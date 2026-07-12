@@ -18,3 +18,11 @@
 | Public Dove registry exists | Not observed | Program/account searches |
 | JUP currently weights Dove security | Unverified | No public stake-weight mapping found |
 | Two-thirds of staked JUP is enforced live | Unverified | Validator source/private configuration unavailable |
+| Canonical Solana JUP mint exists as a JupNet account in the 2026-07-12 snapshot | Not observed | `getAccountInfo` returned `null` |
+| JupNet SPL token accounts hold the canonical JUP mint in the 2026-07-12 snapshot | Not observed | Token-program memcmp query returned zero accounts |
+| Gum state references canonical JUP mint as base58 text in the 2026-07-12 snapshot | Confirmed | 127 Gum-owned accounts contained the canonical JUP mint string |
+| Gum state references canonical JUP mint as raw pubkey bytes in the 2026-07-12 snapshot | Not observed | Deep scan found zero raw 32-byte canonical JUP pubkey hits in Gum account data |
+| Gum/OpenID state maps current validator/vote/stake keys to JUP in the 2026-07-12 snapshot | Not observed | Byte/text scan found zero current validator/vote/stake key hits in Gum and OpenID account data |
+| Native validator consensus stake is equal-weight in the 2026-07-12 snapshot | Confirmed | Seven current vote accounts and seven stake accounts each reported `999999997717120` delegated native stake |
+| Sampled Gum transactions are signed by current validator/vote/stake keys | Not observed | Eight sampled Gum transactions contained zero current validator/vote/stake account-key hits |
+| Sampled Gum transactions are signed by the Gum upgrade authority | Confirmed | Eight sampled Gum transactions included `E9fAVytyjE1EzXfaoCE1it9ZDBKRMTyVndGn1mB1Nvn9` as a signer |

@@ -12,6 +12,54 @@ Scripts developed or discussed during the investigation included:
 - JUP-in-Gum tracing;
 - public dependency/lockfile analysis.
 
+## Added reproducibility scripts
+
+### `scripts/collect_validator_security_snapshot.py`
+
+Collects a bounded live JupNet RPC snapshot for validator-security research.
+
+Example:
+
+```bash
+python3 scripts/collect_validator_security_snapshot.py \
+  --output-dir evidence/YYYY-MM-DD-live-rpc
+```
+
+### `scripts/analyze_validator_security_snapshot.py`
+
+Analyzes a saved snapshot for:
+
+- canonical JUP mint references;
+- validator identity key references;
+- vote account key references;
+- stake account key references;
+- native stake distribution;
+- recent Gum transaction log terms.
+
+Example:
+
+```bash
+python3 scripts/analyze_validator_security_snapshot.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
+### `scripts/deep_dive_validator_security_snapshot.py`
+
+Performs second-stage analysis for:
+
+- Gum account groups containing canonical JUP base58 text;
+- absence/presence of raw canonical JUP pubkey bytes;
+- Gum ProgramData address, deployment slot and upgrade authority;
+- sampled Gum transaction signers;
+- validator/vote/stake account hits in sampled Gum transactions.
+
+Example:
+
+```bash
+python3 scripts/deep_dive_validator_security_snapshot.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
 ## Reproducibility note
 
 The original scripts were developed iteratively. Before publishing them as production tooling:

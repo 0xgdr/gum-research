@@ -31,10 +31,13 @@ Independent reverse-engineering research into the JupNet private beta, Gum, Dove
 - [`docs/08-evidence-matrix.md`](docs/08-evidence-matrix.md)
 - [`docs/09-investigation-timeline.md`](docs/09-investigation-timeline.md)
 - [`docs/10-continuation-plan.md`](docs/10-continuation-plan.md)
+- [`docs/11-validator-security-layer-followup.md`](docs/11-validator-security-layer-followup.md)
 - [`appendices/rpc-catalogue.md`](appendices/rpc-catalogue.md)
 - [`appendices/program-ids.md`](appendices/program-ids.md)
 - [`appendices/scripts-index.md`](appendices/scripts-index.md)
 - [`appendices/dead-ends.md`](appendices/dead-ends.md)
+- [`evidence/2026-07-12-live-rpc/analysis.md`](evidence/2026-07-12-live-rpc/analysis.md)
+- [`evidence/2026-07-12-live-rpc/deep-dive.md`](evidence/2026-07-12-live-rpc/deep-dive.md)
 
 ## Evidence classifications
 
