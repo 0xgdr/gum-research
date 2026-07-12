@@ -58,6 +58,8 @@ The deep-dive analyzer additionally groups Gum JUP-hit accounts by data length, 
 
 The Gum authorization analyzer classifies sampled Gum transaction signers, writable accounts, invoked programs, token mints, instruction data lengths, instruction-data prefixes and full Gum instruction account metas.
 
+The utility classifier separates JUP asset metadata from utility evidence and classifies repeated Gum path accounts.
+
 This scan is intentionally limited to public account data. It cannot detect private validator configuration, off-chain committee state, or encrypted/hashed mappings unless the scanned bytes are directly present.
 
 ## Findings
@@ -190,6 +192,35 @@ Interpretation:
 
 From a Solana program-operator perspective, the sampled public authorization path is dominated by transaction signers, writable Gum/config-like accounts and token-program CPIs. It does not expose a public validator-set, vote-account, stake-account, signer-weight or JUP-weighted quorum dependency.
 
+### Utility Surface Classification
+
+The utility-focused classifier was run against the same snapshot to address three targeted questions:
+
+1. Are the 127 Gum JUP accounts utility records or asset metadata?
+2. Do sampled Gum instruction variants expose utility-specific accounts?
+3. Do repeated config-like accounts expose JUP staking, quorum, fees or controls?
+
+Findings:
+
+- 127 Gum accounts contained canonical JUP as base58 text.
+- 0 Gum accounts contained canonical JUP as raw 32-byte pubkey bytes.
+- 0 JUP metadata accounts contained utility-keyword strings after filtering hash-like false positives.
+- All JUP text hits grouped into 592-byte or 672-byte layouts classified as `asset_metadata_or_route_config`.
+- Sampled instruction variants were `1202`, `0184030000781177`, `0020000000633166` and `0a`.
+- The sampled parsed token mint was `A5ER4hbDN82jEnf986kZzuJzMzsyw1DRqodnone5yJWo`, not canonical Solana JUP.
+
+Repeated account classification:
+
+- `76WKTLzujFUnj7TyB7CqLywPE3YZQf4Fmxj9SwcFAJrY`: Gum-owned 136-byte repeated state/config account in the `1202` variant.
+- `Hso4y8rKEXUUvMbxnyDmjCxA7yk1wbVsZNHSGXcDEUyU`: Gum-owned 200-byte readonly account; candidate `chain_config` based on swap logs.
+- `GZF3sfYF27BU83fd5BPgB419SZiLLZPty3qL6465JTp6`: Gum-owned 336-byte readonly account; candidate `input_unified_mint_map` based on swap logs.
+- `Fh54LKACZCzo3GzDcxoPQomTZamBsFy6XLbj15zJP1WH`: Gum-owned 592-byte account created in the sampled swap flow; candidate swap/request state.
+- `A5ER4hbDN82jEnf986kZzuJzMzsyw1DRqodnone5yJWo`: JPL token mint touched in sampled token CPI; not canonical Solana JUP.
+
+Interpretation:
+
+The 1-3 pass did not find a JUP utility mechanism. It moved the 127 JUP accounts further into the “asset metadata / route config” bucket, identified candidate Gum config/state accounts for future binary layout decoding, and found no validator/vote/stake hits in the sampled Gum instruction variants.
+
 ## Current Assessment
 
 The follow-up strengthens three conclusions:
@@ -199,6 +230,7 @@ The follow-up strengthens three conclusions:
 3. No public Gum/OpenID account data in this snapshot maps current validator identities, vote accounts or stake accounts to JUP.
 4. The sampled Gum transactions were signed by the Gum upgrade authority and did not expose current validator/vote/stake account participation.
 5. The sampled Gum transaction account metas and CPIs show operator/config/token-program authorization surfaces, not a visible native-validator or JUP-weighted Dove surface.
+6. The targeted 1-3 utility pass classified current JUP hits as non-decisive asset metadata/route config and found no JUP utility mechanism.
 
 The decisive unresolved boundary remains private or off-chain state:
 

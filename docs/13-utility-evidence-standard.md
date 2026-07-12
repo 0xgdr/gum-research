@@ -62,6 +62,7 @@ Use when a targeted scan finds no public evidence of the utility mechanism being
 As of the 2026-07-12 snapshot:
 
 - JUP asset metadata in Gum is confirmed.
+- The 127 Gum JUP text-hit accounts are classified as non-decisive asset metadata or route config.
 - JUP as native validator stake is not observed.
 - JUP-denominated Dove or signer weights are not observed.
 - JUP-weighted quorum enforcement is not observed.

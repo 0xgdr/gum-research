@@ -28,3 +28,6 @@
 | Sampled Gum transactions are signed by the Gum upgrade authority | Confirmed | Eight sampled Gum transactions included `E9fAVytyjE1EzXfaoCE1it9ZDBKRMTyVndGn1mB1Nvn9` as a signer |
 | Sampled Gum transaction account metas expose validator/vote/stake accounts | Not observed | Gum authorization analyzer found zero validator/vote/stake hits across eight parsed Gum transactions |
 | Sampled Gum transactions expose JUP-weighted quorum accounts | Not observed | Account-meta and CPI analysis found operator/config/token-program surfaces, but no signer-weight/quorum/JUP-stake accounts |
+| Gum JUP metadata accounts expose utility strings | Not observed | Utility classifier found zero utility-keyword strings after filtering hash-like false positives |
+| Gum JUP metadata accounts look like asset metadata or route config | Strong evidence, non-decisive | 127 JUP text hits grouped into 592-byte or 672-byte layouts with no raw JUP pubkey bytes |
+| Sampled Gum token CPI touches canonical Solana JUP | Not observed | Parsed token mint was `A5ER4hbDN82jEnf986kZzuJzMzsyw1DRqodnone5yJWo`, not canonical JUP |

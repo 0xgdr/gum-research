@@ -21,6 +21,16 @@ NATIVE_LOADER = "NativeLoader1111111111111111111111111111111"
 TOKEN_PROGRAM = "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
 BPF_UPGRADEABLE_LOADER = "BPFLoaderUpgradeab1e11111111111111111111111"
 BPF_LEGACY_LOADER = "BPFLoader2111111111111111111111111111111111"
+REPEATED_GUM_PATH_ACCOUNTS = [
+    "ESUtymMEp6NULmLBcREaumM87TRpgt5R4eNYVrKjCKQq",
+    "76WKTLzujFUnj7TyB7CqLywPE3YZQf4Fmxj9SwcFAJrY",
+    "Hso4y8rKEXUUvMbxnyDmjCxA7yk1wbVsZNHSGXcDEUyU",
+    "GZF3sfYF27BU83fd5BPgB419SZiLLZPty3qL6465JTp6",
+    "Fh54LKACZCzo3GzDcxoPQomTZamBsFy6XLbj15zJP1WH",
+    "A5ER4hbDN82jEnf986kZzuJzMzsyw1DRqodnone5yJWo",
+    "94oZZEp1p1Vwuvc7axgeaRSU4Mk9diugqzjxpz1dnSZv",
+    "FCNefQTEYCsPyQA64hdCpekucCDJFPHm2qfwg8F61jgc",
+]
 
 
 def b58encode(data: bytes) -> str:
@@ -116,6 +126,11 @@ def collect(args: argparse.Namespace) -> None:
             "getSignaturesForAddress",
             "getSignaturesForAddress-Gum.json",
             [GUM_PROGRAM, {"limit": args.signature_limit}],
+        ),
+        (
+            "getMultipleAccounts",
+            "getMultipleAccounts-RepeatedGumPathAccounts.json",
+            [REPEATED_GUM_PATH_ACCOUNTS, {"encoding": "base64"}],
         ),
     ]
 

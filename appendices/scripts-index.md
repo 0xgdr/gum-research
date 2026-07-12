@@ -79,6 +79,17 @@ python3 scripts/analyze_gum_authorization.py \
   evidence/YYYY-MM-DD-live-rpc
 ```
 
+### `scripts/classify_gum_utility_surfaces.py`
+
+Classifies Gum JUP metadata accounts, repeated Gum path accounts and sampled Gum instruction variants as utility evidence or non-decisive asset evidence.
+
+Example:
+
+```bash
+python3 scripts/classify_gum_utility_surfaces.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
 ### `scripts/compare_validator_security_snapshots.py`
 
 Compares two saved snapshots and emits alert-oriented Markdown.

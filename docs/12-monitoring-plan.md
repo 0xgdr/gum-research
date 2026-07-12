@@ -21,6 +21,7 @@ It writes:
 - `analysis.md`
 - `deep-dive.md`
 - `authorization.md`
+- `utility-classification.md`
 - `diff.md` when a previous snapshot exists
 
 ## Manual Workflow
@@ -54,6 +55,14 @@ Generate Gum authorization output:
 python3 scripts/analyze_gum_authorization.py \
   evidence/YYYY-MM-DD-HHMM-live-rpc \
   > evidence/YYYY-MM-DD-HHMM-live-rpc/authorization.md
+```
+
+Generate utility classification output:
+
+```bash
+python3 scripts/classify_gum_utility_surfaces.py \
+  evidence/YYYY-MM-DD-HHMM-live-rpc \
+  > evidence/YYYY-MM-DD-HHMM-live-rpc/utility-classification.md
 ```
 
 Compare two snapshots:

@@ -53,6 +53,7 @@ Utility-relevant evidence includes:
 - [`evidence/2026-07-12-live-rpc/analysis.md`](evidence/2026-07-12-live-rpc/analysis.md)
 - [`evidence/2026-07-12-live-rpc/deep-dive.md`](evidence/2026-07-12-live-rpc/deep-dive.md)
 - [`evidence/2026-07-12-live-rpc/authorization.md`](evidence/2026-07-12-live-rpc/authorization.md)
+- [`evidence/2026-07-12-live-rpc/utility-classification.md`](evidence/2026-07-12-live-rpc/utility-classification.md)
 
 ## Evidence classifications
 

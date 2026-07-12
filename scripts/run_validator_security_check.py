@@ -67,6 +67,7 @@ def main() -> None:
     run([sys.executable, "scripts/analyze_validator_security_snapshot.py", str(out)], out / "analysis.md")
     run([sys.executable, "scripts/deep_dive_validator_security_snapshot.py", str(out)], out / "deep-dive.md")
     run([sys.executable, "scripts/analyze_gum_authorization.py", str(out)], out / "authorization.md")
+    run([sys.executable, "scripts/classify_gum_utility_surfaces.py", str(out)], out / "utility-classification.md")
     if previous:
         run([sys.executable, "scripts/compare_validator_security_snapshots.py", str(previous), str(out)], out / "diff.md")
 
@@ -74,6 +75,7 @@ def main() -> None:
     print(f"Analysis: {out / 'analysis.md'}")
     print(f"Deep dive: {out / 'deep-dive.md'}")
     print(f"Authorization: {out / 'authorization.md'}")
+    print(f"Utility classification: {out / 'utility-classification.md'}")
     if previous:
         print(f"Compared against: {previous}")
         print(f"Diff: {out / 'diff.md'}")
