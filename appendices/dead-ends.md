@@ -1,0 +1,37 @@
+# Dead Ends and Corrections
+
+## Mistaking empty decoded vote instructions for absence
+
+Initial vote tooling requested raw JSON but looked for direct `programId` fields. Raw instructions use `programIdIndex`. The decoder was corrected.
+
+Lesson: preserve raw transactions and resolve indices against static and loaded account keys.
+
+## Treating native stake as JUP stake
+
+Native stake accounts resembled Solana stake accounts and were denominated in native lamports.
+
+Lesson: JUP is an SPL mint. Native stake cannot be called JUP stake without token-account or explicit mapping evidence.
+
+## OpenID as possible Dove registry
+
+Registry metadata was inspected for validator, BLS and stake information. It appeared identity-focused.
+
+Lesson: program names and account sizes are clues, not proof.
+
+## Random executable searches
+
+Executable enumeration was useful, but no clearly labelled Dove consensus program appeared.
+
+Lesson: absence of strings in stripped binaries is not proof of absence; however, repeated random scans have diminishing value.
+
+## Local Cargo cache
+
+The local machine had no Rust/Cargo toolchain and no Cargo Git checkout cache.
+
+Lesson: do not install tooling merely to search for source that was never fetched.
+
+## Every burn is bullish
+
+A Burn instruction in an omnichain flow may be paired with a mint.
+
+Lesson: classify system-wide net issuance, not isolated instruction names.
