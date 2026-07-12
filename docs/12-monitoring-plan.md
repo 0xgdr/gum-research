@@ -31,6 +31,9 @@ It writes:
 - `verify-request-payload-reconstruction.md`
 - `outbox-root-update-transactions.md`
 - `outbox-update-payload-reconstruction.md`
+- `epoch-security-source-hunt.md`
+- `outbox-verifier-payload-field-map.md`
+- `gum-omnichain-sender-program.md`
 - `diff.md` when a previous snapshot exists
 
 ## Manual Workflow
@@ -158,6 +161,33 @@ python3 scripts/reconstruct_outbox_update_payload.py \
   > evidence/YYYY-MM-DD-HHMM-live-rpc/outbox-update-payload-reconstruction.md
 ```
 
+Hunt for epoch security source material:
+
+```bash
+python3 scripts/hunt_epoch_security_sources.py \
+  evidence/YYYY-MM-DD-HHMM-live-rpc \
+  > evidence/YYYY-MM-DD-HHMM-live-rpc/epoch-security-source-hunt.md
+```
+
+Map outbox verifier payload fields:
+
+```bash
+python3 scripts/map_outbox_verifier_payloads.py \
+  evidence/YYYY-MM-DD-HHMM-live-rpc \
+  > evidence/YYYY-MM-DD-HHMM-live-rpc/outbox-verifier-payload-field-map.md
+```
+
+Collect and analyze the recovered Gum omnichain sender program:
+
+```bash
+python3 scripts/collect_gum_omnichain_sender_program.py \
+  evidence/YYYY-MM-DD-HHMM-live-rpc
+
+python3 scripts/analyze_gum_omnichain_sender_program.py \
+  evidence/YYYY-MM-DD-HHMM-live-rpc \
+  > evidence/YYYY-MM-DD-HHMM-live-rpc/gum-omnichain-sender-program.md
+```
+
 Compare two snapshots:
 
 ```bash
@@ -191,6 +221,9 @@ Treat these as high-value changes:
 - `verify_request` payloads start exposing canonical JUP, validator/vote/stake keys, different proof shape, signer-set, quorum or BLS material;
 - outbox root-update transactions start exposing canonical JUP, validator/vote/stake keys, signer-set, quorum, weight or fee material;
 - outbox update payload reconstruction stops matching the `0x00` leaf / `0x01` parent Merkle formula, changes aggregate-key material length, or adds new labelled Dove/JUP/stake fields;
+- epoch security-source hunting finds candidate aggregate-key or epoch-root material co-located with canonical JUP, validator, vote or stake keys;
+- outbox verifier payloads stop matching the mapped field layout, introduce new sender/program ids, or expose canonical JUP / validator / vote / stake key material;
+- Gum omnichain ProgramData hash, deployment slot, upgrade authority, BLS/Merkle strings or utility/security key hits change;
 - Solana Bank Program logs add validator, quorum, stake, signer, BLS or JUP fee/sink terms;
 - current validator set, vote accounts or stake accounts change;
 - sampled Gum transactions start containing current validator, vote or stake account keys;

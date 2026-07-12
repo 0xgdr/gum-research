@@ -239,6 +239,50 @@ python3 scripts/reconstruct_outbox_update_payload.py \
   evidence/YYYY-MM-DD-live-rpc
 ```
 
+### `scripts/hunt_epoch_security_sources.py`
+
+Scans a saved snapshot for the missing source behind an outbox epoch root. It extracts binary account, instruction and program-log records, then searches for the epoch root, candidate aggregate-key material, aggregate-key leaf hash, canonical JUP mint and current JupNet validator/vote/stake keys. It reports whether root/update material co-locates with JUP or validator-security keys.
+
+Example:
+
+```bash
+python3 scripts/hunt_epoch_security_sources.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
+### `scripts/map_outbox_verifier_payloads.py`
+
+Maps sampled Bank/outbox verifier payloads around aggregate-key proof material. It parses message hash, sender/program id, epoch, aggregate-key material, compact signature/verifier field, path bitmap and Merkle proof nodes, then recomputes the stored outbox root for each parsed payload.
+
+Example:
+
+```bash
+python3 scripts/map_outbox_verifier_payloads.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
+### `scripts/collect_gum_omnichain_sender_program.py`
+
+Fetches the JupNet `GUMeb...` sender program and its ProgramData account after the outbox verifier field map identifies it as the stable sender/program id.
+
+Example:
+
+```bash
+python3 scripts/collect_gum_omnichain_sender_program.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
+### `scripts/analyze_gum_omnichain_sender_program.py`
+
+Analyzes the fetched Gum omnichain sender program. It parses upgradeable-loader metadata, extracts executable strings, reports Gum/inbox/outbox/BLS/Merkle terms and scans for canonical JUP plus current validator/vote/stake key material.
+
+Example:
+
+```bash
+python3 scripts/analyze_gum_omnichain_sender_program.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
 ### `scripts/compare_validator_security_snapshots.py`
 
 Compares two saved snapshots and emits alert-oriented Markdown.
@@ -253,7 +297,7 @@ python3 scripts/compare_validator_security_snapshots.py \
 
 ### `scripts/run_validator_security_check.py`
 
-Runs the full monitoring workflow: collect a fresh snapshot, fetch recurring Bank account state, fetch owner-program context, fetch JupNet helper-program-owned accounts, fetch outbox root-update transactions, generate `analysis.md`, generate `deep-dive.md`, generate `authorization.md`, generate `utility-classification.md`, generate `solana-bank.md`, generate `bank-reverse-engineering.md`, generate `bank-account-graph.md`, generate `bank-recurring-account-state.md`, generate `bank-owner-program-context.md`, generate `jupnet-helper-program-accounts.md`, generate `verify-request-payload-reconstruction.md`, generate `outbox-root-update-transactions.md`, generate `outbox-update-payload-reconstruction.md`, and compare against the latest prior snapshot when available.
+Runs the full monitoring workflow: collect a fresh snapshot, fetch recurring Bank account state, fetch owner-program context, fetch JupNet helper-program-owned accounts, fetch outbox root-update transactions, fetch the Gum omnichain sender program, generate `analysis.md`, generate `deep-dive.md`, generate `authorization.md`, generate `utility-classification.md`, generate `solana-bank.md`, generate `bank-reverse-engineering.md`, generate `bank-account-graph.md`, generate `bank-recurring-account-state.md`, generate `bank-owner-program-context.md`, generate `jupnet-helper-program-accounts.md`, generate `verify-request-payload-reconstruction.md`, generate `outbox-root-update-transactions.md`, generate `outbox-update-payload-reconstruction.md`, generate `epoch-security-source-hunt.md`, generate `outbox-verifier-payload-field-map.md`, generate `gum-omnichain-sender-program.md`, and compare against the latest prior snapshot when available.
 
 Example:
 

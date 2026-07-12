@@ -35,6 +35,9 @@ Utility-relevant evidence includes:
 - `verify_request` payload reconstruction shows message/proof data and USDC context, but no JUP, validator keys or visible quorum state.
 - Outbox root-update transaction analysis confirms public BLS signature verification during Merkle-root publication, but still no visible JUP or validator-key source.
 - Outbox update payload reconstruction confirms the sampled root-update bytes match the public JupNet Merkle formula for aggregate-key inclusion proofs.
+- Epoch security-source hunting shows the candidate aggregate-key material appears across multiple verification payloads, but not with JUP, validator, vote or stake keys.
+- Outbox verifier payload mapping matches the public article's message-hash, sender-program, epoch, aggregate-key and Merkle-proof shape.
+- The recovered sender program resolves to JupNet `gum-omnichain`, whose executable exposes Gum deposit/withdraw/swap and BLS/Merkle verification strings.
 - JUP appears in Gum asset metadata/flows; this is confirmed but treated as non-decisive noise unless tied to protocol utility.
 - Public evidence does not currently prove that JUP stake determines validator or Dove voting weight.
 
@@ -64,6 +67,9 @@ Utility-relevant evidence includes:
 - [`docs/21-verify-request-payload-reconstruction.md`](docs/21-verify-request-payload-reconstruction.md)
 - [`docs/22-outbox-root-update-transactions.md`](docs/22-outbox-root-update-transactions.md)
 - [`docs/23-outbox-update-payload-reconstruction.md`](docs/23-outbox-update-payload-reconstruction.md)
+- [`docs/24-epoch-security-source-hunt.md`](docs/24-epoch-security-source-hunt.md)
+- [`docs/25-outbox-verifier-payload-field-map.md`](docs/25-outbox-verifier-payload-field-map.md)
+- [`docs/26-gum-omnichain-sender-program.md`](docs/26-gum-omnichain-sender-program.md)
 - [`appendices/rpc-catalogue.md`](appendices/rpc-catalogue.md)
 - [`appendices/program-ids.md`](appendices/program-ids.md)
 - [`appendices/scripts-index.md`](appendices/scripts-index.md)
@@ -82,6 +88,9 @@ Utility-relevant evidence includes:
 - [`evidence/2026-07-12-bank-live-rpc/verify-request-payload-reconstruction.md`](evidence/2026-07-12-bank-live-rpc/verify-request-payload-reconstruction.md)
 - [`evidence/2026-07-12-bank-live-rpc/outbox-root-update-transactions.md`](evidence/2026-07-12-bank-live-rpc/outbox-root-update-transactions.md)
 - [`evidence/2026-07-12-bank-live-rpc/outbox-update-payload-reconstruction.md`](evidence/2026-07-12-bank-live-rpc/outbox-update-payload-reconstruction.md)
+- [`evidence/2026-07-12-bank-live-rpc/epoch-security-source-hunt.md`](evidence/2026-07-12-bank-live-rpc/epoch-security-source-hunt.md)
+- [`evidence/2026-07-12-bank-live-rpc/outbox-verifier-payload-field-map.md`](evidence/2026-07-12-bank-live-rpc/outbox-verifier-payload-field-map.md)
+- [`evidence/2026-07-12-bank-live-rpc/gum-omnichain-sender-program.md`](evidence/2026-07-12-bank-live-rpc/gum-omnichain-sender-program.md)
 
 ## Evidence classifications
 

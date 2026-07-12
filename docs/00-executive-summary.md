@@ -33,6 +33,9 @@ The investigation therefore proceeded from observable evidence:
 - `verify_request` payload reconstruction shows Merkle proof data and USDC context, but no visible JUP or validator-security fields.
 - Outbox root-update transaction analysis confirms public BLS signature verification during Merkle-root publication.
 - Outbox update payload reconstruction confirms the sampled root-update transaction bytes reproduce the public JupNet article's Merkle leaf and parent hash formulas.
+- Epoch security-source hunting finds the same candidate aggregate-key material in multiple verification payloads, but not co-located with JUP, validator, vote or stake keys.
+- Outbox verifier payload mapping matches the public article's field shape: message hash, sender/program id, epoch, aggregate-key material, compact signature/verifier field and Merkle proof.
+- The recovered sender/program id resolves to JupNet `gum-omnichain`, which exposes deposit, withdrawal, swap, inbox/outbox and BLS/Merkle verification strings.
 - JUP appears in Gum state and transaction flows as an asset.
 - JUP burn and mint operations were observed in omnichain activity, but these are non-decisive unless tied to protocol utility.
 - Public dependency metadata points to JupNet-specific BLS, BN254, Merkle and syscall components.
@@ -62,6 +65,9 @@ The strongest current model is:
 - **Per-request verification:** sampled `verify_request` payloads carry proof/message fields against outbox roots, with no observed JUP or validator-key material.
 - **Root publication:** sampled `UpdateMerkleRoot` logs show Merkle proof verification and BLS signature verification before an outbox root is stored.
 - **Root-update payload:** the sampled 305-byte update payload proves a 64-byte candidate aggregate key into the epoch root using `SHA256(0x00 || key)` leaves and `SHA256(0x01 || left || right)` parents.
+- **Epoch source hunt:** scanning 3153 saved binary records found the candidate aggregate key in repeated verification payloads, but found zero co-location with canonical JUP or current validator/vote/stake keys.
+- **Verifier payloads:** 21 sampled Bank/outbox verifier payloads map to the article's outbox argument shape and recompute to the stored outbox root.
+- **Gum omnichain sender:** the verifier sender/program id is a live upgradeable JupNet program with `programs/gum-omnichain` strings and `sol_verify_bls_merkle_key`.
 - **JUP utility/security:** described publicly for Dove security, but not independently verifiable from the beta artifacts inspected.
 
 This does not disprove the intended JUP security model. It establishes an evidence boundary: the implementation is either private, off-chain, not yet activated, or not publicly exposed in the beta.
