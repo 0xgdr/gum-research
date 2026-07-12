@@ -35,3 +35,9 @@ Lesson: do not install tooling merely to search for source that was never fetche
 A Burn instruction in an omnichain flow may be paired with a mint.
 
 Lesson: classify the protocol mechanism, not isolated instruction names. A trade, bridge burn or mint is noise unless it proves JUP staking, fees, signer weights, access control, governance, rewards, slashing or a permanent protocol sink.
+
+## Treating Omnipair AMM source as Gum validator-security source
+
+The public `jup-ag/omnipair-amm-sdk` repository is real and relevant to Jupiter AMM integration, but inspected source exposes AMM pair state, quote math, swap account metas, rate-model logic and a futarchy-authority configuration. It does not expose Gum validator/Dove software or a JUP-denominated security mechanism.
+
+Lesson: public Jupiter AMM integration code can explain routing and asset support without explaining Gum/JupNet utility. Keep it as a lead, but do not treat it as evidence of JUP utility unless it connects to stake, weights, quorum, fees, governance, access control, slashing, rewards or a permanent sink.

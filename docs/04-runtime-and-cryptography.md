@@ -53,7 +53,9 @@ However, dependency presence does not alone prove:
 
 ## Private source boundary
 
-The referenced `jupnet-svm` repository was not publicly cloneable at the time of investigation. This prevents direct inspection of:
+The referenced `jupnet-svm` repository was not publicly cloneable at the time of investigation. A follow-up GitHub API check for `jupnet/jupnet-svm` returned `404` on 2026-07-12, so this remains a source boundary rather than an inspectable public dependency.
+
+This prevents direct inspection of:
 
 - validator consensus logic;
 - committee selection;

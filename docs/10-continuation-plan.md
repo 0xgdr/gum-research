@@ -11,6 +11,7 @@ Resume investigation when any of the following appears:
 5. Public technical specification for cross-chain quorum proofs.
 6. New Gum program deployment or upgrade.
 7. Observable JUP utility mechanism such as staking, signer weights, fees, access control, governance, slashing, rewards or a permanent protocol burn/sink.
+8. Public Jupiter source for Gum, Dove, JupNet validator software or JUP-weighted security.
 
 ## Recommended live monitoring
 
@@ -64,3 +65,4 @@ The decisive artifact would be one of:
 - an account mapping validator identity to JUP stake;
 - code calculating a two-thirds threshold from JUP-denominated weights;
 - a fee, burn/sink, governance, reward, slashing or access-control mechanism that requires JUP.
+- public source that maps Gum/JupNet validators, Doves, signers or Omnipair/Gum authorities to JUP stake, fees, governance or security weights.

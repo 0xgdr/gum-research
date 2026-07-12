@@ -46,6 +46,7 @@ Utility-relevant evidence includes:
 - [`docs/11-validator-security-layer-followup.md`](docs/11-validator-security-layer-followup.md)
 - [`docs/12-monitoring-plan.md`](docs/12-monitoring-plan.md)
 - [`docs/13-utility-evidence-standard.md`](docs/13-utility-evidence-standard.md)
+- [`docs/14-public-jupiter-source-audit.md`](docs/14-public-jupiter-source-audit.md)
 - [`appendices/rpc-catalogue.md`](appendices/rpc-catalogue.md)
 - [`appendices/program-ids.md`](appendices/program-ids.md)
 - [`appendices/scripts-index.md`](appendices/scripts-index.md)

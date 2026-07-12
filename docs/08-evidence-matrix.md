@@ -31,3 +31,6 @@
 | Gum JUP metadata accounts expose utility strings | Not observed | Utility classifier found zero utility-keyword strings after filtering hash-like false positives |
 | Gum JUP metadata accounts look like asset metadata or route config | Strong evidence, non-decisive | 127 JUP text hits grouped into 592-byte or 672-byte layouts with no raw JUP pubkey bytes |
 | Sampled Gum token CPI touches canonical Solana JUP | Not observed | Parsed token mint was `A5ER4hbDN82jEnf986kZzuJzMzsyw1DRqodnone5yJWo`, not canonical JUP |
+| Public literal Gum repository exists under `jup-ag` | Not observed | GitHub API checks for `jup-ag/gum`, `jup-ag/GUM`, `jup-ag/gum-sdk` and `jup-ag/jupnet` returned `404` on 2026-07-12 |
+| Public `jupnet/jupnet-svm` source is inspectable | Not observed | GitHub API check returned `404` on 2026-07-12 despite dependency metadata referencing the repo URL |
+| Public `jup-ag/omnipair-amm-sdk` explains Gum/JUP validator utility | Not observed | Source shows Omnipair AMM integration, quote math, swap metas, rate model and futarchy-authority config, but no JUP stake/weight/quorum/security mechanism |
