@@ -58,3 +58,6 @@
 | `verify_request` payloads expose JUP security utility | Not observed | Payload scans found USDC and Bank Program pubkeys but zero canonical JUP, current validator/vote/stake keys, signer-set or quorum fields |
 | Outbox root updates verify BLS signatures publicly | Confirmed | One recent outbox transaction logged `UpdateMerkleRoot invoked`, `Merkle proof verified`, `Verifying BLS signature` and `Signature verified` |
 | Outbox root update payload exposes JUP signer/quorum source | Not observed | The sampled 305-byte update payload and account keys exposed the outbox root account and Merkle data, but zero canonical JUP or current validator/vote/stake key hits |
+| Outbox root update payload matches the published JupNet Merkle formula | Confirmed | Recomputed `SHA256(0x00 || candidate_64_bytes)` leaf and `SHA256(0x01 || left || right)` parents reproduce the stored epoch `271` root |
+| Outbox root update payload exposes the aggregate-key inclusion boundary | Strong evidence | The final 64-byte field hashes into the Merkle leaf; the following proof path and bitmap reconstruct the emitted root exactly |
+| Outbox root update payload exposes underlying Dove members or JUP weights | Not observed | The compact proof verifies aggregate-key inclusion but does not list Dove identities, individual BLS keys, stake balances, JUP denomination or threshold calculation |

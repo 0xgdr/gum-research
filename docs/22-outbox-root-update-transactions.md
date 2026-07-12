@@ -55,6 +55,15 @@ The 305-byte update payload decodes as:
 
 The Merkle root matches the public outbox helper state account for epoch `271`.
 
+Follow-up byte-level reconstruction is in:
+
+```text
+docs/23-outbox-update-payload-reconstruction.md
+evidence/2026-07-12-bank-live-rpc/outbox-update-payload-reconstruction.md
+```
+
+That reconstruction proves the final 64-byte field into the emitted root using the public JupNet Merkle formulas: `SHA256(0x00 || candidate_64_bytes)` for the leaf and `SHA256(0x01 || left || right)` for parent nodes.
+
 ## Utility/Security Checks
 
 | Check | Result |

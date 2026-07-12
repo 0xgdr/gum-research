@@ -32,6 +32,7 @@ The investigation therefore proceeded from observable evidence:
 - Helper-program account enumeration shows the public outbox account stores Merkle root history, not visible signer-set or JUP-weight state.
 - `verify_request` payload reconstruction shows Merkle proof data and USDC context, but no visible JUP or validator-security fields.
 - Outbox root-update transaction analysis confirms public BLS signature verification during Merkle-root publication.
+- Outbox update payload reconstruction confirms the sampled root-update transaction bytes reproduce the public JupNet article's Merkle leaf and parent hash formulas.
 - JUP appears in Gum state and transaction flows as an asset.
 - JUP burn and mint operations were observed in omnichain activity, but these are non-decisive unless tied to protocol utility.
 - Public dependency metadata points to JupNet-specific BLS, BN254, Merkle and syscall components.
@@ -60,6 +61,7 @@ The strongest current model is:
 - **Helper program state:** the outbox helper owns one 320-byte Merkle-root-history account; the signer-set/quorum source is not visible there.
 - **Per-request verification:** sampled `verify_request` payloads carry proof/message fields against outbox roots, with no observed JUP or validator-key material.
 - **Root publication:** sampled `UpdateMerkleRoot` logs show Merkle proof verification and BLS signature verification before an outbox root is stored.
+- **Root-update payload:** the sampled 305-byte update payload proves a 64-byte candidate aggregate key into the epoch root using `SHA256(0x00 || key)` leaves and `SHA256(0x01 || left || right)` parents.
 - **JUP utility/security:** described publicly for Dove security, but not independently verifiable from the beta artifacts inspected.
 
 This does not disprove the intended JUP security model. It establishes an evidence boundary: the implementation is either private, off-chain, not yet activated, or not publicly exposed in the beta.

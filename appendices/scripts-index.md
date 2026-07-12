@@ -228,6 +228,17 @@ python3 scripts/analyze_outbox_root_update_transactions.py \
   evidence/YYYY-MM-DD-live-rpc
 ```
 
+### `scripts/reconstruct_outbox_update_payload.py`
+
+Reconstructs sampled 305-byte outbox `UpdateMerkleRoot` payloads. It parses the epoch/root fields, proof nodes, path bitmap and final 64-byte candidate aggregate-key material, then recomputes the Merkle root using the public JupNet article's `0x00` leaf and `0x01` parent hash formulas.
+
+Example:
+
+```bash
+python3 scripts/reconstruct_outbox_update_payload.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
 ### `scripts/compare_validator_security_snapshots.py`
 
 Compares two saved snapshots and emits alert-oriented Markdown.
@@ -242,7 +253,7 @@ python3 scripts/compare_validator_security_snapshots.py \
 
 ### `scripts/run_validator_security_check.py`
 
-Runs the full monitoring workflow: collect a fresh snapshot, fetch recurring Bank account state, fetch owner-program context, fetch JupNet helper-program-owned accounts, fetch outbox root-update transactions, generate `analysis.md`, generate `deep-dive.md`, generate `authorization.md`, generate `utility-classification.md`, generate `solana-bank.md`, generate `bank-reverse-engineering.md`, generate `bank-account-graph.md`, generate `bank-recurring-account-state.md`, generate `bank-owner-program-context.md`, generate `jupnet-helper-program-accounts.md`, generate `verify-request-payload-reconstruction.md`, generate `outbox-root-update-transactions.md`, and compare against the latest prior snapshot when available.
+Runs the full monitoring workflow: collect a fresh snapshot, fetch recurring Bank account state, fetch owner-program context, fetch JupNet helper-program-owned accounts, fetch outbox root-update transactions, generate `analysis.md`, generate `deep-dive.md`, generate `authorization.md`, generate `utility-classification.md`, generate `solana-bank.md`, generate `bank-reverse-engineering.md`, generate `bank-account-graph.md`, generate `bank-recurring-account-state.md`, generate `bank-owner-program-context.md`, generate `jupnet-helper-program-accounts.md`, generate `verify-request-payload-reconstruction.md`, generate `outbox-root-update-transactions.md`, generate `outbox-update-payload-reconstruction.md`, and compare against the latest prior snapshot when available.
 
 Example:
 

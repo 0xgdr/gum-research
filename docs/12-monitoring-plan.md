@@ -30,6 +30,7 @@ It writes:
 - `jupnet-helper-program-accounts.md`
 - `verify-request-payload-reconstruction.md`
 - `outbox-root-update-transactions.md`
+- `outbox-update-payload-reconstruction.md`
 - `diff.md` when a previous snapshot exists
 
 ## Manual Workflow
@@ -149,6 +150,14 @@ python3 scripts/analyze_outbox_root_update_transactions.py \
   > evidence/YYYY-MM-DD-HHMM-live-rpc/outbox-root-update-transactions.md
 ```
 
+Reconstruct outbox update payload proofs:
+
+```bash
+python3 scripts/reconstruct_outbox_update_payload.py \
+  evidence/YYYY-MM-DD-HHMM-live-rpc \
+  > evidence/YYYY-MM-DD-HHMM-live-rpc/outbox-update-payload-reconstruction.md
+```
+
 Compare two snapshots:
 
 ```bash
@@ -181,6 +190,7 @@ Treat these as high-value changes:
 - JupNet helper-program-owned account counts, Merkle roots, JUP hits or validator-key hits change;
 - `verify_request` payloads start exposing canonical JUP, validator/vote/stake keys, different proof shape, signer-set, quorum or BLS material;
 - outbox root-update transactions start exposing canonical JUP, validator/vote/stake keys, signer-set, quorum, weight or fee material;
+- outbox update payload reconstruction stops matching the `0x00` leaf / `0x01` parent Merkle formula, changes aggregate-key material length, or adds new labelled Dove/JUP/stake fields;
 - Solana Bank Program logs add validator, quorum, stake, signer, BLS or JUP fee/sink terms;
 - current validator set, vote accounts or stake accounts change;
 - sampled Gum transactions start containing current validator, vote or stake account keys;
