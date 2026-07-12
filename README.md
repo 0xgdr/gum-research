@@ -32,6 +32,7 @@ Independent reverse-engineering research into the JupNet private beta, Gum, Dove
 - [`docs/09-investigation-timeline.md`](docs/09-investigation-timeline.md)
 - [`docs/10-continuation-plan.md`](docs/10-continuation-plan.md)
 - [`docs/11-validator-security-layer-followup.md`](docs/11-validator-security-layer-followup.md)
+- [`docs/12-monitoring-plan.md`](docs/12-monitoring-plan.md)
 - [`appendices/rpc-catalogue.md`](appendices/rpc-catalogue.md)
 - [`appendices/program-ids.md`](appendices/program-ids.md)
 - [`appendices/scripts-index.md`](appendices/scripts-index.md)

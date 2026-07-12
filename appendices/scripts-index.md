@@ -60,6 +60,28 @@ python3 scripts/deep_dive_validator_security_snapshot.py \
   evidence/YYYY-MM-DD-live-rpc
 ```
 
+### `scripts/compare_validator_security_snapshots.py`
+
+Compares two saved snapshots and emits alert-oriented Markdown.
+
+Example:
+
+```bash
+python3 scripts/compare_validator_security_snapshots.py \
+  evidence/OLD-live-rpc \
+  evidence/NEW-live-rpc
+```
+
+### `scripts/run_validator_security_check.py`
+
+Runs the full monitoring workflow: collect a fresh snapshot, generate `analysis.md`, generate `deep-dive.md`, and compare against the latest prior snapshot when available.
+
+Example:
+
+```bash
+python3 scripts/run_validator_security_check.py
+```
+
 ## Reproducibility note
 
 The original scripts were developed iteratively. Before publishing them as production tooling:
