@@ -12,6 +12,8 @@ from pathlib import Path
 
 ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 JUP_MINT = "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN"
+GUM_BANK = "bk1PDAkbHEBGtVRiM94Lzets8gVFP7FgySyfkAc8MPN"
+GUM_BANK_PROGRAM = "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ"
 
 
 def b58decode(value: str) -> bytes:
@@ -27,7 +29,10 @@ def load(path: Path) -> dict:
 
 
 def result(base: Path, filename: str):
-    return load(base / filename).get("result")
+    path = base / filename
+    if not path.exists():
+        return None
+    return load(path).get("result")
 
 
 def account_bytes(account_data) -> bytes:
@@ -36,6 +41,22 @@ def account_bytes(account_data) -> bytes:
     if isinstance(account_data, dict) and "parsed" in account_data:
         return json.dumps(account_data["parsed"], sort_keys=True).encode()
     return b""
+
+
+def account_value(base: Path, filename: str) -> dict | None:
+    data = result(base, filename)
+    if not data:
+        return None
+    return data.get("value")
+
+
+def account_summary(value: dict | None) -> str:
+    if not value:
+        return "not present"
+    return (
+        f"present; owner `{value.get('owner')}`; executable `{value.get('executable')}`; "
+        f"lamports `{value.get('lamports')}`; space `{value.get('space')}`"
+    )
 
 
 def account_records(base: Path, filename: str) -> list[tuple[str, bytes]]:
@@ -64,6 +85,42 @@ def block_time(value: int | None) -> str:
     return dt.datetime.fromtimestamp(value, dt.timezone.utc).isoformat()
 
 
+def signature_set(base: Path, filename: str) -> set[str]:
+    return {item["signature"] for item in result(base, filename) or []}
+
+
+def tx_account_keys(tx: dict) -> set[str]:
+    keys = set()
+    for key in tx.get("transaction", {}).get("message", {}).get("accountKeys", []):
+        if isinstance(key, dict):
+            keys.add(key["pubkey"])
+        elif isinstance(key, str):
+            keys.add(key)
+    return keys
+
+
+def sampled_tx_rows(base: Path, prefix: str, validator_related: set[str]) -> list[dict]:
+    rows = []
+    for path in sorted(base.glob(f"{prefix}-tx-*.json")):
+        tx = load(path).get("result")
+        if not tx:
+            continue
+        keys = tx_account_keys(tx)
+        logs = tx.get("meta", {}).get("logMessages") or []
+        terms = ("jup", "stake", "signer", "quorum", "proof", "hash", "fee", "lock", "burn", "dove", "vote", "validator")
+        interesting = [line for line in logs if any(term in line.lower() for term in terms)]
+        rows.append(
+            {
+                "file": path.name,
+                "slot": tx.get("slot"),
+                "jup_account_hit": JUP_MINT in keys,
+                "validator_hits": sorted(keys & validator_related),
+                "interesting_logs": interesting,
+            }
+        )
+    return rows
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("snapshot_dir")
@@ -83,6 +140,11 @@ def main() -> None:
     native_loader_accounts = account_records(base, "getProgramAccounts-NativeLoader.json")
     jup_info = result(base, "getAccountInfo-JUPMint.json") or {}
     jup_token_accounts = result(base, "getProgramAccounts-Token-JUPMint.json") or []
+    bank_info = account_value(base, "getAccountInfo-GumBank.json")
+    bank_program_info = account_value(base, "getAccountInfo-GumBankProgram.json")
+    bank_program_accounts = result(base, "getProgramAccounts-GumBankProgram.json") or []
+    if not isinstance(bank_program_accounts, list):
+        bank_program_accounts = []
 
     key_targets = []
     for vote in current_votes + delinquent_votes:
@@ -90,6 +152,11 @@ def main() -> None:
         key_targets.append((f"vote:{vote['votePubkey']}", vote["votePubkey"], b58decode(vote["votePubkey"])))
     for account in stake_accounts:
         key_targets.append((f"stake:{account['pubkey']}", account["pubkey"], b58decode(account["pubkey"])))
+    validator_related = {
+        text
+        for name, text, _raw_key in key_targets
+        if name.startswith(("node:", "vote:", "stake:"))
+    }
 
     jup_raw = b58decode(JUP_MINT)
     gum_jup_raw_hits = scan_exact(gum_accounts, jup_raw)
@@ -118,6 +185,11 @@ def main() -> None:
             )
         )
 
+    gum_signatures = signature_set(base, "getSignaturesForAddress-Gum.json")
+    bank_signatures = signature_set(base, "getSignaturesForAddress-GumBank.json")
+    bank_program_signatures = signature_set(base, "getSignaturesForAddress-GumBankProgram.json")
+    bank_program_tx_rows = sampled_tx_rows(base, "bank", validator_related)
+
     print("# Validator Security Snapshot Analysis")
     print()
     print(f"- Snapshot slot: `{slot}`")
@@ -130,6 +202,18 @@ def main() -> None:
     print(f"- Gum-owned accounts scanned: `{len(gum_accounts)}`")
     print(f"- OpenID-owned accounts scanned: `{len(openid_accounts)}`")
     print(f"- NativeLoader-owned accounts scanned: `{len(native_loader_accounts)}`")
+    print()
+    print("## Public Registry Bank Lead")
+    print()
+    print(f"- Registry Bank account: `{GUM_BANK}`")
+    print(f"- Registry Bank Program: `{GUM_BANK_PROGRAM}`")
+    print(f"- Bank account on configured RPC: {account_summary(bank_info)}")
+    print(f"- Bank Program on configured RPC: {account_summary(bank_program_info)}")
+    print(f"- Bank Program-owned accounts scanned: `{len(bank_program_accounts)}`")
+    print(f"- Recent Bank signatures in window: `{len(bank_signatures)}`")
+    print(f"- Recent Bank Program signatures in window: `{len(bank_program_signatures)}`")
+    print(f"- Gum/Bank signature overlap in windows: `{len(gum_signatures & bank_signatures)}`")
+    print(f"- Gum/Bank Program signature overlap in windows: `{len(gum_signatures & bank_program_signatures)}`")
     print()
     print("## JUP Surface")
     print()
@@ -164,6 +248,29 @@ def main() -> None:
     for item in result(base, "getSignaturesForAddress-Gum.json") or []:
         print(f"| {item.get('slot')} | {block_time(item.get('blockTime'))} | `{item.get('err')}` | `{item['signature'][:16]}` |")
     print()
+    print("## Recent Bank Program Signatures")
+    print()
+    print("| Slot | Block time UTC | Error | Signature prefix |")
+    print("|---:|---|---|---|")
+    for item in result(base, "getSignaturesForAddress-GumBankProgram.json") or []:
+        print(f"| {item.get('slot')} | {block_time(item.get('blockTime'))} | `{item.get('err')}` | `{item['signature'][:16]}` |")
+    print()
+    print("## Sample Bank Program Transaction Logs")
+    print()
+    if bank_program_tx_rows:
+        for row in bank_program_tx_rows:
+            print(f"### `{row['file']}`")
+            print()
+            print(f"- Slot: `{row['slot']}`")
+            print(f"- Canonical JUP account key hit: `{row['jup_account_hit']}`")
+            print(f"- Validator/vote/stake account-key hits: `{len(row['validator_hits'])}`")
+            print(f"- Matching log lines: `{len(row['interesting_logs'])}`")
+            for line in row["interesting_logs"][:8]:
+                print(f"- `{line}`")
+            print()
+    else:
+        print("No sampled Bank Program transactions were available in this snapshot.")
+        print()
     print("## Sample Gum Transaction Logs")
     print()
     terms = ("jup", "stake", "signer", "quorum", "fault", "proof", "hash", "claim", "mint", "burn", "dove", "vote")

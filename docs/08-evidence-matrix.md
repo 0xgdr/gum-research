@@ -34,3 +34,13 @@
 | Public literal Gum repository exists under `jup-ag` | Not observed | GitHub API checks for `jup-ag/gum`, `jup-ag/GUM`, `jup-ag/gum-sdk` and `jup-ag/jupnet` returned `404` on 2026-07-12 |
 | Public `jupnet/jupnet-svm` source is inspectable | Not observed | GitHub API check returned `404` on 2026-07-12 despite dependency metadata referencing the repo URL |
 | Public `jup-ag/omnipair-amm-sdk` explains Gum/JUP validator utility | Not observed | Source shows Omnipair AMM integration, quote math, swap metas, rate model and futarchy-authority config, but no JUP stake/weight/quorum/security mechanism |
+| Public Jupiter registry names GUM/JupNet | Confirmed, non-decisive | `jup-ag/platform-list` contains the only exact public-org `gum`/`jupnet` crawl hits and registers GUM as a Jupiter-parented DEX with bank-related Solana addresses |
+| Public `jup-ag` crawl exposes Gum source or JUP security utility | Not observed | Boundary-matched crawl scanned 186 public repositories; no `proof_hash`/`outbox` hits and no public JUP stake/weight/quorum/validator-security mechanism found |
+| Public registry Bank addresses exist on JupNet RPC | Not observed | 2026-07-12 Bank snapshot returned `null` account info and zero signature-window hits for both registry Bank addresses on JupNet RPC |
+| Public registry Bank addresses exist on Solana mainnet | Confirmed | Both `bk1PDA...` and `BankK1...` are executable upgradeable-loader accounts on Solana mainnet |
+| Solana Bank Program exposes inbox/outbox message flow | Confirmed | Sampled Bank Program transactions logged `SubmitInboxMessageWithFinality`, `VerifyOutboxMessage` and `Outbox verification passed` |
+| Sampled Solana Bank Program transactions use canonical JUP | Not observed | Eight sampled Bank Program transactions had zero canonical JUP account-key hits; parsed token mints were USDC and wrapped SOL |
+| Solana Bank Program proves JUP validator/Dove utility | Not observed | Bank evidence supports cross-chain message/deposit plumbing, but no JUP stake/weight/quorum/security/fee mechanism was observed |
+| Solana Bank instruction variants are recoverable from sampled txs | Confirmed | Five Anchor-style variants identified: `withdraw`, `sweep`, `verify_request`, `rfq_sell_resolve`, `rfq_sell_commit` |
+| Solana Bank binaries expose request/inbox/outbox/Merkle strings | Confirmed | Full ProgramData string scan found request, inbox, outbox, `JUPNET_INBOX`, `merkle_root_state`, `message_hash`, `InvalidMerkleProof` and related source paths |
+| Solana Bank binary strings prove JUP token utility | Not observed | `jup`/`jupnet` strings establish JupNet context, but no JUP-denominated staking, weights, fees, rewards, slashing or governance mechanism was recovered |

@@ -56,6 +56,27 @@ This repository is public and describes a cross-platform blockchain utility libr
 
 Assessment: it is crypto/blockchain tooling, but no Gum/JupNet validator-security or JUP utility mechanism was identified from the README-level inspection.
 
+### `jup-ag/platform-list`
+
+The systematic public-org crawl found the only exact `gum` and `jupnet` source hits in `jup-ag/platform-list`.
+
+The registry entry identifies:
+
+- `id: "gum"`;
+- `name: "GUM"`;
+- JupNet social links;
+- `tags: ["dex"]`;
+- Jupiter as parent platform;
+- a `Global Deposit` service;
+- `Bank` account `bk1PDAkbHEBGtVRiM94Lzets8gVFP7FgySyfkAc8MPN`;
+- `Bank Program` account `BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ`.
+
+Assessment: this is a useful public registry clue and creates two more addresses to monitor, but it is not Gum source code and does not show JUP stake, weights, quorum, fees, governance, access control, slashing, rewards or a permanent sink.
+
+Follow-up live RPC checks showed that these addresses were not present on the configured JupNet RPC endpoint, but both were present as executable upgradeable-loader accounts on Solana mainnet. Sampled Solana Bank Program logs exposed inbox/outbox message handling, including `SubmitInboxMessageWithFinality`, `VerifyOutboxMessage` and `Outbox verification passed`.
+
+This strengthens the interpretation that the public registry points to Solana-side Gum/JupNet message or deposit infrastructure, while still not proving JUP-denominated utility.
+
 ## Current Conclusion
 
 The public Jupiter source found in this pass does not change the repo's main conclusion:
@@ -64,7 +85,7 @@ The public Jupiter source found in this pass does not change the repo's main con
 JUP is visible as a Gum asset/configuration surface, but public evidence still does not show JUP being used for Gum/JupNet protocol utility or validator security.
 ```
 
-The strongest new lead is `jup-ag/omnipair-amm-sdk`, but it currently looks like an AMM integration source, not the missing Gum/Dove validator-security layer.
+The strongest public-code lead from the crawl is `jup-ag/platform-list`, because it directly names GUM and JupNet and exposes bank-related addresses. The strongest source-location lead remains the private `jupnet/jupnet-svm` dependency reference.
 
 ## Follow-up Checks
 
@@ -72,5 +93,6 @@ When re-running this audit, check:
 
 - whether `jup-ag/gum`, `jup-ag/gum-sdk`, `jup-ag/jupnet` or `jupnet/jupnet-svm` becomes publicly accessible;
 - whether `jup-ag/omnipair-amm-sdk` adds account types involving JUP stake, governance or fee sinks;
+- whether `jup-ag/platform-list` changes the GUM bank addresses or adds new Gum/JupNet services;
 - whether Omnipair program accounts overlap with Gum repeated accounts from the live JupNet snapshot;
 - whether any Jupiter source exposes a Dove, validator, signer, quorum, BLS or JUP-weight registry.

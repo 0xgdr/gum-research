@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import base64
+import hashlib
 import json
 import struct
 from pathlib import Path
@@ -13,6 +14,8 @@ from pathlib import Path
 ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 JUP_MINT = "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN"
 GUM_PROGRAM = "brhPfKExpnYDHroomHrk7PNJ4UXJx9SYohCCtd6r8N1"
+GUM_BANK = "bk1PDAkbHEBGtVRiM94Lzets8gVFP7FgySyfkAc8MPN"
+GUM_BANK_PROGRAM = "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ"
 
 
 def b58decode(value: str) -> bytes:
@@ -62,8 +65,8 @@ def count_hits(records: list[tuple[str, bytes]], target: bytes) -> int:
     return sum(1 for _pubkey, raw in records if target in raw)
 
 
-def parse_gum_programdata(base: Path) -> tuple[str | None, int | None, str | None]:
-    program = result(base, "getAccountInfo-GumProgram.json")
+def parse_programdata(base: Path, program_filename: str, programdata_filename: str) -> tuple[str | None, int | None, str | None]:
+    program = result(base, program_filename)
     programdata = None
     if program and program.get("value"):
         raw = raw_account_data(program["value"])
@@ -72,13 +75,30 @@ def parse_gum_programdata(base: Path) -> tuple[str | None, int | None, str | Non
 
     deployment_slot = None
     authority = None
-    data = result(base, "getAccountInfo-GumProgramData-slice48.json")
+    data = result(base, programdata_filename)
     if data and data.get("value"):
         raw = raw_account_data(data["value"])
         if len(raw) >= 45 and struct.unpack("<I", raw[:4])[0] == 3:
             deployment_slot = struct.unpack("<Q", raw[4:12])[0]
             authority = b58encode(raw[13:45]) if raw[12] == 1 else None
     return programdata, deployment_slot, authority
+
+
+def account_value(base: Path, filename: str) -> dict | None:
+    data = result(base, filename)
+    if not data:
+        return None
+    return data.get("value")
+
+
+def account_hash(value: dict | None) -> str | None:
+    if not value:
+        return None
+    return hashlib.sha256(raw_account_data(value)).hexdigest()
+
+
+def signature_set(base: Path, filename: str) -> set[str]:
+    return {item["signature"] for item in result(base, filename) or []}
 
 
 def validator_sets(base: Path) -> tuple[set[str], set[str], dict[str, int]]:
@@ -130,13 +150,95 @@ def tx_rows(base: Path, authority: str | None, validator_related: set[str]) -> t
     return signatures, authority_signed, validator_hits
 
 
+def bank_tx_metrics(base: Path, validator_related: set[str]) -> dict:
+    tx_signatures = set()
+    validator_hits = 0
+    jup_account_hits = 0
+    watched_hits = 0
+    watched = {GUM_PROGRAM, GUM_BANK, GUM_BANK_PROGRAM, JUP_MINT}
+    for path in sorted(base.glob("bank-tx-*.json")):
+        tx = load_json(path).get("result")
+        if not tx:
+            continue
+        for sig in tx.get("transaction", {}).get("signatures", []):
+            tx_signatures.add(sig)
+        keys = set()
+        for key in tx["transaction"]["message"].get("accountKeys", []):
+            if isinstance(key, dict):
+                keys.add(key["pubkey"])
+            elif isinstance(key, str):
+                keys.add(key)
+        validator_hits += len(keys & validator_related)
+        if JUP_MINT in keys:
+            jup_account_hits += 1
+        watched_hits += len(keys & watched)
+    return {
+        "bank_sample_tx_signatures": tx_signatures,
+        "bank_sample_tx_validator_hits": validator_hits,
+        "bank_sample_tx_jup_account_hits": jup_account_hits,
+        "bank_sample_tx_watched_hits": watched_hits,
+    }
+
+
+def solana_bank_tx_metrics(base: Path) -> dict:
+    tx_signatures = set()
+    jup_account_hits = 0
+    inbox_outbox_log_hits = 0
+    watched_hits = 0
+    watched = {GUM_PROGRAM, GUM_BANK, GUM_BANK_PROGRAM, JUP_MINT}
+    for path in sorted(base.glob("solana-mainnet-bank-tx-*.json")):
+        tx = load_json(path).get("result")
+        if not tx:
+            continue
+        for sig in tx.get("transaction", {}).get("signatures", []):
+            tx_signatures.add(sig)
+        keys = set()
+        for key in tx["transaction"]["message"].get("accountKeys", []):
+            if isinstance(key, dict):
+                keys.add(key["pubkey"])
+            elif isinstance(key, str):
+                keys.add(key)
+        if JUP_MINT in keys:
+            jup_account_hits += 1
+        watched_hits += len(keys & watched)
+        logs = tx.get("meta", {}).get("logMessages") or []
+        inbox_outbox_log_hits += sum(1 for line in logs if "inbox" in line.lower() or "outbox" in line.lower())
+    return {
+        "solana_bank_sample_tx_signatures": tx_signatures,
+        "solana_bank_sample_tx_jup_account_hits": jup_account_hits,
+        "solana_bank_sample_tx_watched_hits": watched_hits,
+        "solana_bank_inbox_outbox_log_hits": inbox_outbox_log_hits,
+    }
+
+
 def snapshot_metrics(base: Path) -> dict:
     jup_raw = b58decode(JUP_MINT)
     gum_records = account_records(base, "getProgramAccounts-Gum.json")
     openid_records = account_records(base, "getProgramAccounts-OpenIDRegistry.json")
-    programdata, deployment_slot, authority = parse_gum_programdata(base)
+    programdata, deployment_slot, authority = parse_programdata(
+        base,
+        "getAccountInfo-GumProgram.json",
+        "getAccountInfo-GumProgramData-slice48.json",
+    )
+    bank_programdata, bank_deployment_slot, bank_authority = parse_programdata(
+        base,
+        "getAccountInfo-GumBankProgram.json",
+        "getAccountInfo-GumBankProgramData-slice48.json",
+    )
+    solana_bank_programdata, solana_bank_deployment_slot, solana_bank_authority = parse_programdata(
+        base,
+        "solana-mainnet-getAccountInfo-GumBank.json",
+        "solana-mainnet-getAccountInfo-GumBankProgramData-slice48.json",
+    )
+    solana_bank_program_programdata, solana_bank_program_deployment_slot, solana_bank_program_authority = parse_programdata(
+        base,
+        "solana-mainnet-getAccountInfo-GumBankProgram.json",
+        "solana-mainnet-getAccountInfo-GumBankProgramProgramData-slice48.json",
+    )
     related = validator_related_keys(base)
     tx_sigs, authority_signed, tx_validator_hits = tx_rows(base, authority, related)
+    bank_tx = bank_tx_metrics(base, related)
+    solana_bank_tx = solana_bank_tx_metrics(base)
     gum_validator_hits = 0
     openid_validator_hits = 0
     for _name, raw in gum_records:
@@ -148,6 +250,16 @@ def snapshot_metrics(base: Path) -> dict:
     jup_info = result(base, "getAccountInfo-JUPMint.json") or {}
     token_accounts = result(base, "getProgramAccounts-Token-JUPMint.json") or []
     signatures = result(base, "getSignaturesForAddress-Gum.json") or []
+    gum_signature_set = {item["signature"] for item in signatures}
+    bank_signature_set = signature_set(base, "getSignaturesForAddress-GumBank.json")
+    bank_program_signature_set = signature_set(base, "getSignaturesForAddress-GumBankProgram.json")
+    bank_info = account_value(base, "getAccountInfo-GumBank.json")
+    bank_program_info = account_value(base, "getAccountInfo-GumBankProgram.json")
+    solana_bank_info = account_value(base, "solana-mainnet-getAccountInfo-GumBank.json")
+    solana_bank_program_info = account_value(base, "solana-mainnet-getAccountInfo-GumBankProgram.json")
+    bank_program_accounts = result(base, "getProgramAccounts-GumBankProgram.json") or []
+    if not isinstance(bank_program_accounts, list):
+        bank_program_accounts = []
 
     return {
         "slot": result(base, "getSlot.json"),
@@ -170,10 +282,44 @@ def snapshot_metrics(base: Path) -> dict:
         "gum_deployment_slot": deployment_slot,
         "gum_upgrade_authority": authority,
         "gum_signature_count": len(signatures),
-        "gum_signature_set": {item["signature"] for item in signatures},
+        "gum_signature_set": gum_signature_set,
         "sample_tx_signatures": tx_sigs,
         "sample_tx_authority_signed": authority_signed,
         "sample_tx_validator_hits": tx_validator_hits,
+        "bank_present": bool(bank_info),
+        "bank_owner": bank_info.get("owner") if bank_info else None,
+        "bank_executable": bank_info.get("executable") if bank_info else None,
+        "bank_data_hash": account_hash(bank_info),
+        "bank_program_present": bool(bank_program_info),
+        "bank_program_owner": bank_program_info.get("owner") if bank_program_info else None,
+        "bank_program_executable": bank_program_info.get("executable") if bank_program_info else None,
+        "bank_program_data_hash": account_hash(bank_program_info),
+        "bank_programdata": bank_programdata,
+        "bank_deployment_slot": bank_deployment_slot,
+        "bank_upgrade_authority": bank_authority,
+        "bank_program_owned_accounts": len(bank_program_accounts),
+        "bank_signature_count": len(bank_signature_set),
+        "bank_program_signature_count": len(bank_program_signature_set),
+        "gum_bank_signature_overlap": len(gum_signature_set & bank_signature_set),
+        "gum_bank_program_signature_overlap": len(gum_signature_set & bank_program_signature_set),
+        "bank_signature_set": bank_signature_set,
+        "bank_program_signature_set": bank_program_signature_set,
+        **bank_tx,
+        "solana_bank_present": bool(solana_bank_info),
+        "solana_bank_owner": solana_bank_info.get("owner") if solana_bank_info else None,
+        "solana_bank_executable": solana_bank_info.get("executable") if solana_bank_info else None,
+        "solana_bank_data_hash": account_hash(solana_bank_info),
+        "solana_bank_program_present": bool(solana_bank_program_info),
+        "solana_bank_program_owner": solana_bank_program_info.get("owner") if solana_bank_program_info else None,
+        "solana_bank_program_executable": solana_bank_program_info.get("executable") if solana_bank_program_info else None,
+        "solana_bank_program_data_hash": account_hash(solana_bank_program_info),
+        "solana_bank_programdata": solana_bank_programdata,
+        "solana_bank_deployment_slot": solana_bank_deployment_slot,
+        "solana_bank_upgrade_authority": solana_bank_authority,
+        "solana_bank_program_programdata": solana_bank_program_programdata,
+        "solana_bank_program_deployment_slot": solana_bank_program_deployment_slot,
+        "solana_bank_program_upgrade_authority": solana_bank_program_authority,
+        **solana_bank_tx,
     }
 
 
@@ -223,6 +369,40 @@ def main() -> None:
         ("Gum validator-key hits", "gum_validator_hits"),
         ("OpenID validator-key hits", "openid_validator_hits"),
         ("Sample tx validator-key hits", "sample_tx_validator_hits"),
+        ("Bank account present", "bank_present"),
+        ("Bank account owner", "bank_owner"),
+        ("Bank account executable", "bank_executable"),
+        ("Bank account data hash", "bank_data_hash"),
+        ("Bank Program present", "bank_program_present"),
+        ("Bank Program owner", "bank_program_owner"),
+        ("Bank Program executable", "bank_program_executable"),
+        ("Bank Program data hash", "bank_program_data_hash"),
+        ("Bank ProgramData", "bank_programdata"),
+        ("Bank deployment slot", "bank_deployment_slot"),
+        ("Bank upgrade authority", "bank_upgrade_authority"),
+        ("Bank Program-owned account count", "bank_program_owned_accounts"),
+        ("Gum/Bank signature overlap", "gum_bank_signature_overlap"),
+        ("Gum/Bank Program signature overlap", "gum_bank_program_signature_overlap"),
+        ("Sample Bank tx validator-key hits", "bank_sample_tx_validator_hits"),
+        ("Sample Bank tx canonical JUP account hits", "bank_sample_tx_jup_account_hits"),
+        ("Sample Bank tx watched Gum/Bank/JUP account hits", "bank_sample_tx_watched_hits"),
+        ("Solana Bank present", "solana_bank_present"),
+        ("Solana Bank owner", "solana_bank_owner"),
+        ("Solana Bank executable", "solana_bank_executable"),
+        ("Solana Bank data hash", "solana_bank_data_hash"),
+        ("Solana Bank Program present", "solana_bank_program_present"),
+        ("Solana Bank Program owner", "solana_bank_program_owner"),
+        ("Solana Bank Program executable", "solana_bank_program_executable"),
+        ("Solana Bank Program data hash", "solana_bank_program_data_hash"),
+        ("Solana Bank ProgramData", "solana_bank_programdata"),
+        ("Solana Bank deployment slot", "solana_bank_deployment_slot"),
+        ("Solana Bank upgrade authority", "solana_bank_upgrade_authority"),
+        ("Solana Bank Program ProgramData", "solana_bank_program_programdata"),
+        ("Solana Bank Program deployment slot", "solana_bank_program_deployment_slot"),
+        ("Solana Bank Program upgrade authority", "solana_bank_program_upgrade_authority"),
+        ("Sample Solana Bank tx canonical JUP account hits", "solana_bank_sample_tx_jup_account_hits"),
+        ("Sample Solana Bank tx watched Gum/Bank/JUP account hits", "solana_bank_sample_tx_watched_hits"),
+        ("Sample Solana Bank inbox/outbox log hits", "solana_bank_inbox_outbox_log_hits"),
     ]
     for label, key in watched_scalars:
         line = delta_line(label, old.get(key), new.get(key))
@@ -239,6 +419,39 @@ def main() -> None:
             "gum_validator_hits",
             "openid_validator_hits",
             "sample_tx_validator_hits",
+            "bank_present",
+            "bank_owner",
+            "bank_executable",
+            "bank_data_hash",
+            "bank_program_present",
+            "bank_program_owner",
+            "bank_program_executable",
+            "bank_program_data_hash",
+            "bank_programdata",
+            "bank_deployment_slot",
+            "bank_upgrade_authority",
+            "gum_bank_signature_overlap",
+            "gum_bank_program_signature_overlap",
+            "bank_sample_tx_validator_hits",
+            "bank_sample_tx_jup_account_hits",
+            "bank_sample_tx_watched_hits",
+            "solana_bank_present",
+            "solana_bank_owner",
+            "solana_bank_executable",
+            "solana_bank_data_hash",
+            "solana_bank_program_present",
+            "solana_bank_program_owner",
+            "solana_bank_program_executable",
+            "solana_bank_program_data_hash",
+            "solana_bank_programdata",
+            "solana_bank_deployment_slot",
+            "solana_bank_upgrade_authority",
+            "solana_bank_program_programdata",
+            "solana_bank_program_deployment_slot",
+            "solana_bank_program_upgrade_authority",
+            "solana_bank_sample_tx_jup_account_hits",
+            "solana_bank_sample_tx_watched_hits",
+            "solana_bank_inbox_outbox_log_hits",
         }:
             alerts.append(line)
         else:
@@ -254,6 +467,17 @@ def main() -> None:
     new_sample_txs = sorted(new["sample_tx_signatures"] - old["sample_tx_signatures"])
     if new_sample_txs:
         alerts.append(f"- New sampled Gum transaction bodies: `{len(new_sample_txs)}`")
+    new_bank_program_sigs = sorted(new["bank_program_signature_set"] - old["bank_program_signature_set"])
+    if new_bank_program_sigs:
+        alerts.append(f"- New Bank Program signatures in signature window: `{len(new_bank_program_sigs)}`")
+    new_bank_sample_txs = sorted(new["bank_sample_tx_signatures"] - old["bank_sample_tx_signatures"])
+    if new_bank_sample_txs:
+        alerts.append(f"- New sampled Bank Program transaction bodies: `{len(new_bank_sample_txs)}`")
+    new_solana_bank_sample_txs = sorted(
+        new["solana_bank_sample_tx_signatures"] - old["solana_bank_sample_tx_signatures"]
+    )
+    if new_solana_bank_sample_txs:
+        alerts.append(f"- New sampled Solana Bank Program transaction bodies: `{len(new_solana_bank_sample_txs)}`")
 
     print("# Validator Security Snapshot Diff")
     print()

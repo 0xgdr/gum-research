@@ -22,6 +22,8 @@ It writes:
 - `deep-dive.md`
 - `authorization.md`
 - `utility-classification.md`
+- `solana-bank.md`
+- `bank-reverse-engineering.md`
 - `diff.md` when a previous snapshot exists
 
 ## Manual Workflow
@@ -65,6 +67,22 @@ python3 scripts/classify_gum_utility_surfaces.py \
   > evidence/YYYY-MM-DD-HHMM-live-rpc/utility-classification.md
 ```
 
+Generate Solana Bank surface output:
+
+```bash
+python3 scripts/analyze_solana_bank_surface.py \
+  evidence/YYYY-MM-DD-HHMM-live-rpc \
+  > evidence/YYYY-MM-DD-HHMM-live-rpc/solana-bank.md
+```
+
+Generate Bank reverse-engineering output:
+
+```bash
+python3 scripts/reverse_engineer_solana_bank.py \
+  evidence/YYYY-MM-DD-HHMM-live-rpc \
+  > evidence/YYYY-MM-DD-HHMM-live-rpc/bank-reverse-engineering.md
+```
+
 Compare two snapshots:
 
 ```bash
@@ -86,6 +104,11 @@ Treat these as high-value changes:
 - Gum ProgramData account changes;
 - Gum deployment slot changes;
 - Gum upgrade authority changes;
+- public `jup-ag/platform-list` GUM bank addresses or services change;
+- Solana Bank or Bank Program account info, ProgramData or upgrade authority changes;
+- Solana Bank Program transactions start touching canonical JUP;
+- Solana Bank Program instruction variants or binary string hits change;
+- Solana Bank Program logs add validator, quorum, stake, signer, BLS or JUP fee/sink terms;
 - current validator set, vote accounts or stake accounts change;
 - sampled Gum transactions start containing current validator, vote or stake account keys;
 - new Gum signatures appear after the existing May 2026 signature window.

@@ -90,6 +90,28 @@ python3 scripts/classify_gum_utility_surfaces.py \
   evidence/YYYY-MM-DD-live-rpc
 ```
 
+### `scripts/analyze_solana_bank_surface.py`
+
+Analyzes Solana mainnet Bank evidence captured by the snapshot collector, including account presence, ProgramData, upgrade authority, recent signatures, sampled transaction signers, invoked programs, parsed token mints and inbox/outbox log terms.
+
+Example:
+
+```bash
+python3 scripts/analyze_solana_bank_surface.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
+### `scripts/reverse_engineer_solana_bank.py`
+
+Groups sampled Solana Bank Program instructions by discriminator, data length and account roles, then scans full Bank ProgramData executable bytes for request, inbox, outbox, Merkle, JupNet and JUP-related strings.
+
+Example:
+
+```bash
+python3 scripts/reverse_engineer_solana_bank.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
 ### `scripts/compare_validator_security_snapshots.py`
 
 Compares two saved snapshots and emits alert-oriented Markdown.
@@ -104,12 +126,22 @@ python3 scripts/compare_validator_security_snapshots.py \
 
 ### `scripts/run_validator_security_check.py`
 
-Runs the full monitoring workflow: collect a fresh snapshot, generate `analysis.md`, generate `deep-dive.md`, and compare against the latest prior snapshot when available.
+Runs the full monitoring workflow: collect a fresh snapshot, generate `analysis.md`, generate `deep-dive.md`, generate `authorization.md`, generate `utility-classification.md`, generate `solana-bank.md`, generate `bank-reverse-engineering.md`, and compare against the latest prior snapshot when available.
 
 Example:
 
 ```bash
 python3 scripts/run_validator_security_check.py
+```
+
+### `scripts/crawl_jup_ag_public_repos.py`
+
+Enumerates public repositories under `jup-ag`, shallow-clones each repository into a temporary directory, scans bounded text files for Gum/JupNet utility clue terms and writes markdown/JSON results under `research/`.
+
+Example:
+
+```bash
+python3 scripts/crawl_jup_ag_public_repos.py
 ```
 
 ## Reproducibility note

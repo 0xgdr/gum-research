@@ -15,6 +15,7 @@ The investigation therefore proceeded from observable evidence:
 7. Trace Gum-related JUP transactions only to separate asset support from utility.
 8. Inspect executable strings and public dependency metadata.
 9. Compare observed implementation with the published security model.
+10. Crawl public Jupiter repositories and follow the `jup-ag/platform-list` GUM Bank lead.
 
 ## Confirmed
 
@@ -23,6 +24,8 @@ The investigation therefore proceeded from observable evidence:
 - Validators have native vote accounts.
 - Native stake accounts are delegated to vote accounts.
 - Gum implements cross-chain message and asset flows.
+- Public Jupiter registry data points to Solana-side GUM Bank programs.
+- Solana-side Bank Program samples expose inbox/outbox message handling.
 - JUP appears in Gum state and transaction flows as an asset.
 - JUP burn and mint operations were observed in omnichain activity, but these are non-decisive unless tied to protocol utility.
 - Public dependency metadata points to JupNet-specific BLS, BN254, Merkle and syscall components.
@@ -36,6 +39,7 @@ The investigation therefore proceeded from observable evidence:
 - A two-thirds-of-staked-JUP quorum visible on-chain.
 - BLS aggregate signatures embedded directly in ordinary vote transactions.
 - JUP-denominated fees, governance, access control, rewards, slashing or permanent protocol sinks.
+- Canonical JUP usage in sampled Solana-side Bank Program transactions.
 
 ## Current assessment
 
@@ -43,6 +47,7 @@ The strongest current model is:
 
 - **SVM consensus layer:** native validators, vote accounts and native stake.
 - **Cross-chain security layer:** custom BLS/Merkle machinery, likely implemented in validator/runtime software or private infrastructure.
+- **Solana-side Bank layer:** public registry-linked executable programs that handle inbox/outbox message flow, observed with USDC/wrapped SOL but not canonical JUP in the sampled transactions.
 - **JUP utility/security:** described publicly for Dove security, but not independently verifiable from the beta artifacts inspected.
 
 This does not disprove the intended JUP security model. It establishes an evidence boundary: the implementation is either private, off-chain, not yet activated, or not publicly exposed in the beta.

@@ -5,5 +5,6 @@ target/
 *.json
 !package.json
 !evidence/**/*.json
+!research/*.json
 raw/
 private/

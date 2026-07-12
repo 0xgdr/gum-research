@@ -14,6 +14,8 @@ from pathlib import Path
 ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 JUP_MINT = "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN"
 GUM_PROGRAM = "brhPfKExpnYDHroomHrk7PNJ4UXJx9SYohCCtd6r8N1"
+GUM_BANK = "bk1PDAkbHEBGtVRiM94Lzets8gVFP7FgySyfkAc8MPN"
+GUM_BANK_PROGRAM = "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ"
 
 
 def b58decode(value: str) -> bytes:
@@ -38,7 +40,10 @@ def load(path: Path) -> dict:
 
 
 def result(base: Path, filename: str):
-    return load(base / filename).get("result")
+    path = base / filename
+    if not path.exists():
+        return None
+    return load(path).get("result")
 
 
 def raw_account_data(account: dict) -> bytes:
@@ -66,8 +71,8 @@ def find_positions(raw: bytes, target: bytes) -> tuple[int, ...]:
         start = index + 1
 
 
-def parse_program_address(base: Path) -> tuple[str | None, str | None]:
-    data = result(base, "getAccountInfo-GumProgram.json")
+def parse_program_address(base: Path, filename: str) -> tuple[str | None, str | None]:
+    data = result(base, filename)
     if not data or not data.get("value"):
         return None, None
     raw = raw_account_data(data["value"])
@@ -76,8 +81,8 @@ def parse_program_address(base: Path) -> tuple[str | None, str | None]:
     return b58encode(raw[4:36]), data["value"]["owner"]
 
 
-def parse_programdata(base: Path) -> tuple[int | None, str | None, str | None]:
-    data = result(base, "getAccountInfo-GumProgramData-slice48.json")
+def parse_programdata(base: Path, filename: str) -> tuple[int | None, str | None, str | None]:
+    data = result(base, filename)
     if not data or not data.get("value"):
         return None, None, None
     raw = raw_account_data(data["value"])
@@ -143,6 +148,43 @@ def tx_signer_rows(base: Path, authority: str | None, validator_related: set[str
     return rows
 
 
+def named_tx_signer_rows(
+    base: Path,
+    glob_pattern: str,
+    authority: str | None,
+    validator_related: set[str],
+    watched_accounts: set[str],
+) -> list[tuple[str, int, list[str], bool, list[str], list[str]]]:
+    rows = []
+    for path in sorted(base.glob(glob_pattern)):
+        if path.name.endswith("-raw.json"):
+            continue
+        tx = load(path).get("result")
+        if not tx:
+            continue
+        signers = []
+        account_keys = []
+        for key in tx["transaction"]["message"].get("accountKeys", []):
+            if isinstance(key, dict):
+                account_keys.append(key["pubkey"])
+                if key.get("signer"):
+                    signers.append(key["pubkey"])
+            elif isinstance(key, str):
+                account_keys.append(key)
+        key_set = set(account_keys)
+        rows.append(
+            (
+                path.name,
+                tx.get("slot"),
+                signers,
+                authority in signers if authority else False,
+                sorted(key_set & validator_related),
+                sorted(key_set & watched_accounts),
+            )
+        )
+    return rows
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("snapshot_dir")
@@ -170,12 +212,27 @@ def main() -> None:
         if symbol_pos:
             symbol_hits.append(pubkey)
 
-    programdata_address, program_owner = parse_program_address(base)
-    deployment_slot, upgrade_authority, programdata_owner = parse_programdata(base)
+    programdata_address, program_owner = parse_program_address(base, "getAccountInfo-GumProgram.json")
+    deployment_slot, upgrade_authority, programdata_owner = parse_programdata(base, "getAccountInfo-GumProgramData-slice48.json")
+    bank_programdata_address, bank_program_owner = parse_program_address(base, "getAccountInfo-GumBankProgram.json")
+    bank_deployment_slot, bank_upgrade_authority, bank_programdata_owner = parse_programdata(
+        base,
+        "getAccountInfo-GumBankProgramData-slice48.json",
+    )
     authority_info = account_info(base, "getAccountInfo-GumUpgradeAuthority.json")
+    bank_authority_info = account_info(base, "getAccountInfo-GumBankUpgradeAuthority.json")
+    bank_info = account_info(base, "getAccountInfo-GumBank.json")
+    bank_program_info = account_info(base, "getAccountInfo-GumBankProgram.json")
     tags, program_map = upgradeable_loader_summary(base)
     validator_related = validator_keys(base)
     signer_rows = tx_signer_rows(base, upgrade_authority, validator_related)
+    bank_signer_rows = named_tx_signer_rows(
+        base,
+        "bank-tx-*.json",
+        bank_upgrade_authority,
+        validator_related,
+        {GUM_PROGRAM, GUM_BANK, GUM_BANK_PROGRAM, JUP_MINT},
+    )
 
     print("# Validator Security Deep Dive")
     print()
@@ -209,6 +266,35 @@ def main() -> None:
     print(f"- Upgradeable loader account tags: `{dict(tags)}`")
     print(f"- Gum program maps to ProgramData in loader scan: `{program_map.get(GUM_PROGRAM)}`")
     print()
+    print("## Public Registry Bank Surface")
+    print()
+    print(f"- Registry Bank account: `{GUM_BANK}`")
+    print(f"- Registry Bank Program: `{GUM_BANK_PROGRAM}`")
+    if bank_info:
+        print(f"- Bank account owner: `{bank_info.get('owner')}`")
+        print(f"- Bank account executable: `{bank_info.get('executable')}`")
+        print(f"- Bank account lamports: `{bank_info.get('lamports')}`")
+        print(f"- Bank account data space: `{bank_info.get('space')}`")
+    else:
+        print("- Bank account on configured RPC: `not present`")
+    if bank_program_info:
+        print(f"- Bank Program owner: `{bank_program_owner}`")
+        print(f"- Bank Program executable: `{bank_program_info.get('executable')}`")
+        print(f"- Bank Program lamports: `{bank_program_info.get('lamports')}`")
+        print(f"- Bank Program data space: `{bank_program_info.get('space')}`")
+    else:
+        print("- Bank Program on configured RPC: `not present`")
+    print(f"- Bank ProgramData account: `{bank_programdata_address}`")
+    print(f"- Bank ProgramData owner: `{bank_programdata_owner}`")
+    print(f"- Bank ProgramData deployment slot: `{bank_deployment_slot}`")
+    print(f"- Bank ProgramData upgrade authority: `{bank_upgrade_authority}`")
+    if bank_authority_info:
+        print(f"- Bank upgrade authority account owner: `{bank_authority_info.get('owner')}`")
+        print(f"- Bank upgrade authority lamports: `{bank_authority_info.get('lamports')}`")
+        print(f"- Bank upgrade authority executable: `{bank_authority_info.get('executable')}`")
+        print(f"- Bank upgrade authority data space: `{bank_authority_info.get('space')}`")
+    print(f"- Bank Program maps to ProgramData in loader scan: `{program_map.get(GUM_BANK_PROGRAM)}`")
+    print()
     print("## Sample Gum Transaction Signers")
     print()
     print("| Transaction file | Slot | Signers | Upgrade authority signed | Validator/vote/stake account hits |")
@@ -217,6 +303,18 @@ def main() -> None:
         signer_text = ", ".join(signers)
         hit_text = ", ".join(validator_hits)
         print(f"| `{filename}` | {slot} | `{signer_text}` | `{authority_signed}` | `{hit_text}` |")
+    print()
+    print("## Sample Bank Program Transaction Signers")
+    print()
+    print("| Transaction file | Slot | Signers | Bank upgrade authority signed | Validator/vote/stake account hits | Watched Gum/Bank/JUP account hits |")
+    print("|---|---:|---|---|---|---|")
+    for filename, slot, signers, authority_signed, validator_hits, watched_hits in bank_signer_rows:
+        signer_text = ", ".join(signers)
+        hit_text = ", ".join(validator_hits)
+        watched_text = ", ".join(watched_hits)
+        print(f"| `{filename}` | {slot} | `{signer_text}` | `{authority_signed}` | `{hit_text}` | `{watched_text}` |")
+    if not bank_signer_rows:
+        print("| `none` |  |  |  |  |  |")
     print()
     print("Interpretation: in the sampled Gum transactions, the Gum upgrade authority appears as a signer and no current validator, vote-account or stake-account keys appear in the transaction account lists.")
 

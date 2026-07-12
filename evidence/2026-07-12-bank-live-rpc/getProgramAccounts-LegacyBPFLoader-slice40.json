@@ -1,0 +1,76 @@
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": [
+    {
+      "account": {
+        "data": [
+          "f0VMRgIBAQAAAAAAAAAAAAMA9wABAAAAoAUAAAAAAABAAAAAAAAAAA==",
+          "base64"
+        ],
+        "executable": true,
+        "lamports": 583303680,
+        "owner": "BPFLoader2111111111111111111111111111111111",
+        "rentEpoch": 18446744073709551615,
+        "space": 83680
+      },
+      "pubkey": "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr"
+    },
+    {
+      "account": {
+        "data": [
+          "f0VMRgIBAQAAAAAAAAAAAAMA9wABAAAAyBYBAAAAAABAAAAAAAAAAA==",
+          "base64"
+        ],
+        "executable": true,
+        "lamports": 1514217600,
+        "owner": "BPFLoader2111111111111111111111111111111111",
+        "rentEpoch": 18446744073709551615,
+        "space": 217432
+      },
+      "pubkey": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+    },
+    {
+      "account": {
+        "data": [
+          "f0VMRgIBAQAAAAAAAAAAAAMA9wABAAAAEGcAAAAAAABAAAAAAAAAAA==",
+          "base64"
+        ],
+        "executable": true,
+        "lamports": 1274570880,
+        "owner": "BPFLoader2111111111111111111111111111111111",
+        "rentEpoch": 18446744073709551615,
+        "space": 183000
+      },
+      "pubkey": "namesLPneVptA9Z5rqUDD9tMTWEJwofgaYwp8cawRkX"
+    },
+    {
+      "account": {
+        "data": [
+          "f0VMRgIBAQAAAAAAAAAAAAMA9wABAAAAOAEAAAAAAABAAAAAAAAAAA==",
+          "base64"
+        ],
+        "executable": true,
+        "lamports": 222497280,
+        "owner": "BPFLoader2111111111111111111111111111111111",
+        "rentEpoch": 18446744073709551615,
+        "space": 31840
+      },
+      "pubkey": "noopb9bkMVfRPU8AsbpTUg8AQkHtKwMYZiFUjNRtMmV"
+    },
+    {
+      "account": {
+        "data": [
+          "f0VMRgIBAQAAAAAAAAAAAAMA9wABAAAAWGYAAAAAAABAAAAAAAAAAA==",
+          "base64"
+        ],
+        "executable": true,
+        "lamports": 790711680,
+        "owner": "BPFLoader2111111111111111111111111111111111",
+        "rentEpoch": 18446744073709551615,
+        "space": 113480
+      },
+      "pubkey": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"
+    }
+  ]
+}

@@ -27,6 +27,7 @@ Utility-relevant evidence includes:
 - Vote traffic was decoded and did not expose BLS signatures directly.
 - Public dependency metadata references JupNet-specific BLS, BN254, Merkle and cross-chain crates.
 - Gum exposes omnichain message and burn/mint behaviour, but asset flow alone is not utility evidence.
+- Public Jupiter registry data exposes Solana-side GUM Bank programs with inbox/outbox message logs.
 - JUP appears in Gum asset metadata/flows; this is confirmed but treated as non-decisive noise unless tied to protocol utility.
 - Public evidence does not currently prove that JUP stake determines validator or Dove voting weight.
 
@@ -47,14 +48,19 @@ Utility-relevant evidence includes:
 - [`docs/12-monitoring-plan.md`](docs/12-monitoring-plan.md)
 - [`docs/13-utility-evidence-standard.md`](docs/13-utility-evidence-standard.md)
 - [`docs/14-public-jupiter-source-audit.md`](docs/14-public-jupiter-source-audit.md)
+- [`docs/15-bank-program-followup.md`](docs/15-bank-program-followup.md)
+- [`docs/16-bank-program-reverse-engineering.md`](docs/16-bank-program-reverse-engineering.md)
 - [`appendices/rpc-catalogue.md`](appendices/rpc-catalogue.md)
 - [`appendices/program-ids.md`](appendices/program-ids.md)
 - [`appendices/scripts-index.md`](appendices/scripts-index.md)
 - [`appendices/dead-ends.md`](appendices/dead-ends.md)
+- [`research/repositories.md`](research/repositories.md)
 - [`evidence/2026-07-12-live-rpc/analysis.md`](evidence/2026-07-12-live-rpc/analysis.md)
 - [`evidence/2026-07-12-live-rpc/deep-dive.md`](evidence/2026-07-12-live-rpc/deep-dive.md)
 - [`evidence/2026-07-12-live-rpc/authorization.md`](evidence/2026-07-12-live-rpc/authorization.md)
 - [`evidence/2026-07-12-live-rpc/utility-classification.md`](evidence/2026-07-12-live-rpc/utility-classification.md)
+- [`evidence/2026-07-12-bank-live-rpc/solana-bank.md`](evidence/2026-07-12-bank-live-rpc/solana-bank.md)
+- [`evidence/2026-07-12-bank-live-rpc/bank-reverse-engineering.md`](evidence/2026-07-12-bank-live-rpc/bank-reverse-engineering.md)
 
 ## Evidence classifications
 

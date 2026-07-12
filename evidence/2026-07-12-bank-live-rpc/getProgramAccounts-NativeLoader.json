@@ -1,0 +1,132 @@
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": [
+    {
+      "account": {
+        "data": [
+          "c3lzdGVtX3Byb2dyYW0=",
+          "base64"
+        ],
+        "executable": true,
+        "lamports": 1,
+        "owner": "NativeLoader1111111111111111111111111111111",
+        "rentEpoch": 18446744073709551615,
+        "space": 14
+      },
+      "pubkey": "11111111111111111111111111111111"
+    },
+    {
+      "account": {
+        "data": [
+          "anVwbmV0X2JwZl9sb2FkZXJfZGVwcmVjYXRlZF9wcm9ncmFt",
+          "base64"
+        ],
+        "executable": true,
+        "lamports": 1,
+        "owner": "NativeLoader1111111111111111111111111111111",
+        "rentEpoch": 18446744073709551615,
+        "space": 36
+      },
+      "pubkey": "BPFLoader1111111111111111111111111111111111"
+    },
+    {
+      "account": {
+        "data": [
+          "anVwbmV0X2JwZl9sb2FkZXJfcHJvZ3JhbQ==",
+          "base64"
+        ],
+        "executable": true,
+        "lamports": 1,
+        "owner": "NativeLoader1111111111111111111111111111111",
+        "rentEpoch": 18446744073709551615,
+        "space": 25
+      },
+      "pubkey": "BPFLoader2111111111111111111111111111111111"
+    },
+    {
+      "account": {
+        "data": [
+          "anVwbmV0X2JwZl9sb2FkZXJfdXBncmFkZWFibGVfcHJvZ3JhbQ==",
+          "base64"
+        ],
+        "executable": true,
+        "lamports": 1,
+        "owner": "NativeLoader1111111111111111111111111111111",
+        "rentEpoch": 18446744073709551615,
+        "space": 37
+      },
+      "pubkey": "BPFLoaderUpgradeab1e11111111111111111111111"
+    },
+    {
+      "account": {
+        "data": [
+          "Y2x1c3Rlcl9pZGVudGl0eV9tYW5hZ2VtZW50",
+          "base64"
+        ],
+        "executable": true,
+        "lamports": 1,
+        "owner": "NativeLoader1111111111111111111111111111111",
+        "rentEpoch": 18446744073709551615,
+        "space": 27
+      },
+      "pubkey": "C1uster1dentityMangement1111111111111111111"
+    },
+    {
+      "account": {
+        "data": [
+          "Y29tcHV0ZV9idWRnZXRfcHJvZ3JhbQ==",
+          "base64"
+        ],
+        "executable": true,
+        "lamports": 1,
+        "owner": "NativeLoader1111111111111111111111111111111",
+        "rentEpoch": 18446744073709551615,
+        "space": 22
+      },
+      "pubkey": "ComputeBudget111111111111111111111111111111"
+    },
+    {
+      "account": {
+        "data": [
+          "Y29uZmlnX3Byb2dyYW0=",
+          "base64"
+        ],
+        "executable": true,
+        "lamports": 1,
+        "owner": "NativeLoader1111111111111111111111111111111",
+        "rentEpoch": 18446744073709551615,
+        "space": 14
+      },
+      "pubkey": "Config1111111111111111111111111111111111111"
+    },
+    {
+      "account": {
+        "data": [
+          "c3Rha2VfcHJvZ3JhbQ==",
+          "base64"
+        ],
+        "executable": true,
+        "lamports": 1,
+        "owner": "NativeLoader1111111111111111111111111111111",
+        "rentEpoch": 18446744073709551615,
+        "space": 13
+      },
+      "pubkey": "Stake11111111111111111111111111111111111111"
+    },
+    {
+      "account": {
+        "data": [
+          "dm90ZV9wcm9ncmFt",
+          "base64"
+        ],
+        "executable": true,
+        "lamports": 1,
+        "owner": "NativeLoader1111111111111111111111111111111",
+        "rentEpoch": 18446744073709551615,
+        "space": 12
+      },
+      "pubkey": "Vote111111111111111111111111111111111111111"
+    }
+  ]
+}

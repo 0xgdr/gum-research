@@ -1,0 +1,261 @@
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "current": [
+      {
+        "activatedStake": 999999997717120,
+        "commission": 100,
+        "epochCredits": [
+          [
+            265,
+            109356142,
+            108924146
+          ],
+          [
+            266,
+            109788138,
+            109356142
+          ],
+          [
+            267,
+            110220134,
+            109788138
+          ],
+          [
+            268,
+            110652134,
+            110220134
+          ],
+          [
+            269,
+            111003530,
+            110652134
+          ]
+        ],
+        "epochVoteAccount": true,
+        "lastVote": 111035654,
+        "nodePubkey": "idtxyt9e3XHKu9yEHdaTYdYmZSbeeramkseguZ94yf4",
+        "rootSlot": 111035623,
+        "votePubkey": "votbYAneU8HVs8HvNCToMMxEsMfTsmzSharYFy94dcb"
+      },
+      {
+        "activatedStake": 999999997717120,
+        "commission": 100,
+        "epochCredits": [
+          [
+            265,
+            109355375,
+            108923379
+          ],
+          [
+            266,
+            109787371,
+            109355375
+          ],
+          [
+            267,
+            110219367,
+            109787371
+          ],
+          [
+            268,
+            110651367,
+            110219367
+          ],
+          [
+            269,
+            111002763,
+            110651367
+          ]
+        ],
+        "epochVoteAccount": true,
+        "lastVote": 111035654,
+        "nodePubkey": "idt4cGQcDaGmZGv19coMivuLgJUsKbiWrxu1hse6xXA",
+        "rootSlot": 111035623,
+        "votePubkey": "votmS9U1br5cmR19X57V5Nc7WU8JtQNwRkxxFMhUkit"
+      },
+      {
+        "activatedStake": 999999997717120,
+        "commission": 100,
+        "epochCredits": [
+          [
+            265,
+            109278802,
+            108846806
+          ],
+          [
+            266,
+            109710798,
+            109278802
+          ],
+          [
+            267,
+            110142794,
+            109710798
+          ],
+          [
+            268,
+            110574794,
+            110142794
+          ],
+          [
+            269,
+            110926190,
+            110574794
+          ]
+        ],
+        "epochVoteAccount": true,
+        "lastVote": 111035654,
+        "nodePubkey": "idtjSRacRANaBzv1HsJeQQco4Ydomqm6Popiu9rYnpS",
+        "rootSlot": 111035623,
+        "votePubkey": "votxjy8SwJvdbR3K9wur4RzViUTDVt5DYFwv91QqFUr"
+      },
+      {
+        "activatedStake": 999999997717120,
+        "commission": 100,
+        "epochCredits": [
+          [
+            265,
+            109346116,
+            108914120
+          ],
+          [
+            266,
+            109778112,
+            109346116
+          ],
+          [
+            267,
+            110210108,
+            109778112
+          ],
+          [
+            268,
+            110642108,
+            110210108
+          ],
+          [
+            269,
+            110993504,
+            110642108
+          ]
+        ],
+        "epochVoteAccount": true,
+        "lastVote": 111035654,
+        "nodePubkey": "idtwvwFjrD1revnK7R3usirxke5NUW2ra6L15zFAgR8",
+        "rootSlot": 111035623,
+        "votePubkey": "votneC7rvDKitBgNid5ZkirjmV15rnNCc5TTfBihqtc"
+      },
+      {
+        "activatedStake": 999999997717120,
+        "commission": 100,
+        "epochCredits": [
+          [
+            265,
+            109357570,
+            108925574
+          ],
+          [
+            266,
+            109789566,
+            109357570
+          ],
+          [
+            267,
+            110221562,
+            109789566
+          ],
+          [
+            268,
+            110653562,
+            110221562
+          ],
+          [
+            269,
+            111004958,
+            110653562
+          ]
+        ],
+        "epochVoteAccount": true,
+        "lastVote": 111035654,
+        "nodePubkey": "idttUP3C6BQseTUzSaHVUcgtFdWDr7uyvVwDf1onwnH",
+        "rootSlot": 111035623,
+        "votePubkey": "votEYiWe4mxxVKhyuK74WERFcT9usAKL62vgAo8EXaq"
+      },
+      {
+        "activatedStake": 999999997717120,
+        "commission": 100,
+        "epochCredits": [
+          [
+            265,
+            49676744,
+            49244748
+          ],
+          [
+            266,
+            50108740,
+            49676744
+          ],
+          [
+            267,
+            50540736,
+            50108740
+          ],
+          [
+            268,
+            50972736,
+            50540736
+          ],
+          [
+            269,
+            51324132,
+            50972736
+          ]
+        ],
+        "epochVoteAccount": true,
+        "lastVote": 111035654,
+        "nodePubkey": "idt57UCtb44m66agbVUfQKtAwQhj3oj8CP49kixWTUj",
+        "rootSlot": 111035623,
+        "votePubkey": "votU897ZBdxsPfJjvJzgSp2Dba9D8xnnyevLXmvRSJp"
+      },
+      {
+        "activatedStake": 999999997717120,
+        "commission": 100,
+        "epochCredits": [
+          [
+            265,
+            109357002,
+            108925006
+          ],
+          [
+            266,
+            109788998,
+            109357002
+          ],
+          [
+            267,
+            110220994,
+            109788998
+          ],
+          [
+            268,
+            110652994,
+            110220994
+          ],
+          [
+            269,
+            111004390,
+            110652994
+          ]
+        ],
+        "epochVoteAccount": true,
+        "lastVote": 111035654,
+        "nodePubkey": "idtcqyhGdL3f32N1wKCKhkR2ehdpxrap1cbyQQQUVFH",
+        "rootSlot": 111035623,
+        "votePubkey": "votibKxNCsASJ1yQes2VQn7jrhbBLWGDwShMUP1KhdH"
+      }
+    ],
+    "delinquent": []
+  }
+}
