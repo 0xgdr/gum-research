@@ -29,6 +29,7 @@ It writes:
 - `bank-owner-program-context.md`
 - `jupnet-helper-program-accounts.md`
 - `verify-request-payload-reconstruction.md`
+- `outbox-root-update-transactions.md`
 - `diff.md` when a previous snapshot exists
 
 ## Manual Workflow
@@ -137,6 +138,17 @@ python3 scripts/reconstruct_verify_request_payloads.py \
   > evidence/YYYY-MM-DD-HHMM-live-rpc/verify-request-payload-reconstruction.md
 ```
 
+Collect and analyze outbox root-update transactions:
+
+```bash
+python3 scripts/collect_outbox_root_update_transactions.py \
+  evidence/YYYY-MM-DD-HHMM-live-rpc
+
+python3 scripts/analyze_outbox_root_update_transactions.py \
+  evidence/YYYY-MM-DD-HHMM-live-rpc \
+  > evidence/YYYY-MM-DD-HHMM-live-rpc/outbox-root-update-transactions.md
+```
+
 Compare two snapshots:
 
 ```bash
@@ -168,6 +180,7 @@ Treat these as high-value changes:
 - Bank owner helper programs, ProgramData hashes, upgrade authorities, JUP key hits or validator-key hits change;
 - JupNet helper-program-owned account counts, Merkle roots, JUP hits or validator-key hits change;
 - `verify_request` payloads start exposing canonical JUP, validator/vote/stake keys, different proof shape, signer-set, quorum or BLS material;
+- outbox root-update transactions start exposing canonical JUP, validator/vote/stake keys, signer-set, quorum, weight or fee material;
 - Solana Bank Program logs add validator, quorum, stake, signer, BLS or JUP fee/sink terms;
 - current validator set, vote accounts or stake accounts change;
 - sampled Gum transactions start containing current validator, vote or stake account keys;

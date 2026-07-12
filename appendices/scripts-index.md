@@ -206,6 +206,28 @@ python3 scripts/reconstruct_verify_request_payloads.py \
   evidence/YYYY-MM-DD-live-rpc
 ```
 
+### `scripts/collect_outbox_root_update_transactions.py`
+
+Fetches recent transaction bodies for signatures involving the inferred JupNet outbox helper program.
+
+Example:
+
+```bash
+python3 scripts/collect_outbox_root_update_transactions.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
+### `scripts/analyze_outbox_root_update_transactions.py`
+
+Scans recent outbox helper transactions for `UpdateMerkleRoot`, Merkle proof and BLS verification logs, then decodes the 305-byte root-update payload when present and checks account keys/payload bytes for canonical JUP and current JupNet validator/vote/stake keys.
+
+Example:
+
+```bash
+python3 scripts/analyze_outbox_root_update_transactions.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
 ### `scripts/compare_validator_security_snapshots.py`
 
 Compares two saved snapshots and emits alert-oriented Markdown.
@@ -220,7 +242,7 @@ python3 scripts/compare_validator_security_snapshots.py \
 
 ### `scripts/run_validator_security_check.py`
 
-Runs the full monitoring workflow: collect a fresh snapshot, fetch recurring Bank account state, fetch owner-program context, fetch JupNet helper-program-owned accounts, generate `analysis.md`, generate `deep-dive.md`, generate `authorization.md`, generate `utility-classification.md`, generate `solana-bank.md`, generate `bank-reverse-engineering.md`, generate `bank-account-graph.md`, generate `bank-recurring-account-state.md`, generate `bank-owner-program-context.md`, generate `jupnet-helper-program-accounts.md`, generate `verify-request-payload-reconstruction.md`, and compare against the latest prior snapshot when available.
+Runs the full monitoring workflow: collect a fresh snapshot, fetch recurring Bank account state, fetch owner-program context, fetch JupNet helper-program-owned accounts, fetch outbox root-update transactions, generate `analysis.md`, generate `deep-dive.md`, generate `authorization.md`, generate `utility-classification.md`, generate `solana-bank.md`, generate `bank-reverse-engineering.md`, generate `bank-account-graph.md`, generate `bank-recurring-account-state.md`, generate `bank-owner-program-context.md`, generate `jupnet-helper-program-accounts.md`, generate `verify-request-payload-reconstruction.md`, generate `outbox-root-update-transactions.md`, and compare against the latest prior snapshot when available.
 
 Example:
 

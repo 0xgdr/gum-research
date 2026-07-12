@@ -33,6 +33,7 @@ Utility-relevant evidence includes:
 - Bank owner-context analysis ties recurring non-token state to JupNet inbox/outbox helper programs on Solana mainnet.
 - Helper-program account enumeration shows public outbox state stores Merkle root history, not visible signer-set or JUP-weight state.
 - `verify_request` payload reconstruction shows message/proof data and USDC context, but no JUP, validator keys or visible quorum state.
+- Outbox root-update transaction analysis confirms public BLS signature verification during Merkle-root publication, but still no visible JUP or validator-key source.
 - JUP appears in Gum asset metadata/flows; this is confirmed but treated as non-decisive noise unless tied to protocol utility.
 - Public evidence does not currently prove that JUP stake determines validator or Dove voting weight.
 
@@ -60,6 +61,7 @@ Utility-relevant evidence includes:
 - [`docs/19-bank-owner-program-context.md`](docs/19-bank-owner-program-context.md)
 - [`docs/20-jupnet-helper-program-state.md`](docs/20-jupnet-helper-program-state.md)
 - [`docs/21-verify-request-payload-reconstruction.md`](docs/21-verify-request-payload-reconstruction.md)
+- [`docs/22-outbox-root-update-transactions.md`](docs/22-outbox-root-update-transactions.md)
 - [`appendices/rpc-catalogue.md`](appendices/rpc-catalogue.md)
 - [`appendices/program-ids.md`](appendices/program-ids.md)
 - [`appendices/scripts-index.md`](appendices/scripts-index.md)
@@ -76,6 +78,7 @@ Utility-relevant evidence includes:
 - [`evidence/2026-07-12-bank-live-rpc/bank-owner-program-context.md`](evidence/2026-07-12-bank-live-rpc/bank-owner-program-context.md)
 - [`evidence/2026-07-12-bank-live-rpc/jupnet-helper-program-accounts.md`](evidence/2026-07-12-bank-live-rpc/jupnet-helper-program-accounts.md)
 - [`evidence/2026-07-12-bank-live-rpc/verify-request-payload-reconstruction.md`](evidence/2026-07-12-bank-live-rpc/verify-request-payload-reconstruction.md)
+- [`evidence/2026-07-12-bank-live-rpc/outbox-root-update-transactions.md`](evidence/2026-07-12-bank-live-rpc/outbox-root-update-transactions.md)
 
 ## Evidence classifications
 

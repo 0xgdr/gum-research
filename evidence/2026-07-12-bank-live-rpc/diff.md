@@ -44,6 +44,10 @@
 - Verify request JUP key hits: `None` -> `0`
 - Verify request validator-key hits: `None` -> `0`
 - Verify request proof node count: `None` -> `5`
+- Outbox root update report present: `False` -> `True`
+- Outbox root update/BLS candidate count: `None` -> `1`
+- Outbox root update JUP key hits: `None` -> `0`
+- Outbox root update validator-key hits: `None` -> `0`
 - Bank account graph PDA match added: `BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ | __inbox_event_auth | EG9fKpmLgkzCYZdj8uNDhHu5xmeXCZakccV6QmUavbzt`
 - Bank owner context ProgramData added: `JNiN12VC7ApitDkW7roQ1FmeyKSN1MnmZyCVyLiqAQw | 6fBvinpo8Ub7TVpUeTPpPiGMryL432i8N9Z3n3aH2KVT | GRr146QcbpANhTZPCo9QBJa1tP5Fr9B6vfua4zRC5cc3 | 8f7265a388f02f0ac21638d4f0ea4b59576f9da8b1c2ecbb56501087369c02b7, jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV | D6xAx2iTMXP5hg8DeKPDgTw8exLs8MNpYEsmLg89pAsT | GRr146QcbpANhTZPCo9QBJa1tP5Fr9B6vfua4zRC5cc3 | c438a773de1e9edc6cc36f98ad214724ee0753db5b6be71e6c4cceacac2c18f2`
 - New sampled Solana Bank Program transaction bodies: `8`

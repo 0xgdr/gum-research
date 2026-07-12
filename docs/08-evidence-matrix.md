@@ -56,3 +56,5 @@
 | JupNet helper-owned accounts expose signer-set or quorum state | Not observed | Inbox/outbox helper programs each own one public account; neither contains canonical JUP, current validator/vote/stake keys, signer-set labels, quorum thresholds or obvious weight state |
 | `verify_request` payloads expose Merkle proof data | Confirmed | Two sampled 455-byte payloads include a five-node 32-byte proof tail and reference the outbox root state through account metas |
 | `verify_request` payloads expose JUP security utility | Not observed | Payload scans found USDC and Bank Program pubkeys but zero canonical JUP, current validator/vote/stake keys, signer-set or quorum fields |
+| Outbox root updates verify BLS signatures publicly | Confirmed | One recent outbox transaction logged `UpdateMerkleRoot invoked`, `Merkle proof verified`, `Verifying BLS signature` and `Signature verified` |
+| Outbox root update payload exposes JUP signer/quorum source | Not observed | The sampled 305-byte update payload and account keys exposed the outbox root account and Merkle data, but zero canonical JUP or current validator/vote/stake key hits |

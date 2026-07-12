@@ -347,6 +347,29 @@ def verify_request_payload_metrics(base: Path) -> dict:
     }
 
 
+def outbox_root_update_metrics(base: Path) -> dict:
+    path = base / "outbox-root-update-transactions.md"
+    if not path.exists():
+        return {
+            "outbox_root_update_report_present": False,
+            "outbox_root_update_candidates": None,
+            "outbox_root_update_jup_hits": None,
+            "outbox_root_update_validator_hits": None,
+        }
+    text = path.read_text()
+
+    def number(pattern: str) -> int | None:
+        match = re.search(pattern, text)
+        return int(match.group(1)) if match else None
+
+    return {
+        "outbox_root_update_report_present": True,
+        "outbox_root_update_candidates": number(r"Update/BLS candidate instructions: `(\d+)`"),
+        "outbox_root_update_jup_hits": number(r"Canonical JUP key hits: `(\d+)`"),
+        "outbox_root_update_validator_hits": number(r"Current JupNet validator/vote/stake key hits: `(\d+)`"),
+    }
+
+
 def snapshot_metrics(base: Path) -> dict:
     jup_raw = b58decode(JUP_MINT)
     gum_records = account_records(base, "getProgramAccounts-Gum.json")
@@ -380,6 +403,7 @@ def snapshot_metrics(base: Path) -> dict:
     bank_owner_context = bank_owner_context_metrics(base)
     helper_program_accounts = helper_program_account_metrics(base)
     verify_request_payload = verify_request_payload_metrics(base)
+    outbox_root_update = outbox_root_update_metrics(base)
     gum_validator_hits = 0
     openid_validator_hits = 0
     for _name, raw in gum_records:
@@ -466,6 +490,7 @@ def snapshot_metrics(base: Path) -> dict:
         **bank_owner_context,
         **helper_program_accounts,
         **verify_request_payload,
+        **outbox_root_update,
     }
 
 
@@ -570,6 +595,10 @@ def main() -> None:
         ("Verify request JUP key hits", "verify_request_jup_hits"),
         ("Verify request validator-key hits", "verify_request_validator_hits"),
         ("Verify request proof node count", "verify_request_proof_nodes"),
+        ("Outbox root update report present", "outbox_root_update_report_present"),
+        ("Outbox root update/BLS candidate count", "outbox_root_update_candidates"),
+        ("Outbox root update JUP key hits", "outbox_root_update_jup_hits"),
+        ("Outbox root update validator-key hits", "outbox_root_update_validator_hits"),
     ]
     for label, key in watched_scalars:
         line = delta_line(label, old.get(key), new.get(key))
@@ -640,6 +669,10 @@ def main() -> None:
             "verify_request_jup_hits",
             "verify_request_validator_hits",
             "verify_request_proof_nodes",
+            "outbox_root_update_report_present",
+            "outbox_root_update_candidates",
+            "outbox_root_update_jup_hits",
+            "outbox_root_update_validator_hits",
         }:
             alerts.append(line)
         else:

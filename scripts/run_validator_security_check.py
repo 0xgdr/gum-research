@@ -67,6 +67,7 @@ def main() -> None:
     run([sys.executable, "scripts/collect_bank_recurring_accounts.py", str(out)])
     run([sys.executable, "scripts/collect_bank_owner_context.py", str(out)])
     run([sys.executable, "scripts/collect_jupnet_helper_program_accounts.py", str(out)])
+    run([sys.executable, "scripts/collect_outbox_root_update_transactions.py", str(out)])
     run([sys.executable, "scripts/analyze_validator_security_snapshot.py", str(out)], out / "analysis.md")
     run([sys.executable, "scripts/deep_dive_validator_security_snapshot.py", str(out)], out / "deep-dive.md")
     run([sys.executable, "scripts/analyze_gum_authorization.py", str(out)], out / "authorization.md")
@@ -78,6 +79,7 @@ def main() -> None:
     run([sys.executable, "scripts/analyze_bank_owner_context.py", str(out)], out / "bank-owner-program-context.md")
     run([sys.executable, "scripts/analyze_jupnet_helper_program_accounts.py", str(out)], out / "jupnet-helper-program-accounts.md")
     run([sys.executable, "scripts/reconstruct_verify_request_payloads.py", str(out)], out / "verify-request-payload-reconstruction.md")
+    run([sys.executable, "scripts/analyze_outbox_root_update_transactions.py", str(out)], out / "outbox-root-update-transactions.md")
     if previous:
         run([sys.executable, "scripts/compare_validator_security_snapshots.py", str(previous), str(out)], out / "diff.md")
 
@@ -93,6 +95,7 @@ def main() -> None:
     print(f"Bank owner program context: {out / 'bank-owner-program-context.md'}")
     print(f"JupNet helper program accounts: {out / 'jupnet-helper-program-accounts.md'}")
     print(f"Verify request payload reconstruction: {out / 'verify-request-payload-reconstruction.md'}")
+    print(f"Outbox root update transactions: {out / 'outbox-root-update-transactions.md'}")
     if previous:
         print(f"Compared against: {previous}")
         print(f"Diff: {out / 'diff.md'}")
