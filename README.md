@@ -28,6 +28,7 @@ Utility-relevant evidence includes:
 - Public dependency metadata references JupNet-specific BLS, BN254, Merkle and cross-chain crates.
 - Gum exposes omnichain message and burn/mint behaviour, but asset flow alone is not utility evidence.
 - Public Jupiter registry data exposes Solana-side GUM Bank programs with inbox/outbox message logs.
+- Bank account-graph analysis links a repeated account to the Bank Program `__inbox_event_auth` PDA.
 - JUP appears in Gum asset metadata/flows; this is confirmed but treated as non-decisive noise unless tied to protocol utility.
 - Public evidence does not currently prove that JUP stake determines validator or Dove voting weight.
 
@@ -50,6 +51,7 @@ Utility-relevant evidence includes:
 - [`docs/14-public-jupiter-source-audit.md`](docs/14-public-jupiter-source-audit.md)
 - [`docs/15-bank-program-followup.md`](docs/15-bank-program-followup.md)
 - [`docs/16-bank-program-reverse-engineering.md`](docs/16-bank-program-reverse-engineering.md)
+- [`docs/17-bank-account-graph-and-pda-hunt.md`](docs/17-bank-account-graph-and-pda-hunt.md)
 - [`appendices/rpc-catalogue.md`](appendices/rpc-catalogue.md)
 - [`appendices/program-ids.md`](appendices/program-ids.md)
 - [`appendices/scripts-index.md`](appendices/scripts-index.md)
@@ -61,6 +63,7 @@ Utility-relevant evidence includes:
 - [`evidence/2026-07-12-live-rpc/utility-classification.md`](evidence/2026-07-12-live-rpc/utility-classification.md)
 - [`evidence/2026-07-12-bank-live-rpc/solana-bank.md`](evidence/2026-07-12-bank-live-rpc/solana-bank.md)
 - [`evidence/2026-07-12-bank-live-rpc/bank-reverse-engineering.md`](evidence/2026-07-12-bank-live-rpc/bank-reverse-engineering.md)
+- [`evidence/2026-07-12-bank-live-rpc/bank-account-graph.md`](evidence/2026-07-12-bank-live-rpc/bank-account-graph.md)
 
 ## Evidence classifications
 

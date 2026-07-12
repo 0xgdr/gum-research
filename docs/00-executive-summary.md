@@ -26,6 +26,7 @@ The investigation therefore proceeded from observable evidence:
 - Gum implements cross-chain message and asset flows.
 - Public Jupiter registry data points to Solana-side GUM Bank programs.
 - Solana-side Bank Program samples expose inbox/outbox message handling.
+- Solana-side Bank account analysis derives a repeated `__inbox_event_auth` PDA.
 - JUP appears in Gum state and transaction flows as an asset.
 - JUP burn and mint operations were observed in omnichain activity, but these are non-decisive unless tied to protocol utility.
 - Public dependency metadata points to JupNet-specific BLS, BN254, Merkle and syscall components.
@@ -48,6 +49,7 @@ The strongest current model is:
 - **SVM consensus layer:** native validators, vote accounts and native stake.
 - **Cross-chain security layer:** custom BLS/Merkle machinery, likely implemented in validator/runtime software or private infrastructure.
 - **Solana-side Bank layer:** public registry-linked executable programs that handle inbox/outbox message flow, observed with USDC/wrapped SOL but not canonical JUP in the sampled transactions.
+- **Bank account graph:** one repeated account matches the Bank Program `__inbox_event_auth` PDA, strengthening the inbox/event-authority interpretation.
 - **JUP utility/security:** described publicly for Dove security, but not independently verifiable from the beta artifacts inspected.
 
 This does not disprove the intended JUP security model. It establishes an evidence boundary: the implementation is either private, off-chain, not yet activated, or not publicly exposed in the beta.

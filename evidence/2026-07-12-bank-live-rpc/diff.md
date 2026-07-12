@@ -23,6 +23,9 @@
 - Solana Bank Program upgrade authority: `None` -> `GRr146QcbpANhTZPCo9QBJa1tP5Fr9B6vfua4zRC5cc3`
 - Sample Solana Bank tx watched Gum/Bank/JUP account hits: `0` -> `8`
 - Sample Solana Bank inbox/outbox log hits: `0` -> `9`
+- Bank account graph present: `False` -> `True`
+- Bank account graph canonical JUP account hits: `None` -> `0`
+- Bank account graph PDA match added: `BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ | __inbox_event_auth | EG9fKpmLgkzCYZdj8uNDhHu5xmeXCZakccV6QmUavbzt`
 - New sampled Solana Bank Program transaction bodies: `8`
 
 ## Informational Deltas

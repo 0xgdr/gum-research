@@ -7,6 +7,7 @@ import argparse
 import base64
 import hashlib
 import json
+import re
 import struct
 from pathlib import Path
 
@@ -211,6 +212,31 @@ def solana_bank_tx_metrics(base: Path) -> dict:
     }
 
 
+def bank_account_graph_metrics(base: Path) -> dict:
+    path = base / "bank-account-graph.md"
+    if not path.exists():
+        return {
+            "bank_graph_present": False,
+            "bank_graph_jup_account_hits": None,
+            "bank_graph_pda_matches": set(),
+        }
+    text = path.read_text()
+    jup_hits = None
+    match = re.search(r"Bank instructions with canonical Solana JUP mint account: `(\d+)`", text)
+    if match:
+        jup_hits = int(match.group(1))
+    pda_matches = set()
+    for program, seeds, account in re.findall(r"\| `([^`]+)` \| `([^`]+)` \| `([^`]+)` \|", text):
+        if program == "Program" or account == "Derived observed account":
+            continue
+        pda_matches.add(f"{program} | {seeds} | {account}")
+    return {
+        "bank_graph_present": True,
+        "bank_graph_jup_account_hits": jup_hits,
+        "bank_graph_pda_matches": pda_matches,
+    }
+
+
 def snapshot_metrics(base: Path) -> dict:
     jup_raw = b58decode(JUP_MINT)
     gum_records = account_records(base, "getProgramAccounts-Gum.json")
@@ -239,6 +265,7 @@ def snapshot_metrics(base: Path) -> dict:
     tx_sigs, authority_signed, tx_validator_hits = tx_rows(base, authority, related)
     bank_tx = bank_tx_metrics(base, related)
     solana_bank_tx = solana_bank_tx_metrics(base)
+    bank_graph = bank_account_graph_metrics(base)
     gum_validator_hits = 0
     openid_validator_hits = 0
     for _name, raw in gum_records:
@@ -320,6 +347,7 @@ def snapshot_metrics(base: Path) -> dict:
         "solana_bank_program_deployment_slot": solana_bank_program_deployment_slot,
         "solana_bank_program_upgrade_authority": solana_bank_program_authority,
         **solana_bank_tx,
+        **bank_graph,
     }
 
 
@@ -403,6 +431,8 @@ def main() -> None:
         ("Sample Solana Bank tx canonical JUP account hits", "solana_bank_sample_tx_jup_account_hits"),
         ("Sample Solana Bank tx watched Gum/Bank/JUP account hits", "solana_bank_sample_tx_watched_hits"),
         ("Sample Solana Bank inbox/outbox log hits", "solana_bank_inbox_outbox_log_hits"),
+        ("Bank account graph present", "bank_graph_present"),
+        ("Bank account graph canonical JUP account hits", "bank_graph_jup_account_hits"),
     ]
     for label, key in watched_scalars:
         line = delta_line(label, old.get(key), new.get(key))
@@ -452,6 +482,8 @@ def main() -> None:
             "solana_bank_sample_tx_jup_account_hits",
             "solana_bank_sample_tx_watched_hits",
             "solana_bank_inbox_outbox_log_hits",
+            "bank_graph_present",
+            "bank_graph_jup_account_hits",
         }:
             alerts.append(line)
         else:
@@ -460,6 +492,7 @@ def main() -> None:
     alerts.extend(set_delta("Validator node", old["node_keys"], new["node_keys"]))
     alerts.extend(set_delta("Vote account", old["vote_keys"], new["vote_keys"]))
     alerts.extend(set_delta("Stake account", old["stake_accounts"], new["stake_accounts"]))
+    alerts.extend(set_delta("Bank account graph PDA match", old["bank_graph_pda_matches"], new["bank_graph_pda_matches"]))
 
     new_gum_sigs = sorted(new["gum_signature_set"] - old["gum_signature_set"])
     if new_gum_sigs:

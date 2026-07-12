@@ -44,3 +44,5 @@
 | Solana Bank instruction variants are recoverable from sampled txs | Confirmed | Five Anchor-style variants identified: `withdraw`, `sweep`, `verify_request`, `rfq_sell_resolve`, `rfq_sell_commit` |
 | Solana Bank binaries expose request/inbox/outbox/Merkle strings | Confirmed | Full ProgramData string scan found request, inbox, outbox, `JUPNET_INBOX`, `merkle_root_state`, `message_hash`, `InvalidMerkleProof` and related source paths |
 | Solana Bank binary strings prove JUP token utility | Not observed | `jup`/`jupnet` strings establish JupNet context, but no JUP-denominated staking, weights, fees, rewards, slashing or governance mechanism was recovered |
+| Solana Bank account graph exposes inbox PDA plumbing | Confirmed | Bounded PDA hunt matched `__inbox_event_auth` under the Bank Program to observed account `EG9fKpmLgkzCYZdj8uNDhHu5xmeXCZakccV6QmUavbzt` |
+| Solana Bank account graph exposes canonical JUP-derived security state | Not observed | Sampled Bank instructions had zero canonical JUP mint account hits and no bounded JUP-derived PDA match |

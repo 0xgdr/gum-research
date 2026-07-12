@@ -70,6 +70,7 @@ def main() -> None:
     run([sys.executable, "scripts/classify_gum_utility_surfaces.py", str(out)], out / "utility-classification.md")
     run([sys.executable, "scripts/analyze_solana_bank_surface.py", str(out)], out / "solana-bank.md")
     run([sys.executable, "scripts/reverse_engineer_solana_bank.py", str(out)], out / "bank-reverse-engineering.md")
+    run([sys.executable, "scripts/analyze_bank_account_graph.py", str(out)], out / "bank-account-graph.md")
     if previous:
         run([sys.executable, "scripts/compare_validator_security_snapshots.py", str(previous), str(out)], out / "diff.md")
 
@@ -80,6 +81,7 @@ def main() -> None:
     print(f"Utility classification: {out / 'utility-classification.md'}")
     print(f"Solana Bank surface: {out / 'solana-bank.md'}")
     print(f"Bank reverse engineering: {out / 'bank-reverse-engineering.md'}")
+    print(f"Bank account graph: {out / 'bank-account-graph.md'}")
     if previous:
         print(f"Compared against: {previous}")
         print(f"Diff: {out / 'diff.md'}")

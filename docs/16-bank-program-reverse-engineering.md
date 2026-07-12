@@ -71,4 +71,6 @@ It is still not proof that JUP secures the validator or Dove layer:
 - no JUP-denominated signer weight, validator stake, quorum threshold, slashing, reward or fee mechanism was observed;
 - binary `jup`/`jupnet` string hits identify JupNet integration context, not token utility by themselves.
 
-The next decisive target is an IDL or account-layout reconstruction for `verify_request`, `request`, and `merkle_root_state`.
+Follow-up account-graph work found that the repeated account `EG9fKpmLgkzCYZdj8uNDhHu5xmeXCZakccV6QmUavbzt` is the Bank Program PDA for `__inbox_event_auth`. That supports the inbox-event authority interpretation, but still does not expose a JUP stake, fee, quorum, signer-weight or validator-security account.
+
+The next decisive target is broader account-owner/layout reconstruction for the recurring unknown Bank accounts, especially verifier, root, signer-set and authority candidates.

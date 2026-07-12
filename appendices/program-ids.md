@@ -65,6 +65,9 @@ Bank Program ProgramData:
 
 Bank Program upgrade authority:
 GRr146QcbpANhTZPCo9QBJa1tP5Fr9B6vfua4zRC5cc3
+
+Bank Program `__inbox_event_auth` PDA:
+EG9fKpmLgkzCYZdj8uNDhHu5xmeXCZakccV6QmUavbzt
 ```
 
 These Solana-side addresses do not prove JUP-denominated utility by themselves.

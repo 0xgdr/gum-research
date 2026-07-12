@@ -112,6 +112,23 @@ python3 scripts/reverse_engineer_solana_bank.py \
   evidence/YYYY-MM-DD-live-rpc
 ```
 
+### `scripts/analyze_bank_account_graph.py`
+
+Builds a sampled Solana Bank account graph and PDA hunt:
+
+- account frequency and co-occurrence edges;
+- positional account layouts per instruction variant;
+- token account hints from pre/post token balances;
+- payload string, aligned integer and embedded-pubkey candidates;
+- bounded PDA seed matches for Bank, inbox, outbox, Merkle, authority and JUP-related seeds.
+
+Example:
+
+```bash
+python3 scripts/analyze_bank_account_graph.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
 ### `scripts/compare_validator_security_snapshots.py`
 
 Compares two saved snapshots and emits alert-oriented Markdown.
@@ -126,7 +143,7 @@ python3 scripts/compare_validator_security_snapshots.py \
 
 ### `scripts/run_validator_security_check.py`
 
-Runs the full monitoring workflow: collect a fresh snapshot, generate `analysis.md`, generate `deep-dive.md`, generate `authorization.md`, generate `utility-classification.md`, generate `solana-bank.md`, generate `bank-reverse-engineering.md`, and compare against the latest prior snapshot when available.
+Runs the full monitoring workflow: collect a fresh snapshot, generate `analysis.md`, generate `deep-dive.md`, generate `authorization.md`, generate `utility-classification.md`, generate `solana-bank.md`, generate `bank-reverse-engineering.md`, generate `bank-account-graph.md`, and compare against the latest prior snapshot when available.
 
 Example:
 

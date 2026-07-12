@@ -24,6 +24,7 @@ It writes:
 - `utility-classification.md`
 - `solana-bank.md`
 - `bank-reverse-engineering.md`
+- `bank-account-graph.md`
 - `diff.md` when a previous snapshot exists
 
 ## Manual Workflow
@@ -83,6 +84,14 @@ python3 scripts/reverse_engineer_solana_bank.py \
   > evidence/YYYY-MM-DD-HHMM-live-rpc/bank-reverse-engineering.md
 ```
 
+Generate Bank account-graph and PDA-hunt output:
+
+```bash
+python3 scripts/analyze_bank_account_graph.py \
+  evidence/YYYY-MM-DD-HHMM-live-rpc \
+  > evidence/YYYY-MM-DD-HHMM-live-rpc/bank-account-graph.md
+```
+
 Compare two snapshots:
 
 ```bash
@@ -108,6 +117,8 @@ Treat these as high-value changes:
 - Solana Bank or Bank Program account info, ProgramData or upgrade authority changes;
 - Solana Bank Program transactions start touching canonical JUP;
 - Solana Bank Program instruction variants or binary string hits change;
+- Solana Bank account graph starts exposing canonical JUP-derived PDAs or JUP token accounts;
+- Solana Bank PDA matches change for inbox, outbox, Merkle, signer-set or authority seeds;
 - Solana Bank Program logs add validator, quorum, stake, signer, BLS or JUP fee/sink terms;
 - current validator set, vote accounts or stake accounts change;
 - sampled Gum transactions start containing current validator, vote or stake account keys;
