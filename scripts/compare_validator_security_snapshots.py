@@ -237,6 +237,31 @@ def bank_account_graph_metrics(base: Path) -> dict:
     }
 
 
+def bank_recurring_account_metrics(base: Path) -> dict:
+    path = base / "bank-recurring-account-state.md"
+    if not path.exists():
+        return {
+            "bank_recurring_present": False,
+            "bank_recurring_jup_raw_hits": None,
+            "bank_recurring_jup_text_hits": None,
+            "bank_recurring_validator_hits": None,
+            "bank_recurring_bank_owned_state": None,
+        }
+    text = path.read_text()
+
+    def number(pattern: str) -> int | None:
+        match = re.search(pattern, text)
+        return int(match.group(1)) if match else None
+
+    return {
+        "bank_recurring_present": True,
+        "bank_recurring_jup_raw_hits": number(r"Accounts with canonical JUP raw pubkey bytes: `(\d+)`"),
+        "bank_recurring_jup_text_hits": number(r"Accounts with canonical JUP base58 text: `(\d+)`"),
+        "bank_recurring_validator_hits": number(r"Accounts with JupNet validator/vote/stake key hits: `(\d+)`"),
+        "bank_recurring_bank_owned_state": number(r"Bank Program-owned state: `(\d+)`"),
+    }
+
+
 def snapshot_metrics(base: Path) -> dict:
     jup_raw = b58decode(JUP_MINT)
     gum_records = account_records(base, "getProgramAccounts-Gum.json")
@@ -266,6 +291,7 @@ def snapshot_metrics(base: Path) -> dict:
     bank_tx = bank_tx_metrics(base, related)
     solana_bank_tx = solana_bank_tx_metrics(base)
     bank_graph = bank_account_graph_metrics(base)
+    bank_recurring = bank_recurring_account_metrics(base)
     gum_validator_hits = 0
     openid_validator_hits = 0
     for _name, raw in gum_records:
@@ -348,6 +374,7 @@ def snapshot_metrics(base: Path) -> dict:
         "solana_bank_program_upgrade_authority": solana_bank_program_authority,
         **solana_bank_tx,
         **bank_graph,
+        **bank_recurring,
     }
 
 
@@ -433,6 +460,11 @@ def main() -> None:
         ("Sample Solana Bank inbox/outbox log hits", "solana_bank_inbox_outbox_log_hits"),
         ("Bank account graph present", "bank_graph_present"),
         ("Bank account graph canonical JUP account hits", "bank_graph_jup_account_hits"),
+        ("Bank recurring account report present", "bank_recurring_present"),
+        ("Bank recurring account JUP raw hits", "bank_recurring_jup_raw_hits"),
+        ("Bank recurring account JUP text hits", "bank_recurring_jup_text_hits"),
+        ("Bank recurring account validator-key hits", "bank_recurring_validator_hits"),
+        ("Bank recurring Bank-owned state count", "bank_recurring_bank_owned_state"),
     ]
     for label, key in watched_scalars:
         line = delta_line(label, old.get(key), new.get(key))
@@ -484,6 +516,11 @@ def main() -> None:
             "solana_bank_inbox_outbox_log_hits",
             "bank_graph_present",
             "bank_graph_jup_account_hits",
+            "bank_recurring_present",
+            "bank_recurring_jup_raw_hits",
+            "bank_recurring_jup_text_hits",
+            "bank_recurring_validator_hits",
+            "bank_recurring_bank_owned_state",
         }:
             alerts.append(line)
         else:

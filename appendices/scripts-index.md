@@ -129,6 +129,28 @@ python3 scripts/analyze_bank_account_graph.py \
   evidence/YYYY-MM-DD-live-rpc
 ```
 
+### `scripts/collect_bank_recurring_accounts.py`
+
+Fetches Solana mainnet account state for accounts that recur in sampled Bank Program instructions. The target list is derived from the saved sampled transaction bodies and excludes obvious program/mint accounts.
+
+Example:
+
+```bash
+python3 scripts/collect_bank_recurring_accounts.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
+### `scripts/analyze_bank_recurring_accounts.py`
+
+Classifies fetched recurring Bank accounts as system accounts, SPL token accounts, Bank Program-owned state, missing/transient accounts or other accounts. It scans raw account data for canonical JUP, current JupNet validator/vote/stake keys, known Bank pubkeys and utility/security terms.
+
+Example:
+
+```bash
+python3 scripts/analyze_bank_recurring_accounts.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
 ### `scripts/compare_validator_security_snapshots.py`
 
 Compares two saved snapshots and emits alert-oriented Markdown.
@@ -143,7 +165,7 @@ python3 scripts/compare_validator_security_snapshots.py \
 
 ### `scripts/run_validator_security_check.py`
 
-Runs the full monitoring workflow: collect a fresh snapshot, generate `analysis.md`, generate `deep-dive.md`, generate `authorization.md`, generate `utility-classification.md`, generate `solana-bank.md`, generate `bank-reverse-engineering.md`, generate `bank-account-graph.md`, and compare against the latest prior snapshot when available.
+Runs the full monitoring workflow: collect a fresh snapshot, fetch recurring Bank account state, generate `analysis.md`, generate `deep-dive.md`, generate `authorization.md`, generate `utility-classification.md`, generate `solana-bank.md`, generate `bank-reverse-engineering.md`, generate `bank-account-graph.md`, generate `bank-recurring-account-state.md`, and compare against the latest prior snapshot when available.
 
 Example:
 

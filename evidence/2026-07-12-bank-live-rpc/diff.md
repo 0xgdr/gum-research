@@ -25,6 +25,11 @@
 - Sample Solana Bank inbox/outbox log hits: `0` -> `9`
 - Bank account graph present: `False` -> `True`
 - Bank account graph canonical JUP account hits: `None` -> `0`
+- Bank recurring account report present: `False` -> `True`
+- Bank recurring account JUP raw hits: `None` -> `0`
+- Bank recurring account JUP text hits: `None` -> `0`
+- Bank recurring account validator-key hits: `None` -> `0`
+- Bank recurring Bank-owned state count: `None` -> `2`
 - Bank account graph PDA match added: `BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ | __inbox_event_auth | EG9fKpmLgkzCYZdj8uNDhHu5xmeXCZakccV6QmUavbzt`
 - New sampled Solana Bank Program transaction bodies: `8`
 

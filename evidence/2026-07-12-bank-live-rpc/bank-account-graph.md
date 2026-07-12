@@ -19,7 +19,7 @@
 | `2sbhRE62pbi3sLo9CtjM7nYzUynEV4oBAPrGmQPrhnfF` | 6 |  |
 | `C8VeT16ySsyMW9xijjmYgvw83FfvEZVJawn5jgpzcf1X` | 6 |  |
 | `EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v` | 6 | USDC mint |
-| `ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL` | 5 |  |
+| `ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL` | 5 | Associated Token program |
 | `EG9fKpmLgkzCYZdj8uNDhHu5xmeXCZakccV6QmUavbzt` | 5 |  |
 | `9DvDdsw38EB3RPChPqHkgBmntFbM5v79QxMyMSbfXWuy` | 5 |  |
 | `JNiN12VC7ApitDkW7roQ1FmeyKSN1MnmZyCVyLiqAQw` | 5 |  |
@@ -92,7 +92,7 @@
 | 9 | `5x38Kp4hvdomTCnCrAny4UtMUt5rQBdB6px2K1Ui45Wq` 2 |  |
 | 10 | `JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo` 2 |  |
 | 11 | `TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA` 2 | `SPL Token program` 2 |
-| 12 | `ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL` 2 |  |
+| 12 | `ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL` 2 | `Associated Token program` 2 |
 | 13 | `11111111111111111111111111111111` 2 | `system program` 2 |
 | 14 | `Sysvar1nstructions1111111111111111111111111` 2 | `instructions sysvar` 2 |
 | 15 | `EG9fKpmLgkzCYZdj8uNDhHu5xmeXCZakccV6QmUavbzt` 2 |  |
@@ -137,7 +137,7 @@
 | 9 | `C8VeT16ySsyMW9xijjmYgvw83FfvEZVJawn5jgpzcf1X` 2 | `token account mint=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v owner=2sbhRE62pbi3sLo9CtjM7nYzUynEV4oBAPrGmQPrhnfF` 2 |
 | 10 | `EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v` 2 | `USDC mint` 2 |
 | 11 | `TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA` 2 | `SPL Token program` 2 |
-| 12 | `ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL` 2 |  |
+| 12 | `ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL` 2 | `Associated Token program` 2 |
 | 13 | `11111111111111111111111111111111` 2 | `system program` 2 |
 | 14 | `EG9fKpmLgkzCYZdj8uNDhHu5xmeXCZakccV6QmUavbzt` 2 |  |
 | 15 | `9DvDdsw38EB3RPChPqHkgBmntFbM5v79QxMyMSbfXWuy` 2 |  |
@@ -194,7 +194,7 @@
 | 9 | `EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v` 1 | `USDC mint` 1 |
 | 10 | `TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA` 1 | `SPL Token program` 1 |
 | 11 | `BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ` 1 | `Gum Bank Program executable` 1 |
-| 12 | `ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL` 1 |  |
+| 12 | `ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL` 1 | `Associated Token program` 1 |
 | 13 | `11111111111111111111111111111111` 1 | `system program` 1 |
 | 14 | `DnM9teVNbi4Cebkqtar3sVJs9LcZWSrV8DhwQzPpSeqM` 1 | `token account mint=So11111111111111111111111111111111111111112 owner=rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea` 1 |
 | 15 | `5DtSBy1imR7W2Zbdt9Z1gfRPVmVZyTVorvi562SZ7bvd` 1 | `token account mint=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v owner=rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea` 1 |

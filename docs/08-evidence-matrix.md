@@ -46,3 +46,6 @@
 | Solana Bank binary strings prove JUP token utility | Not observed | `jup`/`jupnet` strings establish JupNet context, but no JUP-denominated staking, weights, fees, rewards, slashing or governance mechanism was recovered |
 | Solana Bank account graph exposes inbox PDA plumbing | Confirmed | Bounded PDA hunt matched `__inbox_event_auth` under the Bank Program to observed account `EG9fKpmLgkzCYZdj8uNDhHu5xmeXCZakccV6QmUavbzt` |
 | Solana Bank account graph exposes canonical JUP-derived security state | Not observed | Sampled Bank instructions had zero canonical JUP mint account hits and no bounded JUP-derived PDA match |
+| Recurring Solana Bank accounts hide canonical JUP state | Not observed | Full account fetch for 20 recurring Bank instruction accounts found zero canonical JUP raw pubkey/text hits |
+| Recurring Solana Bank accounts expose validator/vote/stake mappings | Not observed | The same 20-account fetch found zero current JupNet validator/vote/stake key hits |
+| Recurring Solana Bank accounts include compact Bank-owned state | Confirmed | Two recurring accounts were Bank Program-owned: 9-byte state `HVKuqy...` and 41-byte state `4s3g...` with no JUP/security key hits |
