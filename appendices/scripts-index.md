@@ -173,6 +173,39 @@ python3 scripts/analyze_bank_owner_context.py \
   evidence/YYYY-MM-DD-live-rpc
 ```
 
+### `scripts/collect_jupnet_helper_program_accounts.py`
+
+Fetches all accounts owned by the inferred Solana-side JupNet inbox and outbox helper programs, plus bounded signature windows for those program IDs.
+
+Example:
+
+```bash
+python3 scripts/collect_jupnet_helper_program_accounts.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
+### `scripts/analyze_jupnet_helper_program_accounts.py`
+
+Groups helper-program-owned accounts by layout, scans for canonical JUP and validator/vote/stake keys, and decodes the public outbox state as Merkle root history when present.
+
+Example:
+
+```bash
+python3 scripts/analyze_jupnet_helper_program_accounts.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
+### `scripts/reconstruct_verify_request_payloads.py`
+
+Reconstructs sampled Bank Program `verify_request` instruction payloads, including difference ranges, known pubkey hits, timestamp-like fields, Merkle proof tail extraction, outbox-root comparison and JUP/validator-key checks.
+
+Example:
+
+```bash
+python3 scripts/reconstruct_verify_request_payloads.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
 ### `scripts/compare_validator_security_snapshots.py`
 
 Compares two saved snapshots and emits alert-oriented Markdown.
@@ -187,7 +220,7 @@ python3 scripts/compare_validator_security_snapshots.py \
 
 ### `scripts/run_validator_security_check.py`
 
-Runs the full monitoring workflow: collect a fresh snapshot, fetch recurring Bank account state, fetch owner-program context, generate `analysis.md`, generate `deep-dive.md`, generate `authorization.md`, generate `utility-classification.md`, generate `solana-bank.md`, generate `bank-reverse-engineering.md`, generate `bank-account-graph.md`, generate `bank-recurring-account-state.md`, generate `bank-owner-program-context.md`, and compare against the latest prior snapshot when available.
+Runs the full monitoring workflow: collect a fresh snapshot, fetch recurring Bank account state, fetch owner-program context, fetch JupNet helper-program-owned accounts, generate `analysis.md`, generate `deep-dive.md`, generate `authorization.md`, generate `utility-classification.md`, generate `solana-bank.md`, generate `bank-reverse-engineering.md`, generate `bank-account-graph.md`, generate `bank-recurring-account-state.md`, generate `bank-owner-program-context.md`, generate `jupnet-helper-program-accounts.md`, generate `verify-request-payload-reconstruction.md`, and compare against the latest prior snapshot when available.
 
 Example:
 

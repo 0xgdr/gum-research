@@ -1,0 +1,20 @@
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": [
+    {
+      "account": {
+        "data": [
+          "2uQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+          "base64"
+        ],
+        "executable": false,
+        "lamports": 1336320,
+        "owner": "JNiN12VC7ApitDkW7roQ1FmeyKSN1MnmZyCVyLiqAQw",
+        "rentEpoch": 18446744073709551615,
+        "space": 64
+      },
+      "pubkey": "9DvDdsw38EB3RPChPqHkgBmntFbM5v79QxMyMSbfXWuy"
+    }
+  ]
+}

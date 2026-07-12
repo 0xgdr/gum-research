@@ -31,6 +31,8 @@ Utility-relevant evidence includes:
 - Bank account-graph analysis links a repeated account to the Bank Program `__inbox_event_auth` PDA.
 - Recurring Bank account-state analysis found USDC/wrapped SOL token accounts and compact Bank state, but no canonical JUP or validator-key hits.
 - Bank owner-context analysis ties recurring non-token state to JupNet inbox/outbox helper programs on Solana mainnet.
+- Helper-program account enumeration shows public outbox state stores Merkle root history, not visible signer-set or JUP-weight state.
+- `verify_request` payload reconstruction shows message/proof data and USDC context, but no JUP, validator keys or visible quorum state.
 - JUP appears in Gum asset metadata/flows; this is confirmed but treated as non-decisive noise unless tied to protocol utility.
 - Public evidence does not currently prove that JUP stake determines validator or Dove voting weight.
 
@@ -56,6 +58,8 @@ Utility-relevant evidence includes:
 - [`docs/17-bank-account-graph-and-pda-hunt.md`](docs/17-bank-account-graph-and-pda-hunt.md)
 - [`docs/18-bank-recurring-account-state.md`](docs/18-bank-recurring-account-state.md)
 - [`docs/19-bank-owner-program-context.md`](docs/19-bank-owner-program-context.md)
+- [`docs/20-jupnet-helper-program-state.md`](docs/20-jupnet-helper-program-state.md)
+- [`docs/21-verify-request-payload-reconstruction.md`](docs/21-verify-request-payload-reconstruction.md)
 - [`appendices/rpc-catalogue.md`](appendices/rpc-catalogue.md)
 - [`appendices/program-ids.md`](appendices/program-ids.md)
 - [`appendices/scripts-index.md`](appendices/scripts-index.md)
@@ -70,6 +74,8 @@ Utility-relevant evidence includes:
 - [`evidence/2026-07-12-bank-live-rpc/bank-account-graph.md`](evidence/2026-07-12-bank-live-rpc/bank-account-graph.md)
 - [`evidence/2026-07-12-bank-live-rpc/bank-recurring-account-state.md`](evidence/2026-07-12-bank-live-rpc/bank-recurring-account-state.md)
 - [`evidence/2026-07-12-bank-live-rpc/bank-owner-program-context.md`](evidence/2026-07-12-bank-live-rpc/bank-owner-program-context.md)
+- [`evidence/2026-07-12-bank-live-rpc/jupnet-helper-program-accounts.md`](evidence/2026-07-12-bank-live-rpc/jupnet-helper-program-accounts.md)
+- [`evidence/2026-07-12-bank-live-rpc/verify-request-payload-reconstruction.md`](evidence/2026-07-12-bank-live-rpc/verify-request-payload-reconstruction.md)
 
 ## Evidence classifications
 

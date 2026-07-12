@@ -296,6 +296,57 @@ def bank_owner_context_metrics(base: Path) -> dict:
     }
 
 
+def helper_program_account_metrics(base: Path) -> dict:
+    path = base / "jupnet-helper-program-accounts.md"
+    if not path.exists():
+        return {
+            "helper_program_accounts_present": False,
+            "helper_inbox_accounts": None,
+            "helper_outbox_accounts": None,
+            "helper_jup_hits": None,
+            "helper_validator_hits": None,
+        }
+    text = path.read_text()
+
+    def number(pattern: str) -> int | None:
+        match = re.search(pattern, text)
+        return int(match.group(1)) if match else None
+
+    return {
+        "helper_program_accounts_present": True,
+        "helper_inbox_accounts": number(r"Inbox-owned accounts fetched: `(\d+)`"),
+        "helper_outbox_accounts": number(r"Outbox-owned accounts fetched: `(\d+)`"),
+        "helper_jup_hits": number(r"Accounts with canonical JUP hits: `(\d+)`"),
+        "helper_validator_hits": number(r"Accounts with current JupNet validator/vote/stake key hits: `(\d+)`"),
+    }
+
+
+def verify_request_payload_metrics(base: Path) -> dict:
+    path = base / "verify-request-payload-reconstruction.md"
+    if not path.exists():
+        return {
+            "verify_request_report_present": False,
+            "verify_request_samples": None,
+            "verify_request_jup_hits": None,
+            "verify_request_validator_hits": None,
+            "verify_request_proof_nodes": None,
+        }
+    text = path.read_text()
+
+    def number(pattern: str) -> int | None:
+        match = re.search(pattern, text)
+        return int(match.group(1)) if match else None
+
+    proof_nodes = len(re.findall(r"^\| [0-9]+ \| `[0-9a-f]{64}` \|$", text, flags=re.MULTILINE))
+    return {
+        "verify_request_report_present": True,
+        "verify_request_samples": number(r"`verify_request` samples: `(\d+)`"),
+        "verify_request_jup_hits": number(r"Canonical JUP key hits: `(\d+)`"),
+        "verify_request_validator_hits": number(r"Current JupNet validator/vote/stake key hits: `(\d+)`"),
+        "verify_request_proof_nodes": proof_nodes,
+    }
+
+
 def snapshot_metrics(base: Path) -> dict:
     jup_raw = b58decode(JUP_MINT)
     gum_records = account_records(base, "getProgramAccounts-Gum.json")
@@ -327,6 +378,8 @@ def snapshot_metrics(base: Path) -> dict:
     bank_graph = bank_account_graph_metrics(base)
     bank_recurring = bank_recurring_account_metrics(base)
     bank_owner_context = bank_owner_context_metrics(base)
+    helper_program_accounts = helper_program_account_metrics(base)
+    verify_request_payload = verify_request_payload_metrics(base)
     gum_validator_hits = 0
     openid_validator_hits = 0
     for _name, raw in gum_records:
@@ -411,6 +464,8 @@ def snapshot_metrics(base: Path) -> dict:
         **bank_graph,
         **bank_recurring,
         **bank_owner_context,
+        **helper_program_accounts,
+        **verify_request_payload,
     }
 
 
@@ -505,6 +560,16 @@ def main() -> None:
         ("Bank owner context JUP key hits", "bank_owner_context_jup_hits"),
         ("Bank owner context validator-key hits", "bank_owner_context_validator_hits"),
         ("Bank owner context ProgramData count", "bank_owner_context_programdata_count"),
+        ("JupNet helper account report present", "helper_program_accounts_present"),
+        ("JupNet inbox-owned account count", "helper_inbox_accounts"),
+        ("JupNet outbox-owned account count", "helper_outbox_accounts"),
+        ("JupNet helper account JUP hits", "helper_jup_hits"),
+        ("JupNet helper account validator-key hits", "helper_validator_hits"),
+        ("Verify request report present", "verify_request_report_present"),
+        ("Verify request sample count", "verify_request_samples"),
+        ("Verify request JUP key hits", "verify_request_jup_hits"),
+        ("Verify request validator-key hits", "verify_request_validator_hits"),
+        ("Verify request proof node count", "verify_request_proof_nodes"),
     ]
     for label, key in watched_scalars:
         line = delta_line(label, old.get(key), new.get(key))
@@ -565,6 +630,16 @@ def main() -> None:
             "bank_owner_context_jup_hits",
             "bank_owner_context_validator_hits",
             "bank_owner_context_programdata_count",
+            "helper_program_accounts_present",
+            "helper_inbox_accounts",
+            "helper_outbox_accounts",
+            "helper_jup_hits",
+            "helper_validator_hits",
+            "verify_request_report_present",
+            "verify_request_samples",
+            "verify_request_jup_hits",
+            "verify_request_validator_hits",
+            "verify_request_proof_nodes",
         }:
             alerts.append(line)
         else:

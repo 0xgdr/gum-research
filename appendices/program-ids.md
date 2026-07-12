@@ -83,6 +83,12 @@ D6xAx2iTMXP5hg8DeKPDgTw8exLs8MNpYEsmLg89pAsT
 
 Inbox/outbox helper upgrade authority:
 GRr146QcbpANhTZPCo9QBJa1tP5Fr9B6vfua4zRC5cc3
+
+Inbox helper-owned state account:
+9DvDdsw38EB3RPChPqHkgBmntFbM5v79QxMyMSbfXWuy
+
+Outbox helper-owned Merkle root state account:
+3C1LxtpR3Mh5RQjydfeQdvRaAzpStWM7gBi1XzP9oyGt
 ```
 
 These Solana-side addresses do not prove JUP-denominated utility by themselves.
