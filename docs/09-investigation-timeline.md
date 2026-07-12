@@ -20,12 +20,12 @@
 - Decoded binary and printable metadata.
 - Determined OpenID was primarily identity-oriented.
 
-## Phase 4 — Gum and JUP
+## Phase 4 — Gum and JUP asset-noise boundary
 
 - Located canonical JUP mint in Gum state.
 - Traced JUP transfer/burn/mint activity.
 - Identified proof/inbox/outbox message logs.
-- Separated “JUP used by Gum” from “JUP secures Gum.”
+- Separated “JUP can be used/traded through Gum” from “JUP has Gum/JupNet utility.”
 
 ## Phase 5 — Vote decoding
 

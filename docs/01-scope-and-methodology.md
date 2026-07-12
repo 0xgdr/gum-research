@@ -2,7 +2,9 @@
 
 ## Scope
 
-The investigation focused on architecture and security, not trading performance or token-price forecasting.
+The investigation focused on JUP protocol utility, architecture and security, not trading support, trading performance or token-price forecasting.
+
+JUP trading on Gum is treated as background. It is only relevant when a transaction or account exposes JUP-denominated security, signer weights, fees, access control, governance, permanent burns/sinks, rewards, slashing or validator/Dove participation.
 
 Primary questions:
 
@@ -10,8 +12,8 @@ Primary questions:
 2. Are Doves equivalent to native validators?
 3. What role does native stake play?
 4. Where is BLS used?
-5. Does Gum consume, bridge or permanently burn JUP?
-6. Can JUP-weighted security be proven from the beta?
+5. Does Gum require, consume, sink or permanently burn JUP for protocol operation rather than ordinary asset routing?
+6. Can JUP-weighted security or any other JUP utility be proven from the beta?
 
 ## Methods
 

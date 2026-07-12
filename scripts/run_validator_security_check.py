@@ -66,12 +66,14 @@ def main() -> None:
     )
     run([sys.executable, "scripts/analyze_validator_security_snapshot.py", str(out)], out / "analysis.md")
     run([sys.executable, "scripts/deep_dive_validator_security_snapshot.py", str(out)], out / "deep-dive.md")
+    run([sys.executable, "scripts/analyze_gum_authorization.py", str(out)], out / "authorization.md")
     if previous:
         run([sys.executable, "scripts/compare_validator_security_snapshots.py", str(previous), str(out)], out / "diff.md")
 
     print(f"Snapshot: {out}")
     print(f"Analysis: {out / 'analysis.md'}")
     print(f"Deep dive: {out / 'deep-dive.md'}")
+    print(f"Authorization: {out / 'authorization.md'}")
     if previous:
         print(f"Compared against: {previous}")
         print(f"Diff: {out / 'diff.md'}")

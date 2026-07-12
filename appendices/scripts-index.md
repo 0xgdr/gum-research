@@ -60,6 +60,25 @@ python3 scripts/deep_dive_validator_security_snapshot.py \
   evidence/YYYY-MM-DD-live-rpc
 ```
 
+### `scripts/analyze_gum_authorization.py`
+
+Analyzes sampled Gum transactions like a Solana program/operator review:
+
+- signers and writable accounts;
+- Gum instruction data lengths and first eight bytes;
+- invoked top-level and inner programs;
+- parsed token mints touched;
+- repeated config-like accounts;
+- validator/vote/stake account hits;
+- full Gum instruction account metas with signer/writable roles.
+
+Example:
+
+```bash
+python3 scripts/analyze_gum_authorization.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
 ### `scripts/compare_validator_security_snapshots.py`
 
 Compares two saved snapshots and emits alert-oriented Markdown.

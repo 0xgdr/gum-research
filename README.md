@@ -1,12 +1,24 @@
 # JupNet Technical Investigation
 
-Independent reverse-engineering research into the JupNet private beta, Gum, Doves, native staking, vote traffic, BLS-related runtime components, OpenID, and the unresolved question of whether JUP currently provides stake-weighted economic security.
+Independent reverse-engineering research into the JupNet private beta, Gum, Doves, native staking, vote traffic, BLS-related runtime components, OpenID, and the unresolved question of whether JUP currently has protocol utility beyond being a tradable Gum asset.
 
 ## Status
 
 **Version:** 1.0  
 **State:** Living investigation  
-**Primary unresolved question:** Is validator/Dove security weight currently derived from JUP stake?
+**Primary unresolved question:** Is validator/Dove security weight, protocol access, fee flow, burn/sink behavior, governance control or any other Gum/JupNet utility currently derived from JUP?
+
+## Research focus
+
+This repo is not trying to prove that JUP can be traded on Gum. Treat JUP trading, bridging, transfer, burn/mint routing and asset metadata as background unless the evidence connects JUP to protocol utility.
+
+Utility-relevant evidence includes:
+
+- JUP stake or lock records tied to validators, Doves, signers or operators.
+- Signer weights, quorum thresholds or BLS verifier configs denominated in JUP.
+- JUP fees, fee sinks, permanent burns or settlement costs required by Gum/JupNet.
+- Governance, upgrade, access-control or slashing/reward mechanisms keyed to JUP.
+- Validator/Dove registration or onboarding that requires JUP.
 
 ## Key conclusions
 
@@ -14,8 +26,8 @@ Independent reverse-engineering research into the JupNet private beta, Gum, Dove
 - A live validator set, native vote accounts and native stake accounts were observed.
 - Vote traffic was decoded and did not expose BLS signatures directly.
 - Public dependency metadata references JupNet-specific BLS, BN254, Merkle and cross-chain crates.
-- Gum exposes omnichain message and burn/mint behaviour.
-- JUP is integrated into Gum asset flows.
+- Gum exposes omnichain message and burn/mint behaviour, but asset flow alone is not utility evidence.
+- JUP appears in Gum asset metadata/flows; this is confirmed but treated as non-decisive noise unless tied to protocol utility.
 - Public evidence does not currently prove that JUP stake determines validator or Dove voting weight.
 
 ## Repository map
@@ -33,12 +45,14 @@ Independent reverse-engineering research into the JupNet private beta, Gum, Dove
 - [`docs/10-continuation-plan.md`](docs/10-continuation-plan.md)
 - [`docs/11-validator-security-layer-followup.md`](docs/11-validator-security-layer-followup.md)
 - [`docs/12-monitoring-plan.md`](docs/12-monitoring-plan.md)
+- [`docs/13-utility-evidence-standard.md`](docs/13-utility-evidence-standard.md)
 - [`appendices/rpc-catalogue.md`](appendices/rpc-catalogue.md)
 - [`appendices/program-ids.md`](appendices/program-ids.md)
 - [`appendices/scripts-index.md`](appendices/scripts-index.md)
 - [`appendices/dead-ends.md`](appendices/dead-ends.md)
 - [`evidence/2026-07-12-live-rpc/analysis.md`](evidence/2026-07-12-live-rpc/analysis.md)
 - [`evidence/2026-07-12-live-rpc/deep-dive.md`](evidence/2026-07-12-live-rpc/deep-dive.md)
+- [`evidence/2026-07-12-live-rpc/authorization.md`](evidence/2026-07-12-live-rpc/authorization.md)
 
 ## Evidence classifications
 
@@ -46,7 +60,8 @@ Independent reverse-engineering research into the JupNet private beta, Gum, Dove
 - **Strong evidence** — multiple independent observations support the conclusion.
 - **Working hypothesis** — plausible but not yet directly verified.
 - **Unverified** — claim could not be demonstrated from accessible evidence.
+- **Non-decisive asset evidence** — confirms JUP appears in trading, routing, transfer, mint/burn or metadata surfaces, but does not prove protocol utility.
 
 ## Important caution
 
-A token `Burn` instruction is not automatically deflationary. In an omnichain design, a burn may be paired with a mint elsewhere. Permanent supply reduction requires matching source burns, destination mints and canonical supply changes.
+A token `Burn`, `MintTo`, transfer, market route or Gum asset record is not utility evidence by itself. In this repo, those observations are only useful when they reveal JUP-denominated stake, signer weight, fee capture, permanent supply sink, governance control, access control or validator/Dove participation.

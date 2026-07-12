@@ -1,6 +1,6 @@
 # Monitoring Plan
 
-Use this workflow to check whether new public evidence appears for JUP-backed validator or Dove security.
+Use this workflow to check whether new public evidence appears for JUP protocol utility. Trading support is treated as noise unless it connects to staking, signer weights, quorum, fees, governance, access control, slashing, rewards or permanent protocol burns/sinks.
 
 ## One-Command Check
 
@@ -20,6 +20,7 @@ It writes:
 
 - `analysis.md`
 - `deep-dive.md`
+- `authorization.md`
 - `diff.md` when a previous snapshot exists
 
 ## Manual Workflow
@@ -47,6 +48,14 @@ python3 scripts/deep_dive_validator_security_snapshot.py \
   > evidence/YYYY-MM-DD-HHMM-live-rpc/deep-dive.md
 ```
 
+Generate Gum authorization output:
+
+```bash
+python3 scripts/analyze_gum_authorization.py \
+  evidence/YYYY-MM-DD-HHMM-live-rpc \
+  > evidence/YYYY-MM-DD-HHMM-live-rpc/authorization.md
+```
+
 Compare two snapshots:
 
 ```bash
@@ -64,12 +73,15 @@ Treat these as high-value changes:
 - JupNet SPL token accounts appear for canonical JUP;
 - Gum or OpenID account data starts containing raw canonical JUP pubkey bytes;
 - Gum or OpenID account data starts containing current validator, vote or stake account keys;
+- JUP appears in fee, reward, slashing, governance, access-control or permanent burn/sink accounts;
 - Gum ProgramData account changes;
 - Gum deployment slot changes;
 - Gum upgrade authority changes;
 - current validator set, vote accounts or stake accounts change;
 - sampled Gum transactions start containing current validator, vote or stake account keys;
 - new Gum signatures appear after the existing May 2026 signature window.
+
+Do not alert on JUP trading or asset metadata alone.
 
 ## How To Ask For A Check
 

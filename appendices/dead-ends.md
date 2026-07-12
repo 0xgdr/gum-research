@@ -30,8 +30,8 @@ The local machine had no Rust/Cargo toolchain and no Cargo Git checkout cache.
 
 Lesson: do not install tooling merely to search for source that was never fetched.
 
-## Every burn is bullish
+## Mistaking every burn for utility
 
 A Burn instruction in an omnichain flow may be paired with a mint.
 
-Lesson: classify system-wide net issuance, not isolated instruction names.
+Lesson: classify the protocol mechanism, not isolated instruction names. A trade, bridge burn or mint is noise unless it proves JUP staking, fees, signer weights, access control, governance, rewards, slashing or a permanent protocol sink.

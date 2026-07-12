@@ -2,7 +2,7 @@
 
 ## Snapshot
 
-This follow-up tested whether public JupNet state exposes evidence that JUP is used directly in the validator or Dove security layer.
+This follow-up tested whether public JupNet state exposes evidence that JUP is used directly in the validator or Dove security layer. It also treats JUP trading/asset metadata as non-decisive unless linked to utility.
 
 The live snapshot was collected on:
 
@@ -21,6 +21,7 @@ The generated analyzer output is:
 ```text
 evidence/2026-07-12-live-rpc/analysis.md
 evidence/2026-07-12-live-rpc/deep-dive.md
+evidence/2026-07-12-live-rpc/authorization.md
 ```
 
 ## Methods Added
@@ -54,6 +55,8 @@ The analyzer scans saved account data for:
 - current stake account keys.
 
 The deep-dive analyzer additionally groups Gum JUP-hit accounts by data length, first eight bytes and text offset, then maps Gum program loader metadata and sampled Gum transaction signers.
+
+The Gum authorization analyzer classifies sampled Gum transaction signers, writable accounts, invoked programs, token mints, instruction data lengths, instruction-data prefixes and full Gum instruction account metas.
 
 This scan is intentionally limited to public account data. It cannot detect private validator configuration, off-chain committee state, or encrypted/hashed mappings unless the scanned bytes are directly present.
 
@@ -99,9 +102,9 @@ Results:
 
 Interpretation:
 
-Gum state publicly references canonical JUP as an external or configured asset string. In this snapshot, the canonical Solana JUP mint does not appear to exist as a native JupNet SPL mint account, no JupNet SPL token accounts were found for that mint, and the scanned Gum layouts did not contain the canonical mint as raw pubkey bytes.
+Gum state publicly references canonical JUP as an external or configured asset string. This is asset support, not utility by itself. In this snapshot, the canonical Solana JUP mint does not appear to exist as a native JupNet SPL mint account, no JupNet SPL token accounts were found for that mint, and the scanned Gum layouts did not contain the canonical mint as raw pubkey bytes.
 
-This supports the existing conclusion that JUP is visible in Gum asset configuration/flows, but it does not support the stronger claim that JUP is natively locked or delegated on JupNet for validator security.
+This supports the existing conclusion that JUP is visible in Gum asset configuration/flows, but it does not support the stronger claim that JUP has protocol utility such as staking, signer weight, fee flow, access control, governance, slashing, rewards or validator security.
 
 ### Validator-to-JUP Correlation
 
@@ -158,30 +161,58 @@ The upgrade authority account was system-owned, non-executable and had zero acco
 
 Interpretation:
 
-The sampled Gum activity appears operationally controlled by the Gum upgrade-authority key rather than by the public native validator set. This does not rule out private/off-chain Dove signing, but it gives no public evidence that current native validators or their native stake accounts are participating directly in sampled Gum message flow.
+The sampled Gum activity appears operationally controlled by the Gum upgrade-authority key rather than by the public native validator set. This does not rule out private/off-chain Dove signing, but it gives no public evidence that current native validators, their native stake accounts or JUP utility mechanisms are participating directly in sampled Gum message flow.
+
+### Gum Authorization Surface
+
+The Solana-style transaction/account-meta analysis covered eight parsed Gum transactions.
+
+Summary:
+
+- unique signers: 2;
+- unique writable accounts: 15;
+- unique transaction accounts: 21;
+- validator/vote/stake account hits across transactions: 0;
+- the Gum upgrade authority signed all eight sampled transactions;
+- one sampled transfer-style transaction also included signer `94oZZEp1p1Vwuvc7axgeaRSU4Mk9diugqzjxpz1dnSZv`;
+- one parsed token mint was touched: `A5ER4hbDN82jEnf986kZzuJzMzsyw1DRqodnone5yJWo`;
+- invoked programs were limited to ComputeBudget, Gum, JPL Token, System and Associated Token.
+
+Five sampled Gum instructions used two-byte data with prefix:
+
+```text
+1202
+```
+
+The larger sampled instructions had data lengths of 187 and 244 bytes. Those are plausible message/proof/action payloads, but their public account metas still did not include native validator, vote or stake accounts.
+
+Interpretation:
+
+From a Solana program-operator perspective, the sampled public authorization path is dominated by transaction signers, writable Gum/config-like accounts and token-program CPIs. It does not expose a public validator-set, vote-account, stake-account, signer-weight or JUP-weighted quorum dependency.
 
 ## Current Assessment
 
 The follow-up strengthens three conclusions:
 
 1. The public native validator layer currently visible through RPC is native-stake based, not visibly JUP-stake based.
-2. Gum publicly references canonical JUP as text metadata/configuration, but not as a raw native SPL mint pubkey in the scanned Gum account layouts.
+2. Gum publicly references canonical JUP as text metadata/configuration, but this is non-decisive asset evidence and not a utility mechanism.
 3. No public Gum/OpenID account data in this snapshot maps current validator identities, vote accounts or stake accounts to JUP.
 4. The sampled Gum transactions were signed by the Gum upgrade authority and did not expose current validator/vote/stake account participation.
+5. The sampled Gum transaction account metas and CPIs show operator/config/token-program authorization surfaces, not a visible native-validator or JUP-weighted Dove surface.
 
 The decisive unresolved boundary remains private or off-chain state:
 
 - validator runtime configuration;
 - Dove signer registry;
 - BLS signer weights;
-- JUP lock/delegation records;
+- JUP lock/delegation, fee, governance, access-control, reward, slashing or burn/sink records;
 - quorum-enforcement code.
 
 ## Next Proof Targets
 
 The next highest-value work is:
 
-1. Decode the 127 Gum accounts that contain the canonical JUP mint and classify their account layouts.
+1. Decode the 127 Gum accounts that contain the canonical JUP mint and classify whether they are only asset metadata or part of a utility mechanism.
 2. Identify Gum verifier/config accounts and determine whether any contain signer sets or weight fields.
 3. Track Gum program upgrades by ProgramData hash and diff account layouts across snapshots.
 4. Search for public validator/Dove source, deployment configs, Docker images or lockfiles that reference JUP-denominated weights.

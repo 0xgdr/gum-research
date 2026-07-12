@@ -12,7 +12,7 @@ The investigation therefore proceeded from observable evidence:
 4. Decode recent vote transactions.
 5. Enumerate program-owned accounts and deployed executables.
 6. Decode OpenID Registry state.
-7. Trace Gum-related JUP transactions.
+7. Trace Gum-related JUP transactions only to separate asset support from utility.
 8. Inspect executable strings and public dependency metadata.
 9. Compare observed implementation with the published security model.
 
@@ -23,8 +23,8 @@ The investigation therefore proceeded from observable evidence:
 - Validators have native vote accounts.
 - Native stake accounts are delegated to vote accounts.
 - Gum implements cross-chain message and asset flows.
-- JUP appears in Gum state and transaction flows.
-- JUP burn and mint operations were observed in omnichain activity.
+- JUP appears in Gum state and transaction flows as an asset.
+- JUP burn and mint operations were observed in omnichain activity, but these are non-decisive unless tied to protocol utility.
 - Public dependency metadata points to JupNet-specific BLS, BN254, Merkle and syscall components.
 
 ## Not confirmed
@@ -35,6 +35,7 @@ The investigation therefore proceeded from observable evidence:
 - Stake weights derived from JUP.
 - A two-thirds-of-staked-JUP quorum visible on-chain.
 - BLS aggregate signatures embedded directly in ordinary vote transactions.
+- JUP-denominated fees, governance, access control, rewards, slashing or permanent protocol sinks.
 
 ## Current assessment
 
@@ -42,6 +43,6 @@ The strongest current model is:
 
 - **SVM consensus layer:** native validators, vote accounts and native stake.
 - **Cross-chain security layer:** custom BLS/Merkle machinery, likely implemented in validator/runtime software or private infrastructure.
-- **JUP economic security:** described publicly but not independently verifiable from the beta artifacts inspected.
+- **JUP utility/security:** described publicly for Dove security, but not independently verifiable from the beta artifacts inspected.
 
 This does not disprove the intended JUP security model. It establishes an evidence boundary: the implementation is either private, off-chain, not yet activated, or not publicly exposed in the beta.
