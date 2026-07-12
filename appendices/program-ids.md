@@ -68,6 +68,21 @@ GRr146QcbpANhTZPCo9QBJa1tP5Fr9B6vfua4zRC5cc3
 
 Bank Program `__inbox_event_auth` PDA:
 EG9fKpmLgkzCYZdj8uNDhHu5xmeXCZakccV6QmUavbzt
+
+Inferred JupNet inbox helper program:
+JNiN12VC7ApitDkW7roQ1FmeyKSN1MnmZyCVyLiqAQw
+
+Inbox helper ProgramData:
+6fBvinpo8Ub7TVpUeTPpPiGMryL432i8N9Z3n3aH2KVT
+
+Inferred JupNet outbox helper program:
+jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV
+
+Outbox helper ProgramData:
+D6xAx2iTMXP5hg8DeKPDgTw8exLs8MNpYEsmLg89pAsT
+
+Inbox/outbox helper upgrade authority:
+GRr146QcbpANhTZPCo9QBJa1tP5Fr9B6vfua4zRC5cc3
 ```
 
 These Solana-side addresses do not prove JUP-denominated utility by themselves.

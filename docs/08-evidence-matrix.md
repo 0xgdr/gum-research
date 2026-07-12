@@ -49,3 +49,6 @@
 | Recurring Solana Bank accounts hide canonical JUP state | Not observed | Full account fetch for 20 recurring Bank instruction accounts found zero canonical JUP raw pubkey/text hits |
 | Recurring Solana Bank accounts expose validator/vote/stake mappings | Not observed | The same 20-account fetch found zero current JupNet validator/vote/stake key hits |
 | Recurring Solana Bank accounts include compact Bank-owned state | Confirmed | Two recurring accounts were Bank Program-owned: 9-byte state `HVKuqy...` and 41-byte state `4s3g...` with no JUP/security key hits |
+| Solana Bank owner context exposes JupNet inbox helper program | Confirmed | Program `JNiN12...` ProgramData strings include `programs/jupnet-inbox-program`, `SubmitInboxMessage`, `SubmitInboxMessageWithFinality` and `JUPNET_INBOX` |
+| Solana Bank owner context exposes JupNet outbox helper program | Confirmed | Program `jnoUtn...` ProgramData strings include `programs/jupnet-outbox-program`, `VerifyOutboxMessage`, `Verifying BLS signature`, `Merkle proof verified` and `merkle_root_state` |
+| Solana Bank owner context exposes JUP validator-security state | Not observed | Owner-context accounts and helper ProgramData did not expose canonical JUP key material or current JupNet validator/vote/stake key mappings |

@@ -262,6 +262,40 @@ def bank_recurring_account_metrics(base: Path) -> dict:
     }
 
 
+def bank_owner_context_metrics(base: Path) -> dict:
+    path = base / "bank-owner-program-context.md"
+    if not path.exists():
+        return {
+            "bank_owner_context_present": False,
+            "bank_owner_context_jup_hits": None,
+            "bank_owner_context_validator_hits": None,
+            "bank_owner_context_programdata_count": None,
+            "bank_owner_context_programdata_set": set(),
+        }
+    text = path.read_text()
+
+    def number(pattern: str) -> int | None:
+        match = re.search(pattern, text)
+        return int(match.group(1)) if match else None
+
+    programdata_set = set()
+    for program, programdata, _slot, authority, _bytes, sha256 in re.findall(
+        r"\| `([^`]+)` \| `([^`]+)` \| ([0-9A-Za-z]+) \| `([^`]+)` \| ([0-9]+) \| `([^`]+)` \|",
+        text,
+    ):
+        if program == "Program":
+            continue
+        programdata_set.add(f"{program} | {programdata} | {authority} | {sha256}")
+
+    return {
+        "bank_owner_context_present": True,
+        "bank_owner_context_jup_hits": number(r"Accounts with canonical JUP key hits: `(\d+)`"),
+        "bank_owner_context_validator_hits": number(r"Accounts with current JupNet validator/vote/stake key hits: `(\d+)`"),
+        "bank_owner_context_programdata_count": number(r"Upgradeable owner programs with ProgramData: `(\d+)`"),
+        "bank_owner_context_programdata_set": programdata_set,
+    }
+
+
 def snapshot_metrics(base: Path) -> dict:
     jup_raw = b58decode(JUP_MINT)
     gum_records = account_records(base, "getProgramAccounts-Gum.json")
@@ -292,6 +326,7 @@ def snapshot_metrics(base: Path) -> dict:
     solana_bank_tx = solana_bank_tx_metrics(base)
     bank_graph = bank_account_graph_metrics(base)
     bank_recurring = bank_recurring_account_metrics(base)
+    bank_owner_context = bank_owner_context_metrics(base)
     gum_validator_hits = 0
     openid_validator_hits = 0
     for _name, raw in gum_records:
@@ -375,6 +410,7 @@ def snapshot_metrics(base: Path) -> dict:
         **solana_bank_tx,
         **bank_graph,
         **bank_recurring,
+        **bank_owner_context,
     }
 
 
@@ -465,6 +501,10 @@ def main() -> None:
         ("Bank recurring account JUP text hits", "bank_recurring_jup_text_hits"),
         ("Bank recurring account validator-key hits", "bank_recurring_validator_hits"),
         ("Bank recurring Bank-owned state count", "bank_recurring_bank_owned_state"),
+        ("Bank owner context report present", "bank_owner_context_present"),
+        ("Bank owner context JUP key hits", "bank_owner_context_jup_hits"),
+        ("Bank owner context validator-key hits", "bank_owner_context_validator_hits"),
+        ("Bank owner context ProgramData count", "bank_owner_context_programdata_count"),
     ]
     for label, key in watched_scalars:
         line = delta_line(label, old.get(key), new.get(key))
@@ -521,6 +561,10 @@ def main() -> None:
             "bank_recurring_jup_text_hits",
             "bank_recurring_validator_hits",
             "bank_recurring_bank_owned_state",
+            "bank_owner_context_present",
+            "bank_owner_context_jup_hits",
+            "bank_owner_context_validator_hits",
+            "bank_owner_context_programdata_count",
         }:
             alerts.append(line)
         else:
@@ -530,6 +574,13 @@ def main() -> None:
     alerts.extend(set_delta("Vote account", old["vote_keys"], new["vote_keys"]))
     alerts.extend(set_delta("Stake account", old["stake_accounts"], new["stake_accounts"]))
     alerts.extend(set_delta("Bank account graph PDA match", old["bank_graph_pda_matches"], new["bank_graph_pda_matches"]))
+    alerts.extend(
+        set_delta(
+            "Bank owner context ProgramData",
+            old["bank_owner_context_programdata_set"],
+            new["bank_owner_context_programdata_set"],
+        )
+    )
 
     new_gum_sigs = sorted(new["gum_signature_set"] - old["gum_signature_set"])
     if new_gum_sigs:

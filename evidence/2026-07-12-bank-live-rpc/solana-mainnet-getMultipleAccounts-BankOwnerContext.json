@@ -1,0 +1,78 @@
+{
+  "accounts": [
+    "2sbhRE62pbi3sLo9CtjM7nYzUynEV4oBAPrGmQPrhnfF",
+    "2x4wPZePCbq2W9tFfP2bagXjXnysdqNWQWMtwGMoyPFv",
+    "3C1LxtpR3Mh5RQjydfeQdvRaAzpStWM7gBi1XzP9oyGt",
+    "5Tv692BDJinbjR6Beb2K9bGmxnbQeFaGb1rJqCs2y3Q6",
+    "7SnRzKKo8QonsMUb1wYCQoqCsLq2njp41yS33gJsVfp8",
+    "9DvDdsw38EB3RPChPqHkgBmntFbM5v79QxMyMSbfXWuy",
+    "Cei4rumgr8ePPdNCMim7yo4C6idaMNv3N8P3qqQbbjyf",
+    "EG9fKpmLgkzCYZdj8uNDhHu5xmeXCZakccV6QmUavbzt",
+    "H5Y5aLdTQXRWJ6kitWeUkHyAEVLPPfChgSxhUBVxZ3D2",
+    "JNiN12VC7ApitDkW7roQ1FmeyKSN1MnmZyCVyLiqAQw",
+    "jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV"
+  ],
+  "response": {
+    "id": 1,
+    "jsonrpc": "2.0",
+    "result": {
+      "context": {
+        "apiVersion": "4.1.0",
+        "slot": 432511172
+      },
+      "value": [
+        null,
+        null,
+        {
+          "data": [
+            "DgEAAAAAAABpKJV7LqQ2vMnESXCg+FNktvDI5eTohlZe6gYcm9jZmQ0BAAAAAAAAaSiVey6kNrzJxElwoPhTZLbwyOXk6IZWXuoGHJvY2ZkMAQAAAAAAAGkolXsupDa8ycRJcKD4U2S28Mjl5OiGVl7qBhyb2NmZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+            "base64"
+          ],
+          "executable": false,
+          "lamports": 3118080,
+          "owner": "jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV",
+          "rentEpoch": 18446744073709551615,
+          "space": 320
+        },
+        null,
+        null,
+        {
+          "data": [
+            "1OQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+            "base64"
+          ],
+          "executable": false,
+          "lamports": 1336320,
+          "owner": "JNiN12VC7ApitDkW7roQ1FmeyKSN1MnmZyCVyLiqAQw",
+          "rentEpoch": 18446744073709551615,
+          "space": 64
+        },
+        null,
+        null,
+        null,
+        {
+          "data": [
+            "AgAAAFQS3BSHX1H3wHPEo/kR/zw+7dTPsjxWnUGLLlpjpybC",
+            "base64"
+          ],
+          "executable": true,
+          "lamports": 1141440,
+          "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+          "rentEpoch": 18446744073709551615,
+          "space": 36
+        },
+        {
+          "data": [
+            "AgAAALPSh6Gmjsy7cwje/H3k/J73wBBq1EQ77hmunPKvlgYq",
+            "base64"
+          ],
+          "executable": true,
+          "lamports": 1141440,
+          "owner": "BPFLoaderUpgradeab1e11111111111111111111111",
+          "rentEpoch": 18446744073709551615,
+          "space": 36
+        }
+      ]
+    }
+  }
+}

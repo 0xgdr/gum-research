@@ -26,6 +26,7 @@ It writes:
 - `bank-reverse-engineering.md`
 - `bank-account-graph.md`
 - `bank-recurring-account-state.md`
+- `bank-owner-program-context.md`
 - `diff.md` when a previous snapshot exists
 
 ## Manual Workflow
@@ -104,6 +105,17 @@ python3 scripts/analyze_bank_recurring_accounts.py \
   > evidence/YYYY-MM-DD-HHMM-live-rpc/bank-recurring-account-state.md
 ```
 
+Fetch and analyze Bank owner-program context:
+
+```bash
+python3 scripts/collect_bank_owner_context.py \
+  evidence/YYYY-MM-DD-HHMM-live-rpc
+
+python3 scripts/analyze_bank_owner_context.py \
+  evidence/YYYY-MM-DD-HHMM-live-rpc \
+  > evidence/YYYY-MM-DD-HHMM-live-rpc/bank-owner-program-context.md
+```
+
 Compare two snapshots:
 
 ```bash
@@ -132,6 +144,7 @@ Treat these as high-value changes:
 - Solana Bank account graph starts exposing canonical JUP-derived PDAs or JUP token accounts;
 - Solana Bank PDA matches change for inbox, outbox, Merkle, signer-set or authority seeds;
 - recurring Bank account state starts exposing canonical JUP, validator/vote/stake keys, or new Bank-owned state layouts;
+- Bank owner helper programs, ProgramData hashes, upgrade authorities, JUP key hits or validator-key hits change;
 - Solana Bank Program logs add validator, quorum, stake, signer, BLS or JUP fee/sink terms;
 - current validator set, vote accounts or stake accounts change;
 - sampled Gum transactions start containing current validator, vote or stake account keys;

@@ -30,6 +30,7 @@ Utility-relevant evidence includes:
 - Public Jupiter registry data exposes Solana-side GUM Bank programs with inbox/outbox message logs.
 - Bank account-graph analysis links a repeated account to the Bank Program `__inbox_event_auth` PDA.
 - Recurring Bank account-state analysis found USDC/wrapped SOL token accounts and compact Bank state, but no canonical JUP or validator-key hits.
+- Bank owner-context analysis ties recurring non-token state to JupNet inbox/outbox helper programs on Solana mainnet.
 - JUP appears in Gum asset metadata/flows; this is confirmed but treated as non-decisive noise unless tied to protocol utility.
 - Public evidence does not currently prove that JUP stake determines validator or Dove voting weight.
 
@@ -54,6 +55,7 @@ Utility-relevant evidence includes:
 - [`docs/16-bank-program-reverse-engineering.md`](docs/16-bank-program-reverse-engineering.md)
 - [`docs/17-bank-account-graph-and-pda-hunt.md`](docs/17-bank-account-graph-and-pda-hunt.md)
 - [`docs/18-bank-recurring-account-state.md`](docs/18-bank-recurring-account-state.md)
+- [`docs/19-bank-owner-program-context.md`](docs/19-bank-owner-program-context.md)
 - [`appendices/rpc-catalogue.md`](appendices/rpc-catalogue.md)
 - [`appendices/program-ids.md`](appendices/program-ids.md)
 - [`appendices/scripts-index.md`](appendices/scripts-index.md)
@@ -67,6 +69,7 @@ Utility-relevant evidence includes:
 - [`evidence/2026-07-12-bank-live-rpc/bank-reverse-engineering.md`](evidence/2026-07-12-bank-live-rpc/bank-reverse-engineering.md)
 - [`evidence/2026-07-12-bank-live-rpc/bank-account-graph.md`](evidence/2026-07-12-bank-live-rpc/bank-account-graph.md)
 - [`evidence/2026-07-12-bank-live-rpc/bank-recurring-account-state.md`](evidence/2026-07-12-bank-live-rpc/bank-recurring-account-state.md)
+- [`evidence/2026-07-12-bank-live-rpc/bank-owner-program-context.md`](evidence/2026-07-12-bank-live-rpc/bank-owner-program-context.md)
 
 ## Evidence classifications
 

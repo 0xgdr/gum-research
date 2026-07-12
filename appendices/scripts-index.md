@@ -151,6 +151,28 @@ python3 scripts/analyze_bank_recurring_accounts.py \
   evidence/YYYY-MM-DD-live-rpc
 ```
 
+### `scripts/collect_bank_owner_context.py`
+
+Fetches Solana mainnet owner/program context for recurring Bank accounts, including owner programs, their ProgramData accounts where applicable, and bounded signature windows for the context cluster.
+
+Example:
+
+```bash
+python3 scripts/collect_bank_owner_context.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
+### `scripts/analyze_bank_owner_context.py`
+
+Analyzes the owner/program context cluster for recurring Bank state. It identifies upgradeable owner programs, ProgramData deployment slots, upgrade authorities, executable hashes, inbox/outbox/Merkle/BLS string hits, canonical JUP hits and validator/vote/stake key hits.
+
+Example:
+
+```bash
+python3 scripts/analyze_bank_owner_context.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
 ### `scripts/compare_validator_security_snapshots.py`
 
 Compares two saved snapshots and emits alert-oriented Markdown.
@@ -165,7 +187,7 @@ python3 scripts/compare_validator_security_snapshots.py \
 
 ### `scripts/run_validator_security_check.py`
 
-Runs the full monitoring workflow: collect a fresh snapshot, fetch recurring Bank account state, generate `analysis.md`, generate `deep-dive.md`, generate `authorization.md`, generate `utility-classification.md`, generate `solana-bank.md`, generate `bank-reverse-engineering.md`, generate `bank-account-graph.md`, generate `bank-recurring-account-state.md`, and compare against the latest prior snapshot when available.
+Runs the full monitoring workflow: collect a fresh snapshot, fetch recurring Bank account state, fetch owner-program context, generate `analysis.md`, generate `deep-dive.md`, generate `authorization.md`, generate `utility-classification.md`, generate `solana-bank.md`, generate `bank-reverse-engineering.md`, generate `bank-account-graph.md`, generate `bank-recurring-account-state.md`, generate `bank-owner-program-context.md`, and compare against the latest prior snapshot when available.
 
 Example:
 
