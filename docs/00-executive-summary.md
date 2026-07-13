@@ -36,6 +36,7 @@ The investigation therefore proceeded from observable evidence:
 - Epoch security-source hunting finds the same candidate aggregate-key material in multiple verification payloads, but not co-located with JUP, validator, vote or stake keys.
 - Outbox verifier payload mapping matches the public article's field shape: message hash, sender/program id, epoch, aggregate-key material, compact signature/verifier field and Merkle proof.
 - The recovered sender/program id resolves to JupNet `gum-omnichain`, which exposes deposit, withdrawal, swap, inbox/outbox and BLS/Merkle verification strings.
+- JupNet executable census found `sol_verify_bls_merkle_key` in two Gum omnichain executables, but did not expose Dove/JUP/stake-weight source material.
 - JUP appears in Gum state and transaction flows as an asset.
 - JUP burn and mint operations were observed in omnichain activity, but these are non-decisive unless tied to protocol utility.
 - Public dependency metadata points to JupNet-specific BLS, BN254, Merkle and syscall components.
@@ -68,6 +69,7 @@ The strongest current model is:
 - **Epoch source hunt:** scanning 3153 saved binary records found the candidate aggregate key in repeated verification payloads, but found zero co-location with canonical JUP or current validator/vote/stake keys.
 - **Verifier payloads:** 21 sampled Bank/outbox verifier payloads map to the article's outbox argument shape and recompute to the stored outbox root.
 - **Gum omnichain sender:** the verifier sender/program id is a live upgradeable JupNet program with `programs/gum-omnichain` strings and `sol_verify_bls_merkle_key`.
+- **Executable census:** all 23 visible JupNet upgradeable executables were fetched; two Gum omnichain binaries contain `sol_verify_bls_merkle_key`, and zero expose canonical JUP or current validator/vote/stake keys.
 - **JUP utility/security:** described publicly for Dove security, but not independently verifiable from the beta artifacts inspected.
 
 This does not disprove the intended JUP security model. It establishes an evidence boundary: the implementation is either private, off-chain, not yet activated, or not publicly exposed in the beta.

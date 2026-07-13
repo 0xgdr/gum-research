@@ -34,6 +34,7 @@ It writes:
 - `epoch-security-source-hunt.md`
 - `outbox-verifier-payload-field-map.md`
 - `gum-omnichain-sender-program.md`
+- `jupnet-executable-census.md`
 - `diff.md` when a previous snapshot exists
 
 ## Manual Workflow
@@ -188,6 +189,17 @@ python3 scripts/analyze_gum_omnichain_sender_program.py \
   > evidence/YYYY-MM-DD-HHMM-live-rpc/gum-omnichain-sender-program.md
 ```
 
+Collect and analyze all visible JupNet upgradeable executables:
+
+```bash
+python3 scripts/collect_jupnet_executable_census.py \
+  evidence/YYYY-MM-DD-HHMM-live-rpc
+
+python3 scripts/analyze_jupnet_executable_census.py \
+  evidence/YYYY-MM-DD-HHMM-live-rpc \
+  > evidence/YYYY-MM-DD-HHMM-live-rpc/jupnet-executable-census.md
+```
+
 Compare two snapshots:
 
 ```bash
@@ -224,6 +236,7 @@ Treat these as high-value changes:
 - epoch security-source hunting finds candidate aggregate-key or epoch-root material co-located with canonical JUP, validator, vote or stake keys;
 - outbox verifier payloads stop matching the mapped field layout, introduce new sender/program ids, or expose canonical JUP / validator / vote / stake key material;
 - Gum omnichain ProgramData hash, deployment slot, upgrade authority, BLS/Merkle strings or utility/security key hits change;
+- JupNet executable census finds new programs, ProgramData hash changes, new `sol_verify_bls_merkle_key` consumers, or any canonical JUP / validator / vote / stake / Dove-weight source material;
 - Solana Bank Program logs add validator, quorum, stake, signer, BLS or JUP fee/sink terms;
 - current validator set, vote accounts or stake accounts change;
 - sampled Gum transactions start containing current validator, vote or stake account keys;

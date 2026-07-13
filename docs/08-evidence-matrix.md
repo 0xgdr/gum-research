@@ -69,3 +69,6 @@
 | Outbox verifier sender resolves to Gum omnichain | Confirmed | Stable sender/program candidate `GUMebNDC...` is an executable upgradeable JupNet program whose ProgramData strings identify `programs/gum-omnichain` |
 | Gum omnichain executable exposes BLS/Merkle verification | Confirmed | ProgramData strings include `programs/gum-omnichain/src/utils/verification.rs` and `sol_verify_bls_merkle_key` |
 | Gum omnichain executable exposes JUP security source | Not observed | ProgramData string/key scan found zero canonical JUP, current validator, vote or stake key hits and no Dove/JUP stake-weight registry strings |
+| JupNet executable census covers visible upgradeable programs | Confirmed | Full ProgramData was fetched and analyzed for 23 upgradeable JupNet executables visible in the loader scan |
+| JupNet executable census exposes verifier syscall consumers | Confirmed | `sol_verify_bls_merkle_key` appeared in two Gum omnichain executables: `brhPf...` and `GUMeb...` |
+| JupNet executable census exposes root-builder or Dove/JUP producer | Not observed | Census found zero canonical JUP/current validator/vote/stake key hits and no public Dove registry, JUP stake-weight table, slashing/reward or root-builder implementation |

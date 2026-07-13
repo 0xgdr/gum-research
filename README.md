@@ -38,6 +38,7 @@ Utility-relevant evidence includes:
 - Epoch security-source hunting shows the candidate aggregate-key material appears across multiple verification payloads, but not with JUP, validator, vote or stake keys.
 - Outbox verifier payload mapping matches the public article's message-hash, sender-program, epoch, aggregate-key and Merkle-proof shape.
 - The recovered sender program resolves to JupNet `gum-omnichain`, whose executable exposes Gum deposit/withdraw/swap and BLS/Merkle verification strings.
+- JupNet executable census found `sol_verify_bls_merkle_key` in two Gum omnichain executables, but no public Dove/JUP/stake-weight source.
 - JUP appears in Gum asset metadata/flows; this is confirmed but treated as non-decisive noise unless tied to protocol utility.
 - Public evidence does not currently prove that JUP stake determines validator or Dove voting weight.
 
@@ -70,6 +71,7 @@ Utility-relevant evidence includes:
 - [`docs/24-epoch-security-source-hunt.md`](docs/24-epoch-security-source-hunt.md)
 - [`docs/25-outbox-verifier-payload-field-map.md`](docs/25-outbox-verifier-payload-field-map.md)
 - [`docs/26-gum-omnichain-sender-program.md`](docs/26-gum-omnichain-sender-program.md)
+- [`docs/27-jupnet-executable-census.md`](docs/27-jupnet-executable-census.md)
 - [`appendices/rpc-catalogue.md`](appendices/rpc-catalogue.md)
 - [`appendices/program-ids.md`](appendices/program-ids.md)
 - [`appendices/scripts-index.md`](appendices/scripts-index.md)
@@ -91,6 +93,7 @@ Utility-relevant evidence includes:
 - [`evidence/2026-07-12-bank-live-rpc/epoch-security-source-hunt.md`](evidence/2026-07-12-bank-live-rpc/epoch-security-source-hunt.md)
 - [`evidence/2026-07-12-bank-live-rpc/outbox-verifier-payload-field-map.md`](evidence/2026-07-12-bank-live-rpc/outbox-verifier-payload-field-map.md)
 - [`evidence/2026-07-12-bank-live-rpc/gum-omnichain-sender-program.md`](evidence/2026-07-12-bank-live-rpc/gum-omnichain-sender-program.md)
+- [`evidence/2026-07-12-bank-live-rpc/jupnet-executable-census.md`](evidence/2026-07-12-bank-live-rpc/jupnet-executable-census.md)
 
 ## Evidence classifications
 

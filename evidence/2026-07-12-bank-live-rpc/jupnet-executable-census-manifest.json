@@ -1,0 +1,143 @@
+{
+  "program_count": 23,
+  "programs": [
+    {
+      "program": "JupnetUser111111111111111111111111111111111",
+      "program_space": 36,
+      "programdata": "3brU5Pg72UVjZWvB4NdQJGRQiSLfi6GQ7v2HqU9SPFCx",
+      "programdata_file": "jupnet-programdata-JupnetUs.json"
+    },
+    {
+      "program": "Jupnetopen1DRegistry11111111111111111111111",
+      "program_space": 36,
+      "programdata": "E2guMYDzcBgpLqWHebw3DaJWGKJDBpZp17gaQqtV36KL",
+      "programdata_file": "jupnet-programdata-Jupnetop.json"
+    },
+    {
+      "program": "MagiCFLC56sJYawfhuJQhfveDfQY96AjUft2sk3TssA",
+      "program_space": 36,
+      "programdata": "C2eUfWuyT3S3tSKhyaJKDQ2pbtAnzHE4op6isk2CYgCf",
+      "programdata_file": "jupnet-programdata-MagiCFLC.json"
+    },
+    {
+      "program": "PoKERjpvXZBFhLF1zQUNxCFUszYBNHAvBCXX6UKXpT6",
+      "program_space": 36,
+      "programdata": "9EBhYAxrhd79xb8EqoMnD7tcBGtWExA8TWoKqbXVhBzM",
+      "programdata_file": "jupnet-programdata-PoKERjpv.json"
+    },
+    {
+      "program": "Tokenis9xgQh7yMRbNBnV6uFq7LANbuZJwebxWBWixf",
+      "program_space": 36,
+      "programdata": "2uYJvtVYZ7JGJdsyhFZdDHyDSCfuakgHYAPEGZyVp8tk",
+      "programdata_file": "jupnet-programdata-Tokenis9.json"
+    },
+    {
+      "program": "brhPfKExpnYDHroomHrk7PNJ4UXJx9SYohCCtd6r8N1",
+      "program_space": 36,
+      "programdata": "BW7ncAFAX1jjhZU6X5AS8JrkAqr8njfUNQxkuPtUQXjv",
+      "programdata_file": "jupnet-programdata-brhPfKEx.json"
+    },
+    {
+      "program": "jtxQHH3ysuWRETjaynai3jowPztq2LBJApVFcEv4Wmg",
+      "program_space": 36,
+      "programdata": "AQTRmjfy8C4MCdiL5ANSVvoJKP61cvewacqWN5ZNDKMR",
+      "programdata_file": "jupnet-programdata-jtxQHH3y.json"
+    },
+    {
+      "program": "morcJ52h6fKAEm4KdLvDFYzC67Fou8YyZBvURjBVUts",
+      "program_space": 36,
+      "programdata": "5SoPuxu6KhvaCyV352fQLDLAP7NrVqETASaYtjvapSZL",
+      "programdata_file": "jupnet-programdata-morcJ52h.json"
+    },
+    {
+      "program": "udpZn12nNpW1LyEjDSdjXtH4quYqbJinFWBHDrRVDRp",
+      "program_space": 36,
+      "programdata": "8VMfvubChGyXyf1pBBxVfjssHK76fdzcJ7cJB9eMRWag",
+      "programdata_file": "jupnet-programdata-udpZn12n.json"
+    },
+    {
+      "program": "2ZisfjpHB1sjvhPLMBuAjegRY1hiakqenw1BwrBN1MhQ",
+      "program_space": 36,
+      "programdata": "F3cnRt5iGAjhrMG4PEKFyDBsU5oBahYqgTBAmV3Fqx5p",
+      "programdata_file": "jupnet-programdata-2ZisfjpH.json"
+    },
+    {
+      "program": "3UmdTSD7SYocc1FCvjAfxYsLAvMVFU8BFQQmhjrW1Z9d",
+      "program_space": 36,
+      "programdata": "AsQk1DvPS8oFpQVHS3Y52iUENKdWLctcSM196nTtyr7d",
+      "programdata_file": "jupnet-programdata-3UmdTSD7.json"
+    },
+    {
+      "program": "5C5ZEsDUKUH5dwHyzDtdEb7bcviYoqB4rBf9rkLj5AKm",
+      "program_space": 36,
+      "programdata": "EK64n7pPGRxbxsRduCQwLefibTwqHwePXN8JSUy7Frkj",
+      "programdata_file": "jupnet-programdata-5C5ZEsDU.json"
+    },
+    {
+      "program": "5JX82h3HJSamWJVC6Zg2iSPSFwhpZj9h3KBXQPPuDwVn",
+      "program_space": 36,
+      "programdata": "AHpmurTZENhZ4Lk8NooL9yGm8Q9pnkoYziHpvSseLzBH",
+      "programdata_file": "jupnet-programdata-5JX82h3H.json"
+    },
+    {
+      "program": "5p9pJmtfFt6wkceFJHF4Q1uaQA7Venc5knFq2zeDT7kd",
+      "program_space": 36,
+      "programdata": "HzxAJKJMc8M12z8yPvUcKEZUYvWQ5PPBB2hebbqh1ieF",
+      "programdata_file": "jupnet-programdata-5p9pJmtf.json"
+    },
+    {
+      "program": "7KhNwmEmfhBjQwnD6QTi5ek8jFZ8WrP8KMYWmPQgYUn9",
+      "program_space": 36,
+      "programdata": "D3ZjC6F3z1s3Fk88MzvuUM37hkYBnKQ9srwCFHekcq7a",
+      "programdata_file": "jupnet-programdata-7KhNwmEm.json"
+    },
+    {
+      "program": "8SJbxjZWNTTQtWnoqpRGCY2xLRZ4N97Qs7hWHjGhZEQg",
+      "program_space": 36,
+      "programdata": "8QD2QMLiwao6xRwgAo2DrMdFhRxENGzJ15p7inK17QKU",
+      "programdata_file": "jupnet-programdata-8SJbxjZW.json"
+    },
+    {
+      "program": "9QUEKQy6LKCUSqmkiiwSkxKALDfhAX5JYx3Uvh7jztJe",
+      "program_space": 36,
+      "programdata": "HsVq7GMPgMHQ6HkpuJngVd52PXUVbyLVnTSUnkAvP2ma",
+      "programdata_file": "jupnet-programdata-9QUEKQy6.json"
+    },
+    {
+      "program": "CFDH8vii4NSDFPX7cRGp1urkjZM4yqUxHYY29wZkvxzU",
+      "program_space": 36,
+      "programdata": "BJgMaqksJNi5W9uVVrJ6u77gz4rrFoyZgjix94m9NLZe",
+      "programdata_file": "jupnet-programdata-CFDH8vii.json"
+    },
+    {
+      "program": "DDXSif7Ya4FC4f4cFYpdGW3UGpghpbbSdrXJJ3ZzhotQ",
+      "program_space": 36,
+      "programdata": "8DTiBJzTWABGGv9BodEsQD23aHBkuRapN3XXrLQ3FMvr",
+      "programdata_file": "jupnet-programdata-DDXSif7Y.json"
+    },
+    {
+      "program": "E6Eh5HML9pA6ACKaRf2cn9NbgRcJniAJbipjJiJPPHqf",
+      "program_space": 36,
+      "programdata": "i3LVfrrRVCLn7uprXMnAyAfeAmfeXmBR1Mzpk93bDqc",
+      "programdata_file": "jupnet-programdata-E6Eh5HML.json"
+    },
+    {
+      "program": "E9M2DUEDdzvUQyxYDbZL9pijdXSavWYYPam4vvXchBR7",
+      "program_space": 36,
+      "programdata": "4EbiMXj6yGtzH2a3BKnBqTT6i1tdBa5tooENDZX8bAbd",
+      "programdata_file": "jupnet-programdata-E9M2DUED.json"
+    },
+    {
+      "program": "GUMebNDCYyF81xjyqaHagbgMQVUTb8fBC9YRh25xSH64",
+      "program_space": 36,
+      "programdata": "Gi8HgbHnykRiHboqG2VHysti773o8bNSjuFJWpyf4Q89",
+      "programdata_file": "jupnet-programdata-GUMebNDC.json"
+    },
+    {
+      "program": "GZFttP3CHkK3ujbA1edDhB7wP4Nm9jQMyiJiynhoYqKF",
+      "program_space": 36,
+      "programdata": "J7pApEuvze2YGYU1KmFFqQt8heyNati5H3ikykq5KC68",
+      "programdata_file": "jupnet-programdata-GZFttP3C.json"
+    }
+  ]
+}
