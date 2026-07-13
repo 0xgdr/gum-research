@@ -47,6 +47,7 @@ Utility-relevant evidence includes:
 - Funding actor classification shows the setup payload names wrapped SOL, recipient `6f5mu...`, amount `2132273211` and implementation program `op16...`; `JUPW3...` is the system-owned fee payer/signer and `bk1PDA...`/`op16...` are upgradeable executable programs.
 - Bank withdrawal cohort analysis found `op16...` reused across 19 decoded withdrawal-like rows and `JUPW3...` signing/paying the 50 fetched `bk1PDA...` transactions; the root submitter is one recipient among many, but its setup row is the only wrapped SOL recipient in the compared set.
 - Withdrawal surface comparison links the `bk1PDA... -> op16...` decoded withdrawal path to the live `BankK...` inbox/outbox path through shared operational signer behavior, while still finding zero canonical JUP/current validator/vote/stake intersections.
+- Bank request/message correlation found no direct per-message join between decoded `bk1PDA...` withdrawals and sampled `BankK...` rows: zero message-hash hits, zero request/jupnet pubkey hits, zero recipient hits and zero token near-matches.
 - Security boundary corpus analysis decoded 42 verifier payloads across 128 local Bank/outbox/history transaction files and still found no JUP, validator, vote, stake, signer-set, quorum or weight exposure.
 - Private runtime fingerprint analysis found `jupnet_bn254` and `jupnet_crosschain_hash` in one public Gum omnichain ProgramData binary, but still found no Dove/JUP/stake-weight/quorum/root-builder producer terms.
 - Gum omnichain binary-role analysis shows `brhPf...` is the richer verifier/crypto-linked Gum binary, while `GUMeb...` is the recovered verifier-payload sender/program id.
@@ -96,6 +97,7 @@ Utility-relevant evidence includes:
 - [`docs/37-funding-actor-classifier.md`](docs/37-funding-actor-classifier.md)
 - [`docs/38-bank-withdrawal-cohort.md`](docs/38-bank-withdrawal-cohort.md)
 - [`docs/39-withdrawal-surface-comparison.md`](docs/39-withdrawal-surface-comparison.md)
+- [`docs/40-bank-request-message-correlation.md`](docs/40-bank-request-message-correlation.md)
 - [`appendices/rpc-catalogue.md`](appendices/rpc-catalogue.md)
 - [`appendices/program-ids.md`](appendices/program-ids.md)
 - [`appendices/scripts-index.md`](appendices/scripts-index.md)
@@ -126,6 +128,7 @@ Utility-relevant evidence includes:
 - [`evidence/2026-07-12-bank-live-rpc/funding-actor-classifier.md`](evidence/2026-07-12-bank-live-rpc/funding-actor-classifier.md)
 - [`evidence/2026-07-12-bank-live-rpc/bank-withdrawal-cohort.md`](evidence/2026-07-12-bank-live-rpc/bank-withdrawal-cohort.md)
 - [`evidence/2026-07-12-bank-live-rpc/withdrawal-surface-comparison.md`](evidence/2026-07-12-bank-live-rpc/withdrawal-surface-comparison.md)
+- [`evidence/2026-07-12-bank-live-rpc/bank-request-message-correlation.md`](evidence/2026-07-12-bank-live-rpc/bank-request-message-correlation.md)
 - [`evidence/2026-07-12-bank-live-rpc/security-boundary-corpus.md`](evidence/2026-07-12-bank-live-rpc/security-boundary-corpus.md)
 - [`evidence/2026-07-12-bank-live-rpc/private-runtime-fingerprints.md`](evidence/2026-07-12-bank-live-rpc/private-runtime-fingerprints.md)
 - [`evidence/2026-07-12-bank-live-rpc/gum-omnichain-binary-roles.md`](evidence/2026-07-12-bank-live-rpc/gum-omnichain-binary-roles.md)

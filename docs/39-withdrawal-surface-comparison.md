@@ -91,3 +91,10 @@ The strongest remaining public angle is to watch for changes in the relationship
 - any future appearance of canonical JUP or current validator/vote/stake keys in either surface.
 
 This comparison is now part of the monitor so future checks can alert if the withdrawal/security boundary changes.
+
+The direct per-message correlation follow-up is documented in:
+
+```text
+docs/40-bank-request-message-correlation.md
+evidence/2026-07-12-bank-live-rpc/bank-request-message-correlation.md
+```

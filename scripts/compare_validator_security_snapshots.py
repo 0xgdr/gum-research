@@ -809,6 +809,45 @@ def withdrawal_surface_comparison_metrics(base: Path) -> dict:
     }
 
 
+def bank_request_message_correlation_metrics(base: Path) -> dict:
+    report = base / "bank-request-message-correlation.md"
+    text = report.read_text() if report.exists() else ""
+
+    def number(pattern: str) -> int | None:
+        match = re.search(pattern, text)
+        return int(match.group(1)) if match else None
+
+    created_spaces = set()
+    for cell in re.findall(r"`([^`]+ space=[0-9]+): [0-9]+`", text):
+        created_spaces.add(cell)
+
+    role_rows = set()
+    role_section = re.search(r"## BankK Role Map\n\n(.*?)(?=\n## |\Z)", text, flags=re.S)
+    if role_section:
+        for line in role_section.group(1).splitlines():
+            if not line.startswith("| `"):
+                continue
+            cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+            if len(cells) >= 6:
+                role_rows.add(" | ".join(cells[:6]))
+
+    return {
+        "bank_request_message_correlation_present": report.exists(),
+        "bank_request_message_correlation_decoded_rows": number(r"decoded `bk1PDA\.\.\.` / setup request rows: `(\d+)`"),
+        "bank_request_message_correlation_bankk_withdraw_rows": number(r"`BankK\.\.\.` Withdraw rows: `(\d+)`"),
+        "bank_request_message_correlation_bankk_verify_rows": number(r"`BankK\.\.\.` VerifyRequest rows: `(\d+)`"),
+        "bank_request_message_correlation_security_intersections": number(r"canonical JUP / current validator / vote / stake intersections: `(\d+)`"),
+        "bank_request_message_correlation_high_value_hits": number(r"Exact high-value request/message/recipient hits .*: `(\d+)`"),
+        "bank_request_message_correlation_message_hash_hits": number(r"Exact `message_hash` hits .*: `(\d+)`"),
+        "bank_request_message_correlation_request_hits": number(r"Exact withdrawal-request / `jupnet` pubkey hits .*: `(\d+)`"),
+        "bank_request_message_correlation_recipient_hits": number(r"Exact recipient pubkey hits .*: `(\d+)`"),
+        "bank_request_message_correlation_common_context_hits": number(r"Exact common mint/implementation context hits .*: `(\d+)`"),
+        "bank_request_message_correlation_token_near_matches": number(r"Token near-matches .*: `(\d+)`"),
+        "bank_request_message_correlation_created_spaces": created_spaces,
+        "bank_request_message_correlation_role_rows": role_rows,
+    }
+
+
 def outbox_verifier_payload_map_metrics(base: Path) -> dict:
     rows = verifier_payload_rows(base)
     roots = verifier_stored_roots(base)
@@ -932,6 +971,7 @@ def snapshot_metrics(base: Path) -> dict:
     funding_actor_classifier = funding_actor_classifier_metrics(base)
     bank_withdrawal_cohort = bank_withdrawal_cohort_metrics(base)
     withdrawal_surface_comparison = withdrawal_surface_comparison_metrics(base)
+    bank_request_message_correlation = bank_request_message_correlation_metrics(base)
     outbox_verifier_payload_map = outbox_verifier_payload_map_metrics(base)
     jupnet_executable_census = jupnet_executable_census_metrics(base)
     gum_validator_hits = 0
@@ -1030,6 +1070,7 @@ def snapshot_metrics(base: Path) -> dict:
         **funding_actor_classifier,
         **bank_withdrawal_cohort,
         **withdrawal_surface_comparison,
+        **bank_request_message_correlation,
         **outbox_verifier_payload_map,
         **jupnet_executable_census,
     }
@@ -1193,6 +1234,17 @@ def main() -> None:
         ("Withdrawal surface comparison report present", "withdrawal_surface_comparison_present"),
         ("Withdrawal surface comparison tx count", "withdrawal_surface_comparison_transactions"),
         ("Withdrawal surface comparison has no JUP/validator/stake intersections", "withdrawal_surface_comparison_security_clean"),
+        ("Bank request/message correlation report present", "bank_request_message_correlation_present"),
+        ("Bank request/message decoded request rows", "bank_request_message_correlation_decoded_rows"),
+        ("Bank request/message BankK Withdraw rows", "bank_request_message_correlation_bankk_withdraw_rows"),
+        ("Bank request/message BankK VerifyRequest rows", "bank_request_message_correlation_bankk_verify_rows"),
+        ("Bank request/message security-intersection count", "bank_request_message_correlation_security_intersections"),
+        ("Bank request/message high-value direct hits", "bank_request_message_correlation_high_value_hits"),
+        ("Bank request/message message-hash direct hits", "bank_request_message_correlation_message_hash_hits"),
+        ("Bank request/message request direct hits", "bank_request_message_correlation_request_hits"),
+        ("Bank request/message recipient direct hits", "bank_request_message_correlation_recipient_hits"),
+        ("Bank request/message common context hits", "bank_request_message_correlation_common_context_hits"),
+        ("Bank request/message token near-matches", "bank_request_message_correlation_token_near_matches"),
         ("Outbox verifier field-map report present", "outbox_verifier_map_present"),
         ("Outbox verifier field-map payloads", "outbox_verifier_map_payloads"),
         ("Outbox verifier field-map Bank wrappers", "outbox_verifier_map_bank_wrappers"),
@@ -1333,6 +1385,17 @@ def main() -> None:
             "withdrawal_surface_comparison_present",
             "withdrawal_surface_comparison_transactions",
             "withdrawal_surface_comparison_security_clean",
+            "bank_request_message_correlation_present",
+            "bank_request_message_correlation_decoded_rows",
+            "bank_request_message_correlation_bankk_withdraw_rows",
+            "bank_request_message_correlation_bankk_verify_rows",
+            "bank_request_message_correlation_security_intersections",
+            "bank_request_message_correlation_high_value_hits",
+            "bank_request_message_correlation_message_hash_hits",
+            "bank_request_message_correlation_request_hits",
+            "bank_request_message_correlation_recipient_hits",
+            "bank_request_message_correlation_common_context_hits",
+            "bank_request_message_correlation_token_near_matches",
             "outbox_verifier_map_present",
             "outbox_verifier_map_payloads",
             "outbox_verifier_map_bank_wrappers",
@@ -1525,6 +1588,8 @@ def main() -> None:
     alerts.extend(set_delta("Withdrawal surface instruction", old["withdrawal_surface_comparison_instructions"], new["withdrawal_surface_comparison_instructions"]))
     alerts.extend(set_delta("Withdrawal surface mint", old["withdrawal_surface_comparison_mints"], new["withdrawal_surface_comparison_mints"]))
     alerts.extend(set_delta("Withdrawal surface helper/high-value program", old["withdrawal_surface_comparison_helper_programs"], new["withdrawal_surface_comparison_helper_programs"]))
+    alerts.extend(set_delta("Bank request/message created account space", old["bank_request_message_correlation_created_spaces"], new["bank_request_message_correlation_created_spaces"]))
+    alerts.extend(set_delta("Bank request/message role row", old["bank_request_message_correlation_role_rows"], new["bank_request_message_correlation_role_rows"]))
     alerts.extend(set_delta("Outbox verifier sender/program", old["outbox_verifier_map_senders"], new["outbox_verifier_map_senders"]))
     alerts.extend(set_delta("Outbox verifier field-map aggregate key", old["outbox_verifier_map_aggregate_keys"], new["outbox_verifier_map_aggregate_keys"]))
     alerts.extend(set_delta("Outbox verifier field-map root", old["outbox_verifier_map_roots"], new["outbox_verifier_map_roots"]))
@@ -1624,6 +1689,9 @@ def main() -> None:
     print(f"- Bank withdrawal cohort unique recipients: `{new['bank_withdrawal_cohort_unique_recipients']}`")
     print(f"- Withdrawal surface comparison txs: `{new['withdrawal_surface_comparison_transactions']}`")
     print(f"- Withdrawal surface comparison clean of JUP/validator/stake intersections: `{new['withdrawal_surface_comparison_security_clean']}`")
+    print(f"- Bank request/message message-hash direct hits: `{new['bank_request_message_correlation_message_hash_hits']}`")
+    print(f"- Bank request/message high-value direct hits: `{new['bank_request_message_correlation_high_value_hits']}`")
+    print(f"- Bank request/message token near-matches: `{new['bank_request_message_correlation_token_near_matches']}`")
     print(f"- Outbox verifier field-map sender/programs: `{len(new['outbox_verifier_map_senders'])}`")
     print(f"- JupNet executable verifier-syscall consumers: `{new['jupnet_executable_verifier_count']}`")
     print(f"- JupNet executable key-hit rows: `{new['jupnet_executable_key_hit_count']}`")

@@ -177,6 +177,7 @@ def main() -> None:
         ]
     )
     run([sys.executable, "scripts/analyze_withdrawal_surface_comparison.py", str(out)], out / "withdrawal-surface-comparison.md")
+    run([sys.executable, "scripts/analyze_bank_request_message_correlation.py", str(out)], out / "bank-request-message-correlation.md")
     run([sys.executable, "scripts/hunt_epoch_security_sources.py", str(out)], out / "epoch-security-source-hunt.md")
     run([sys.executable, "scripts/map_outbox_verifier_payloads.py", str(out)], out / "outbox-verifier-payload-field-map.md")
     run([sys.executable, "scripts/analyze_security_boundary_corpus.py", str(out)], out / "security-boundary-corpus.md")
@@ -210,6 +211,7 @@ def main() -> None:
     print(f"Funding actor classifier: {out / 'funding-actor-classifier.md'}")
     print(f"Bank withdrawal cohort: {out / 'bank-withdrawal-cohort.md'}")
     print(f"Withdrawal surface comparison: {out / 'withdrawal-surface-comparison.md'}")
+    print(f"Bank request/message correlation: {out / 'bank-request-message-correlation.md'}")
     print(f"Epoch security source hunt: {out / 'epoch-security-source-hunt.md'}")
     print(f"Outbox verifier payload field map: {out / 'outbox-verifier-payload-field-map.md'}")
     print(f"Security boundary corpus: {out / 'security-boundary-corpus.md'}")

@@ -39,6 +39,7 @@ It writes:
 - `funding-actor-classifier.md`
 - `bank-withdrawal-cohort.md`
 - `withdrawal-surface-comparison.md`
+- `bank-request-message-correlation.md`
 - `epoch-security-source-hunt.md`
 - `outbox-verifier-payload-field-map.md`
 - `security-boundary-corpus.md`
@@ -291,6 +292,8 @@ The diff now promotes the proof-chain surfaces into alerts: outbox root-history 
 
 It also tracks withdrawal-surface comparison changes across `bk1PDA...`, `op16...`, `BankK...`, `JNiN...`, `jnoUtn...`, operational signers, fee payers, mints and canonical JUP / validator / vote / stake intersections.
 
+The request/message correlation report is alert-worthy if it starts finding direct message-hash, request-pubkey, recipient or token-flow joins between the sampled `bk1PDA...` and `BankK...` surfaces.
+
 ## Alert Conditions
 
 Treat these as high-value changes:
@@ -323,6 +326,7 @@ Treat these as high-value changes:
 - funding actor classification changes the setup recipient, mint, amount, implementation program, fee payer/signer, Bank-owned request accounts, or exposes canonical JUP / validator / vote / stake material;
 - Bank withdrawal cohort changes decoded recipient distribution, mint distribution, implementation-program distribution, fee payer/signer distribution, or exposes canonical JUP / validator / vote / stake material;
 - withdrawal surface comparison changes the `bk1PDA...`/`BankK...` transaction mix, operational signer set, helper-program set, mint distribution, inbox/outbox behavior, or exposes canonical JUP / validator / vote / stake material;
+- Bank request/message correlation finds a direct decoded message-hash, request-pubkey, `jupnet` pubkey, recipient or token near-match between `bk1PDA...` and `BankK...`, changes Bank-owned account layout distribution, or exposes canonical JUP / validator / vote / stake material;
 - epoch security-source hunting finds candidate aggregate-key or epoch-root material co-located with canonical JUP, validator, vote or stake keys;
 - outbox verifier payloads stop matching the mapped field layout, introduce new sender/program ids, or expose canonical JUP / validator / vote / stake key material;
 - security boundary corpus analysis finds helper-owned signer-set/quorum/weight state, root mismatches, new verifier sender/program ids, new proof layouts, or canonical JUP / validator / vote / stake material;
