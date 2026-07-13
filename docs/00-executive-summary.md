@@ -40,6 +40,7 @@ The investigation therefore proceeded from observable evidence:
 - Outbox root-history analysis found one decoded root update and 19 decoded verifier payloads across 120 local outbox transaction files, with no canonical JUP or validator/vote/stake key exposure.
 - Security boundary corpus analysis decoded 42 verifier payloads across 128 local Bank/outbox/history transaction files and found zero canonical JUP/current validator/vote/stake key hits, zero root mismatches and no visible signer-set/quorum/weight state in helper-owned accounts.
 - Private runtime fingerprint analysis found `jupnet_bn254` and `jupnet_crosschain_hash` in one public Gum omnichain ProgramData binary, while still finding zero Dove/stake-weight/quorum/root-builder producer terms.
+- Gum omnichain binary-role analysis shows `brhPf...` is the richer/full verifier candidate with BN254, cross-chain-hash and alt-BN128 BLS symbols, while `GUMeb...` is the recovered outbox verifier sender/program id.
 - JUP appears in Gum state and transaction flows as an asset.
 - JUP burn and mint operations were observed in omnichain activity, but these are non-decisive unless tied to protocol utility.
 - Public dependency metadata points to JupNet-specific BLS, BN254, Merkle and syscall components.
@@ -76,6 +77,7 @@ The strongest current model is:
 - **Root history:** a widened outbox history window found one root update and 19 verifier payloads; verifier aggregate keys varied, but every decoded verifier root landed on the same stored root and no decoded row exposed JUP or validator/stake key material.
 - **Security boundary corpus:** the helper accounts and wider verifier corpus strengthen the public BLS/Merkle verifier model, but still stop at the aggregate-key inclusion boundary rather than exposing the Dove/JUP/stake producer side.
 - **Private runtime fingerprints:** public Gum omnichain executable bytes expose JupNet-specific BN254 and cross-chain hash crate fingerprints, but not the private root-builder, Dove registry or JUP stake-weight implementation.
+- **Gum binary roles:** `brhPf...` carries the strongest public crypto/verifier linkage; `GUMeb...` carries the sender/application role seen in verifier payloads.
 - **JUP utility/security:** described publicly for Dove security, but not independently verifiable from the beta artifacts inspected.
 
 This does not disprove the intended JUP security model. It establishes an evidence boundary: the implementation is either private, off-chain, not yet activated, or not publicly exposed in the beta.
