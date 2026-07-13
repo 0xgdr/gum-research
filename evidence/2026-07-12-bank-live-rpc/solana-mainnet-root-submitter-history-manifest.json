@@ -1,0 +1,45 @@
+{
+  "endpoint": "https://api.mainnet-beta.solana.com",
+  "signature_limit": 30,
+  "submitters": [
+    {
+      "account_file": "solana-mainnet-root-submitter-6f5muRji-account.json",
+      "address": "6f5muRjigWVnoQHfXWLeXFfafUqMVJfzoBBJL8Gwquji",
+      "fetched": 30,
+      "signature_count": 30,
+      "signature_file": "solana-mainnet-root-submitter-6f5muRji-signatures.json",
+      "transaction_files": [
+        "solana-mainnet-root-submitter-6f5muRji-tx-i59huvch.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-3Zjq8FZd.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-3oy2qHzS.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-2j61Y5xW.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-61tTbpXV.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-5WQdmYLY.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-5qzm2oLT.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-tS17qo9b.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-53jNnjDG.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-3oteWNzM.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-3wywP6KZ.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-2h5AGRgs.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-2UqeqAxE.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-657Kjjvb.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-5pMoxdDj.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-m2tWNJcN.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-5uj1DjMq.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-4iRtSMGS.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-5EdGaCuB.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-3wadzyHZ.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-5HopDYb7.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-2ru15rFF.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-4rHmMZo8.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-63aXidcw.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-4Dhhgix4.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-23LJyaZt.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-2qZmdTav.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-4hrMygJK.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-wBZ9RQGd.json",
+        "solana-mainnet-root-submitter-6f5muRji-tx-3eMioUXf.json"
+      ]
+    }
+  ]
+}

@@ -86,7 +86,19 @@ def main() -> None:
     run([sys.executable, "scripts/reconstruct_outbox_update_payload.py", str(out)], out / "outbox-update-payload-reconstruction.md")
     run([sys.executable, "scripts/analyze_outbox_root_history.py", str(out)], out / "outbox-root-history.md")
     run([sys.executable, "scripts/analyze_root_update_authority_graph.py", str(out)], out / "root-update-authority-graph.md")
+    run(
+        [
+            sys.executable,
+            "scripts/collect_root_submitter_history.py",
+            str(out),
+            "--signature-limit",
+            str(args.signature_limit),
+            "--transaction-limit",
+            str(args.transaction_limit),
+        ]
+    )
     run([sys.executable, "scripts/analyze_root_submitter_provenance.py", str(out)], out / "root-submitter-provenance.md")
+    run([sys.executable, "scripts/analyze_root_submitter_history.py", str(out)], out / "root-submitter-history.md")
     run([sys.executable, "scripts/hunt_epoch_security_sources.py", str(out)], out / "epoch-security-source-hunt.md")
     run([sys.executable, "scripts/map_outbox_verifier_payloads.py", str(out)], out / "outbox-verifier-payload-field-map.md")
     run([sys.executable, "scripts/analyze_security_boundary_corpus.py", str(out)], out / "security-boundary-corpus.md")
@@ -115,6 +127,7 @@ def main() -> None:
     print(f"Outbox root history: {out / 'outbox-root-history.md'}")
     print(f"Root update authority graph: {out / 'root-update-authority-graph.md'}")
     print(f"Root submitter provenance: {out / 'root-submitter-provenance.md'}")
+    print(f"Root submitter direct history: {out / 'root-submitter-history.md'}")
     print(f"Epoch security source hunt: {out / 'epoch-security-source-hunt.md'}")
     print(f"Outbox verifier payload field map: {out / 'outbox-verifier-payload-field-map.md'}")
     print(f"Security boundary corpus: {out / 'security-boundary-corpus.md'}")

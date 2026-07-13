@@ -72,6 +72,8 @@ def raw_account_data(account: dict | None) -> bytes:
 def transaction_files(base: Path) -> list[Path]:
     paths = []
     for path in sorted(base.glob("*.json")):
+        if path.name.startswith("solana-mainnet-root-submitter-") and "-tx-" in path.name:
+            continue
         data = load(path)
         tx = data.get("result")
         if isinstance(tx, dict) and isinstance(tx.get("transaction"), dict):

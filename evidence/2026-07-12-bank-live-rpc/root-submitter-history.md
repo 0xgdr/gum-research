@@ -1,0 +1,71 @@
+# Root Submitter Direct History
+
+## Scope
+
+- Snapshot: `evidence/2026-07-12-bank-live-rpc`
+- Submitters with collected history: `1`
+- Manifest: `solana-mainnet-root-submitter-history-manifest.json`
+
+## Submitter Summary
+
+| Submitter | Signatures | Fetched txs | Account lamports | Owner | Executable |
+|---|---:|---:|---:|---|---|
+| `6f5muRjigWVnoQHfXWLeXFfafUqMVJfzoBBJL8Gwquji` | 30 | 30 | 2127865131 | `11111111111111111111111111111111` | `False` |
+
+## Submitter `6f5muRjigWVnoQHfXWLeXFfafUqMVJfzoBBJL8Gwquji`
+
+| File | Time | Slot | Signer | Root update | Lamport delta | Programs | Security hits | Authority hits | Transfers | Logs |
+|---|---|---:|---|---|---|---|---|---|---|---|
+| `solana-mainnet-root-submitter-6f5muRji-tx-3eMioUXf.json` | `2026-06-30T19:44:46+00:00` | 429943056 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-wBZ9RQGd.json` | `2026-07-01T06:05:49+00:00` | 430035336 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-4hrMygJK.json` | `2026-07-01T16:25:44+00:00` | 430127714 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-2qZmdTav.json` | `2026-07-02T02:46:00+00:00` | 430219892 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-23LJyaZt.json` | `2026-07-02T13:06:05+00:00` | 430312307 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-4Dhhgix4.json` | `2026-07-02T23:26:23+00:00` | 430404487 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-63aXidcw.json` | `2026-07-03T09:46:53+00:00` | 430496904 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-4rHmMZo8.json` | `2026-07-03T20:07:11+00:00` | 430589027 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-2ru15rFF.json` | `2026-07-04T06:27:32+00:00` | 430681221 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-5HopDYb7.json` | `2026-07-04T16:47:51+00:00` | 430773513 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-3wadzyHZ.json` | `2026-07-05T03:08:30+00:00` | 430865828 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-5EdGaCuB.json` | `2026-07-05T13:29:03+00:00` | 430958170 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-4iRtSMGS.json` | `2026-07-05T23:49:44+00:00` | 431050350 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-5uj1DjMq.json` | `2026-07-06T09:57:17+00:00` | 431140756 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-m2tWNJcN.json` | `2026-07-06T20:32:34+00:00` | 431234725 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-5pMoxdDj.json` | `2026-07-07T06:50:33+00:00` | 431326173 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-657Kjjvb.json` | `2026-07-07T17:11:31+00:00` | 431418030 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-2UqeqAxE.json` | `2026-07-08T03:31:55+00:00` | 431509635 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-2h5AGRgs.json` | `2026-07-08T13:03:36+00:00` | 431594168 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-3wywP6KZ.json` | `2026-07-09T00:21:32+00:00` | 431693729 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-3oteWNzM.json` | `2026-07-09T10:33:33+00:00` | 431783570 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-53jNnjDG.json` | `2026-07-09T20:56:04+00:00` | 431874603 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-tS17qo9b.json` | `2026-07-10T07:17:00+00:00` | 431965573 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-5qzm2oLT.json` | `2026-07-10T16:27:01+00:00` | 432046206 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-5WQdmYLY.json` | `2026-07-11T04:10:49+00:00` | 432149276 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-61tTbpXV.json` | `2026-07-11T14:19:13+00:00` | 432238240 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-2j61Y5xW.json` | `2026-07-12T00:42:50+00:00` | 432329547 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-3oy2qHzS.json` | `2026-07-12T11:04:15+00:00` | 432420621 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-3Zjq8FZd.json` | `2026-07-12T21:25:50+00:00` | 432511387 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+| `solana-mainnet-root-submitter-6f5muRji-tx-i59huvch.json` | `2026-07-13T07:47:25+00:00` | 432602298 | `True` | `True` | `-5000 fee=5000` | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV` | `None` | `None` | `None` | `Program log: UpdateMerkleRoot invoked`<br>`Program log: Merkle proof verified`<br>`Program log: Verifying BLS signature`<br>`Program log: Signature verified` |
+
+### Submitter Aggregates
+
+| Group | Values |
+|---|---|
+| Programs | `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV: 30` |
+| Positive lamport deltas | `None` |
+| Negative lamport deltas | `solana-mainnet-root-submitter-6f5muRji-tx-3eMioUXf.json: -5000`<br>`solana-mainnet-root-submitter-6f5muRji-tx-wBZ9RQGd.json: -5000`<br>`solana-mainnet-root-submitter-6f5muRji-tx-4hrMygJK.json: -5000`<br>`solana-mainnet-root-submitter-6f5muRji-tx-2qZmdTav.json: -5000`<br>`solana-mainnet-root-submitter-6f5muRji-tx-23LJyaZt.json: -5000`<br>`solana-mainnet-root-submitter-6f5muRji-tx-4Dhhgix4.json: -5000`<br>`solana-mainnet-root-submitter-6f5muRji-tx-63aXidcw.json: -5000`<br>`solana-mainnet-root-submitter-6f5muRji-tx-4rHmMZo8.json: -5000`<br>`solana-mainnet-root-submitter-6f5muRji-tx-2ru15rFF.json: -5000`<br>`solana-mainnet-root-submitter-6f5muRji-tx-5HopDYb7.json: -5000`<br>`solana-mainnet-root-submitter-6f5muRji-tx-3wadzyHZ.json: -5000`<br>`solana-mainnet-root-submitter-6f5muRji-tx-5EdGaCuB.json: -5000`<br>`solana-mainnet-root-submitter-6f5muRji-tx-4iRtSMGS.json: -5000`<br>`solana-mainnet-root-submitter-6f5muRji-tx-5uj1DjMq.json: -5000`<br>`solana-mainnet-root-submitter-6f5muRji-tx-m2tWNJcN.json: -5000`<br>`solana-mainnet-root-submitter-6f5muRji-tx-5pMoxdDj.json: -5000`<br>`solana-mainnet-root-submitter-6f5muRji-tx-657Kjjvb.json: -5000`<br>`solana-mainnet-root-submitter-6f5muRji-tx-2UqeqAxE.json: -5000`<br>`solana-mainnet-root-submitter-6f5muRji-tx-2h5AGRgs.json: -5000`<br>`solana-mainnet-root-submitter-6f5muRji-tx-3wywP6KZ.json: -5000` |
+| Transfers involving submitter | `None` |
+| Token-balance hints | `None` |
+| Security intersections | `None` |
+| Upgrade-authority intersections | `None` |
+
+## Cross-Submitter Assessment
+
+- Transaction bodies analyzed: `30`
+- Unique submitters observed in direct history: `1`
+- Programs invoked across submitter history: `jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV: 30`
+- Canonical JUP / current validator / vote / stake intersections: `0`
+- Parsed upgrade-authority intersections: `0`
+
+- Direct submitter history did not expose canonical JUP, current validator/vote/stake keys or parsed upgrade authorities.
+- Funding attribution depends on whether positive lamport deltas or transfer-source rows are present in the fetched signature window.
