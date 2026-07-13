@@ -377,6 +377,48 @@ def outbox_root_update_metrics(base: Path) -> dict:
     }
 
 
+def private_runtime_fingerprint_metrics(base: Path) -> dict:
+    path = base / "private-runtime-fingerprints.md"
+    if not path.exists():
+        return {
+            "private_runtime_fingerprints_present": False,
+            "private_runtime_dependency_terms_with_hits": None,
+            "private_runtime_security_producer_terms_with_hits": None,
+            "private_runtime_public_verifier_terms_with_hits": None,
+            "private_runtime_source_paths_recovered": None,
+            "private_runtime_dependency_hit_terms": set(),
+            "private_runtime_security_producer_hit_terms": set(),
+            "private_runtime_public_verifier_hit_terms": set(),
+        }
+    text = path.read_text()
+
+    def number(pattern: str) -> int | None:
+        match = re.search(pattern, text)
+        return int(match.group(1)) if match else None
+
+    def section(title: str) -> str:
+        match = re.search(rf"## {re.escape(title)}\n\n(.*?)(?=\n## |\Z)", text, flags=re.S)
+        return match.group(1) if match else ""
+
+    def hit_terms(title: str) -> set[str]:
+        terms = set()
+        for term, count in re.findall(r"\| `([^`]+)` \| ([0-9]+) \|", section(title)):
+            if int(count) > 0:
+                terms.add(term)
+        return terms
+
+    return {
+        "private_runtime_fingerprints_present": True,
+        "private_runtime_dependency_terms_with_hits": number(r"Private runtime dependency terms with hits: `(\d+)`"),
+        "private_runtime_security_producer_terms_with_hits": number(r"Security producer terms with hits: `(\d+)`"),
+        "private_runtime_public_verifier_terms_with_hits": number(r"Public verifier terms with hits: `(\d+)`"),
+        "private_runtime_source_paths_recovered": number(r"JupNet/Gum source paths recovered: `(\d+)`"),
+        "private_runtime_dependency_hit_terms": hit_terms("Private Runtime Dependency Terms"),
+        "private_runtime_security_producer_hit_terms": hit_terms("Security Producer Terms"),
+        "private_runtime_public_verifier_hit_terms": hit_terms("Public Verifier Terms"),
+    }
+
+
 def outbox_root_history_metrics(base: Path) -> dict:
     files = outbox_history_transaction_files(base)
     update_rows, verifier_rows = outbox_history_rows(base)
@@ -522,6 +564,7 @@ def snapshot_metrics(base: Path) -> dict:
     helper_program_accounts = helper_program_account_metrics(base)
     verify_request_payload = verify_request_payload_metrics(base)
     outbox_root_update = outbox_root_update_metrics(base)
+    private_runtime_fingerprints = private_runtime_fingerprint_metrics(base)
     outbox_root_history = outbox_root_history_metrics(base)
     outbox_verifier_payload_map = outbox_verifier_payload_map_metrics(base)
     jupnet_executable_census = jupnet_executable_census_metrics(base)
@@ -612,6 +655,7 @@ def snapshot_metrics(base: Path) -> dict:
         **helper_program_accounts,
         **verify_request_payload,
         **outbox_root_update,
+        **private_runtime_fingerprints,
         **outbox_root_history,
         **outbox_verifier_payload_map,
         **jupnet_executable_census,
@@ -723,6 +767,11 @@ def main() -> None:
         ("Outbox root update/BLS candidate count", "outbox_root_update_candidates"),
         ("Outbox root update JUP key hits", "outbox_root_update_jup_hits"),
         ("Outbox root update validator-key hits", "outbox_root_update_validator_hits"),
+        ("Private runtime fingerprint report present", "private_runtime_fingerprints_present"),
+        ("Private runtime dependency terms with hits", "private_runtime_dependency_terms_with_hits"),
+        ("Private runtime security-producer terms with hits", "private_runtime_security_producer_terms_with_hits"),
+        ("Private runtime public-verifier terms with hits", "private_runtime_public_verifier_terms_with_hits"),
+        ("Private runtime source paths recovered", "private_runtime_source_paths_recovered"),
         ("Outbox root history report present", "outbox_root_history_present"),
         ("Outbox root history transaction files", "outbox_root_history_tx_files"),
         ("Outbox root history update payloads", "outbox_root_history_updates"),
@@ -816,6 +865,11 @@ def main() -> None:
             "outbox_root_update_candidates",
             "outbox_root_update_jup_hits",
             "outbox_root_update_validator_hits",
+            "private_runtime_fingerprints_present",
+            "private_runtime_dependency_terms_with_hits",
+            "private_runtime_security_producer_terms_with_hits",
+            "private_runtime_public_verifier_terms_with_hits",
+            "private_runtime_source_paths_recovered",
             "outbox_root_history_present",
             "outbox_root_history_tx_files",
             "outbox_root_history_updates",
@@ -885,6 +939,15 @@ def main() -> None:
     alerts.extend(set_delta("Outbox verifier field-map aggregate key", old["outbox_verifier_map_aggregate_keys"], new["outbox_verifier_map_aggregate_keys"]))
     alerts.extend(set_delta("Outbox verifier field-map root", old["outbox_verifier_map_roots"], new["outbox_verifier_map_roots"]))
     alerts.extend(set_delta("Outbox verifier field-map layout", old["outbox_verifier_map_layouts"], new["outbox_verifier_map_layouts"]))
+    alerts.extend(set_delta("Private runtime dependency hit term", old["private_runtime_dependency_hit_terms"], new["private_runtime_dependency_hit_terms"]))
+    alerts.extend(
+        set_delta(
+            "Private runtime security-producer hit term",
+            old["private_runtime_security_producer_hit_terms"],
+            new["private_runtime_security_producer_hit_terms"],
+        )
+    )
+    alerts.extend(set_delta("Private runtime public-verifier hit term", old["private_runtime_public_verifier_hit_terms"], new["private_runtime_public_verifier_hit_terms"]))
     alerts.extend(set_delta("JupNet executable", old["jupnet_executable_records"], new["jupnet_executable_records"]))
     alerts.extend(
         set_delta(
@@ -953,6 +1016,8 @@ def main() -> None:
     print(f"- Outbox verifier field-map sender/programs: `{len(new['outbox_verifier_map_senders'])}`")
     print(f"- JupNet executable verifier-syscall consumers: `{new['jupnet_executable_verifier_count']}`")
     print(f"- JupNet executable key-hit rows: `{new['jupnet_executable_key_hit_count']}`")
+    print(f"- Private runtime dependency terms with hits: `{new['private_runtime_dependency_terms_with_hits']}`")
+    print(f"- Private runtime security-producer terms with hits: `{new['private_runtime_security_producer_terms_with_hits']}`")
 
 
 if __name__ == "__main__":

@@ -329,7 +329,7 @@ python3 scripts/analyze_jupnet_executable_census.py \
 
 ### `scripts/compare_validator_security_snapshots.py`
 
-Compares two saved snapshots and emits alert-oriented Markdown. The comparator tracks the original Gum/Bank/JUP surfaces plus the newer proof-chain evidence: outbox root-history roots, aggregate keys, compact verifier fields, verifier sender/program ids, verifier payload layouts, JupNet executable hashes, upgrade authorities, `sol_verify_bls_merkle_key` consumers and executable key-hit rows.
+Compares two saved snapshots and emits alert-oriented Markdown. The comparator tracks the original Gum/Bank/JUP surfaces plus the newer proof-chain evidence: outbox root-history roots, aggregate keys, compact verifier fields, verifier sender/program ids, verifier payload layouts, private runtime fingerprints, JupNet executable hashes, upgrade authorities, `sol_verify_bls_merkle_key` consumers and executable key-hit rows.
 
 Example:
 
@@ -350,9 +350,20 @@ python3 scripts/analyze_security_boundary_corpus.py \
   evidence/YYYY-MM-DD-live-rpc
 ```
 
+### `scripts/analyze_private_runtime_fingerprints.py`
+
+Scans saved public artifacts for exact private JupNet runtime/security fingerprints. It searches decoded account data, ProgramData executable bytes, transaction instruction bytes and JSON/log text for private dependency names, Dove/stake-weight/quorum/root-builder terms and public verifier strings.
+
+Example:
+
+```bash
+python3 scripts/analyze_private_runtime_fingerprints.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
 ### `scripts/run_validator_security_check.py`
 
-Runs the full monitoring workflow: collect a fresh snapshot, fetch recurring Bank account state, fetch owner-program context, fetch JupNet helper-program-owned accounts, fetch outbox root-update transactions, fetch wider outbox root history, fetch the Gum omnichain sender program, fetch all visible JupNet executable ProgramData accounts, generate `analysis.md`, generate `deep-dive.md`, generate `authorization.md`, generate `utility-classification.md`, generate `solana-bank.md`, generate `bank-reverse-engineering.md`, generate `bank-account-graph.md`, generate `bank-recurring-account-state.md`, generate `bank-owner-program-context.md`, generate `jupnet-helper-program-accounts.md`, generate `verify-request-payload-reconstruction.md`, generate `outbox-root-update-transactions.md`, generate `outbox-update-payload-reconstruction.md`, generate `outbox-root-history.md`, generate `epoch-security-source-hunt.md`, generate `outbox-verifier-payload-field-map.md`, generate `security-boundary-corpus.md`, generate `gum-omnichain-sender-program.md`, generate `jupnet-executable-census.md`, and compare against the latest prior snapshot when available.
+Runs the full monitoring workflow: collect a fresh snapshot, fetch recurring Bank account state, fetch owner-program context, fetch JupNet helper-program-owned accounts, fetch outbox root-update transactions, fetch wider outbox root history, fetch the Gum omnichain sender program, fetch all visible JupNet executable ProgramData accounts, generate `analysis.md`, generate `deep-dive.md`, generate `authorization.md`, generate `utility-classification.md`, generate `solana-bank.md`, generate `bank-reverse-engineering.md`, generate `bank-account-graph.md`, generate `bank-recurring-account-state.md`, generate `bank-owner-program-context.md`, generate `jupnet-helper-program-accounts.md`, generate `verify-request-payload-reconstruction.md`, generate `outbox-root-update-transactions.md`, generate `outbox-update-payload-reconstruction.md`, generate `outbox-root-history.md`, generate `epoch-security-source-hunt.md`, generate `outbox-verifier-payload-field-map.md`, generate `security-boundary-corpus.md`, generate `private-runtime-fingerprints.md`, generate `gum-omnichain-sender-program.md`, generate `jupnet-executable-census.md`, and compare against the latest prior snapshot when available.
 
 Example:
 

@@ -78,3 +78,5 @@
 | Security boundary corpus covers helper accounts and wider verifier payloads | Confirmed | 128 local Bank/outbox/history transaction files were scanned; 42 verifier payloads decoded across 21 files with zero stored-root mismatches |
 | Security boundary corpus exposes public aggregate-key verifier behavior | Confirmed | Three aggregate keys, one recomputed root and stable Gum omnichain sender/program evidence were observed across the corpus |
 | Security boundary corpus exposes Dove/JUP/stake producer state | Not observed | Helper-owned accounts and decoded verifier payloads had zero canonical JUP/current validator/vote/stake hits and no visible signer-set, quorum or weight records |
+| Private runtime fingerprints appear in public Gum omnichain executable bytes | Confirmed | `jupnet_bn254` and `jupnet_crosschain_hash` appeared in `jupnet-programdata-brhPfKEx.json` alongside BLS/verifier fingerprints |
+| Private runtime fingerprint scan exposes Dove/JUP/stake producer implementation | Not observed | Scan of 204 JSON artifacts and 3418 decoded/text blobs found zero Dove, stake-weight, quorum, root-builder or aggregate-key-set producer term hits |
