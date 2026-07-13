@@ -43,6 +43,7 @@ Utility-relevant evidence includes:
 - Security boundary corpus analysis decoded 42 verifier payloads across 128 local Bank/outbox/history transaction files and still found no JUP, validator, vote, stake, signer-set, quorum or weight exposure.
 - Private runtime fingerprint analysis found `jupnet_bn254` and `jupnet_crosschain_hash` in one public Gum omnichain ProgramData binary, but still found no Dove/JUP/stake-weight/quorum/root-builder producer terms.
 - Gum omnichain binary-role analysis shows `brhPf...` is the richer verifier/crypto-linked Gum binary, while `GUMeb...` is the recovered verifier-payload sender/program id.
+- Gum account-role reconstruction shows `GUMeb...` is not directly invoked in saved transaction bodies; direct public roles split across `brhPf...` admin/config operations, Solana Bank asset/request handling and outbox proof verification.
 - JUP appears in Gum asset metadata/flows; this is confirmed but treated as non-decisive noise unless tied to protocol utility.
 - Public evidence does not currently prove that JUP stake determines validator or Dove voting weight.
 
@@ -80,6 +81,7 @@ Utility-relevant evidence includes:
 - [`docs/29-security-boundary-corpus.md`](docs/29-security-boundary-corpus.md)
 - [`docs/30-private-runtime-fingerprints.md`](docs/30-private-runtime-fingerprints.md)
 - [`docs/31-gum-omnichain-binary-roles.md`](docs/31-gum-omnichain-binary-roles.md)
+- [`docs/32-gum-account-role-reconstruction.md`](docs/32-gum-account-role-reconstruction.md)
 - [`appendices/rpc-catalogue.md`](appendices/rpc-catalogue.md)
 - [`appendices/program-ids.md`](appendices/program-ids.md)
 - [`appendices/scripts-index.md`](appendices/scripts-index.md)
@@ -106,6 +108,7 @@ Utility-relevant evidence includes:
 - [`evidence/2026-07-12-bank-live-rpc/security-boundary-corpus.md`](evidence/2026-07-12-bank-live-rpc/security-boundary-corpus.md)
 - [`evidence/2026-07-12-bank-live-rpc/private-runtime-fingerprints.md`](evidence/2026-07-12-bank-live-rpc/private-runtime-fingerprints.md)
 - [`evidence/2026-07-12-bank-live-rpc/gum-omnichain-binary-roles.md`](evidence/2026-07-12-bank-live-rpc/gum-omnichain-binary-roles.md)
+- [`evidence/2026-07-12-bank-live-rpc/gum-account-role-reconstruction.md`](evidence/2026-07-12-bank-live-rpc/gum-account-role-reconstruction.md)
 
 ## Evidence classifications
 

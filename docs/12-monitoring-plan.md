@@ -37,6 +37,7 @@ It writes:
 - `security-boundary-corpus.md`
 - `private-runtime-fingerprints.md`
 - `gum-omnichain-binary-roles.md`
+- `gum-account-role-reconstruction.md`
 - `gum-omnichain-sender-program.md`
 - `jupnet-executable-census.md`
 - `diff.md` when a previous snapshot exists
@@ -217,6 +218,14 @@ python3 scripts/analyze_gum_omnichain_binary_roles.py \
   > evidence/YYYY-MM-DD-HHMM-live-rpc/gum-omnichain-binary-roles.md
 ```
 
+Reconstruct Gum and Bank account roles:
+
+```bash
+python3 scripts/analyze_gum_account_role_reconstruction.py \
+  evidence/YYYY-MM-DD-HHMM-live-rpc \
+  > evidence/YYYY-MM-DD-HHMM-live-rpc/gum-account-role-reconstruction.md
+```
+
 Collect and analyze the recovered Gum omnichain sender program:
 
 ```bash
@@ -280,6 +289,7 @@ Treat these as high-value changes:
 - security boundary corpus analysis finds helper-owned signer-set/quorum/weight state, root mismatches, new verifier sender/program ids, new proof layouts, or canonical JUP / validator / vote / stake material;
 - private runtime fingerprint analysis finds new private JupNet crate names, Dove/stake-weight/quorum/root-builder terms, or loses existing BN254/cross-chain-hash/verifier fingerprints;
 - Gum omnichain binary-role analysis changes the `brhPf...` / `GUMeb...` verifier split, adds producer/security terms, or loses existing BN254/cross-chain-hash/verifier symbols;
+- Gum account-role reconstruction finds direct `GUMeb...` top-level instructions, canonical JUP account metas, validator/vote/stake account metas, or new signer-set/quorum/weight role candidates;
 - Gum omnichain ProgramData hash, deployment slot, upgrade authority, BLS/Merkle strings or utility/security key hits change;
 - JupNet executable census finds new programs, ProgramData hash changes, new `sol_verify_bls_merkle_key` consumers, or any canonical JUP / validator / vote / stake / Dove-weight source material;
 - Solana Bank Program logs add validator, quorum, stake, signer, BLS or JUP fee/sink terms;
