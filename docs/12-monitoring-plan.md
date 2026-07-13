@@ -221,6 +221,8 @@ python3 scripts/compare_validator_security_snapshots.py \
   > evidence/NEW-live-rpc/diff.md
 ```
 
+The diff now promotes the proof-chain surfaces into alerts: outbox root-history roots, aggregate keys, compact verifier fields, verifier aggregate-key sets, sender/program ids, verifier payload layouts, JupNet executable hashes, upgrade authorities, `sol_verify_bls_merkle_key` consumers and executable key-hit rows.
+
 ## Alert Conditions
 
 Treat these as high-value changes:

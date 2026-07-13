@@ -329,7 +329,7 @@ python3 scripts/analyze_jupnet_executable_census.py \
 
 ### `scripts/compare_validator_security_snapshots.py`
 
-Compares two saved snapshots and emits alert-oriented Markdown.
+Compares two saved snapshots and emits alert-oriented Markdown. The comparator tracks the original Gum/Bank/JUP surfaces plus the newer proof-chain evidence: outbox root-history roots, aggregate keys, compact verifier fields, verifier sender/program ids, verifier payload layouts, JupNet executable hashes, upgrade authorities, `sol_verify_bls_merkle_key` consumers and executable key-hit rows.
 
 Example:
 

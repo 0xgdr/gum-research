@@ -11,6 +11,13 @@ import re
 import struct
 from pathlib import Path
 
+from analyze_jupnet_executable_census import program_label as census_program_label
+from analyze_jupnet_executable_census import program_rows as census_program_rows
+from analyze_outbox_root_history import history_rows as outbox_history_rows
+from analyze_outbox_root_history import transaction_files as outbox_history_transaction_files
+from map_outbox_verifier_payloads import collect_rows as verifier_payload_rows
+from map_outbox_verifier_payloads import outbox_roots as verifier_stored_roots
+
 
 ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
 JUP_MINT = "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN"
@@ -370,6 +377,117 @@ def outbox_root_update_metrics(base: Path) -> dict:
     }
 
 
+def outbox_root_history_metrics(base: Path) -> dict:
+    files = outbox_history_transaction_files(base)
+    update_rows, verifier_rows = outbox_history_rows(base)
+    rows = update_rows + verifier_rows
+    security_hit_rows = sum(1 for row in rows if row.get("key_hits") or row.get("payload_hits"))
+    latest = max(
+        update_rows,
+        key=lambda row: ((row.get("block_time") or 0), (row.get("slot") or 0), str(row.get("signature") or "")),
+        default=None,
+    )
+    return {
+        "outbox_root_history_present": bool(files or (base / "outbox-root-history.md").exists()),
+        "outbox_root_history_tx_files": len(files),
+        "outbox_root_history_updates": len(update_rows),
+        "outbox_root_history_verifiers": len(verifier_rows),
+        "outbox_root_history_security_hit_rows": security_hit_rows,
+        "outbox_root_history_latest_update": (
+            f"epoch {latest['epoch']} root {latest['root'].hex()} "
+            f"aggregate {latest['aggregate_key'].hex()} compact {latest['compact_verifier_field'].hex()}"
+            if latest
+            else None
+        ),
+        "outbox_root_history_epochs": {str(row["epoch"]) for row in update_rows},
+        "outbox_root_history_roots": {row["root"].hex() for row in update_rows},
+        "outbox_root_history_aggregate_keys": {row["aggregate_key"].hex() for row in update_rows},
+        "outbox_root_history_compact_fields": {row["compact_verifier_field"].hex() for row in update_rows},
+        "outbox_root_history_verifier_roots": {row["root"].hex() for row in verifier_rows},
+        "outbox_root_history_verifier_aggregate_keys": {row["aggregate_key"].hex() for row in verifier_rows},
+    }
+
+
+def outbox_verifier_payload_map_metrics(base: Path) -> dict:
+    rows = verifier_payload_rows(base)
+    roots = verifier_stored_roots(base)
+    related = validator_related_keys(base)
+    validator_keys = set(related)
+    jup_raw = b58decode(JUP_MINT)
+
+    jup_hits = 0
+    validator_hits = 0
+    root_mismatches = 0
+    senders = set()
+    for row in rows:
+        raw_blob = b"".join([row["message_hash"], row["aggregate_key"], row["signature"], *row["proof_nodes"]])
+        if jup_raw in raw_blob or JUP_MINT in row["account_keys"]:
+            jup_hits += 1
+        if row["account_keys"] & validator_keys:
+            validator_hits += 1
+        expected = roots.get(row["epoch"])
+        if expected and row["recomputed_root"] != expected:
+            root_mismatches += 1
+        if row.get("sender"):
+            senders.add(b58encode(row["sender"]))
+
+    return {
+        "outbox_verifier_map_present": bool(rows or (base / "outbox-verifier-payload-field-map.md").exists()),
+        "outbox_verifier_map_payloads": len(rows),
+        "outbox_verifier_map_bank_wrappers": sum(1 for row in rows if row["kind"] == "bank-verify-wrapper"),
+        "outbox_verifier_map_inner_payloads": sum(1 for row in rows if row["kind"] == "inner-outbox"),
+        "outbox_verifier_map_jup_hits": jup_hits,
+        "outbox_verifier_map_validator_hits": validator_hits,
+        "outbox_verifier_map_root_mismatches": root_mismatches,
+        "outbox_verifier_map_senders": senders,
+        "outbox_verifier_map_aggregate_keys": {row["aggregate_key"].hex() for row in rows},
+        "outbox_verifier_map_roots": {row["recomputed_root"].hex() for row in rows},
+        "outbox_verifier_map_layouts": {
+            f"{row['kind']} | len {row['raw_len']} | aggregate {row['aggregate_offset']} | "
+            f"bitmap {row['path_bitmap']} | proof {row['proof_count']}"
+            for row in rows
+        },
+    }
+
+
+def jupnet_executable_census_metrics(base: Path) -> dict:
+    rows = census_program_rows(base)
+    verifier_rows = [
+        row
+        for row in rows
+        if any("sol_verify_bls_merkle_key" in text for values in row["term_hits"].values() for text in values)
+    ]
+    key_hit_rows = [row for row in rows if row["key_hits"]]
+    high_rows = [row for row in rows if row["high_value_hits"]]
+
+    def record(row: dict) -> str:
+        return (
+            f"{row['program']} | {census_program_label(row) or 'unlabeled'} | "
+            f"{row['programdata']} | slot {row['slot']} | authority {row['upgrade_authority']} | "
+            f"exe {row['executable_sha256']} | programdata {row['programdata_sha256']}"
+        )
+
+    def high_value_record(row: dict) -> str:
+        terms = ",".join(sorted(row["high_value_hits"]))
+        return f"{row['program']} | {census_program_label(row) or 'unlabeled'} | {terms}"
+
+    return {
+        "jupnet_executable_census_present": bool(rows or (base / "jupnet-executable-census.md").exists()),
+        "jupnet_executable_count": len(rows),
+        "jupnet_executable_source_path_count": sum(1 for row in rows if row["source_paths"]),
+        "jupnet_executable_high_value_count": len(high_rows),
+        "jupnet_executable_key_hit_count": len(key_hit_rows),
+        "jupnet_executable_verifier_count": len(verifier_rows),
+        "jupnet_executable_records": {record(row) for row in rows},
+        "jupnet_executable_verifier_records": {record(row) for row in verifier_rows},
+        "jupnet_executable_key_hit_records": {record(row) for row in key_hit_rows},
+        "jupnet_executable_high_value_records": {high_value_record(row) for row in high_rows},
+        "jupnet_executable_authority_records": {
+            f"{row['program']} | {row['upgrade_authority']}" for row in rows
+        },
+    }
+
+
 def snapshot_metrics(base: Path) -> dict:
     jup_raw = b58decode(JUP_MINT)
     gum_records = account_records(base, "getProgramAccounts-Gum.json")
@@ -404,6 +522,9 @@ def snapshot_metrics(base: Path) -> dict:
     helper_program_accounts = helper_program_account_metrics(base)
     verify_request_payload = verify_request_payload_metrics(base)
     outbox_root_update = outbox_root_update_metrics(base)
+    outbox_root_history = outbox_root_history_metrics(base)
+    outbox_verifier_payload_map = outbox_verifier_payload_map_metrics(base)
+    jupnet_executable_census = jupnet_executable_census_metrics(base)
     gum_validator_hits = 0
     openid_validator_hits = 0
     for _name, raw in gum_records:
@@ -491,6 +612,9 @@ def snapshot_metrics(base: Path) -> dict:
         **helper_program_accounts,
         **verify_request_payload,
         **outbox_root_update,
+        **outbox_root_history,
+        **outbox_verifier_payload_map,
+        **jupnet_executable_census,
     }
 
 
@@ -599,6 +723,25 @@ def main() -> None:
         ("Outbox root update/BLS candidate count", "outbox_root_update_candidates"),
         ("Outbox root update JUP key hits", "outbox_root_update_jup_hits"),
         ("Outbox root update validator-key hits", "outbox_root_update_validator_hits"),
+        ("Outbox root history report present", "outbox_root_history_present"),
+        ("Outbox root history transaction files", "outbox_root_history_tx_files"),
+        ("Outbox root history update payloads", "outbox_root_history_updates"),
+        ("Outbox root history verifier payloads", "outbox_root_history_verifiers"),
+        ("Outbox root history security-hit rows", "outbox_root_history_security_hit_rows"),
+        ("Outbox root history latest update", "outbox_root_history_latest_update"),
+        ("Outbox verifier field-map report present", "outbox_verifier_map_present"),
+        ("Outbox verifier field-map payloads", "outbox_verifier_map_payloads"),
+        ("Outbox verifier field-map Bank wrappers", "outbox_verifier_map_bank_wrappers"),
+        ("Outbox verifier field-map inner payloads", "outbox_verifier_map_inner_payloads"),
+        ("Outbox verifier field-map JUP-hit payloads", "outbox_verifier_map_jup_hits"),
+        ("Outbox verifier field-map validator-hit payloads", "outbox_verifier_map_validator_hits"),
+        ("Outbox verifier field-map root mismatches", "outbox_verifier_map_root_mismatches"),
+        ("JupNet executable census report present", "jupnet_executable_census_present"),
+        ("JupNet executable count", "jupnet_executable_count"),
+        ("JupNet executable source-path count", "jupnet_executable_source_path_count"),
+        ("JupNet executable high-value term count", "jupnet_executable_high_value_count"),
+        ("JupNet executable key-hit count", "jupnet_executable_key_hit_count"),
+        ("JupNet executable verifier-syscall count", "jupnet_executable_verifier_count"),
     ]
     for label, key in watched_scalars:
         line = delta_line(label, old.get(key), new.get(key))
@@ -673,6 +816,25 @@ def main() -> None:
             "outbox_root_update_candidates",
             "outbox_root_update_jup_hits",
             "outbox_root_update_validator_hits",
+            "outbox_root_history_present",
+            "outbox_root_history_tx_files",
+            "outbox_root_history_updates",
+            "outbox_root_history_verifiers",
+            "outbox_root_history_security_hit_rows",
+            "outbox_root_history_latest_update",
+            "outbox_verifier_map_present",
+            "outbox_verifier_map_payloads",
+            "outbox_verifier_map_bank_wrappers",
+            "outbox_verifier_map_inner_payloads",
+            "outbox_verifier_map_jup_hits",
+            "outbox_verifier_map_validator_hits",
+            "outbox_verifier_map_root_mismatches",
+            "jupnet_executable_census_present",
+            "jupnet_executable_count",
+            "jupnet_executable_source_path_count",
+            "jupnet_executable_high_value_count",
+            "jupnet_executable_key_hit_count",
+            "jupnet_executable_verifier_count",
         }:
             alerts.append(line)
         else:
@@ -689,6 +851,51 @@ def main() -> None:
             new["bank_owner_context_programdata_set"],
         )
     )
+    alerts.extend(set_delta("Outbox root-history epoch", old["outbox_root_history_epochs"], new["outbox_root_history_epochs"]))
+    alerts.extend(set_delta("Outbox root-history root", old["outbox_root_history_roots"], new["outbox_root_history_roots"]))
+    alerts.extend(
+        set_delta(
+            "Outbox root-history aggregate key",
+            old["outbox_root_history_aggregate_keys"],
+            new["outbox_root_history_aggregate_keys"],
+        )
+    )
+    alerts.extend(
+        set_delta(
+            "Outbox root-history compact verifier field",
+            old["outbox_root_history_compact_fields"],
+            new["outbox_root_history_compact_fields"],
+        )
+    )
+    alerts.extend(
+        set_delta(
+            "Outbox verifier recomputed root",
+            old["outbox_root_history_verifier_roots"],
+            new["outbox_root_history_verifier_roots"],
+        )
+    )
+    alerts.extend(
+        set_delta(
+            "Outbox verifier aggregate key",
+            old["outbox_root_history_verifier_aggregate_keys"],
+            new["outbox_root_history_verifier_aggregate_keys"],
+        )
+    )
+    alerts.extend(set_delta("Outbox verifier sender/program", old["outbox_verifier_map_senders"], new["outbox_verifier_map_senders"]))
+    alerts.extend(set_delta("Outbox verifier field-map aggregate key", old["outbox_verifier_map_aggregate_keys"], new["outbox_verifier_map_aggregate_keys"]))
+    alerts.extend(set_delta("Outbox verifier field-map root", old["outbox_verifier_map_roots"], new["outbox_verifier_map_roots"]))
+    alerts.extend(set_delta("Outbox verifier field-map layout", old["outbox_verifier_map_layouts"], new["outbox_verifier_map_layouts"]))
+    alerts.extend(set_delta("JupNet executable", old["jupnet_executable_records"], new["jupnet_executable_records"]))
+    alerts.extend(
+        set_delta(
+            "JupNet executable verifier-syscall consumer",
+            old["jupnet_executable_verifier_records"],
+            new["jupnet_executable_verifier_records"],
+        )
+    )
+    alerts.extend(set_delta("JupNet executable key-hit row", old["jupnet_executable_key_hit_records"], new["jupnet_executable_key_hit_records"]))
+    alerts.extend(set_delta("JupNet executable high-value row", old["jupnet_executable_high_value_records"], new["jupnet_executable_high_value_records"]))
+    alerts.extend(set_delta("JupNet executable authority", old["jupnet_executable_authority_records"], new["jupnet_executable_authority_records"]))
 
     new_gum_sigs = sorted(new["gum_signature_set"] - old["gum_signature_set"])
     if new_gum_sigs:
@@ -741,6 +948,11 @@ def main() -> None:
     print(f"- JUP token accounts on JupNet: `{new['jup_token_accounts']}`")
     print(f"- Gum upgrade authority: `{new['gum_upgrade_authority']}`")
     print(f"- Sample tx validator-key hits: `{new['sample_tx_validator_hits']}`")
+    print(f"- Outbox root-history update payloads: `{new['outbox_root_history_updates']}`")
+    print(f"- Outbox root-history security-hit rows: `{new['outbox_root_history_security_hit_rows']}`")
+    print(f"- Outbox verifier field-map sender/programs: `{len(new['outbox_verifier_map_senders'])}`")
+    print(f"- JupNet executable verifier-syscall consumers: `{new['jupnet_executable_verifier_count']}`")
+    print(f"- JupNet executable key-hit rows: `{new['jupnet_executable_key_hit_count']}`")
 
 
 if __name__ == "__main__":
