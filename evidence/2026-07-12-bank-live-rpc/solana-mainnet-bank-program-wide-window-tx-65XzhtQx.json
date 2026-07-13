@@ -1,0 +1,144 @@
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "blockTime": 1783972825,
+    "meta": {
+      "computeUnitsConsumed": 10795,
+      "costUnits": 12326,
+      "err": null,
+      "fee": 15726,
+      "innerInstructions": [
+        {
+          "index": 2,
+          "instructions": [
+            {
+              "parsed": {
+                "info": {
+                  "lamports": 1336320,
+                  "newAccount": "Cjm2JuwsPBJNofoA6Yq1tCzBL6W3HZkLhzPW58pVoizS",
+                  "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+                  "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+                  "space": 64
+                },
+                "type": "createAccount"
+              },
+              "program": "system",
+              "programId": "11111111111111111111111111111111",
+              "stackHeight": 2
+            }
+          ]
+        }
+      ],
+      "logMessages": [
+        "Program ComputeBudget111111111111111111111111111111 invoke [1]",
+        "Program ComputeBudget111111111111111111111111111111 success",
+        "Program ComputeBudget111111111111111111111111111111 invoke [1]",
+        "Program ComputeBudget111111111111111111111111111111 success",
+        "Program BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ invoke [1]",
+        "Program log: Instruction: CacheTokenMetadata",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ consumed 10495 of 30345 compute units",
+        "Program BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ success"
+      ],
+      "postBalances": [
+        3577471539,
+        1336320,
+        1,
+        1,
+        0,
+        1141440
+      ],
+      "postTokenBalances": [],
+      "preBalances": [
+        3578823585,
+        0,
+        1,
+        1,
+        0,
+        1141440
+      ],
+      "preTokenBalances": [],
+      "rewards": [],
+      "status": {
+        "Ok": null
+      }
+    },
+    "slot": 432709310,
+    "transaction": {
+      "message": {
+        "accountKeys": [
+          {
+            "pubkey": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+            "signer": true,
+            "source": "transaction",
+            "writable": true
+          },
+          {
+            "pubkey": "Cjm2JuwsPBJNofoA6Yq1tCzBL6W3HZkLhzPW58pVoizS",
+            "signer": false,
+            "source": "transaction",
+            "writable": true
+          },
+          {
+            "pubkey": "11111111111111111111111111111111",
+            "signer": false,
+            "source": "transaction",
+            "writable": false
+          },
+          {
+            "pubkey": "ComputeBudget111111111111111111111111111111",
+            "signer": false,
+            "source": "transaction",
+            "writable": false
+          },
+          {
+            "pubkey": "AHNdT2RJ3RxBZFYs2hJCTW3giitJ67UvaEvvHK4BbJ8M",
+            "signer": false,
+            "source": "transaction",
+            "writable": false
+          },
+          {
+            "pubkey": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+            "signer": false,
+            "source": "transaction",
+            "writable": false
+          }
+        ],
+        "addressTableLookups": [],
+        "instructions": [
+          {
+            "accounts": [],
+            "data": "3MYX9epnkNJB",
+            "programId": "ComputeBudget111111111111111111111111111111",
+            "stackHeight": 1
+          },
+          {
+            "accounts": [],
+            "data": "Jj6Pbm",
+            "programId": "ComputeBudget111111111111111111111111111111",
+            "stackHeight": 1
+          },
+          {
+            "accounts": [
+              "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+              "AHNdT2RJ3RxBZFYs2hJCTW3giitJ67UvaEvvHK4BbJ8M",
+              "Cjm2JuwsPBJNofoA6Yq1tCzBL6W3HZkLhzPW58pVoizS",
+              "11111111111111111111111111111111"
+            ],
+            "data": "AsaBPU5QQXRXJncZ4hYeHcaZETd3NgEhqGjQCd8MR",
+            "programId": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+            "stackHeight": 1
+          }
+        ],
+        "recentBlockhash": "BFWcRsXwhHeDRCEqzb49nBZmbQgD3sDef2R4pWpz3ckU"
+      },
+      "signatures": [
+        "65XzhtQxqtzsLB4FpznKCvbkqopZGwvCZwHVtDZhvLVQdCXihZFb4zGU4Wn4Nd1JtwUzxyUGxdXFW3Hv8F2uHm34"
+      ]
+    },
+    "transactionIndex": 1048,
+    "version": 0
+  }
+}

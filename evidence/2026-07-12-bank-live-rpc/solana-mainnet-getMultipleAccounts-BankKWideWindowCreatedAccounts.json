@@ -1,0 +1,5720 @@
+{
+  "accounts": [
+    "2F9vjTNWNseBEMseZjjh7JBgcfJ87wFL8oHdbhdrWPmz",
+    "2nHoGpNdRYrGh1iPPejiqhsE2hQvqA57oTV5fUxCRQCe",
+    "2rraTTzH18widKn9ugrZ24Ebh9fN1mt9d8iJppieQ6UJ",
+    "2stwEz6YnS8Wa316kLuSq2mp1TpwCUzkLYByb8PpvMSL",
+    "321axcsu1nPno1FKmi4qJmVbGvxah9TBVnSXoU4qKMjp",
+    "32U7Zi5ywPek96jmfGofQD7gxccnNp3iJupCZgkPntVH",
+    "39nuqq5jsEzSZMyarWFiR3DYM8j9gWfHhMw9XFz2MA8u",
+    "3HBAHgg7kscFvu1EQCsBuJczXAmezxMJPn4Hc1tNDuxU",
+    "3KjTwtgeVMyU3suPrsJdP9zUHgwQf78uKTuhuLkpN1fc",
+    "3Kq3TpK5fifDWPQF1RWKvYWXJruCPSv2xfoTUGR3B7bV",
+    "3SQQCnD8u7CDjoeGQZsUdp7yjus4fqEPaDDA15PMUmuj",
+    "3cYFa8Wz1BBNebSUaGW3iVshJ1inEFtKBwGs1kstkvV6",
+    "3eYtV4S1DwzNvjK8CYMZuKii9CBQgz71aFs2c1wyrZn8",
+    "3hJszgLDw99aAbofU3KhwAZiKuN9aiou3tFGH6RZwdoa",
+    "3jToz2gRJ8qqu2vHVUDRveSVDFWZDqHMPm4NwtBoBhwr",
+    "4FENwg7LVJEzMGTNQWn5oCzQEM5iodHczZ6WPZSQnERj",
+    "4MAA9zPS1Eymrencz6izNuibJPuwvyHWszmNS5HCqPkJ",
+    "4NMv7r639i3rCS9zBMvLvbPokCXBktX7znc1feiayNkg",
+    "4enaisuMzCsxiY8beCZTy1yffKHDrkK5oR86zV1wSDUC",
+    "4k3JHoP5j8iwgS6T7cQ88UYhq7B9EiV4nysocYAPbRnG",
+    "4tFcNmdcGitnzX9zHR3Li1y7jjgpfrYzbfj3JSioW3ZV",
+    "4xQK5WXPWsa1Bbuc3A1gsvHvfXePypDi1ZRvw1fXj4kV",
+    "547YWv9AEohdSLA9goJqJW8hcWmvnECoQsrSyEqquaBT",
+    "58nZmWDZoXR8gRb3PH9rhaVKihnqVKkgnvv93fWqRHv2",
+    "59kbVgD6hcitjzB7Gjv4mSdbLQL9be1uou3cYURSCAEB",
+    "5PyXBNagiYnJ2dMKmc4QHSiFmTkXdpzBGAS68aFLYy2q",
+    "5S7tuPPxJNXjdVyBDPhmQ5Rmg9SoGiNXBDrnCmznRb7",
+    "5SbXH1AZwDHUzxESprpRbGxZANtghJbSmiLJ1XhCFAG5",
+    "5aWwLrxHv71DVQTouEwrnWqwYnpwrUtHUjeswevQLDky",
+    "5fhzvTLV95WLebpkmFQVdkUAqRGnQddsV2b95tQreWDC",
+    "5sana3U6QKhWdC8sQ9iCqgCXpmWc9b2JHdcVVrwwiujV",
+    "5uXV3gS99QkoBd2H8hyLn9RGbRneAKZyiudoYaeXYv7q",
+    "5zNPpe462H6aZw15radgQLYx65YSEsu5WzwB84mqq5UG",
+    "63fLAN5GjvR89Vn9FyCvUtKNUpvxAbnMerA3h6rr56PA",
+    "6KKyMXxvZTqWihpM1f7GX7r27eLrtvbSuVh5dahgLMBN",
+    "6QRHpaE4pWa2hK9NoAfCSvkmP1JTWioxL2oFYQBpoW2z",
+    "6Vvprqbf5vAqWH6nUQzHMhpheLuNujGco33JupGFYtMN",
+    "6kCn4y4p2AsHErgeDZNjWf26CbPePofFEvVEQP51aMFq",
+    "6o8uSdsh8pfHn92jCxJkokjCmpKgMzpnbyZwpfZjXjmk",
+    "75b3kPZxgvKNiewsufQQU9ijRkS7WAF1RxVNMT4N3DWr",
+    "7FqbLbbskxCTsfoscwegUFupnxXfvhiRYnEeaDhcZt46",
+    "7Kei8Y3HEkzgb5WiNdQugearmhy1HFTeVHsDZAvqKBB9",
+    "7MxneSM4KGhrrrEpMH2nYseVxEm7azBdz5S2rckgBtqt",
+    "7T6zWu13RDHJE37hyFdbYZvnyDLVF8Y3t7k5cad66F5h",
+    "7UZUsYwjeS4MkMBuE6EB5eSwYy5BxzapNEM28RVvkA4n",
+    "7Z9sssutjLvWct4zAgoTwQASfmERB8Kv1EG9Ux9vNKrE",
+    "7bTTtBDD2Jd3xint5HyxvGiFKgHwPnVRrqa131o7NRNx",
+    "7e64gpsiMwn9jVUuM3iyYNDRwt1sRagwu7sTL2BdeCR9",
+    "7kom7nnjfVHyKSrsJTgituBS6nM45uZ9W7819kcVYVex",
+    "7nkw6HoGxgUxk9xm99ZAmpJnryQoZGkXVBM8jKE1g7RW",
+    "7usYwAPoNWoFqPc2yAis7Tki4LyEipeFPxAV8m2KPwPC",
+    "83ciqgSKBsMSHzyg9UjCxSXzq89cBbx3uqSb6ehpVQ3e",
+    "88n7iuuUpBzLtWBqQ6xk4ss7niE4gdu9vxJaYvP3t7es",
+    "8DG1gGtLrsQeMvJxFxKa4HGfj1xvubs35bZBkuVy5LXw",
+    "8HwpfUhioy8MDoGdk3SjzCUSLnyeRy6xaRznfgSJwfjc",
+    "8Rz73eoBKsYUxL5NrZ1etrthArpRiBaQ1wnqfD6WPkvv",
+    "8S9b6GjPzEpDLYQbdt3ZzpJRR3VPemwZ7MxnUUQSTxQa",
+    "8V2UAxnGzH1Reh5aLnjgFDhcbVXL3vaN4VubbpinAQiE",
+    "8XRYCgDD3Har9pTDRLpJTjoSezSBA5LDoDR79xPYWb4x",
+    "8wWEmWFDx7Sw16NyoF4kux3Kv3aN8dtQ4CTmXbtcMEUQ",
+    "91j9HnHz2fSsvTAbwYiRc7nMdzqVt8q66eeqCMtF66gH",
+    "99Y9x1JbM7URjPqsfixAhFt1unXZcs6RQy7mFyFzBj1D",
+    "9B4haNYKSVJzUJp8XPq4CH36HeRohDqXtqBsLMpFTMHV",
+    "9GZKxksdnV5r5BSAAvRHRQtheJjByECFPZ5YA57sdvwU",
+    "9Gfcrzieisp6NbRpy5wwr3jUL9K6ZAUYTqwWuQqx79sB",
+    "9Jww51AiG8NnwwqZNKaGoyRfWYRC3R3eaQjiSeyuefHs",
+    "9LGkE4majw2AbcGqagPeShLTBfhTBhjEMAnrtuEG8H7i",
+    "9R9NEvgeg7sEutMHnanQqcMFxCp1KaXgeXiJMqJMMumy",
+    "9Yx2EVgpxYS8jerN1ZCHwLZybV1wZaT3Zx3GGfjLzCGp",
+    "9aGopDcdFaPARoL5gyrQXXVjpWFnubFV5kn8kQYadQfi",
+    "9b3KkomFCd8NRBPmoXC52FWbRbMWLAaSXBkHraNH2QTZ",
+    "9iTfPkmUK6NvBf1tnVbc22bmSQTynKwHAoJEBn4jYQwo",
+    "9qtF93JczNkSqH4fKfrPQhc8QKmvm8jCAq31g4ynNC6N",
+    "9sGjZn5w26LWaXGdeL2znXGt1qLMbTPRcxDajsCSe9TS",
+    "9smXUU1X1JNSDy972iwPd7yf2AbT79jLRndNVfsCbsSP",
+    "A96nvZfyznYuQ8R6mD251MjRRt9ibko81KtN2mFDUWwQ",
+    "ADzuiLrJNgf4d2Rsc8dqNtj6qjt76CminS4MMdVqXyEz",
+    "ALWQJrSFkjQcw6cuGpUbATxoihLDWoT5TPrgb6e8mXzh",
+    "AQwf74v8AcSfQ66RCpLWZHUcfi4QM2kdYhufufjRwwoi",
+    "AwN71EcYJEsgwivkofKXMHHqQCusP51tS8zxf3afiTLe",
+    "B2p1Xp35g9bYiwmrSL7Fn4YaDZ7UBAuhDRSSLq64USnY",
+    "BKwJXpYkEAwJBJZmBd9eL5vNGMsv5vNij912eyCiwcsH",
+    "BLrUpXedSq1itkMXfT4oCFFESkRwPpaX8whaqnVcR8Ay",
+    "BQm1o9jKEmaTnoufAnFmovNPzSpGeTawwDShrgHqErjz",
+    "BRU5nrWUvk8sfADmTVtqdZbMnNECquENj7NRdJSPbJKz",
+    "BTeWbuC3NZijcDWm4LP7aYRyhiNkaDHz7zYQB9bF3LSv",
+    "BbKbav77BpwrUdziSBE7BzxBEyeqiKwEikr2YFa6g3An",
+    "BeshMSsxwxw8XSKYPghf1nYaxLB8L1qvQ6mz9GTBwUP1",
+    "BkHTBkDDjmaDXMHBkdRGY4fZedVchjp3M8MHFgnRNApW",
+    "BrucEQYeUdiafDPY1RzPBv8jArZokdnDoNscUk4L3iAP",
+    "CEYAxsDQqnLYFsJboR3mBtRfLq746EJBcurZcZ4Xt49d",
+    "CMYEtCLbMf3CHFbuYEZT31qHJLHtYE4uq3fshz3UrxqN",
+    "CTMfuzxMXLpBkM7xnDWAbvZ63hcK3Nc6WE8X94eUHPA",
+    "CVWK839WMKZg6dvaBtJxSSfdMQGRQvBoyNBQcTwAwEuF",
+    "CezmZzyLL7FhW7wwZLy2Vu8tX75tyuavfjBPpgRs7xze",
+    "CiMVn6FYqVRnd38dwHo8MDC9KRZuxEWBAWKYCJSGSJ6w",
+    "Cjdg5znxx5DUFqhgrWnhghAfs7nJ2MWmzz62jRZV7vpy",
+    "Cjm2JuwsPBJNofoA6Yq1tCzBL6W3HZkLhzPW58pVoizS",
+    "Cm75PWRSFNjWD5HYKJrdeqHfySV7YCjN1Sbr753d1FLP",
+    "Cn5VRCZA4ng84H8WiAbrTvSPLJKS9MYndWhWJa9RfRob",
+    "CrTVn6sM2zFDfepK3JYcBW6MuCMwmj4FiMcba63M69y5",
+    "D1XJM4WYFjT6ZVqkYznsAATNjp8N7UZU9SbjLAffLBWV",
+    "DG1SAnCu6Cpqx7Wy9cnbrqv8bTSGmGLKBWiACjtMnfKh",
+    "DHqPoegjPFP5cH8qNiMrmceAeLdWU8cBbYQDiJmnHk2V",
+    "DJWZ3QaQV1Ef7FKpZJDj3WZXPRvFvagvL1JkpKepG7Fu",
+    "DK3ZTHJawtBAsReEd6WayjfST8M51yXbHAtRQcWH81RR",
+    "DMNo3vcsQfU4w5wo6Y2Gddt6mgmtPsWden6E1NRZZWxM",
+    "DT9deD6BsXWUtvfEPE1z6QqR5BXDbnsE5ASuEzE1CVac",
+    "DY1sNq1rq8RN2P7q3zMaJjWhHCYgNp39Qs6hKrGRYTgX",
+    "DkGcTScyyc87JrAvXwZDXaApJ3Zd27gXkewKN7xzqoVt",
+    "DkwLTJy5JZLxRBZkVACW3Q1gCxJFvMm2WAE1dVfmfXGn",
+    "DnM9teVNbi4Cebkqtar3sVJs9LcZWSrV8DhwQzPpSeqM",
+    "DniUERZAeTm23rKJqWGV2JNJcRoZYL8gE9eU5S1q2rKc",
+    "DvTkY3gjmMz53xpRgdbufkCTr5Q9oTS9QV3B928DCxBD",
+    "E15RLzjW28N9WTzs41g2T6dEmHspEoVDpJx8Hw5QYyDN",
+    "E1oTdUrSiBd23Z4YgHLGswhxRGzLrD4xFMHD7ydzWJ28",
+    "ECzbm5m7Q2oS2FRAzvSN5ytdGwmgnTwYXqxEUzqLEK9R",
+    "ESDk2NChMPMpGX5fG4WbMHCNN6JsT7zZ7T4oNYgabHzq",
+    "EXnuFkcMDHWz1C7x6YTLhUmQUG3CDzgHtqguZ5t1ME1B",
+    "EZYDnBqdwKjSeVuNW3bQt9VuZPddfP4hQSar3ona2iUP",
+    "EkTKHfeGYZm3VTAJCxFKf6otrSwBWof3mRGfJ1YH1viJ",
+    "F1v1MCajJhnVFr9fwMTJZK9ZAaPj2DVdG5twdE5KV73g",
+    "F4KFSKRGEoJQgudnf9u15vo5zLfPJ6PuktKb2zsbPRkW",
+    "F6ixtDGe1ThJhNupn4SfwBcEHh6ydWkvQNLBmYZwqGqh",
+    "F6zf79wEBNqbTQJZMzFNa5JzpQL1rMLvRaV1NXqHBdjQ",
+    "FRKN4VGaLhYwbm9G2iVEmjTobG9VCNVf1zZ48vFuzPCX",
+    "FRLWpEEe5UZdiqSWrPNLBwBwJAQfLYDibnqB8kqpaQne",
+    "FSpgnrnyb9vktcGuqKzc4K4i9CcCZcaNd2r36yh3vao6",
+    "FT7ctYiiAdDEjLbqMJochxr81dUMk8kfsSNWQzaQ3h2G",
+    "FYkvwwWjNV9p185eTZ3sK8qRVqK3Sid8hg1J2DZWtfJ5",
+    "FgeP5YKoUpHGqYcx7rR6eSPnuSn7BHuhrD3KvXvX6fEg",
+    "FpM57V3utdG4kyePcHcHFPHvBAUwUBd6SPehEUAZ5zZZ",
+    "FpggR9PMrz2hCbnJSS4qHauQnxk9cfdju9FsUZiteEPn",
+    "FrvzjNta86AY3n15e4ce66JR5HFfFetX7x5ZrLyYzUtz",
+    "G6jeAnnoFjgrzkgJGEyWycLqwDmi6aD22WTC5cmzdVvV",
+    "GYjnccRDjetgigoxxqRBVimFWu63Vg6MNGAbmBeVonhp",
+    "GdHzRAyQJhpjxC6uhz7WEJ8oRsTSY6UxjaL7pL3BPx4",
+    "GvRNPtuX3dGXfVkNBPsACGpt5JxzXHS3bXZpniCgiSvm",
+    "GzPTv31a85zix4eMjSPFX4dJDVPsLH6UviF5ZvBP6uwL",
+    "H1ed7fL51rptJf7XjQNfXPeVFrCpxyFgFYnVAhBtGqiT",
+    "HNj6Er27nAV6Y3dzXHeWUxhFfrkNEWNh6duiJynbynMh",
+    "HSDifrWNZNXfwrKqEMYDVAooGbumL4QCi4xJrGDYVpSk",
+    "HUckZqie9DHnbHDPdDrKvPoZXcCy2NhyzSAsRr6KTLce",
+    "HZkiyzRGoFC84HfMiTnoNuTva8nr7zy9Rv6pZD9rkPvV",
+    "HiuuWDL17fw4DNbfHvzySaRgEnutCpuY8Gf9haLCjTWV",
+    "HjoyEcZV1FuNj73bz29MKgcFGPtccWeQwGaYDzGJQFDf",
+    "HkjuuFsAjTUwSWDyiyFXtYKwf3E4diCR9WJkjwB7GKQ8",
+    "Ht6mYHxjgPKjszrimqzC8kFp4GAeX9qpHFx9MK2xJdMQ",
+    "J5gJGFrRHvkVgWsMGnewRULsVhRC9CWj7tSgftRw566V",
+    "J6EJcdpTi9USK4z5EEPnXYygvBzcmoSr7cjyaEG8fDV1",
+    "eM6bJEgHrFdZDixcpkR7kB9qgPTg8aLb2brYhKNUSix",
+    "h7Jvc5AvVHrbyn5tdaPUqNC4GiKYwfZ1c1mr6FfLRYZ",
+    "k5sbCXg1cyBweFhazEQ2WAkKkHwbs3F6uc38Np4HjXt",
+    "mEDE3m7RLFBQBi84cyojp6VVirri98cezPxtjEXhstD",
+    "qeTav6uKhiAmJ8PMHneg6iVE35iqWtvQSqHeJMejj8x"
+  ],
+  "input_prefix": "bank-program-wide-window",
+  "metadata": {
+    "2F9vjTNWNseBEMseZjjh7JBgcfJ87wFL8oHdbhdrWPmz": {
+      "account": "2F9vjTNWNseBEMseZjjh7JBgcfJ87wFL8oHdbhdrWPmz",
+      "created_by": [
+        {
+          "block_time": 1783979166,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5YSeWBwz.json",
+          "instructions": [
+            "CacheTokenMetadata"
+          ],
+          "lamports": 1336320,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5YSeWBwzHXB2LQnE2fq29wNfxxiTpMSQ5gPBEezLacHZ5hDrqXQ5NaSx5M7mzkwwGjEKj1QUi29YKk4jSeqVVshB",
+          "slot": 432724705,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 64
+        }
+      ],
+      "instructions": {
+        "CacheTokenMetadata": 1
+      },
+      "lamports": {
+        "1336320": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "64": 1
+      }
+    },
+    "2nHoGpNdRYrGh1iPPejiqhsE2hQvqA57oTV5fUxCRQCe": {
+      "account": "2nHoGpNdRYrGh1iPPejiqhsE2hQvqA57oTV5fUxCRQCe",
+      "created_by": [
+        {
+          "block_time": 1783971936,
+          "file": "solana-mainnet-bank-program-wide-window-tx-2JYqNmJm.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "2JYqNmJmVqzP9VVVprfYG5oMjP86NpHxCUqRbfaEYxjeShdLx8VgBm82XgFoTsTT1m3QWMvavSnzSKExCxexpMPL",
+          "slot": 432707132,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "2rraTTzH18widKn9ugrZ24Ebh9fN1mt9d8iJppieQ6UJ": {
+      "account": "2rraTTzH18widKn9ugrZ24Ebh9fN1mt9d8iJppieQ6UJ",
+      "created_by": [
+        {
+          "block_time": 1783971048,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3Ebo9H3i.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3Ebo9H3i2nNJgu1tT9wNodWR8oosjXR1kEw5QiVhA9VEEsVezsS4Aug9VqxzwK3s176c3VY1ejnAyv9vTHAogyoa",
+          "slot": 432704978,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "2stwEz6YnS8Wa316kLuSq2mp1TpwCUzkLYByb8PpvMSL": {
+      "account": "2stwEz6YnS8Wa316kLuSq2mp1TpwCUzkLYByb8PpvMSL",
+      "created_by": [
+        {
+          "block_time": 1783972494,
+          "file": "solana-mainnet-bank-program-wide-window-tx-443nkicD.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "443nkicDH8yBKE6mRJb4NCF8ktPFBP6iSERZaVJYdyPFg3FXoVBaWx62ZGD8kRgXfQmiGcqiQnagBpwYXcUpEGBL",
+          "slot": 432708498,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "321axcsu1nPno1FKmi4qJmVbGvxah9TBVnSXoU4qKMjp": {
+      "account": "321axcsu1nPno1FKmi4qJmVbGvxah9TBVnSXoU4qKMjp",
+      "created_by": [
+        {
+          "block_time": 1783978235,
+          "file": "solana-mainnet-bank-program-wide-window-tx-56w6iNNd.json",
+          "instructions": [
+            "Swap",
+            "RouteV2",
+            "swap_v4"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "56w6iNNdz2Dqpz5DrDaMCnkDJcUTnJgYYNqh3UtyTNrxYHyq3QLmsHoUEQzukc7wTew4jzntt2h6r5Nf2DHqUrQv",
+          "slot": 432722440,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "RouteV2": 1,
+        "Swap": 1,
+        "swap_v4": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "32U7Zi5ywPek96jmfGofQD7gxccnNp3iJupCZgkPntVH": {
+      "account": "32U7Zi5ywPek96jmfGofQD7gxccnNp3iJupCZgkPntVH",
+      "created_by": [
+        {
+          "block_time": 1783970429,
+          "file": "solana-mainnet-bank-program-wide-window-tx-42GNBfEv.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "42GNBfEvSgLp7WxFH88jXJJ441xGdoDm2ExuQuMgdtEu5QwLz3oZtfHECbRs17zJqZyVbQDzH3eiHhDm7D6kTJfb",
+          "slot": 432703461,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "39nuqq5jsEzSZMyarWFiR3DYM8j9gWfHhMw9XFz2MA8u": {
+      "account": "39nuqq5jsEzSZMyarWFiR3DYM8j9gWfHhMw9XFz2MA8u",
+      "created_by": [
+        {
+          "block_time": 1783973740,
+          "file": "solana-mainnet-bank-program-wide-window-tx-2NfHbGVz.json",
+          "instructions": [
+            "Swap",
+            "RouteV2",
+            "Swap"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "2NfHbGVzs2VsSEjqwFWC1A79DiFYyN3Y24ScT5tzLUpQn1bwvMdVPe8aUeD2ozBGmPNHNB8dTo9VRNr2RPLNvyUC",
+          "slot": 432711528,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "RouteV2": 1,
+        "Swap": 2
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "3HBAHgg7kscFvu1EQCsBuJczXAmezxMJPn4Hc1tNDuxU": {
+      "account": "3HBAHgg7kscFvu1EQCsBuJczXAmezxMJPn4Hc1tNDuxU",
+      "created_by": [
+        {
+          "block_time": 1783969233,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3FSP28Ko.json",
+          "instructions": [
+            "Swap",
+            "RouteV2",
+            "Swap"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3FSP28Kob6gBe6pY8ueBD3rQrBhdHaWhMTTRYieoCLPH5wv9rUPAkQ6mkanfHowgCDv3XETP7RB9PQT4XqVnRyTq",
+          "slot": 432700546,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "RouteV2": 1,
+        "Swap": 2
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "3KjTwtgeVMyU3suPrsJdP9zUHgwQf78uKTuhuLkpN1fc": {
+      "account": "3KjTwtgeVMyU3suPrsJdP9zUHgwQf78uKTuhuLkpN1fc",
+      "created_by": [
+        {
+          "block_time": 1783973740,
+          "file": "solana-mainnet-bank-program-wide-window-tx-Zt6FozCd.json",
+          "instructions": [
+            "CacheTokenMetadata"
+          ],
+          "lamports": 1336320,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "Zt6FozCdfqxAnYQjkcDuFCAwpBa7sgwgwhdFTVNDaoMC3EMeAZFvn7J3ZErdxMvJvtkrgohjJ5SUmCiwEeeHkDP",
+          "slot": 432711528,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 64
+        }
+      ],
+      "instructions": {
+        "CacheTokenMetadata": 1
+      },
+      "lamports": {
+        "1336320": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "64": 1
+      }
+    },
+    "3Kq3TpK5fifDWPQF1RWKvYWXJruCPSv2xfoTUGR3B7bV": {
+      "account": "3Kq3TpK5fifDWPQF1RWKvYWXJruCPSv2xfoTUGR3B7bV",
+      "created_by": [
+        {
+          "block_time": 1783970150,
+          "file": "solana-mainnet-bank-program-wide-window-tx-4fXehw9D.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "4fXehw9Dx78hPhurF1p8HaLQak3fn4rCQQHBWwDxN2g9VuSjVZQukrebky3q6fUf276vt7qAtobr3edLkMoBVquz",
+          "slot": 432702784,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "3SQQCnD8u7CDjoeGQZsUdp7yjus4fqEPaDDA15PMUmuj": {
+      "account": "3SQQCnD8u7CDjoeGQZsUdp7yjus4fqEPaDDA15PMUmuj",
+      "created_by": [
+        {
+          "block_time": 1783970082,
+          "file": "solana-mainnet-bank-program-wide-window-tx-36ezaWvv.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "36ezaWvvdRTYZoMrtjATVuAhaZoq1GFuBVndjUS1ogRgwNNUaovg1WUSrapxe1qqEFTfN4JZoMxpvvNNKT3hE56N",
+          "slot": 432702623,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "3cYFa8Wz1BBNebSUaGW3iVshJ1inEFtKBwGs1kstkvV6": {
+      "account": "3cYFa8Wz1BBNebSUaGW3iVshJ1inEFtKBwGs1kstkvV6",
+      "created_by": [
+        {
+          "block_time": 1783971951,
+          "file": "solana-mainnet-bank-program-wide-window-tx-2y2iUcbi.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "2y2iUcbi4djfTGwLbBXiEhCCb1QUgTsVSuzk88WBBnLDytS2t1UumXxuzGSUg5aDFbNhCGp38h6YZtVz2vR1QkRp",
+          "slot": 432707169,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "3eYtV4S1DwzNvjK8CYMZuKii9CBQgz71aFs2c1wyrZn8": {
+      "account": "3eYtV4S1DwzNvjK8CYMZuKii9CBQgz71aFs2c1wyrZn8",
+      "created_by": [
+        {
+          "block_time": 1783969233,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3qydYxDP.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3qydYxDPPYhpNcM1CebC8ksyLWq8L2AuaaYT97wrz4YTA9bq85B3odkYGxnKHAnyMgstbMN1GvnikwCY5j8GWGtC",
+          "slot": 432700546,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "3hJszgLDw99aAbofU3KhwAZiKuN9aiou3tFGH6RZwdoa": {
+      "account": "3hJszgLDw99aAbofU3KhwAZiKuN9aiou3tFGH6RZwdoa",
+      "created_by": [
+        {
+          "block_time": 1783970300,
+          "file": "solana-mainnet-bank-program-wide-window-tx-4q8wFyWf.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "4q8wFyWfZd6ZDLf4jw82dMwnQVb5fBWMKfmyDm9akgbhGoXtqNH2xKsit6yHQ76pvvWZtTar1a3UJGMwXeXeuJhi",
+          "slot": 432703151,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "3jToz2gRJ8qqu2vHVUDRveSVDFWZDqHMPm4NwtBoBhwr": {
+      "account": "3jToz2gRJ8qqu2vHVUDRveSVDFWZDqHMPm4NwtBoBhwr",
+      "created_by": [
+        {
+          "block_time": 1783970002,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5FYnd53e.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5FYnd53e5CeYfspgELvdZsvH2JoKLifJ4vXGxLEJwxTv5YNRQ9PHkEvbPiVqb6eRZiyGR6QKVMm1CtjhhMr1qtfb",
+          "slot": 432702430,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "4FENwg7LVJEzMGTNQWn5oCzQEM5iodHczZ6WPZSQnERj": {
+      "account": "4FENwg7LVJEzMGTNQWn5oCzQEM5iodHczZ6WPZSQnERj",
+      "created_by": [
+        {
+          "block_time": 1783978124,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5s1vztmh.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5s1vztmhfWgrrbauy69hNX9cLa1oDHXs9bUwZ92meapmtAUnE5BbjJW8NJknFP61gL3EZT8fbYTMUsGYmbahnN2q",
+          "slot": 432722172,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "4MAA9zPS1Eymrencz6izNuibJPuwvyHWszmNS5HCqPkJ": {
+      "account": "4MAA9zPS1Eymrencz6izNuibJPuwvyHWszmNS5HCqPkJ",
+      "created_by": [
+        {
+          "block_time": 1783974565,
+          "file": "solana-mainnet-bank-program-wide-window-tx-mpPAgQVn.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "mpPAgQVnzDndvWHUqnrawFukRSxroraqnzSgSGoQnuCfNxHttYtU5e9KKgBEGmdxLPrScim56sqRGUq9pLEAezB",
+          "slot": 432713519,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "4NMv7r639i3rCS9zBMvLvbPokCXBktX7znc1feiayNkg": {
+      "account": "4NMv7r639i3rCS9zBMvLvbPokCXBktX7znc1feiayNkg",
+      "created_by": [
+        {
+          "block_time": 1783977334,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3byZxEVL.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3byZxEVLC2goH9VdBavCJgw2obJSMYnwmE3MdVXhBD71abTk9hKHZXCWr6z2vLPrcQShNi3nGMU9mpdzj5HDutuz",
+          "slot": 432720239,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "4enaisuMzCsxiY8beCZTy1yffKHDrkK5oR86zV1wSDUC": {
+      "account": "4enaisuMzCsxiY8beCZTy1yffKHDrkK5oR86zV1wSDUC",
+      "created_by": [
+        {
+          "block_time": 1783973246,
+          "file": "solana-mainnet-bank-program-wide-window-tx-41pFXHNt.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "41pFXHNt5L6kiAP3kt6X5butrEGufeY3cCWWPsm9AeAdN3HbskM9SXBtWLWzLgmGpibH5KbuzNBGSHhctMGyj34c",
+          "slot": 432710320,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "4k3JHoP5j8iwgS6T7cQ88UYhq7B9EiV4nysocYAPbRnG": {
+      "account": "4k3JHoP5j8iwgS6T7cQ88UYhq7B9EiV4nysocYAPbRnG",
+      "created_by": [
+        {
+          "block_time": 1783976438,
+          "file": "solana-mainnet-bank-program-wide-window-tx-63gWtV3c.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "63gWtV3cNDiFyAbHU5pULiBiGHd4i4hLuVa1DWieTEkNa4RCGAfPyQ1mczagjDs5REbZBPfBYp3X5RY9fytGzut",
+          "slot": 432718075,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "4tFcNmdcGitnzX9zHR3Li1y7jjgpfrYzbfj3JSioW3ZV": {
+      "account": "4tFcNmdcGitnzX9zHR3Li1y7jjgpfrYzbfj3JSioW3ZV",
+      "created_by": [
+        {
+          "block_time": 1783978221,
+          "file": "solana-mainnet-bank-program-wide-window-tx-58xw53yA.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "58xw53yAcpDXC71uVx1v2XsnuVXYu6eswTKpBZqAU5QF7mdC5WSiQHCF7477bms4jJX5bAAHCM8cinzker6uEKLC",
+          "slot": 432722404,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "4xQK5WXPWsa1Bbuc3A1gsvHvfXePypDi1ZRvw1fXj4kV": {
+      "account": "4xQK5WXPWsa1Bbuc3A1gsvHvfXePypDi1ZRvw1fXj4kV",
+      "created_by": [
+        {
+          "block_time": 1783972736,
+          "file": "solana-mainnet-bank-program-wide-window-tx-4EzjQABh.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "4EzjQABhC3dnMdzpeAcctDEyM5wX1QGcJYNV74U847bZz4Auc2owpBDFBmKviHm3bBybSyNVh9Ksrw397pgm7YXH",
+          "slot": 432709091,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "547YWv9AEohdSLA9goJqJW8hcWmvnECoQsrSyEqquaBT": {
+      "account": "547YWv9AEohdSLA9goJqJW8hcWmvnECoQsrSyEqquaBT",
+      "created_by": [
+        {
+          "block_time": 1783978764,
+          "file": "solana-mainnet-bank-program-wide-window-tx-4VAhqm9P.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "4VAhqm9PfCbCQGmWNZUXP1G8EfXtw9hVw1jeJLQueUuwXCWr7RzdnRFZcBnhX7crmuqSiWnkJ6TMP4ZN8Two5cbk",
+          "slot": 432723720,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "58nZmWDZoXR8gRb3PH9rhaVKihnqVKkgnvv93fWqRHv2": {
+      "account": "58nZmWDZoXR8gRb3PH9rhaVKihnqVKkgnvv93fWqRHv2",
+      "created_by": [
+        {
+          "block_time": 1783972836,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3Vqw2KWh.json",
+          "instructions": [
+            "Swap",
+            "SharedAccountsRouteV2",
+            "Swap",
+            "SwapExactIn"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3Vqw2KWh1VTm9L5mpvPcytE9pddqxd8vJuj6v1MhzkNH3NjL1t9UzAppeXiRuFNS5tFZDXv8c1eUfZPFeqEYVsY3",
+          "slot": 432709335,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "SharedAccountsRouteV2": 1,
+        "Swap": 2,
+        "SwapExactIn": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "59kbVgD6hcitjzB7Gjv4mSdbLQL9be1uou3cYURSCAEB": {
+      "account": "59kbVgD6hcitjzB7Gjv4mSdbLQL9be1uou3cYURSCAEB",
+      "created_by": [
+        {
+          "block_time": 1783978680,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5FAAYvg2.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5FAAYvg2w1MZxTbuJmc3sqbm586KqjUQGfPsExF11AhARKZH9Eyz8e6hQSaJXXAhigH7QmHr6K6WXwJkPb4ZuYrF",
+          "slot": 432723525,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "5PyXBNagiYnJ2dMKmc4QHSiFmTkXdpzBGAS68aFLYy2q": {
+      "account": "5PyXBNagiYnJ2dMKmc4QHSiFmTkXdpzBGAS68aFLYy2q",
+      "created_by": [
+        {
+          "block_time": 1783973740,
+          "file": "solana-mainnet-bank-program-wide-window-tx-2SLAtYq8.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "2SLAtYq892iLR191gAz8yNFuT1QkEnZU9FW5FjeSD5wrJzv9zzsRLaCsf2nFbJTYbwGNvwD8cVWfeYqAPRTZwK96",
+          "slot": 432711528,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "5S7tuPPxJNXjdVyBDPhmQ5Rmg9SoGiNXBDrnCmznRb7": {
+      "account": "5S7tuPPxJNXjdVyBDPhmQ5Rmg9SoGiNXBDrnCmznRb7",
+      "created_by": [
+        {
+          "block_time": 1783970002,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5qPefVso.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5qPefVsoK2MvyBgP8cM2D8XmcD7DhCzY71DNGLNELRYzjJhKw331gZ1DiGWYJqREujaPAJacZFutaW5SrZ9hyGEs",
+          "slot": 432702430,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "5SbXH1AZwDHUzxESprpRbGxZANtghJbSmiLJ1XhCFAG5": {
+      "account": "5SbXH1AZwDHUzxESprpRbGxZANtghJbSmiLJ1XhCFAG5",
+      "created_by": [
+        {
+          "block_time": 1783979124,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3PSJr9px.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3PSJr9pxuGMj4CwHcndkJYmjncyzPVajm8pBRv1EnVrmoJu5xcP6BUfyVV9GKgsHdgGcoK9gTkyERCUWvLDemFKH",
+          "slot": 432724599,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "5aWwLrxHv71DVQTouEwrnWqwYnpwrUtHUjeswevQLDky": {
+      "account": "5aWwLrxHv71DVQTouEwrnWqwYnpwrUtHUjeswevQLDky",
+      "created_by": [
+        {
+          "block_time": 1783975463,
+          "file": "solana-mainnet-bank-program-wide-window-tx-4ocfEyMt.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "4ocfEyMtaUWjk1GfqqdEWHDGJFVkoBsWYLosvYCzvfXYo3b36FiYCeVUVecdhQBtRXbdXwin648nJC4kWozoSnFg",
+          "slot": 432715703,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "5fhzvTLV95WLebpkmFQVdkUAqRGnQddsV2b95tQreWDC": {
+      "account": "5fhzvTLV95WLebpkmFQVdkUAqRGnQddsV2b95tQreWDC",
+      "created_by": [
+        {
+          "block_time": 1783972494,
+          "file": "solana-mainnet-bank-program-wide-window-tx-25rVZJBa.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "25rVZJBaQWUMZCsJFDN3APZgKxAWCpE23usoe2d9itPLS1DbptbiiKPsMb7jcnzoYfMit81NHQJ4dgo5aDX6FePY",
+          "slot": 432708498,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "5sana3U6QKhWdC8sQ9iCqgCXpmWc9b2JHdcVVrwwiujV": {
+      "account": "5sana3U6QKhWdC8sQ9iCqgCXpmWc9b2JHdcVVrwwiujV",
+      "created_by": [
+        {
+          "block_time": 1783971926,
+          "file": "solana-mainnet-bank-program-wide-window-tx-54AxXpDo.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "54AxXpDodVBGbjaFBfVZ8NgPNXHFMyL194dGskzDPX4nTkR6C15CNkzrahHDbSvF9zBJLuMNZ6Lh8zuQuPwsq9P8",
+          "slot": 432707109,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "5uXV3gS99QkoBd2H8hyLn9RGbRneAKZyiudoYaeXYv7q": {
+      "account": "5uXV3gS99QkoBd2H8hyLn9RGbRneAKZyiudoYaeXYv7q",
+      "created_by": [
+        {
+          "block_time": 1783971937,
+          "file": "solana-mainnet-bank-program-wide-window-tx-2asM38q2.json",
+          "instructions": [
+            "RfqSellCommit"
+          ],
+          "lamports": 1398960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "2asM38q2HYoyqUoWCUcWPYzxVFzfTpQuWGqihYNZNKrTYT4Z9TqRV4HCNgVN8WYpgWpznadDqpCoPbuLyFzt2sRP",
+          "slot": 432707135,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 73
+        }
+      ],
+      "instructions": {
+        "RfqSellCommit": 1
+      },
+      "lamports": {
+        "1398960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea": 1
+      },
+      "spaces": {
+        "73": 1
+      }
+    },
+    "5zNPpe462H6aZw15radgQLYx65YSEsu5WzwB84mqq5UG": {
+      "account": "5zNPpe462H6aZw15radgQLYx65YSEsu5WzwB84mqq5UG",
+      "created_by": [
+        {
+          "block_time": 1783974626,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5mDoH33F.json",
+          "instructions": [
+            "RfqSwap"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5mDoH33FaAZrkm57HYq1Fvt32Q1a34omQyAkoJVDySUdrKpf5KjYdhGNhNQV2HZCjsAJmu9gfLjjWkR2dUqdt4WG",
+          "slot": 432713667,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "RfqSwap": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "63fLAN5GjvR89Vn9FyCvUtKNUpvxAbnMerA3h6rr56PA": {
+      "account": "63fLAN5GjvR89Vn9FyCvUtKNUpvxAbnMerA3h6rr56PA",
+      "created_by": [
+        {
+          "block_time": 1783972736,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3x2v2syf.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 2039280,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "signature": "3x2v2syfw5BYjHZi9i8VLMkUvs5aPJJzPZjv8PbMB8nCKSs3BiKzjWADxLBu5GCoM2HD78zqDAXCEup5NPBZVQF3",
+          "slot": 432709091,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 165
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "2039280": 1
+      },
+      "owners": {
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "165": 1
+      }
+    },
+    "6KKyMXxvZTqWihpM1f7GX7r27eLrtvbSuVh5dahgLMBN": {
+      "account": "6KKyMXxvZTqWihpM1f7GX7r27eLrtvbSuVh5dahgLMBN",
+      "created_by": [
+        {
+          "block_time": 1783974652,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3PAYTr25.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3PAYTr25HTMtMNXwtYQkGM2YjhoFUzhv99v6cw7Tes2VnnQL3vMvRRG8rRh5tA5mrvpoPmvGYUwuhXn1Gvwkxegp",
+          "slot": 432713725,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "6QRHpaE4pWa2hK9NoAfCSvkmP1JTWioxL2oFYQBpoW2z": {
+      "account": "6QRHpaE4pWa2hK9NoAfCSvkmP1JTWioxL2oFYQBpoW2z",
+      "created_by": [
+        {
+          "block_time": 1783977446,
+          "file": "solana-mainnet-bank-program-wide-window-tx-2vPdAEvT.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "2vPdAEvTjAfJGbYnz8zM6e8UUciHFzxqzAwWTai8jVKTRvQZHFQDi7hyg436pmfP4k1UeZDP8pVESPJqEfeTMxQx",
+          "slot": 432720517,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "6Vvprqbf5vAqWH6nUQzHMhpheLuNujGco33JupGFYtMN": {
+      "account": "6Vvprqbf5vAqWH6nUQzHMhpheLuNujGco33JupGFYtMN",
+      "created_by": [
+        {
+          "block_time": 1783976022,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3695Qr1P.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3695Qr1PPQTWQChUhJiaAe9eYW72d2UjwUgN4jCS5Z9zsvAnTZnjLcprp5ThWfZPKVjexCrXTBuWT2HoWtx63pd1",
+          "slot": 432717062,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "6kCn4y4p2AsHErgeDZNjWf26CbPePofFEvVEQP51aMFq": {
+      "account": "6kCn4y4p2AsHErgeDZNjWf26CbPePofFEvVEQP51aMFq",
+      "created_by": [
+        {
+          "block_time": 1783977334,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3EXxMaJk.json",
+          "instructions": [
+            "RfqSellCommit"
+          ],
+          "lamports": 1398960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3EXxMaJk4xAM9gsHg4tVZChUJsajvVavU41XHM41pzXomMv6SWo4biSTLyrMeHYEHQDHSdpBafqZEgHhbdnK92V9",
+          "slot": 432720241,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 73
+        }
+      ],
+      "instructions": {
+        "RfqSellCommit": 1
+      },
+      "lamports": {
+        "1398960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea": 1
+      },
+      "spaces": {
+        "73": 1
+      }
+    },
+    "6o8uSdsh8pfHn92jCxJkokjCmpKgMzpnbyZwpfZjXjmk": {
+      "account": "6o8uSdsh8pfHn92jCxJkokjCmpKgMzpnbyZwpfZjXjmk",
+      "created_by": [
+        {
+          "block_time": 1783976424,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5hsR4ff5.json",
+          "instructions": [
+            "RfqSwap"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5hsR4ff5YxvpdNg8j4nJsGJcTnLu9bQLkHqySHiFH7ZHzMzjsoTfnHhvUcxKBm9cQJYgwgF5V93y43ZFJh8T91B8",
+          "slot": 432718039,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "RfqSwap": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "75b3kPZxgvKNiewsufQQU9ijRkS7WAF1RxVNMT4N3DWr": {
+      "account": "75b3kPZxgvKNiewsufQQU9ijRkS7WAF1RxVNMT4N3DWr",
+      "created_by": [
+        {
+          "block_time": 1783973841,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5rvCXvrh.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5rvCXvrhq95eVS8ZvG8ghpiRbzVTS8rGBHKk82nrDxx6A4xHkDtMFcJf2Dh1x8cXpuc7ELGjMJxQ2DDpGLbqYe7d",
+          "slot": 432711770,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "7FqbLbbskxCTsfoscwegUFupnxXfvhiRYnEeaDhcZt46": {
+      "account": "7FqbLbbskxCTsfoscwegUFupnxXfvhiRYnEeaDhcZt46",
+      "created_by": [
+        {
+          "block_time": 1783971020,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3Yk8ARi8.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3Yk8ARi8FAi6nQNx5TfL16RVhnVCSL3QCMn7NyUtBvFfKYmg5FSTWu1mfy8pFj5UHqz4kpZzmspRgNZKT5i6o5QZ",
+          "slot": 432704909,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "7Kei8Y3HEkzgb5WiNdQugearmhy1HFTeVHsDZAvqKBB9": {
+      "account": "7Kei8Y3HEkzgb5WiNdQugearmhy1HFTeVHsDZAvqKBB9",
+      "created_by": [
+        {
+          "block_time": 1783972183,
+          "file": "solana-mainnet-bank-program-wide-window-tx-578khp8y.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "578khp8yWENFmH9h5L4va5LaTvdvbniaVnXPMuAJ8ruiZgkz7NqRDviVJkwNqJbXEbeqsEYQL5e7x2Bf6Y9otSZn",
+          "slot": 432707733,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "7MxneSM4KGhrrrEpMH2nYseVxEm7azBdz5S2rckgBtqt": {
+      "account": "7MxneSM4KGhrrrEpMH2nYseVxEm7azBdz5S2rckgBtqt",
+      "created_by": [
+        {
+          "block_time": 1783974955,
+          "file": "solana-mainnet-bank-program-wide-window-tx-4Kr1umLp.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "4Kr1umLpFArAzcHMTWfocoMa487gzpfmUCNiv1aTycVYu3PRFWNYwU6KrATAf7ttZkfrfieRRQkkq5LwLzofPTTq",
+          "slot": 432714461,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "7T6zWu13RDHJE37hyFdbYZvnyDLVF8Y3t7k5cad66F5h": {
+      "account": "7T6zWu13RDHJE37hyFdbYZvnyDLVF8Y3t7k5cad66F5h",
+      "created_by": [
+        {
+          "block_time": 1783976449,
+          "file": "solana-mainnet-bank-program-wide-window-tx-SaWE2vGn.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "SaWE2vGnj12mQxmXqnpwbanVUT66BcQQtN6uTZh7nqx9dg1f1Kx89Yj6xs5dn46Um9ecjt5xpFBdQxHC4HKGm1S",
+          "slot": 432718101,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "7UZUsYwjeS4MkMBuE6EB5eSwYy5BxzapNEM28RVvkA4n": {
+      "account": "7UZUsYwjeS4MkMBuE6EB5eSwYy5BxzapNEM28RVvkA4n",
+      "created_by": [
+        {
+          "block_time": 1783974623,
+          "file": "solana-mainnet-bank-program-wide-window-tx-ewL7or8V.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "ewL7or8V1iTzjaPPzikcqKf7idqwreYnsALR4mS4BPvNGUDAQ7XVEsNwPgAdzVPYWKgft1Z6G4iD46zKHQH35tz",
+          "slot": 432713659,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "7Z9sssutjLvWct4zAgoTwQASfmERB8Kv1EG9Ux9vNKrE": {
+      "account": "7Z9sssutjLvWct4zAgoTwQASfmERB8Kv1EG9Ux9vNKrE",
+      "created_by": [
+        {
+          "block_time": 1783971951,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3u62pYdz.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3u62pYdzwqBx1sRVqD1ZzQawGkN3BVJEiSBmqmizbj2Snv5vnjEpPiqvkUYKjhK5dDVxWBTrA5UCjoNMS6uBSKWn",
+          "slot": 432707169,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "7bTTtBDD2Jd3xint5HyxvGiFKgHwPnVRrqa131o7NRNx": {
+      "account": "7bTTtBDD2Jd3xint5HyxvGiFKgHwPnVRrqa131o7NRNx",
+      "created_by": [
+        {
+          "block_time": 1783978248,
+          "file": "solana-mainnet-bank-program-wide-window-tx-4tzAj4ir.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "4tzAj4irKK24aa6pacEi7PCBDEYc5LVfduagU9EqKF1MAQPD3Mm19taJdvGJ2QC4dW4hJGpnZZfACWmUjFfzkxtr",
+          "slot": 432722472,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "7e64gpsiMwn9jVUuM3iyYNDRwt1sRagwu7sTL2BdeCR9": {
+      "account": "7e64gpsiMwn9jVUuM3iyYNDRwt1sRagwu7sTL2BdeCR9",
+      "created_by": [
+        {
+          "block_time": 1783976022,
+          "file": "solana-mainnet-bank-program-wide-window-tx-MN5t8DxD.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "MN5t8DxDfZR8sRJ6CDp6kebQFe9GCA5ZaGVCQMmSSpD3W7ESKCqKrqcYQT7pTJHUqiLG98ZvtwdYevNxQTvmUGd",
+          "slot": 432717062,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "7kom7nnjfVHyKSrsJTgituBS6nM45uZ9W7819kcVYVex": {
+      "account": "7kom7nnjfVHyKSrsJTgituBS6nM45uZ9W7819kcVYVex",
+      "created_by": [
+        {
+          "block_time": 1783976701,
+          "file": "solana-mainnet-bank-program-wide-window-tx-WYA3DwMN.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "WYA3DwMN53Qo2fEHqoTvqnY7Uc7hXg6xvy8swePL4Fpq6YKzsJFwcLyf3HLGTLBnmZSRorob92ayvn7GzCEdL2E",
+          "slot": 432718702,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "7nkw6HoGxgUxk9xm99ZAmpJnryQoZGkXVBM8jKE1g7RW": {
+      "account": "7nkw6HoGxgUxk9xm99ZAmpJnryQoZGkXVBM8jKE1g7RW",
+      "created_by": [
+        {
+          "block_time": 1783978896,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5X8jPJwX.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5X8jPJwXRGPVXohmsx5vZLGCTZmJw3tXbdApUBLVHKG114ENCydfhJUrA55AAuRYE9a3TnHdUPuMicwWKKhCdL7s",
+          "slot": 432724042,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "7usYwAPoNWoFqPc2yAis7Tki4LyEipeFPxAV8m2KPwPC": {
+      "account": "7usYwAPoNWoFqPc2yAis7Tki4LyEipeFPxAV8m2KPwPC",
+      "created_by": [
+        {
+          "block_time": 1783979166,
+          "file": "solana-mainnet-bank-program-wide-window-tx-31qBRtDS.json",
+          "instructions": [
+            "Swap",
+            "RouteV2",
+            "SwapExactAmountIn"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "31qBRtDSbMsvsRwtjBu8yrwNYNhLbPgvUehnQsJYop3xxN5dzpxo9AZcEsuHwHZkbVZo2ZyqayoYwurdhQEwMFWW",
+          "slot": 432724705,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "RouteV2": 1,
+        "Swap": 1,
+        "SwapExactAmountIn": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "83ciqgSKBsMSHzyg9UjCxSXzq89cBbx3uqSb6ehpVQ3e": {
+      "account": "83ciqgSKBsMSHzyg9UjCxSXzq89cBbx3uqSb6ehpVQ3e",
+      "created_by": [
+        {
+          "block_time": 1783977336,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5jLLyg6f.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5jLLyg6f9SzReZR26YCdFByd6sdA8c7XY7EPZE6iJoPPonmZ3VNsAJeDma8wzEtAoULFUYgGDfRSA2tBHscTSNd3",
+          "slot": 432720246,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "88n7iuuUpBzLtWBqQ6xk4ss7niE4gdu9vxJaYvP3t7es": {
+      "account": "88n7iuuUpBzLtWBqQ6xk4ss7niE4gdu9vxJaYvP3t7es",
+      "created_by": [
+        {
+          "block_time": 1783973750,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3qGEX1FS.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3qGEX1FS9FpnMqSvnYBh2xHDAziQazNuSBY2n6wHXeV4M3cBfuyV9JqnC4XkNb2GdESGSyUQyhginYuFxLaFNQ8s",
+          "slot": 432711551,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "8DG1gGtLrsQeMvJxFxKa4HGfj1xvubs35bZBkuVy5LXw": {
+      "account": "8DG1gGtLrsQeMvJxFxKa4HGfj1xvubs35bZBkuVy5LXw",
+      "created_by": [
+        {
+          "block_time": 1783970300,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3mR1zxuu.json",
+          "instructions": [
+            "GetAccountDataSize",
+            "InitializeImmutableOwner",
+            "InitializeAccount3",
+            "Swap",
+            "RouteV2",
+            "TransferChecked",
+            "TransferChecked"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3mR1zxuu12uWifKarTXRU8SwNQVHsctGLA3tdG9XTo87jRdbJDN4ZdnNVvaYBRX5RN6VHfCceo6wvPDuZakexJxX",
+          "slot": 432703151,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "GetAccountDataSize": 1,
+        "InitializeAccount3": 1,
+        "InitializeImmutableOwner": 1,
+        "RouteV2": 1,
+        "Swap": 1,
+        "TransferChecked": 2
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "8HwpfUhioy8MDoGdk3SjzCUSLnyeRy6xaRznfgSJwfjc": {
+      "account": "8HwpfUhioy8MDoGdk3SjzCUSLnyeRy6xaRznfgSJwfjc",
+      "created_by": [
+        {
+          "block_time": 1783976372,
+          "file": "solana-mainnet-bank-program-wide-window-tx-8H4H6uCF.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "8H4H6uCF8SpxM8Bfn8EU7boBZJ2V2FQvDYH8ijC19MQWrVED2Mi2r5bA8B45uV4RYutjkyv5NmiJM85zjPrVqPV",
+          "slot": 432717916,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "8Rz73eoBKsYUxL5NrZ1etrthArpRiBaQ1wnqfD6WPkvv": {
+      "account": "8Rz73eoBKsYUxL5NrZ1etrthArpRiBaQ1wnqfD6WPkvv",
+      "created_by": [
+        {
+          "block_time": 1783970126,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5wWDvanq.json",
+          "instructions": [
+            "RfqSwap"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5wWDvanq6tHP4L93ByymL4BBDqGq9AY5q5Thh6t2QhFEpyZbAMs7fHmcZU1fWryp3tHTjMDMKi43WpCUNCakZWiR",
+          "slot": 432702727,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "RfqSwap": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "8S9b6GjPzEpDLYQbdt3ZzpJRR3VPemwZ7MxnUUQSTxQa": {
+      "account": "8S9b6GjPzEpDLYQbdt3ZzpJRR3VPemwZ7MxnUUQSTxQa",
+      "created_by": [
+        {
+          "block_time": 1783975635,
+          "file": "solana-mainnet-bank-program-wide-window-tx-58XUdjYy.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "58XUdjYyQutAHx3ybMemrCV4RXiADMaS8YEjGdkGUQupoHLLdfrVA68SMsCCfnLjbDMsTiVGZxrohsmM6oicmitB",
+          "slot": 432716120,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "8V2UAxnGzH1Reh5aLnjgFDhcbVXL3vaN4VubbpinAQiE": {
+      "account": "8V2UAxnGzH1Reh5aLnjgFDhcbVXL3vaN4VubbpinAQiE",
+      "created_by": [
+        {
+          "block_time": 1783973725,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5DazBrKw.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5DazBrKwvgZAXABXLh8Mg3RqEy1iUT6HmnxHovDj7rw8iPPtDh2od2NYZnkNQgCteb7Tw3vJdgxgcoj4q82Qm8Zc",
+          "slot": 432711491,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "8XRYCgDD3Har9pTDRLpJTjoSezSBA5LDoDR79xPYWb4x": {
+      "account": "8XRYCgDD3Har9pTDRLpJTjoSezSBA5LDoDR79xPYWb4x",
+      "created_by": [
+        {
+          "block_time": 1783977321,
+          "file": "solana-mainnet-bank-program-wide-window-tx-38ZzLYT2.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "38ZzLYT2b7a5U4d9FjHfqs8hoBQwY77zZVny2st6mNKxKYtwTedfG7JFcDPzKF9z8rRPinxKT76RYwsv6ZXuwBfK",
+          "slot": 432720209,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "8wWEmWFDx7Sw16NyoF4kux3Kv3aN8dtQ4CTmXbtcMEUQ": {
+      "account": "8wWEmWFDx7Sw16NyoF4kux3Kv3aN8dtQ4CTmXbtcMEUQ",
+      "created_by": [
+        {
+          "block_time": 1783972836,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3Vqw2KWh.json",
+          "instructions": [
+            "Swap",
+            "SharedAccountsRouteV2",
+            "Swap",
+            "SwapExactIn"
+          ],
+          "lamports": 2039280,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "signature": "3Vqw2KWh1VTm9L5mpvPcytE9pddqxd8vJuj6v1MhzkNH3NjL1t9UzAppeXiRuFNS5tFZDXv8c1eUfZPFeqEYVsY3",
+          "slot": 432709335,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 165
+        },
+        {
+          "block_time": 1783972825,
+          "file": "solana-mainnet-bank-program-wide-window-tx-QUpseqcH.json",
+          "instructions": [
+            "Swap",
+            "RouteV2",
+            "swap_v4"
+          ],
+          "lamports": 2039280,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "signature": "QUpseqcHKbJNoup2PM8NdjacqrVZC8tqDMyxYiPJN6z792aqoeBArh29sLEj2HiuaZjk6DwmzoNjvdk8BZ3yEZE",
+          "slot": 432709310,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 165
+        },
+        {
+          "block_time": 1783971926,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3YUJrfGo.json",
+          "instructions": [
+            "Swap",
+            "RouteV2"
+          ],
+          "lamports": 2039280,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "signature": "3YUJrfGoUzGpHywTsnJcxEvoiFGAvoGGubTkMR4VvkVoxV31uEY5pDaz8aQGEzmTPyvDQcPEoLq5zMJzHriYg3bX",
+          "slot": 432707109,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 165
+        },
+        {
+          "block_time": 1783970429,
+          "file": "solana-mainnet-bank-program-wide-window-tx-2xVehYw6.json",
+          "instructions": [
+            "Swap",
+            "RouteV2",
+            "TransferChecked",
+            "TransferChecked"
+          ],
+          "lamports": 2039280,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "signature": "2xVehYw61esCQoroqWPMTAYv1WJa9kmnvtWmcKtPGdMWBKLaieR4Pm9jDqvdTV9MCXjWB5Njso9uKFTJFKfMursm",
+          "slot": 432703461,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 165
+        },
+        {
+          "block_time": 1783969233,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3FSP28Ko.json",
+          "instructions": [
+            "Swap",
+            "RouteV2",
+            "Swap"
+          ],
+          "lamports": 2039280,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "signature": "3FSP28Kob6gBe6pY8ueBD3rQrBhdHaWhMTTRYieoCLPH5wv9rUPAkQ6mkanfHowgCDv3XETP7RB9PQT4XqVnRyTq",
+          "slot": 432700546,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 165
+        }
+      ],
+      "instructions": {
+        "RouteV2": 4,
+        "SharedAccountsRouteV2": 1,
+        "Swap": 7,
+        "SwapExactIn": 1,
+        "TransferChecked": 2,
+        "swap_v4": 1
+      },
+      "lamports": {
+        "2039280": 5
+      },
+      "owners": {
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": 5
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 5
+      },
+      "spaces": {
+        "165": 5
+      }
+    },
+    "91j9HnHz2fSsvTAbwYiRc7nMdzqVt8q66eeqCMtF66gH": {
+      "account": "91j9HnHz2fSsvTAbwYiRc7nMdzqVt8q66eeqCMtF66gH",
+      "created_by": [
+        {
+          "block_time": 1783973725,
+          "file": "solana-mainnet-bank-program-wide-window-tx-bkQeRWA9.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "bkQeRWA9hhdXtEHEZmax45iUHW9nQuGEWfgUonua4ZVs6M6bnrKCwAHuyFaD3nwG35PaWr3GRyBkBiwMZsTzQ9m",
+          "slot": 432711491,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "99Y9x1JbM7URjPqsfixAhFt1unXZcs6RQy7mFyFzBj1D": {
+      "account": "99Y9x1JbM7URjPqsfixAhFt1unXZcs6RQy7mFyFzBj1D",
+      "created_by": [
+        {
+          "block_time": 1783970123,
+          "file": "solana-mainnet-bank-program-wide-window-tx-2BLBsZGv.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "2BLBsZGvLSupz9GdjQ1E61DqVAb5SVWX6HsVX2YCUwxqF8f3ejXyYtYf9smyNaVZXjZF43bwAHHxVQAh91KfxReH",
+          "slot": 432702719,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "9B4haNYKSVJzUJp8XPq4CH36HeRohDqXtqBsLMpFTMHV": {
+      "account": "9B4haNYKSVJzUJp8XPq4CH36HeRohDqXtqBsLMpFTMHV",
+      "created_by": [
+        {
+          "block_time": 1783975635,
+          "file": "solana-mainnet-bank-program-wide-window-tx-363zEKVz.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "363zEKVzHqeKTmUBmV3vC2cN5PpUogS5BA8A5UCtLJKVVgAkAqfPzg88DDdfwAzvdLQDZwexhzbNLPGdGuyu2oH9",
+          "slot": 432716120,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "9GZKxksdnV5r5BSAAvRHRQtheJjByECFPZ5YA57sdvwU": {
+      "account": "9GZKxksdnV5r5BSAAvRHRQtheJjByECFPZ5YA57sdvwU",
+      "created_by": [
+        {
+          "block_time": 1783976832,
+          "file": "solana-mainnet-bank-program-wide-window-tx-36o3EU7G.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "36o3EU7GcR1pNvPsJycLQjbQRZ4ktPTK8QsUBJehPQDSrrtbMHungvN9vqzKZjPoZdAHEMgvVXfk3HYC23BcjzzS",
+          "slot": 432719013,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "9Gfcrzieisp6NbRpy5wwr3jUL9K6ZAUYTqwWuQqx79sB": {
+      "account": "9Gfcrzieisp6NbRpy5wwr3jUL9K6ZAUYTqwWuQqx79sB",
+      "created_by": [
+        {
+          "block_time": 1783975549,
+          "file": "solana-mainnet-bank-program-wide-window-tx-249nobFU.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "249nobFU5pguxvVA9iD9FfP94HNoS57rq2CoTZRkQaQtRkBM8XLDTp2qC5gDxyw5S9k3WJyrBBFm22idZkp1oHsb",
+          "slot": 432715911,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "9Jww51AiG8NnwwqZNKaGoyRfWYRC3R3eaQjiSeyuefHs": {
+      "account": "9Jww51AiG8NnwwqZNKaGoyRfWYRC3R3eaQjiSeyuefHs",
+      "created_by": [
+        {
+          "block_time": 1783974636,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5XKe5FVT.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5XKe5FVTLoPB1nraERXUqBJRmt83gqRbkchU1JGDjPqj6dQYAjEoikrgsQoTn8ez8VU6pQhQgwtf988esaXRtPo7",
+          "slot": 432713687,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "9LGkE4majw2AbcGqagPeShLTBfhTBhjEMAnrtuEG8H7i": {
+      "account": "9LGkE4majw2AbcGqagPeShLTBfhTBhjEMAnrtuEG8H7i",
+      "created_by": [
+        {
+          "block_time": 1783970150,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5cACwNy6.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5cACwNy6bEKhQJyAYqzRx5MiEm6H23oVVdCQkAjTnTVmGDJH4a9X5jkfBn8aSqmDrQm6gm7YKjGrcspUYYMPHmYt",
+          "slot": 432702784,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "9R9NEvgeg7sEutMHnanQqcMFxCp1KaXgeXiJMqJMMumy": {
+      "account": "9R9NEvgeg7sEutMHnanQqcMFxCp1KaXgeXiJMqJMMumy",
+      "created_by": [
+        {
+          "block_time": 1783976258,
+          "file": "solana-mainnet-bank-program-wide-window-tx-58M59rnh.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "58M59rnh4wfQRh8fK9BgRSbtFBMfkR861Jd58KaeoLVVDS7vVqyDEuJyb1XMUmxV1spt5cbgQf7eXmvL7EqUKzho",
+          "slot": 432717637,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "9Yx2EVgpxYS8jerN1ZCHwLZybV1wZaT3Zx3GGfjLzCGp": {
+      "account": "9Yx2EVgpxYS8jerN1ZCHwLZybV1wZaT3Zx3GGfjLzCGp",
+      "created_by": [
+        {
+          "block_time": 1783975549,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3h4QTnCy.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3h4QTnCy6wSU2ABvoPCmAK78W5rhJxHwBW3CKCpXevqpWkYx9x7pES4EKuiwZjj8xczpTC5XkJbf2uzCApCEn3DN",
+          "slot": 432715911,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "9aGopDcdFaPARoL5gyrQXXVjpWFnubFV5kn8kQYadQfi": {
+      "account": "9aGopDcdFaPARoL5gyrQXXVjpWFnubFV5kn8kQYadQfi",
+      "created_by": [
+        {
+          "block_time": 1783971926,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3QmAb6aR.json",
+          "instructions": [
+            "CacheTokenMetadata"
+          ],
+          "lamports": 1336320,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3QmAb6aRJnNaLoCzCSmRjwejeQrniWBjy9cxBmebLp4U4eT4sNPeXUiMw2NQG1qqN1F4WG14WZRWHvwBS8aCV2z7",
+          "slot": 432707109,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 64
+        }
+      ],
+      "instructions": {
+        "CacheTokenMetadata": 1
+      },
+      "lamports": {
+        "1336320": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "64": 1
+      }
+    },
+    "9b3KkomFCd8NRBPmoXC52FWbRbMWLAaSXBkHraNH2QTZ": {
+      "account": "9b3KkomFCd8NRBPmoXC52FWbRbMWLAaSXBkHraNH2QTZ",
+      "created_by": [
+        {
+          "block_time": 1783969245,
+          "file": "solana-mainnet-bank-program-wide-window-tx-FqSBYi9s.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "FqSBYi9sJDSdWPSZScrqf4KjHtkkPMHEPgRhLQT4mmPQ4utqrDYj3Qoh8Hxvc81Z8oGnNFVLGoj1hZKNMQuWmAk",
+          "slot": 432700574,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "9iTfPkmUK6NvBf1tnVbc22bmSQTynKwHAoJEBn4jYQwo": {
+      "account": "9iTfPkmUK6NvBf1tnVbc22bmSQTynKwHAoJEBn4jYQwo",
+      "created_by": [
+        {
+          "block_time": 1783971032,
+          "file": "solana-mainnet-bank-program-wide-window-tx-59UkQFFF.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "59UkQFFF6DdT84bhdVkoX4QdhC49HRUT1htZ8PgM5vLtgvqhnkSTm2PfQgsVSnBYKarCbaFyPwseSSpWXNVEvcQ7",
+          "slot": 432704938,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "9qtF93JczNkSqH4fKfrPQhc8QKmvm8jCAq31g4ynNC6N": {
+      "account": "9qtF93JczNkSqH4fKfrPQhc8QKmvm8jCAq31g4ynNC6N",
+      "created_by": [
+        {
+          "block_time": 1783979136,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5vnMDXWk.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5vnMDXWkuHApJCDUAVfdqBMJ7f6QE6BrnN9eNoqoA77yx8xy9Y9EpYCSgqE5csVcvwozzpQ5af1tcF3KSqBZPcbq",
+          "slot": 432724630,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "9sGjZn5w26LWaXGdeL2znXGt1qLMbTPRcxDajsCSe9TS": {
+      "account": "9sGjZn5w26LWaXGdeL2znXGt1qLMbTPRcxDajsCSe9TS",
+      "created_by": [
+        {
+          "block_time": 1783978235,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3znAr5Ch.json",
+          "instructions": [
+            "CacheTokenMetadata"
+          ],
+          "lamports": 1336320,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3znAr5ChRTFqFx6qRSVtwUWtdxgD9wSZaeDH3a93pmtmow1SJW3fntgR62uBpXHxW4sdVvup8kyR4ngEEPkPbfcn",
+          "slot": 432722440,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 64
+        }
+      ],
+      "instructions": {
+        "CacheTokenMetadata": 1
+      },
+      "lamports": {
+        "1336320": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "64": 1
+      }
+    },
+    "9smXUU1X1JNSDy972iwPd7yf2AbT79jLRndNVfsCbsSP": {
+      "account": "9smXUU1X1JNSDy972iwPd7yf2AbT79jLRndNVfsCbsSP",
+      "created_by": [
+        {
+          "block_time": 1783970082,
+          "file": "solana-mainnet-bank-program-wide-window-tx-Ng7xdCfM.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 2039280,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "signature": "Ng7xdCfM6HEd5uDZHPhmPvqmiRModJMEpZsjV8sCXF6Ei9K33amfHQvmqBp9CxYxuX9KKM5juknPcN2KL6Vxdb5",
+          "slot": 432702623,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 165
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "2039280": 1
+      },
+      "owners": {
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "165": 1
+      }
+    },
+    "A96nvZfyznYuQ8R6mD251MjRRt9ibko81KtN2mFDUWwQ": {
+      "account": "A96nvZfyznYuQ8R6mD251MjRRt9ibko81KtN2mFDUWwQ",
+      "created_by": [
+        {
+          "block_time": 1783979166,
+          "file": "solana-mainnet-bank-program-wide-window-tx-51SSB76H.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "51SSB76HVuL6sQ1Z3fdkpKkGDKMqwmWvTeA8JZaYrKDkSXVPeUPJBLaKm65PJdNk576BvfBELHx7Z3yXqnd2nofY",
+          "slot": 432724705,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "ADzuiLrJNgf4d2Rsc8dqNtj6qjt76CminS4MMdVqXyEz": {
+      "account": "ADzuiLrJNgf4d2Rsc8dqNtj6qjt76CminS4MMdVqXyEz",
+      "created_by": [
+        {
+          "block_time": 1783971687,
+          "file": "solana-mainnet-bank-program-wide-window-tx-4TCXcPur.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "4TCXcPurZ5xavUvqL3DF7UYZqSRpUVtzdsh7UUqPVGdCq5gnTVi8XvP9MinS1t1Q9RY6JQcxittcEBCcJVGAGZK",
+          "slot": 432706536,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "ALWQJrSFkjQcw6cuGpUbATxoihLDWoT5TPrgb6e8mXzh": {
+      "account": "ALWQJrSFkjQcw6cuGpUbATxoihLDWoT5TPrgb6e8mXzh",
+      "created_by": [
+        {
+          "block_time": 1783976372,
+          "file": "solana-mainnet-bank-program-wide-window-tx-63XFedjd.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "63XFedjdHAzPQL5tmiiQojiNmwqkuAfafzYeRiNiCisioaoSHMY1CHrF8jrHn4vt5LVD4ftJwYL2srKrT5NsUHdp",
+          "slot": 432717916,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "AQwf74v8AcSfQ66RCpLWZHUcfi4QM2kdYhufufjRwwoi": {
+      "account": "AQwf74v8AcSfQ66RCpLWZHUcfi4QM2kdYhufufjRwwoi",
+      "created_by": [
+        {
+          "block_time": 1783973725,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3yPAKLxr.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3yPAKLxr5XtmJh3uVTqbiu5crUT8QxWqLx8gda1kmGvDQUhuQCjj1imPHLkZdAjrA4ymW9nD3mkShFtgsVMu75u7",
+          "slot": 432711490,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "AwN71EcYJEsgwivkofKXMHHqQCusP51tS8zxf3afiTLe": {
+      "account": "AwN71EcYJEsgwivkofKXMHHqQCusP51tS8zxf3afiTLe",
+      "created_by": [
+        {
+          "block_time": 1783970548,
+          "file": "solana-mainnet-bank-program-wide-window-tx-31mXJuSH.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "31mXJuSHvVVUyH66ucTxjxQrWSdxxPtedgA2n5Bc7Ao4EMqHDnzMMxRkm3BNSgsyLo9Jo3s8D4DTPeWpjYhLKv4h",
+          "slot": 432703755,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "B2p1Xp35g9bYiwmrSL7Fn4YaDZ7UBAuhDRSSLq64USnY": {
+      "account": "B2p1Xp35g9bYiwmrSL7Fn4YaDZ7UBAuhDRSSLq64USnY",
+      "created_by": [
+        {
+          "block_time": 1783973246,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3V5LNAuC.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3V5LNAuCNfGq68ZnmtXcNrmG1xjxUbasJu9EYBUurBGuE3u617PDDSks9vKTbLpRcbCcAELQHfsxawnH6wRTLPnj",
+          "slot": 432710320,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "BKwJXpYkEAwJBJZmBd9eL5vNGMsv5vNij912eyCiwcsH": {
+      "account": "BKwJXpYkEAwJBJZmBd9eL5vNGMsv5vNij912eyCiwcsH",
+      "created_by": [
+        {
+          "block_time": 1783974565,
+          "file": "solana-mainnet-bank-program-wide-window-tx-57UmbKs2.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "57UmbKs2ayiKBS2FmMa8AqNmQT4fWTGLRFoxv4zvuhcTXo5ybQfFn2n4gfUB4xuFbuWJq5MKYWf2q97udtz77EaC",
+          "slot": 432713519,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "BLrUpXedSq1itkMXfT4oCFFESkRwPpaX8whaqnVcR8Ay": {
+      "account": "BLrUpXedSq1itkMXfT4oCFFESkRwPpaX8whaqnVcR8Ay",
+      "created_by": [
+        {
+          "block_time": 1783978680,
+          "file": "solana-mainnet-bank-program-wide-window-tx-4J3rrFag.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "4J3rrFagrAxks2vDx3XcjDr9yWeCBe4UB23EVNBzh2Xi2K4mq9DrECfMFf6iBnMK2UMNRrvJpgAzVoGmytigNfez",
+          "slot": 432723525,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "BQm1o9jKEmaTnoufAnFmovNPzSpGeTawwDShrgHqErjz": {
+      "account": "BQm1o9jKEmaTnoufAnFmovNPzSpGeTawwDShrgHqErjz",
+      "created_by": [
+        {
+          "block_time": 1783969245,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3gHuGZSE.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3gHuGZSEanFvHnSbqU7pxASYP2SLnBiUzjYBbuVti6gAk4qJeCs9gJSauNewnVubHYpFr8ozk8eMkqNCQuWmsZBQ",
+          "slot": 432700574,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "BRU5nrWUvk8sfADmTVtqdZbMnNECquENj7NRdJSPbJKz": {
+      "account": "BRU5nrWUvk8sfADmTVtqdZbMnNECquENj7NRdJSPbJKz",
+      "created_by": [
+        {
+          "block_time": 1783971048,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5U2yiRp7.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5U2yiRp7eYTzasF3wEUEYf5tFaVnY2wBvTA1UWRTxKRGpFrXW8EKLAo2HVCnJ4vq3iX47u5pAyofLZfTpZwrkqnM",
+          "slot": 432704978,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "BTeWbuC3NZijcDWm4LP7aYRyhiNkaDHz7zYQB9bF3LSv": {
+      "account": "BTeWbuC3NZijcDWm4LP7aYRyhiNkaDHz7zYQB9bF3LSv",
+      "created_by": [
+        {
+          "block_time": 1783970429,
+          "file": "solana-mainnet-bank-program-wide-window-tx-2xVehYw6.json",
+          "instructions": [
+            "Swap",
+            "RouteV2",
+            "TransferChecked",
+            "TransferChecked"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "2xVehYw61esCQoroqWPMTAYv1WJa9kmnvtWmcKtPGdMWBKLaieR4Pm9jDqvdTV9MCXjWB5Njso9uKFTJFKfMursm",
+          "slot": 432703461,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "RouteV2": 1,
+        "Swap": 1,
+        "TransferChecked": 2
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "BbKbav77BpwrUdziSBE7BzxBEyeqiKwEikr2YFa6g3An": {
+      "account": "BbKbav77BpwrUdziSBE7BzxBEyeqiKwEikr2YFa6g3An",
+      "created_by": [
+        {
+          "block_time": 1783972847,
+          "file": "solana-mainnet-bank-program-wide-window-tx-DgBNCUw8.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "DgBNCUw8bzTxzTFXUUczzAc2RTKZ84eT9MBx1soRzwnbJGh9CywU7PxMaqHNkpQU9MnLn6AMajE8wmWuC2JDKrL",
+          "slot": 432709363,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "BeshMSsxwxw8XSKYPghf1nYaxLB8L1qvQ6mz9GTBwUP1": {
+      "account": "BeshMSsxwxw8XSKYPghf1nYaxLB8L1qvQ6mz9GTBwUP1",
+      "created_by": [
+        {
+          "block_time": 1783969218,
+          "file": "solana-mainnet-bank-program-wide-window-tx-53thKzBo.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "53thKzBoVCSCu7bXAerMDteEk1y9ViJGH3zaVP7NJ6aTvdSFcw1i5D2mmuniUwYBjoULen4Sh6VZPTfySkbA6ezH",
+          "slot": 432700510,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "BkHTBkDDjmaDXMHBkdRGY4fZedVchjp3M8MHFgnRNApW": {
+      "account": "BkHTBkDDjmaDXMHBkdRGY4fZedVchjp3M8MHFgnRNApW",
+      "created_by": [
+        {
+          "block_time": 1783971033,
+          "file": "solana-mainnet-bank-program-wide-window-tx-fnzLou22.json",
+          "instructions": [
+            "RfqSellCommit"
+          ],
+          "lamports": 1398960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "fnzLou22Ct9xtdV6JQt5BDPVooHp8ctkFFSmnqQg4sHZzJK6k2X1cJQnzFBAQMbVuKWcoCYU6LkATKrryA6XNqD",
+          "slot": 432704941,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 73
+        }
+      ],
+      "instructions": {
+        "RfqSellCommit": 1
+      },
+      "lamports": {
+        "1398960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea": 1
+      },
+      "spaces": {
+        "73": 1
+      }
+    },
+    "BrucEQYeUdiafDPY1RzPBv8jArZokdnDoNscUk4L3iAP": {
+      "account": "BrucEQYeUdiafDPY1RzPBv8jArZokdnDoNscUk4L3iAP",
+      "created_by": [
+        {
+          "block_time": 1783978764,
+          "file": "solana-mainnet-bank-program-wide-window-tx-64KYTBwE.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "64KYTBwEaNvt1sir1Aba8igzAePGG1sFt3asWL1Vyrh5W6HXDzBVFuWUZFnx3AQaN4vDLgN7u74PzPrcd6JpGKFp",
+          "slot": 432723720,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "CEYAxsDQqnLYFsJboR3mBtRfLq746EJBcurZcZ4Xt49d": {
+      "account": "CEYAxsDQqnLYFsJboR3mBtRfLq746EJBcurZcZ4Xt49d",
+      "created_by": [
+        {
+          "block_time": 1783977336,
+          "file": "solana-mainnet-bank-program-wide-window-tx-468ZFwcZ.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "468ZFwcZcTp589Pg8ZAVdrfQMqB6ufLvEEkxEAbkUvqweuwZ7dDo3ggCKpeJCbKk9gzJ9YkxSu4LyMBQdABLHAjM",
+          "slot": 432720246,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "CMYEtCLbMf3CHFbuYEZT31qHJLHtYE4uq3fshz3UrxqN": {
+      "account": "CMYEtCLbMf3CHFbuYEZT31qHJLHtYE4uq3fshz3UrxqN",
+      "created_by": [
+        {
+          "block_time": 1783969277,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5TGFgwoE.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5TGFgwoEdjANFfZNvdQ2BuyQtaP9DN9DWjQoFBjTbEY6f9hR3DQ2cgext1qv8JQ3TPnYoWFAzvU8f2ekkhvDRwKx",
+          "slot": 432700654,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "CTMfuzxMXLpBkM7xnDWAbvZ63hcK3Nc6WE8X94eUHPA": {
+      "account": "CTMfuzxMXLpBkM7xnDWAbvZ63hcK3Nc6WE8X94eUHPA",
+      "created_by": [
+        {
+          "block_time": 1783976258,
+          "file": "solana-mainnet-bank-program-wide-window-tx-HVhJZbjg.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "HVhJZbjgP7XAFEePJd3RJ2XVSoqw15BUbH7DxvRCbX12uoNfxL4JpSk6d9Fk3VHx99EpGi6Dr1xTGeBhmiN2Qy7",
+          "slot": 432717637,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "CVWK839WMKZg6dvaBtJxSSfdMQGRQvBoyNBQcTwAwEuF": {
+      "account": "CVWK839WMKZg6dvaBtJxSSfdMQGRQvBoyNBQcTwAwEuF",
+      "created_by": [
+        {
+          "block_time": 1783969233,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3JYhbUjr.json",
+          "instructions": [
+            "CacheTokenMetadata"
+          ],
+          "lamports": 1336320,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3JYhbUjrDuKmgCH4Y3mP4jKN7538TvoijPmmEYKixaDsQ4bsUHYWo3U9nSo7crEAsmvh4129UNow7YzJtVqUcBgU",
+          "slot": 432700546,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 64
+        }
+      ],
+      "instructions": {
+        "CacheTokenMetadata": 1
+      },
+      "lamports": {
+        "1336320": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "64": 1
+      }
+    },
+    "CezmZzyLL7FhW7wwZLy2Vu8tX75tyuavfjBPpgRs7xze": {
+      "account": "CezmZzyLL7FhW7wwZLy2Vu8tX75tyuavfjBPpgRs7xze",
+      "created_by": [
+        {
+          "block_time": 1783970429,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5tKFGQQM.json",
+          "instructions": [
+            "CacheTokenMetadata"
+          ],
+          "lamports": 1336320,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5tKFGQQMFdKJszinK34zv7xN3rSFUD9fUfgnaknFK6HHjt4WjLPMZ4mwtStokwNBaAMs1ovGk6Fv5nc2koQkViNC",
+          "slot": 432703461,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 64
+        }
+      ],
+      "instructions": {
+        "CacheTokenMetadata": 1
+      },
+      "lamports": {
+        "1336320": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "64": 1
+      }
+    },
+    "CiMVn6FYqVRnd38dwHo8MDC9KRZuxEWBAWKYCJSGSJ6w": {
+      "account": "CiMVn6FYqVRnd38dwHo8MDC9KRZuxEWBAWKYCJSGSJ6w",
+      "created_by": [
+        {
+          "block_time": 1783978235,
+          "file": "solana-mainnet-bank-program-wide-window-tx-42i1QAVc.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "42i1QAVcoYKKBHcYNzdMgQuNiGZUqWPAp8fF3CcXtnp7A85Z83ogbCTchRrtnNPD988AtLzsGFUkYyhqjdyYLqFx",
+          "slot": 432722440,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "Cjdg5znxx5DUFqhgrWnhghAfs7nJ2MWmzz62jRZV7vpy": {
+      "account": "Cjdg5znxx5DUFqhgrWnhghAfs7nJ2MWmzz62jRZV7vpy",
+      "created_by": [
+        {
+          "block_time": 1783979166,
+          "file": "solana-mainnet-bank-program-wide-window-tx-31qBRtDS.json",
+          "instructions": [
+            "Swap",
+            "RouteV2",
+            "SwapExactAmountIn"
+          ],
+          "lamports": 2039280,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "signature": "31qBRtDSbMsvsRwtjBu8yrwNYNhLbPgvUehnQsJYop3xxN5dzpxo9AZcEsuHwHZkbVZo2ZyqayoYwurdhQEwMFWW",
+          "slot": 432724705,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 165
+        },
+        {
+          "block_time": 1783978235,
+          "file": "solana-mainnet-bank-program-wide-window-tx-56w6iNNd.json",
+          "instructions": [
+            "Swap",
+            "RouteV2",
+            "swap_v4"
+          ],
+          "lamports": 2039280,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "signature": "56w6iNNdz2Dqpz5DrDaMCnkDJcUTnJgYYNqh3UtyTNrxYHyq3QLmsHoUEQzukc7wTew4jzntt2h6r5Nf2DHqUrQv",
+          "slot": 432722440,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 165
+        },
+        {
+          "block_time": 1783976438,
+          "file": "solana-mainnet-bank-program-wide-window-tx-1GX6Nhmx.json",
+          "instructions": [
+            "Swap",
+            "RouteV2",
+            "Swap"
+          ],
+          "lamports": 2039280,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "signature": "1GX6NhmxXXEEti8CZRNzF416ReNE7uWzV3Gjsy94yFkidB7srN7txdmkeSUDLgjsUDvsuh1k24WAbay6GDREh1",
+          "slot": 432718075,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 165
+        },
+        {
+          "block_time": 1783975537,
+          "file": "solana-mainnet-bank-program-wide-window-tx-Vrc1bYfU.json",
+          "instructions": [
+            "Swap",
+            "RouteV2",
+            "SwapExactAmountIn"
+          ],
+          "lamports": 2039280,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "signature": "Vrc1bYfUKJvC27RJzQRShUaihEMzFQ17fWUDw4azzptmQg5MoBahbmxKeTmR7WWA6Kr9BUPFZzhzsoMCkJ6KzTV",
+          "slot": 432715883,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 165
+        },
+        {
+          "block_time": 1783973740,
+          "file": "solana-mainnet-bank-program-wide-window-tx-2NfHbGVz.json",
+          "instructions": [
+            "Swap",
+            "RouteV2",
+            "Swap"
+          ],
+          "lamports": 2039280,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "signature": "2NfHbGVzs2VsSEjqwFWC1A79DiFYyN3Y24ScT5tzLUpQn1bwvMdVPe8aUeD2ozBGmPNHNB8dTo9VRNr2RPLNvyUC",
+          "slot": 432711528,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 165
+        },
+        {
+          "block_time": 1783971926,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3YUJrfGo.json",
+          "instructions": [
+            "Swap",
+            "RouteV2"
+          ],
+          "lamports": 2039280,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "signature": "3YUJrfGoUzGpHywTsnJcxEvoiFGAvoGGubTkMR4VvkVoxV31uEY5pDaz8aQGEzmTPyvDQcPEoLq5zMJzHriYg3bX",
+          "slot": 432707109,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 165
+        }
+      ],
+      "instructions": {
+        "RouteV2": 6,
+        "Swap": 8,
+        "SwapExactAmountIn": 2,
+        "swap_v4": 1
+      },
+      "lamports": {
+        "2039280": 6
+      },
+      "owners": {
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": 6
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 6
+      },
+      "spaces": {
+        "165": 6
+      }
+    },
+    "Cjm2JuwsPBJNofoA6Yq1tCzBL6W3HZkLhzPW58pVoizS": {
+      "account": "Cjm2JuwsPBJNofoA6Yq1tCzBL6W3HZkLhzPW58pVoizS",
+      "created_by": [
+        {
+          "block_time": 1783972825,
+          "file": "solana-mainnet-bank-program-wide-window-tx-65XzhtQx.json",
+          "instructions": [
+            "CacheTokenMetadata"
+          ],
+          "lamports": 1336320,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "65XzhtQxqtzsLB4FpznKCvbkqopZGwvCZwHVtDZhvLVQdCXihZFb4zGU4Wn4Nd1JtwUzxyUGxdXFW3Hv8F2uHm34",
+          "slot": 432709310,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 64
+        }
+      ],
+      "instructions": {
+        "CacheTokenMetadata": 1
+      },
+      "lamports": {
+        "1336320": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "64": 1
+      }
+    },
+    "Cm75PWRSFNjWD5HYKJrdeqHfySV7YCjN1Sbr753d1FLP": {
+      "account": "Cm75PWRSFNjWD5HYKJrdeqHfySV7YCjN1Sbr753d1FLP",
+      "created_by": [
+        {
+          "block_time": 1783969661,
+          "file": "solana-mainnet-bank-program-wide-window-tx-411N5REJ.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "411N5REJBgiAtRmox5nYLhL1QUyMM61RmpgWFWXBmrVwqHdfNJ67YERJ13a47DkwU8zCKK8LU774Mdc4sHgy6dKz",
+          "slot": 432701599,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "Cn5VRCZA4ng84H8WiAbrTvSPLJKS9MYndWhWJa9RfRob": {
+      "account": "Cn5VRCZA4ng84H8WiAbrTvSPLJKS9MYndWhWJa9RfRob",
+      "created_by": [
+        {
+          "block_time": 1783970594,
+          "file": "solana-mainnet-bank-program-wide-window-tx-2RX4sC4W.json",
+          "instructions": [
+            "RfqSwap",
+            "TransferChecked"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "2RX4sC4WT8x2LS7sp1msiSq53LfhWJF4PkdcJSQXoX67eHj9rEGHDyKKLv458QW3NEg1vQ1Q3rREQSDQ4xa2DCWV",
+          "slot": 432703867,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "RfqSwap": 1,
+        "TransferChecked": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "CrTVn6sM2zFDfepK3JYcBW6MuCMwmj4FiMcba63M69y5": {
+      "account": "CrTVn6sM2zFDfepK3JYcBW6MuCMwmj4FiMcba63M69y5",
+      "created_by": [
+        {
+          "block_time": 1783975537,
+          "file": "solana-mainnet-bank-program-wide-window-tx-oE8XtGVU.json",
+          "instructions": [
+            "CacheTokenMetadata"
+          ],
+          "lamports": 1336320,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "oE8XtGVU7XyenPnmLWFKcGkJiP9LbLS8xnb6m7KwkXSvocuvf68P94yQcFHESMvTgmsEyMLsPqM1coBKHYtCySu",
+          "slot": 432715883,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 64
+        }
+      ],
+      "instructions": {
+        "CacheTokenMetadata": 1
+      },
+      "lamports": {
+        "1336320": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "64": 1
+      }
+    },
+    "D1XJM4WYFjT6ZVqkYznsAATNjp8N7UZU9SbjLAffLBWV": {
+      "account": "D1XJM4WYFjT6ZVqkYznsAATNjp8N7UZU9SbjLAffLBWV",
+      "created_by": [
+        {
+          "block_time": 1783979157,
+          "file": "solana-mainnet-bank-program-wide-window-tx-rVafP1MN.json",
+          "instructions": [
+            "RfqSwap"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "rVafP1MNbaBFCPbDRcuvmGMsJHNWxiubLYvf1SJsrBu8aZq7e8uqPA9Pgy33QzLULugidRXUhqhzsimzkA6UXnr",
+          "slot": 432724682,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "RfqSwap": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "DG1SAnCu6Cpqx7Wy9cnbrqv8bTSGmGLKBWiACjtMnfKh": {
+      "account": "DG1SAnCu6Cpqx7Wy9cnbrqv8bTSGmGLKBWiACjtMnfKh",
+      "created_by": [
+        {
+          "block_time": 1783975519,
+          "file": "solana-mainnet-bank-program-wide-window-tx-4CqcpYcW.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "4CqcpYcWGKrFvnwpvpzChHeG4vBHNzqf6yYuRpuH46WgB7YPAJ5t2tRhMoZKV8VZU8pP6JNEiSQwnw4DcGETLJtX",
+          "slot": 432715840,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "DHqPoegjPFP5cH8qNiMrmceAeLdWU8cBbYQDiJmnHk2V": {
+      "account": "DHqPoegjPFP5cH8qNiMrmceAeLdWU8cBbYQDiJmnHk2V",
+      "created_by": [
+        {
+          "block_time": 1783971565,
+          "file": "solana-mainnet-bank-program-wide-window-tx-4DGvVCYW.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "4DGvVCYW3q4jF4jMVMTfXzKLynfq14xtMpE6JNDsSR5jrCcXj9Fdz95qmUZEQsWUCv3yjQU7U6G3TwFzbLaic1ab",
+          "slot": 432706236,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "DJWZ3QaQV1Ef7FKpZJDj3WZXPRvFvagvL1JkpKepG7Fu": {
+      "account": "DJWZ3QaQV1Ef7FKpZJDj3WZXPRvFvagvL1JkpKepG7Fu",
+      "created_by": [
+        {
+          "block_time": 1783969315,
+          "file": "solana-mainnet-bank-program-wide-window-tx-4nX9jCqz.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "4nX9jCqzVa5TcofwyF7w31mvHTMRE3UahCprWUYqHYujbHVhVvDaBKEobZbfY6t1ME6o8qVcA9JUW94GKAXjqP4d",
+          "slot": 432700752,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "DK3ZTHJawtBAsReEd6WayjfST8M51yXbHAtRQcWH81RR": {
+      "account": "DK3ZTHJawtBAsReEd6WayjfST8M51yXbHAtRQcWH81RR",
+      "created_by": [
+        {
+          "block_time": 1783974955,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5okp7Ebn.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5okp7EbnJGGz6dRzwJh1PEetxF7Afu6dvUvK5EjzpH1JmuSetD4B94A8RrqmepMtkJPfKmnE5kBhLopf32zyoV7i",
+          "slot": 432714461,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "DMNo3vcsQfU4w5wo6Y2Gddt6mgmtPsWden6E1NRZZWxM": {
+      "account": "DMNo3vcsQfU4w5wo6Y2Gddt6mgmtPsWden6E1NRZZWxM",
+      "created_by": [
+        {
+          "block_time": 1783976449,
+          "file": "solana-mainnet-bank-program-wide-window-tx-18vPhZKp.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "18vPhZKpSb3kxhpXK5CDyqzp4dCqT2NzCRSkzaew726Yr4eyrrkWUhjQvo6SKuSsnXGKGsSY52kTde5nzFZmZva",
+          "slot": 432718101,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "DT9deD6BsXWUtvfEPE1z6QqR5BXDbnsE5ASuEzE1CVac": {
+      "account": "DT9deD6BsXWUtvfEPE1z6QqR5BXDbnsE5ASuEzE1CVac",
+      "created_by": [
+        {
+          "block_time": 1783971565,
+          "file": "solana-mainnet-bank-program-wide-window-tx-43A7MpnB.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "43A7MpnBS7sixkZWRezuHuaiTfRiVSxgxd1cDsxYr7BLgTEyisuk8LT32X3gaBrb1NvwpeHsfi2VWTuhc6GPbfbp",
+          "slot": 432706236,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "DY1sNq1rq8RN2P7q3zMaJjWhHCYgNp39Qs6hKrGRYTgX": {
+      "account": "DY1sNq1rq8RN2P7q3zMaJjWhHCYgNp39Qs6hKrGRYTgX",
+      "created_by": [
+        {
+          "block_time": 1783972825,
+          "file": "solana-mainnet-bank-program-wide-window-tx-QUpseqcH.json",
+          "instructions": [
+            "Swap",
+            "RouteV2",
+            "swap_v4"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "QUpseqcHKbJNoup2PM8NdjacqrVZC8tqDMyxYiPJN6z792aqoeBArh29sLEj2HiuaZjk6DwmzoNjvdk8BZ3yEZE",
+          "slot": 432709310,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "RouteV2": 1,
+        "Swap": 1,
+        "swap_v4": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "DkGcTScyyc87JrAvXwZDXaApJ3Zd27gXkewKN7xzqoVt": {
+      "account": "DkGcTScyyc87JrAvXwZDXaApJ3Zd27gXkewKN7xzqoVt",
+      "created_by": [
+        {
+          "block_time": 1783972736,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3x2v2syf.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3x2v2syfw5BYjHZi9i8VLMkUvs5aPJJzPZjv8PbMB8nCKSs3BiKzjWADxLBu5GCoM2HD78zqDAXCEup5NPBZVQF3",
+          "slot": 432709091,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "DkwLTJy5JZLxRBZkVACW3Q1gCxJFvMm2WAE1dVfmfXGn": {
+      "account": "DkwLTJy5JZLxRBZkVACW3Q1gCxJFvMm2WAE1dVfmfXGn",
+      "created_by": [
+        {
+          "block_time": 1783978124,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3xfhnS6q.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3xfhnS6qMv5c9H92of7Y5Q3Mo8kt8vtCzkxkzgvXCPY1B8io2cSv1qGgaMunGjb4mjg3YfXTZg78iToLi6u7oRuE",
+          "slot": 432722172,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "DnM9teVNbi4Cebkqtar3sVJs9LcZWSrV8DhwQzPpSeqM": {
+      "account": "DnM9teVNbi4Cebkqtar3sVJs9LcZWSrV8DhwQzPpSeqM",
+      "created_by": [
+        {
+          "block_time": 1783978224,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5WqeES33.json",
+          "instructions": [
+            "RfqSwap"
+          ],
+          "lamports": 2039280,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "signature": "5WqeES33m2rj1tZW55zSQGY6PqCXSCiHcouFNTV3rsaDd96impDE2dru44d7jWMnv6BP1BpxajfSdDdkNGmeUVu5",
+          "slot": 432722413,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 165
+        },
+        {
+          "block_time": 1783975523,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5JgG223R.json",
+          "instructions": [
+            "RfqSwap"
+          ],
+          "lamports": 2039280,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "signature": "5JgG223RxELDvKC84H9w7wffHogCNWM9U2JwPNyLPTmm9ECWQU77jvJhc6Q3ffnA2JDNi59nBY5NDqhudmZYqgcq",
+          "slot": 432715848,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 165
+        },
+        {
+          "block_time": 1783973728,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5wZxxQBe.json",
+          "instructions": [
+            "RfqSwap"
+          ],
+          "lamports": 2039280,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "signature": "5wZxxQBedui6Br9aGo336S36Rb3zBr2NFxu5WQwjictnHBQLK66VHzBFrJMW8gZZdrfdzJV9jFWCTLDdSA6Bf13X",
+          "slot": 432711497,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 165
+        },
+        {
+          "block_time": 1783971937,
+          "file": "solana-mainnet-bank-program-wide-window-tx-2asM38q2.json",
+          "instructions": [
+            "RfqSellCommit"
+          ],
+          "lamports": 2039280,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "signature": "2asM38q2HYoyqUoWCUcWPYzxVFzfTpQuWGqihYNZNKrTYT4Z9TqRV4HCNgVN8WYpgWpznadDqpCoPbuLyFzt2sRP",
+          "slot": 432707135,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 165
+        },
+        {
+          "block_time": 1783971024,
+          "file": "solana-mainnet-bank-program-wide-window-tx-2H6z9KYM.json",
+          "instructions": [
+            "RfqSwap"
+          ],
+          "lamports": 2039280,
+          "owner": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+          "signature": "2H6z9KYMSb6HT5ETvSrUq1J454CGnbZScyYfxdCTkSV67buTHwLzR6Kx99pTwyzZfDjSBTuMJKKLoRiTiAsnwgQP",
+          "slot": 432704917,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 165
+        }
+      ],
+      "instructions": {
+        "RfqSellCommit": 1,
+        "RfqSwap": 4
+      },
+      "lamports": {
+        "2039280": 5
+      },
+      "owners": {
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": 5
+      },
+      "sources": {
+        "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea": 5
+      },
+      "spaces": {
+        "165": 5
+      }
+    },
+    "DniUERZAeTm23rKJqWGV2JNJcRoZYL8gE9eU5S1q2rKc": {
+      "account": "DniUERZAeTm23rKJqWGV2JNJcRoZYL8gE9eU5S1q2rKc",
+      "created_by": [
+        {
+          "block_time": 1783970082,
+          "file": "solana-mainnet-bank-program-wide-window-tx-Ng7xdCfM.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "Ng7xdCfM6HEd5uDZHPhmPvqmiRModJMEpZsjV8sCXF6Ei9K33amfHQvmqBp9CxYxuX9KKM5juknPcN2KL6Vxdb5",
+          "slot": 432702623,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "DvTkY3gjmMz53xpRgdbufkCTr5Q9oTS9QV3B928DCxBD": {
+      "account": "DvTkY3gjmMz53xpRgdbufkCTr5Q9oTS9QV3B928DCxBD",
+      "created_by": [
+        {
+          "block_time": 1783977348,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3MbGHu7p.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3MbGHu7pWQtiNBvPZ1JDQrMzddYazvZstqQw6c7WyEnQUWg6rzCaC1ckVofBVw5R6JV45KcuU9XGb7BCj4MHnKhp",
+          "slot": 432720274,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "E15RLzjW28N9WTzs41g2T6dEmHspEoVDpJx8Hw5QYyDN": {
+      "account": "E15RLzjW28N9WTzs41g2T6dEmHspEoVDpJx8Hw5QYyDN",
+      "created_by": [
+        {
+          "block_time": 1783975537,
+          "file": "solana-mainnet-bank-program-wide-window-tx-Vrc1bYfU.json",
+          "instructions": [
+            "Swap",
+            "RouteV2",
+            "SwapExactAmountIn"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "Vrc1bYfUKJvC27RJzQRShUaihEMzFQ17fWUDw4azzptmQg5MoBahbmxKeTmR7WWA6Kr9BUPFZzhzsoMCkJ6KzTV",
+          "slot": 432715883,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "RouteV2": 1,
+        "Swap": 1,
+        "SwapExactAmountIn": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "E1oTdUrSiBd23Z4YgHLGswhxRGzLrD4xFMHD7ydzWJ28": {
+      "account": "E1oTdUrSiBd23Z4YgHLGswhxRGzLrD4xFMHD7ydzWJ28",
+      "created_by": [
+        {
+          "block_time": 1783978224,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5WqeES33.json",
+          "instructions": [
+            "RfqSwap"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5WqeES33m2rj1tZW55zSQGY6PqCXSCiHcouFNTV3rsaDd96impDE2dru44d7jWMnv6BP1BpxajfSdDdkNGmeUVu5",
+          "slot": 432722413,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "RfqSwap": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "ECzbm5m7Q2oS2FRAzvSN5ytdGwmgnTwYXqxEUzqLEK9R": {
+      "account": "ECzbm5m7Q2oS2FRAzvSN5ytdGwmgnTwYXqxEUzqLEK9R",
+      "created_by": [
+        {
+          "block_time": 1783970136,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5DFzxj5q.json",
+          "instructions": [
+            "RfqSellCommit"
+          ],
+          "lamports": 1398960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5DFzxj5qEVoKo225VqzhBpz8JAM3kdcJMhYanBrXH8CiRBYeqDECCU7jXov1RAi6Lewv84XwuRH38HXYF2J5MTYT",
+          "slot": 432702750,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 73
+        }
+      ],
+      "instructions": {
+        "RfqSellCommit": 1
+      },
+      "lamports": {
+        "1398960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea": 1
+      },
+      "spaces": {
+        "73": 1
+      }
+    },
+    "ESDk2NChMPMpGX5fG4WbMHCNN6JsT7zZ7T4oNYgabHzq": {
+      "account": "ESDk2NChMPMpGX5fG4WbMHCNN6JsT7zZ7T4oNYgabHzq",
+      "created_by": [
+        {
+          "block_time": 1783978896,
+          "file": "solana-mainnet-bank-program-wide-window-tx-hC4jbyKx.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "hC4jbyKxNooSnnZqGvrNUwQMDv6mYcY2nu8hKpnQUTHfv8BLyBxvumJG6KtBezq9poaR6jc2ub5Bwp5xwWHRWAD",
+          "slot": 432724042,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "EXnuFkcMDHWz1C7x6YTLhUmQUG3CDzgHtqguZ5t1ME1B": {
+      "account": "EXnuFkcMDHWz1C7x6YTLhUmQUG3CDzgHtqguZ5t1ME1B",
+      "created_by": [
+        {
+          "block_time": 1783970591,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5ZRDa37Q.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5ZRDa37QxkukMjkjQ3dYQ4WWzdZbzMaf17xBgViEQsLD1RcL5k7irzmgPWSHjNgy2MRCrJSA9U2SGMzx3EiBdGHr",
+          "slot": 432703859,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "EZYDnBqdwKjSeVuNW3bQt9VuZPddfP4hQSar3ona2iUP": {
+      "account": "EZYDnBqdwKjSeVuNW3bQt9VuZPddfP4hQSar3ona2iUP",
+      "created_by": [
+        {
+          "block_time": 1783977348,
+          "file": "solana-mainnet-bank-program-wide-window-tx-23P677Mr.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "23P677MrZHqrzwbypwWfeDyaK9Lk8R3zEeyJXpiFmqLpdD2Zy8nvdTKkTjNLPH5t9sDdXhK3aa7hQhcJZic8joBp",
+          "slot": 432720274,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "EkTKHfeGYZm3VTAJCxFKf6otrSwBWof3mRGfJ1YH1viJ": {
+      "account": "EkTKHfeGYZm3VTAJCxFKf6otrSwBWof3mRGfJ1YH1viJ",
+      "created_by": [
+        {
+          "block_time": 1783973841,
+          "file": "solana-mainnet-bank-program-wide-window-tx-2z1zWEkz.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "2z1zWEkz7QyWMHzzmKf9xqzq6ZBsCEDthMnFQN6m5bNUmjiRx1fwu3D16do9HNXjZkHX8a4VCdrCvzK8LYNRkhkM",
+          "slot": 432711770,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "F1v1MCajJhnVFr9fwMTJZK9ZAaPj2DVdG5twdE5KV73g": {
+      "account": "F1v1MCajJhnVFr9fwMTJZK9ZAaPj2DVdG5twdE5KV73g",
+      "created_by": [
+        {
+          "block_time": 1783972836,
+          "file": "solana-mainnet-bank-program-wide-window-tx-39gQkjoo.json",
+          "instructions": [
+            "CacheTokenMetadata"
+          ],
+          "lamports": 1336320,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "39gQkjooScZJ9QxZc1NBv2vJTF78X256ewAeBh2WnmgKsvtH8jny2wpBqc2oALkNzhzwgCgXFDzayf6cXqiQnfxf",
+          "slot": 432709335,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 64
+        }
+      ],
+      "instructions": {
+        "CacheTokenMetadata": 1
+      },
+      "lamports": {
+        "1336320": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "64": 1
+      }
+    },
+    "F4KFSKRGEoJQgudnf9u15vo5zLfPJ6PuktKb2zsbPRkW": {
+      "account": "F4KFSKRGEoJQgudnf9u15vo5zLfPJ6PuktKb2zsbPRkW",
+      "created_by": [
+        {
+          "block_time": 1783976420,
+          "file": "solana-mainnet-bank-program-wide-window-tx-376VTaCC.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "376VTaCCqSuLMs78p77nADYrZDEnZgwFBwuhGTgt7gDEzpi9dpgk7GygrF42Hf3bahuGQXVDzqsRCX8gGmAsQSjd",
+          "slot": 432718031,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "F6ixtDGe1ThJhNupn4SfwBcEHh6ydWkvQNLBmYZwqGqh": {
+      "account": "F6ixtDGe1ThJhNupn4SfwBcEHh6ydWkvQNLBmYZwqGqh",
+      "created_by": [
+        {
+          "block_time": 1783972847,
+          "file": "solana-mainnet-bank-program-wide-window-tx-Wgebxhh1.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "Wgebxhh16kwUFwRXptG3we5bbCtr9hFSNpgEuU2Rgq4D8rCdFcrBXrcngKYZ7fpD92VMHqwUBUkQmhkrvb4TrgC",
+          "slot": 432709363,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "F6zf79wEBNqbTQJZMzFNa5JzpQL1rMLvRaV1NXqHBdjQ": {
+      "account": "F6zf79wEBNqbTQJZMzFNa5JzpQL1rMLvRaV1NXqHBdjQ",
+      "created_by": [
+        {
+          "block_time": 1783974638,
+          "file": "solana-mainnet-bank-program-wide-window-tx-WDMJSaNa.json",
+          "instructions": [
+            "RfqSellCommit"
+          ],
+          "lamports": 1398960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "WDMJSaNaqis9S17DCEAUxLDdJHAFSxhqLbDhGH6H6rPr5HAdSz5FYHyNw75ad4dyuwuSsqpJPXgUuRybtfFpouD",
+          "slot": 432713690,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 73
+        }
+      ],
+      "instructions": {
+        "RfqSellCommit": 1
+      },
+      "lamports": {
+        "1398960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea": 1
+      },
+      "spaces": {
+        "73": 1
+      }
+    },
+    "FRKN4VGaLhYwbm9G2iVEmjTobG9VCNVf1zZ48vFuzPCX": {
+      "account": "FRKN4VGaLhYwbm9G2iVEmjTobG9VCNVf1zZ48vFuzPCX",
+      "created_by": [
+        {
+          "block_time": 1783969315,
+          "file": "solana-mainnet-bank-program-wide-window-tx-45Jz9vJ5.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "45Jz9vJ5RpnCTjFAXj66MLGq7Te7YVxfT669ZLMjQXrfG7PBPZER4nxC3ZGVUsmMQKU1myUnBbVz4pSvG59s2ydv",
+          "slot": 432700752,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "FRLWpEEe5UZdiqSWrPNLBwBwJAQfLYDibnqB8kqpaQne": {
+      "account": "FRLWpEEe5UZdiqSWrPNLBwBwJAQfLYDibnqB8kqpaQne",
+      "created_by": [
+        {
+          "block_time": 1783976438,
+          "file": "solana-mainnet-bank-program-wide-window-tx-1GX6Nhmx.json",
+          "instructions": [
+            "Swap",
+            "RouteV2",
+            "Swap"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "1GX6NhmxXXEEti8CZRNzF416ReNE7uWzV3Gjsy94yFkidB7srN7txdmkeSUDLgjsUDvsuh1k24WAbay6GDREh1",
+          "slot": 432718075,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "RouteV2": 1,
+        "Swap": 2
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "FSpgnrnyb9vktcGuqKzc4K4i9CcCZcaNd2r36yh3vao6": {
+      "account": "FSpgnrnyb9vktcGuqKzc4K4i9CcCZcaNd2r36yh3vao6",
+      "created_by": [
+        {
+          "block_time": 1783976832,
+          "file": "solana-mainnet-bank-program-wide-window-tx-4oPaVjy7.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "4oPaVjy7mKrKC1o1epHPdWVXsRYutrvTsWGZPcrTTUPpMbeS6LjdGMNmXB5knNCAmPW7yrJMM3tpkK7WHmvQKpqk",
+          "slot": 432719013,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "FT7ctYiiAdDEjLbqMJochxr81dUMk8kfsSNWQzaQ3h2G": {
+      "account": "FT7ctYiiAdDEjLbqMJochxr81dUMk8kfsSNWQzaQ3h2G",
+      "created_by": [
+        {
+          "block_time": 1783970551,
+          "file": "solana-mainnet-bank-program-wide-window-tx-31ZGk7NL.json",
+          "instructions": [
+            "RfqSwap",
+            "TransferChecked"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "31ZGk7NLHRSjW1mm7LYQkLb2wTroQU2p1MUH8SNeoWvQCDpTHYHsk9Dmgoon76WuFRDvKJg33XvhUNhVJGWEmu3n",
+          "slot": 432703764,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "RfqSwap": 1,
+        "TransferChecked": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "FYkvwwWjNV9p185eTZ3sK8qRVqK3Sid8hg1J2DZWtfJ5": {
+      "account": "FYkvwwWjNV9p185eTZ3sK8qRVqK3Sid8hg1J2DZWtfJ5",
+      "created_by": [
+        {
+          "block_time": 1783969277,
+          "file": "solana-mainnet-bank-program-wide-window-tx-47ePZ8P3.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "47ePZ8P3k2FoiB6HAHh6Mt7XGji3AR3BmhSESEXTHzuHddxMN3PMpq6i9E3W7JAqY8YtQN2Re1oYhevqFHAwM4RG",
+          "slot": 432700654,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "FgeP5YKoUpHGqYcx7rR6eSPnuSn7BHuhrD3KvXvX6fEg": {
+      "account": "FgeP5YKoUpHGqYcx7rR6eSPnuSn7BHuhrD3KvXvX6fEg",
+      "created_by": [
+        {
+          "block_time": 1783977325,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5MxewGjX.json",
+          "instructions": [
+            "RfqSwap"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5MxewGjXiqBuYDLKDxvEkJvVDALKDxp3GzZWx89GeJqJ483JxvixqAwbQ9zLeo1GQJgjT4potqsAhAakHU3U6mLP",
+          "slot": 432720217,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "RfqSwap": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "FpM57V3utdG4kyePcHcHFPHvBAUwUBd6SPehEUAZ5zZZ": {
+      "account": "FpM57V3utdG4kyePcHcHFPHvBAUwUBd6SPehEUAZ5zZZ",
+      "created_by": [
+        {
+          "block_time": 1783975463,
+          "file": "solana-mainnet-bank-program-wide-window-tx-32StyUdQ.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "32StyUdQZ1heXaKyTf534SUWbggQ7ugFH4N3yMqxCF2Kqvc8GjqS2dp4CuEgy7YNywqsaNu7TsqZZp1HpVkX2eeE",
+          "slot": 432715703,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "FpggR9PMrz2hCbnJSS4qHauQnxk9cfdju9FsUZiteEPn": {
+      "account": "FpggR9PMrz2hCbnJSS4qHauQnxk9cfdju9FsUZiteEPn",
+      "created_by": [
+        {
+          "block_time": 1783976438,
+          "file": "solana-mainnet-bank-program-wide-window-tx-Nd4akJKA.json",
+          "instructions": [
+            "CacheTokenMetadata"
+          ],
+          "lamports": 1336320,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "Nd4akJKA8zoPC2rXmo3kot6wPcfB1F6PBnQEztNohzteKG8YbX41T8nk5fpz89qBm7rGt5L58Js88dVTBDVpEYT",
+          "slot": 432718075,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 64
+        }
+      ],
+      "instructions": {
+        "CacheTokenMetadata": 1
+      },
+      "lamports": {
+        "1336320": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "64": 1
+      }
+    },
+    "FrvzjNta86AY3n15e4ce66JR5HFfFetX7x5ZrLyYzUtz": {
+      "account": "FrvzjNta86AY3n15e4ce66JR5HFfFetX7x5ZrLyYzUtz",
+      "created_by": [
+        {
+          "block_time": 1783975523,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5JgG223R.json",
+          "instructions": [
+            "RfqSwap"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5JgG223RxELDvKC84H9w7wffHogCNWM9U2JwPNyLPTmm9ECWQU77jvJhc6Q3ffnA2JDNi59nBY5NDqhudmZYqgcq",
+          "slot": 432715848,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "RfqSwap": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "G6jeAnnoFjgrzkgJGEyWycLqwDmi6aD22WTC5cmzdVvV": {
+      "account": "G6jeAnnoFjgrzkgJGEyWycLqwDmi6aD22WTC5cmzdVvV",
+      "created_by": [
+        {
+          "block_time": 1783971926,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3YUJrfGo.json",
+          "instructions": [
+            "Swap",
+            "RouteV2"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3YUJrfGoUzGpHywTsnJcxEvoiFGAvoGGubTkMR4VvkVoxV31uEY5pDaz8aQGEzmTPyvDQcPEoLq5zMJzHriYg3bX",
+          "slot": 432707109,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "RouteV2": 1,
+        "Swap": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "GYjnccRDjetgigoxxqRBVimFWu63Vg6MNGAbmBeVonhp": {
+      "account": "GYjnccRDjetgigoxxqRBVimFWu63Vg6MNGAbmBeVonhp",
+      "created_by": [
+        {
+          "block_time": 1783972825,
+          "file": "solana-mainnet-bank-program-wide-window-tx-4Sf6xHsM.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "4Sf6xHsMMX1GsTWZbSSsQNXLLJC8rbZB5dZ59Fw2hB7PvmUQwY8pXGVDDsYTuK1soeNJKErQ3sZyWUGTBe2grmJB",
+          "slot": 432709310,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "GdHzRAyQJhpjxC6uhz7WEJ8oRsTSY6UxjaL7pL3BPx4": {
+      "account": "GdHzRAyQJhpjxC6uhz7WEJ8oRsTSY6UxjaL7pL3BPx4",
+      "created_by": [
+        {
+          "block_time": 1783970135,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5zgjSric.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5zgjSric5hTMRdAwiqqKgzruAtCATBjJtG6e31C5RAf31TxnfWvckdU5SPFp2BjCfktoyJSh2mqxiLg7AkjA7sTQ",
+          "slot": 432702748,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "GvRNPtuX3dGXfVkNBPsACGpt5JxzXHS3bXZpniCgiSvm": {
+      "account": "GvRNPtuX3dGXfVkNBPsACGpt5JxzXHS3bXZpniCgiSvm",
+      "created_by": [
+        {
+          "block_time": 1783972836,
+          "file": "solana-mainnet-bank-program-wide-window-tx-4LP2Qghd.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "4LP2QghdB3Dvp9UJ1UytB9LL74AMYLWpEertPJ4BQ4mqRMYqauHph6pLt28edUtP4N4JnNetYL5ouVNJgtn53Gkz",
+          "slot": 432709335,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "GzPTv31a85zix4eMjSPFX4dJDVPsLH6UviF5ZvBP6uwL": {
+      "account": "GzPTv31a85zix4eMjSPFX4dJDVPsLH6UviF5ZvBP6uwL",
+      "created_by": [
+        {
+          "block_time": 1783978248,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5hnBrhR1.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5hnBrhR1ASwGCg7xFm6YYrLxhiHGhMaM6xhm5pkcpuL2epnSkHERzaSnPL52tpvLWoa8qDJ3an7LCqLDYpe8jBQ7",
+          "slot": 432722472,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "H1ed7fL51rptJf7XjQNfXPeVFrCpxyFgFYnVAhBtGqiT": {
+      "account": "H1ed7fL51rptJf7XjQNfXPeVFrCpxyFgFYnVAhBtGqiT",
+      "created_by": [
+        {
+          "block_time": 1783970150,
+          "file": "solana-mainnet-bank-program-wide-window-tx-61kGeYhZ.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "61kGeYhZ2Mv8Y2PmN16LDaiVqGf9p1UuDTm95TanGwbZYmuKvqQXzrZHjYcQ94YgWhpfxzpV7wbNYe9EX38WAa6g",
+          "slot": 432702784,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "HNj6Er27nAV6Y3dzXHeWUxhFfrkNEWNh6duiJynbynMh": {
+      "account": "HNj6Er27nAV6Y3dzXHeWUxhFfrkNEWNh6duiJynbynMh",
+      "created_by": [
+        {
+          "block_time": 1783973750,
+          "file": "solana-mainnet-bank-program-wide-window-tx-4FBZzaeQ.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "4FBZzaeQ4zAYA88MfuqRU6Xp6Hu47an6tcQZVy7UX1RXTh5uDLPqc8YYbpcL9xvwNNCNkTopH2KvuczLYobptCnW",
+          "slot": 432711551,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "HSDifrWNZNXfwrKqEMYDVAooGbumL4QCi4xJrGDYVpSk": {
+      "account": "HSDifrWNZNXfwrKqEMYDVAooGbumL4QCi4xJrGDYVpSk",
+      "created_by": [
+        {
+          "block_time": 1783970300,
+          "file": "solana-mainnet-bank-program-wide-window-tx-4wzUrZcU.json",
+          "instructions": [
+            "CacheTokenMetadata"
+          ],
+          "lamports": 1336320,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "4wzUrZcU7zyFBr9AZCxGQc6XaTqWRoU8LDRxi6W7BnB5yDkta5bvWj4N6ShUN1WyJaeokbJUU7581mcQCg5RpTpd",
+          "slot": 432703151,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 64
+        }
+      ],
+      "instructions": {
+        "CacheTokenMetadata": 1
+      },
+      "lamports": {
+        "1336320": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "64": 1
+      }
+    },
+    "HUckZqie9DHnbHDPdDrKvPoZXcCy2NhyzSAsRr6KTLce": {
+      "account": "HUckZqie9DHnbHDPdDrKvPoZXcCy2NhyzSAsRr6KTLce",
+      "created_by": [
+        {
+          "block_time": 1783971024,
+          "file": "solana-mainnet-bank-program-wide-window-tx-2H6z9KYM.json",
+          "instructions": [
+            "RfqSwap"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "2H6z9KYMSb6HT5ETvSrUq1J454CGnbZScyYfxdCTkSV67buTHwLzR6Kx99pTwyzZfDjSBTuMJKKLoRiTiAsnwgQP",
+          "slot": 432704917,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "RfqSwap": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "HZkiyzRGoFC84HfMiTnoNuTva8nr7zy9Rv6pZD9rkPvV": {
+      "account": "HZkiyzRGoFC84HfMiTnoNuTva8nr7zy9Rv6pZD9rkPvV",
+      "created_by": [
+        {
+          "block_time": 1783969222,
+          "file": "solana-mainnet-bank-program-wide-window-tx-APF8V5ai.json",
+          "instructions": [
+            "RfqSwap"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "APF8V5ai7pk5S6wB46DB15Mhz1XaokKmmfR6LTRaK1x5L3hRdYaSa9HKZm3Tninz6wJK6pSVHMbDLHjCCN7kBr7",
+          "slot": 432700518,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "RfqSwap": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "HiuuWDL17fw4DNbfHvzySaRgEnutCpuY8Gf9haLCjTWV": {
+      "account": "HiuuWDL17fw4DNbfHvzySaRgEnutCpuY8Gf9haLCjTWV",
+      "created_by": [
+        {
+          "block_time": 1783979136,
+          "file": "solana-mainnet-bank-program-wide-window-tx-43gZrnog.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "43gZrnogJp54f1KndDr6TDa1Gn1tHnhBC1bR7Ctrcn35Tne6zQHZGnTkCVSfo2sj1EPkCGaqLuhYtPitsbvngCT9",
+          "slot": 432724630,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "HjoyEcZV1FuNj73bz29MKgcFGPtccWeQwGaYDzGJQFDf": {
+      "account": "HjoyEcZV1FuNj73bz29MKgcFGPtccWeQwGaYDzGJQFDf",
+      "created_by": [
+        {
+          "block_time": 1783975537,
+          "file": "solana-mainnet-bank-program-wide-window-tx-4GP2rBiN.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2672640,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "4GP2rBiNfP5h6geCMDqjzVMa2Yi6CgUjfBoXo99SKhXuwY812g1n4iRBh7mKk5HzJHbA4bZdfwtxJrqmjDRwbJkz",
+          "slot": 432715883,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 256
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2672640": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "256": 1
+      }
+    },
+    "HkjuuFsAjTUwSWDyiyFXtYKwf3E4diCR9WJkjwB7GKQ8": {
+      "account": "HkjuuFsAjTUwSWDyiyFXtYKwf3E4diCR9WJkjwB7GKQ8",
+      "created_by": [
+        {
+          "block_time": 1783976701,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3E4WRmsf.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "3E4WRmsfhAGLAppHg6DehGXSPKrhiE6BGSFChFZB6FFhP4KR6wHHWqjDuSrULHC1ZzGBFvqS7TVRdU56Ab4Q1eRQ",
+          "slot": 432718702,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "Ht6mYHxjgPKjszrimqzC8kFp4GAeX9qpHFx9MK2xJdMQ": {
+      "account": "Ht6mYHxjgPKjszrimqzC8kFp4GAeX9qpHFx9MK2xJdMQ",
+      "created_by": [
+        {
+          "block_time": 1783970150,
+          "file": "solana-mainnet-bank-program-wide-window-tx-rTafxhHh.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "rTafxhHheZDExmx1HZvA4w2UQeRme4FMChH4wdccH4KmfYXZ89Carfx7TiBGBBDhBsJiKdKQJYyYTjXLGhAjs3e",
+          "slot": 432702784,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "J5gJGFrRHvkVgWsMGnewRULsVhRC9CWj7tSgftRw566V": {
+      "account": "J5gJGFrRHvkVgWsMGnewRULsVhRC9CWj7tSgftRw566V",
+      "created_by": [
+        {
+          "block_time": 1783970300,
+          "file": "solana-mainnet-bank-program-wide-window-tx-3mR1zxuu.json",
+          "instructions": [
+            "GetAccountDataSize",
+            "InitializeImmutableOwner",
+            "InitializeAccount3",
+            "Swap",
+            "RouteV2",
+            "TransferChecked",
+            "TransferChecked"
+          ],
+          "lamports": 2136720,
+          "owner": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb",
+          "signature": "3mR1zxuu12uWifKarTXRU8SwNQVHsctGLA3tdG9XTo87jRdbJDN4ZdnNVvaYBRX5RN6VHfCceo6wvPDuZakexJxX",
+          "slot": 432703151,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 179
+        }
+      ],
+      "instructions": {
+        "GetAccountDataSize": 1,
+        "InitializeAccount3": 1,
+        "InitializeImmutableOwner": 1,
+        "RouteV2": 1,
+        "Swap": 1,
+        "TransferChecked": 2
+      },
+      "lamports": {
+        "2136720": 1
+      },
+      "owners": {
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "179": 1
+      }
+    },
+    "J6EJcdpTi9USK4z5EEPnXYygvBzcmoSr7cjyaEG8fDV1": {
+      "account": "J6EJcdpTi9USK4z5EEPnXYygvBzcmoSr7cjyaEG8fDV1",
+      "created_by": [
+        {
+          "block_time": 1783973728,
+          "file": "solana-mainnet-bank-program-wide-window-tx-5wZxxQBe.json",
+          "instructions": [
+            "RfqSwap"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "5wZxxQBedui6Br9aGo336S36Rb3zBr2NFxu5WQwjictnHBQLK66VHzBFrJMW8gZZdrfdzJV9jFWCTLDdSA6Bf13X",
+          "slot": 432711497,
+          "source": "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "RfqSwap": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "rfQMFpNueeNufBW4byyEAhvL4To4tCsVBVagcEWG8ea": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "eM6bJEgHrFdZDixcpkR7kB9qgPTg8aLb2brYhKNUSix": {
+      "account": "eM6bJEgHrFdZDixcpkR7kB9qgPTg8aLb2brYhKNUSix",
+      "created_by": [
+        {
+          "block_time": 1783969661,
+          "file": "solana-mainnet-bank-program-wide-window-tx-cH6xcGzh.json",
+          "instructions": [
+            "VerifyRequest"
+          ],
+          "lamports": 2442960,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "cH6xcGzhuY4VYz7UFnLVvPtmWQLFMi1w9UZkgMe79L2yN9EyqAP9upQjWsazjEVRKYvtvU2nS6J58MbcGatVCJv",
+          "slot": 432701599,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 223
+        }
+      ],
+      "instructions": {
+        "VerifyRequest": 1
+      },
+      "lamports": {
+        "2442960": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "223": 1
+      }
+    },
+    "h7Jvc5AvVHrbyn5tdaPUqNC4GiKYwfZ1c1mr6FfLRYZ": {
+      "account": "h7Jvc5AvVHrbyn5tdaPUqNC4GiKYwfZ1c1mr6FfLRYZ",
+      "created_by": [
+        {
+          "block_time": 1783977446,
+          "file": "solana-mainnet-bank-program-wide-window-tx-cEAXxCHu.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "cEAXxCHuaZoJu62a73Jdr7we7dc9NSfgS836PYcyTrfSK5N5iCoCKiL32ejHkcGtX2JKAHPRjxvmjkCFm3gnKyX",
+          "slot": 432720517,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "k5sbCXg1cyBweFhazEQ2WAkKkHwbs3F6uc38Np4HjXt": {
+      "account": "k5sbCXg1cyBweFhazEQ2WAkKkHwbs3F6uc38Np4HjXt",
+      "created_by": [
+        {
+          "block_time": 1783972183,
+          "file": "solana-mainnet-bank-program-wide-window-tx-4Rz63DPQ.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "4Rz63DPQyiGwPrCjp1Fg49xgH14bvjJ4JJWyaRBNKWsBsdXwwofgvhvefiT3BuJtoDwFktfxjUkuJoNTy5T3LrHi",
+          "slot": 432707733,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "mEDE3m7RLFBQBi84cyojp6VVirri98cezPxtjEXhstD": {
+      "account": "mEDE3m7RLFBQBi84cyojp6VVirri98cezPxtjEXhstD",
+      "created_by": [
+        {
+          "block_time": 1783971687,
+          "file": "solana-mainnet-bank-program-wide-window-tx-4L5vYLJC.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "4L5vYLJChG3TqDuTZ3Bz58JScFyTpVD1JcpqF58ab9XD1qQztL3AXiiW8DzAwA5t3skuFpUKMJDxGNWsVqjNEhSk",
+          "slot": 432706536,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    },
+    "qeTav6uKhiAmJ8PMHneg6iVE35iqWtvQSqHeJMejj8x": {
+      "account": "qeTav6uKhiAmJ8PMHneg6iVE35iqWtvQSqHeJMejj8x",
+      "created_by": [
+        {
+          "block_time": 1783974652,
+          "file": "solana-mainnet-bank-program-wide-window-tx-C6XRoW7p.json",
+          "instructions": [
+            "Withdraw"
+          ],
+          "lamports": 1176240,
+          "owner": "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ",
+          "signature": "C6XRoW7pXeL6MN98jhuWbkkD2mufSRGEcSCUfreGeUcoQr5MHPvM7PbZtJ2ULvmMj8fXKx3EJmsumbmY7zvRZ9F",
+          "slot": 432713725,
+          "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+          "space": 41
+        }
+      ],
+      "instructions": {
+        "Withdraw": 1
+      },
+      "lamports": {
+        "1176240": 1
+      },
+      "owners": {
+        "BankK1Y7HK6ZYmPorzAuUNk1TbJixDFQnqfWnP7HNmFZ": 1
+      },
+      "sources": {
+        "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo": 1
+      },
+      "spaces": {
+        "41": 1
+      }
+    }
+  },
+  "responses": [
+    {
+      "accounts": [
+        "2F9vjTNWNseBEMseZjjh7JBgcfJ87wFL8oHdbhdrWPmz",
+        "2nHoGpNdRYrGh1iPPejiqhsE2hQvqA57oTV5fUxCRQCe",
+        "2rraTTzH18widKn9ugrZ24Ebh9fN1mt9d8iJppieQ6UJ",
+        "2stwEz6YnS8Wa316kLuSq2mp1TpwCUzkLYByb8PpvMSL",
+        "321axcsu1nPno1FKmi4qJmVbGvxah9TBVnSXoU4qKMjp",
+        "32U7Zi5ywPek96jmfGofQD7gxccnNp3iJupCZgkPntVH",
+        "39nuqq5jsEzSZMyarWFiR3DYM8j9gWfHhMw9XFz2MA8u",
+        "3HBAHgg7kscFvu1EQCsBuJczXAmezxMJPn4Hc1tNDuxU",
+        "3KjTwtgeVMyU3suPrsJdP9zUHgwQf78uKTuhuLkpN1fc",
+        "3Kq3TpK5fifDWPQF1RWKvYWXJruCPSv2xfoTUGR3B7bV",
+        "3SQQCnD8u7CDjoeGQZsUdp7yjus4fqEPaDDA15PMUmuj",
+        "3cYFa8Wz1BBNebSUaGW3iVshJ1inEFtKBwGs1kstkvV6",
+        "3eYtV4S1DwzNvjK8CYMZuKii9CBQgz71aFs2c1wyrZn8",
+        "3hJszgLDw99aAbofU3KhwAZiKuN9aiou3tFGH6RZwdoa",
+        "3jToz2gRJ8qqu2vHVUDRveSVDFWZDqHMPm4NwtBoBhwr",
+        "4FENwg7LVJEzMGTNQWn5oCzQEM5iodHczZ6WPZSQnERj",
+        "4MAA9zPS1Eymrencz6izNuibJPuwvyHWszmNS5HCqPkJ",
+        "4NMv7r639i3rCS9zBMvLvbPokCXBktX7znc1feiayNkg",
+        "4enaisuMzCsxiY8beCZTy1yffKHDrkK5oR86zV1wSDUC",
+        "4k3JHoP5j8iwgS6T7cQ88UYhq7B9EiV4nysocYAPbRnG",
+        "4tFcNmdcGitnzX9zHR3Li1y7jjgpfrYzbfj3JSioW3ZV",
+        "4xQK5WXPWsa1Bbuc3A1gsvHvfXePypDi1ZRvw1fXj4kV",
+        "547YWv9AEohdSLA9goJqJW8hcWmvnECoQsrSyEqquaBT",
+        "58nZmWDZoXR8gRb3PH9rhaVKihnqVKkgnvv93fWqRHv2",
+        "59kbVgD6hcitjzB7Gjv4mSdbLQL9be1uou3cYURSCAEB",
+        "5PyXBNagiYnJ2dMKmc4QHSiFmTkXdpzBGAS68aFLYy2q",
+        "5S7tuPPxJNXjdVyBDPhmQ5Rmg9SoGiNXBDrnCmznRb7",
+        "5SbXH1AZwDHUzxESprpRbGxZANtghJbSmiLJ1XhCFAG5",
+        "5aWwLrxHv71DVQTouEwrnWqwYnpwrUtHUjeswevQLDky",
+        "5fhzvTLV95WLebpkmFQVdkUAqRGnQddsV2b95tQreWDC",
+        "5sana3U6QKhWdC8sQ9iCqgCXpmWc9b2JHdcVVrwwiujV",
+        "5uXV3gS99QkoBd2H8hyLn9RGbRneAKZyiudoYaeXYv7q",
+        "5zNPpe462H6aZw15radgQLYx65YSEsu5WzwB84mqq5UG",
+        "63fLAN5GjvR89Vn9FyCvUtKNUpvxAbnMerA3h6rr56PA",
+        "6KKyMXxvZTqWihpM1f7GX7r27eLrtvbSuVh5dahgLMBN",
+        "6QRHpaE4pWa2hK9NoAfCSvkmP1JTWioxL2oFYQBpoW2z",
+        "6Vvprqbf5vAqWH6nUQzHMhpheLuNujGco33JupGFYtMN",
+        "6kCn4y4p2AsHErgeDZNjWf26CbPePofFEvVEQP51aMFq",
+        "6o8uSdsh8pfHn92jCxJkokjCmpKgMzpnbyZwpfZjXjmk",
+        "75b3kPZxgvKNiewsufQQU9ijRkS7WAF1RxVNMT4N3DWr",
+        "7FqbLbbskxCTsfoscwegUFupnxXfvhiRYnEeaDhcZt46",
+        "7Kei8Y3HEkzgb5WiNdQugearmhy1HFTeVHsDZAvqKBB9",
+        "7MxneSM4KGhrrrEpMH2nYseVxEm7azBdz5S2rckgBtqt",
+        "7T6zWu13RDHJE37hyFdbYZvnyDLVF8Y3t7k5cad66F5h",
+        "7UZUsYwjeS4MkMBuE6EB5eSwYy5BxzapNEM28RVvkA4n",
+        "7Z9sssutjLvWct4zAgoTwQASfmERB8Kv1EG9Ux9vNKrE",
+        "7bTTtBDD2Jd3xint5HyxvGiFKgHwPnVRrqa131o7NRNx",
+        "7e64gpsiMwn9jVUuM3iyYNDRwt1sRagwu7sTL2BdeCR9",
+        "7kom7nnjfVHyKSrsJTgituBS6nM45uZ9W7819kcVYVex",
+        "7nkw6HoGxgUxk9xm99ZAmpJnryQoZGkXVBM8jKE1g7RW",
+        "7usYwAPoNWoFqPc2yAis7Tki4LyEipeFPxAV8m2KPwPC",
+        "83ciqgSKBsMSHzyg9UjCxSXzq89cBbx3uqSb6ehpVQ3e",
+        "88n7iuuUpBzLtWBqQ6xk4ss7niE4gdu9vxJaYvP3t7es",
+        "8DG1gGtLrsQeMvJxFxKa4HGfj1xvubs35bZBkuVy5LXw",
+        "8HwpfUhioy8MDoGdk3SjzCUSLnyeRy6xaRznfgSJwfjc",
+        "8Rz73eoBKsYUxL5NrZ1etrthArpRiBaQ1wnqfD6WPkvv",
+        "8S9b6GjPzEpDLYQbdt3ZzpJRR3VPemwZ7MxnUUQSTxQa",
+        "8V2UAxnGzH1Reh5aLnjgFDhcbVXL3vaN4VubbpinAQiE",
+        "8XRYCgDD3Har9pTDRLpJTjoSezSBA5LDoDR79xPYWb4x",
+        "8wWEmWFDx7Sw16NyoF4kux3Kv3aN8dtQ4CTmXbtcMEUQ",
+        "91j9HnHz2fSsvTAbwYiRc7nMdzqVt8q66eeqCMtF66gH",
+        "99Y9x1JbM7URjPqsfixAhFt1unXZcs6RQy7mFyFzBj1D",
+        "9B4haNYKSVJzUJp8XPq4CH36HeRohDqXtqBsLMpFTMHV",
+        "9GZKxksdnV5r5BSAAvRHRQtheJjByECFPZ5YA57sdvwU",
+        "9Gfcrzieisp6NbRpy5wwr3jUL9K6ZAUYTqwWuQqx79sB",
+        "9Jww51AiG8NnwwqZNKaGoyRfWYRC3R3eaQjiSeyuefHs",
+        "9LGkE4majw2AbcGqagPeShLTBfhTBhjEMAnrtuEG8H7i",
+        "9R9NEvgeg7sEutMHnanQqcMFxCp1KaXgeXiJMqJMMumy",
+        "9Yx2EVgpxYS8jerN1ZCHwLZybV1wZaT3Zx3GGfjLzCGp",
+        "9aGopDcdFaPARoL5gyrQXXVjpWFnubFV5kn8kQYadQfi",
+        "9b3KkomFCd8NRBPmoXC52FWbRbMWLAaSXBkHraNH2QTZ",
+        "9iTfPkmUK6NvBf1tnVbc22bmSQTynKwHAoJEBn4jYQwo",
+        "9qtF93JczNkSqH4fKfrPQhc8QKmvm8jCAq31g4ynNC6N",
+        "9sGjZn5w26LWaXGdeL2znXGt1qLMbTPRcxDajsCSe9TS",
+        "9smXUU1X1JNSDy972iwPd7yf2AbT79jLRndNVfsCbsSP",
+        "A96nvZfyznYuQ8R6mD251MjRRt9ibko81KtN2mFDUWwQ",
+        "ADzuiLrJNgf4d2Rsc8dqNtj6qjt76CminS4MMdVqXyEz",
+        "ALWQJrSFkjQcw6cuGpUbATxoihLDWoT5TPrgb6e8mXzh",
+        "AQwf74v8AcSfQ66RCpLWZHUcfi4QM2kdYhufufjRwwoi",
+        "AwN71EcYJEsgwivkofKXMHHqQCusP51tS8zxf3afiTLe",
+        "B2p1Xp35g9bYiwmrSL7Fn4YaDZ7UBAuhDRSSLq64USnY",
+        "BKwJXpYkEAwJBJZmBd9eL5vNGMsv5vNij912eyCiwcsH",
+        "BLrUpXedSq1itkMXfT4oCFFESkRwPpaX8whaqnVcR8Ay",
+        "BQm1o9jKEmaTnoufAnFmovNPzSpGeTawwDShrgHqErjz",
+        "BRU5nrWUvk8sfADmTVtqdZbMnNECquENj7NRdJSPbJKz",
+        "BTeWbuC3NZijcDWm4LP7aYRyhiNkaDHz7zYQB9bF3LSv",
+        "BbKbav77BpwrUdziSBE7BzxBEyeqiKwEikr2YFa6g3An",
+        "BeshMSsxwxw8XSKYPghf1nYaxLB8L1qvQ6mz9GTBwUP1",
+        "BkHTBkDDjmaDXMHBkdRGY4fZedVchjp3M8MHFgnRNApW",
+        "BrucEQYeUdiafDPY1RzPBv8jArZokdnDoNscUk4L3iAP",
+        "CEYAxsDQqnLYFsJboR3mBtRfLq746EJBcurZcZ4Xt49d",
+        "CMYEtCLbMf3CHFbuYEZT31qHJLHtYE4uq3fshz3UrxqN",
+        "CTMfuzxMXLpBkM7xnDWAbvZ63hcK3Nc6WE8X94eUHPA",
+        "CVWK839WMKZg6dvaBtJxSSfdMQGRQvBoyNBQcTwAwEuF",
+        "CezmZzyLL7FhW7wwZLy2Vu8tX75tyuavfjBPpgRs7xze",
+        "CiMVn6FYqVRnd38dwHo8MDC9KRZuxEWBAWKYCJSGSJ6w",
+        "Cjdg5znxx5DUFqhgrWnhghAfs7nJ2MWmzz62jRZV7vpy",
+        "Cjm2JuwsPBJNofoA6Yq1tCzBL6W3HZkLhzPW58pVoizS",
+        "Cm75PWRSFNjWD5HYKJrdeqHfySV7YCjN1Sbr753d1FLP",
+        "Cn5VRCZA4ng84H8WiAbrTvSPLJKS9MYndWhWJa9RfRob"
+      ],
+      "response": {
+        "error": {
+          "message": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+        },
+        "id": 1,
+        "jsonrpc": "2.0"
+      }
+    },
+    {
+      "accounts": [
+        "CrTVn6sM2zFDfepK3JYcBW6MuCMwmj4FiMcba63M69y5",
+        "D1XJM4WYFjT6ZVqkYznsAATNjp8N7UZU9SbjLAffLBWV",
+        "DG1SAnCu6Cpqx7Wy9cnbrqv8bTSGmGLKBWiACjtMnfKh",
+        "DHqPoegjPFP5cH8qNiMrmceAeLdWU8cBbYQDiJmnHk2V",
+        "DJWZ3QaQV1Ef7FKpZJDj3WZXPRvFvagvL1JkpKepG7Fu",
+        "DK3ZTHJawtBAsReEd6WayjfST8M51yXbHAtRQcWH81RR",
+        "DMNo3vcsQfU4w5wo6Y2Gddt6mgmtPsWden6E1NRZZWxM",
+        "DT9deD6BsXWUtvfEPE1z6QqR5BXDbnsE5ASuEzE1CVac",
+        "DY1sNq1rq8RN2P7q3zMaJjWhHCYgNp39Qs6hKrGRYTgX",
+        "DkGcTScyyc87JrAvXwZDXaApJ3Zd27gXkewKN7xzqoVt",
+        "DkwLTJy5JZLxRBZkVACW3Q1gCxJFvMm2WAE1dVfmfXGn",
+        "DnM9teVNbi4Cebkqtar3sVJs9LcZWSrV8DhwQzPpSeqM",
+        "DniUERZAeTm23rKJqWGV2JNJcRoZYL8gE9eU5S1q2rKc",
+        "DvTkY3gjmMz53xpRgdbufkCTr5Q9oTS9QV3B928DCxBD",
+        "E15RLzjW28N9WTzs41g2T6dEmHspEoVDpJx8Hw5QYyDN",
+        "E1oTdUrSiBd23Z4YgHLGswhxRGzLrD4xFMHD7ydzWJ28",
+        "ECzbm5m7Q2oS2FRAzvSN5ytdGwmgnTwYXqxEUzqLEK9R",
+        "ESDk2NChMPMpGX5fG4WbMHCNN6JsT7zZ7T4oNYgabHzq",
+        "EXnuFkcMDHWz1C7x6YTLhUmQUG3CDzgHtqguZ5t1ME1B",
+        "EZYDnBqdwKjSeVuNW3bQt9VuZPddfP4hQSar3ona2iUP",
+        "EkTKHfeGYZm3VTAJCxFKf6otrSwBWof3mRGfJ1YH1viJ",
+        "F1v1MCajJhnVFr9fwMTJZK9ZAaPj2DVdG5twdE5KV73g",
+        "F4KFSKRGEoJQgudnf9u15vo5zLfPJ6PuktKb2zsbPRkW",
+        "F6ixtDGe1ThJhNupn4SfwBcEHh6ydWkvQNLBmYZwqGqh",
+        "F6zf79wEBNqbTQJZMzFNa5JzpQL1rMLvRaV1NXqHBdjQ",
+        "FRKN4VGaLhYwbm9G2iVEmjTobG9VCNVf1zZ48vFuzPCX",
+        "FRLWpEEe5UZdiqSWrPNLBwBwJAQfLYDibnqB8kqpaQne",
+        "FSpgnrnyb9vktcGuqKzc4K4i9CcCZcaNd2r36yh3vao6",
+        "FT7ctYiiAdDEjLbqMJochxr81dUMk8kfsSNWQzaQ3h2G",
+        "FYkvwwWjNV9p185eTZ3sK8qRVqK3Sid8hg1J2DZWtfJ5",
+        "FgeP5YKoUpHGqYcx7rR6eSPnuSn7BHuhrD3KvXvX6fEg",
+        "FpM57V3utdG4kyePcHcHFPHvBAUwUBd6SPehEUAZ5zZZ",
+        "FpggR9PMrz2hCbnJSS4qHauQnxk9cfdju9FsUZiteEPn",
+        "FrvzjNta86AY3n15e4ce66JR5HFfFetX7x5ZrLyYzUtz",
+        "G6jeAnnoFjgrzkgJGEyWycLqwDmi6aD22WTC5cmzdVvV",
+        "GYjnccRDjetgigoxxqRBVimFWu63Vg6MNGAbmBeVonhp",
+        "GdHzRAyQJhpjxC6uhz7WEJ8oRsTSY6UxjaL7pL3BPx4",
+        "GvRNPtuX3dGXfVkNBPsACGpt5JxzXHS3bXZpniCgiSvm",
+        "GzPTv31a85zix4eMjSPFX4dJDVPsLH6UviF5ZvBP6uwL",
+        "H1ed7fL51rptJf7XjQNfXPeVFrCpxyFgFYnVAhBtGqiT",
+        "HNj6Er27nAV6Y3dzXHeWUxhFfrkNEWNh6duiJynbynMh",
+        "HSDifrWNZNXfwrKqEMYDVAooGbumL4QCi4xJrGDYVpSk",
+        "HUckZqie9DHnbHDPdDrKvPoZXcCy2NhyzSAsRr6KTLce",
+        "HZkiyzRGoFC84HfMiTnoNuTva8nr7zy9Rv6pZD9rkPvV",
+        "HiuuWDL17fw4DNbfHvzySaRgEnutCpuY8Gf9haLCjTWV",
+        "HjoyEcZV1FuNj73bz29MKgcFGPtccWeQwGaYDzGJQFDf",
+        "HkjuuFsAjTUwSWDyiyFXtYKwf3E4diCR9WJkjwB7GKQ8",
+        "Ht6mYHxjgPKjszrimqzC8kFp4GAeX9qpHFx9MK2xJdMQ",
+        "J5gJGFrRHvkVgWsMGnewRULsVhRC9CWj7tSgftRw566V",
+        "J6EJcdpTi9USK4z5EEPnXYygvBzcmoSr7cjyaEG8fDV1",
+        "eM6bJEgHrFdZDixcpkR7kB9qgPTg8aLb2brYhKNUSix",
+        "h7Jvc5AvVHrbyn5tdaPUqNC4GiKYwfZ1c1mr6FfLRYZ",
+        "k5sbCXg1cyBweFhazEQ2WAkKkHwbs3F6uc38Np4HjXt",
+        "mEDE3m7RLFBQBi84cyojp6VVirri98cezPxtjEXhstD",
+        "qeTav6uKhiAmJ8PMHneg6iVE35iqWtvQSqHeJMejj8x"
+      ],
+      "response": {
+        "error": {
+          "message": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+        },
+        "id": 1,
+        "jsonrpc": "2.0"
+      }
+    }
+  ],
+  "values": []
+}

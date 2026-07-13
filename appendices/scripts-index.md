@@ -444,6 +444,30 @@ python3 scripts/analyze_bankk_local_id_lifecycle.py \
   evidence/YYYY-MM-DD-live-rpc
 ```
 
+### `scripts/collect_bankk_window_created_accounts.py`
+
+Derives accounts created in a named `BankK...` transaction window and fetches their current Solana account state with `getMultipleAccounts`. It is intended for wider manual windows collected with `collect_bank_withdrawal_cohort.py --output-prefix bank-program-wide-window`.
+
+Example:
+
+```bash
+python3 scripts/collect_bankk_window_created_accounts.py \
+  evidence/YYYY-MM-DD-live-rpc \
+  --input-prefix bank-program-wide-window
+```
+
+### `scripts/analyze_bankk_wide_window_lifecycle.py`
+
+Analyzes a wider `BankK...` transaction window for Bank-local ids. It combines current 41-byte state ids where available with payload-derived local ids at operation offset `16` and `VerifyRequest` offset `54`, then checks for operation/verify lifecycle bridges, same-slot pairings, outbox payload hits, verifier/root hits, decoded `bk1PDA...` joins, root-update-slot proximity and canonical JUP/current validator/vote/stake key hits.
+
+Example:
+
+```bash
+python3 scripts/analyze_bankk_wide_window_lifecycle.py \
+  evidence/YYYY-MM-DD-live-rpc \
+  > evidence/YYYY-MM-DD-live-rpc/bankk-wide-window-lifecycle.md
+```
+
 ### `scripts/reconstruct_outbox_update_payload.py`
 
 Reconstructs sampled 305-byte outbox `UpdateMerkleRoot` payloads. It parses the epoch/root fields, proof nodes, path bitmap and final 64-byte candidate aggregate-key material, then recomputes the Merkle root using the public JupNet article's `0x00` leaf and `0x01` parent hash formulas.

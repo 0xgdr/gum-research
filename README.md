@@ -51,6 +51,7 @@ Utility-relevant evidence includes:
 - Created account-state correlation found current `bk1PDA...` 72-byte request accounts retain `op16...` and some request/`jupnet` pubkeys, while current `BankK...` state contains zero decoded `bk1PDA...` message/request/recipient joins and zero JUP/validator/vote/stake hits.
 - `BankK...` 41-byte state now decodes as a stable compact layout: 8-byte discriminator, flag byte `1`, and a 32-byte Bank-local id that reappears in `BankK...` / `JNiN...` inbox payloads, but still has zero `bk1PDA...`, verifier/root, JUP or validator/vote/stake matches.
 - Bank-local id lifecycle analysis found 18 local ids bridging `BankK...` operation payloads and `VerifyRequest` payloads, including 12 same-slot operation/verify pairings, but zero outbox-root, decoded `bk1PDA...`, JUP or validator/vote/stake matches.
+- A wider 200-transaction `BankK...` window recovered 175 payload-derived local ids; 69 bridged operation plus verify evidence and 52 bridged in the same slot, while still producing zero outbox, verifier/root, decoded `bk1PDA...`, canonical JUP, validator, vote, stake or root-update-slot hits.
 - Security boundary corpus analysis decoded 42 verifier payloads across 128 local Bank/outbox/history transaction files and still found no JUP, validator, vote, stake, signer-set, quorum or weight exposure.
 - Private runtime fingerprint analysis found `jupnet_bn254` and `jupnet_crosschain_hash` in one public Gum omnichain ProgramData binary, but still found no Dove/JUP/stake-weight/quorum/root-builder producer terms.
 - Gum omnichain binary-role analysis shows `brhPf...` is the richer verifier/crypto-linked Gum binary, while `GUMeb...` is the recovered verifier-payload sender/program id.
@@ -104,6 +105,7 @@ Utility-relevant evidence includes:
 - [`docs/41-created-bank-state-account-correlation.md`](docs/41-created-bank-state-account-correlation.md)
 - [`docs/42-bankk-41-byte-state-layout.md`](docs/42-bankk-41-byte-state-layout.md)
 - [`docs/43-bankk-local-id-lifecycle.md`](docs/43-bankk-local-id-lifecycle.md)
+- [`docs/44-bankk-wide-window-lifecycle.md`](docs/44-bankk-wide-window-lifecycle.md)
 - [`appendices/rpc-catalogue.md`](appendices/rpc-catalogue.md)
 - [`appendices/program-ids.md`](appendices/program-ids.md)
 - [`appendices/scripts-index.md`](appendices/scripts-index.md)
@@ -138,6 +140,7 @@ Utility-relevant evidence includes:
 - [`evidence/2026-07-12-bank-live-rpc/created-bank-state-account-correlation.md`](evidence/2026-07-12-bank-live-rpc/created-bank-state-account-correlation.md)
 - [`evidence/2026-07-12-bank-live-rpc/bankk-41-byte-state-layout.md`](evidence/2026-07-12-bank-live-rpc/bankk-41-byte-state-layout.md)
 - [`evidence/2026-07-12-bank-live-rpc/bankk-local-id-lifecycle.md`](evidence/2026-07-12-bank-live-rpc/bankk-local-id-lifecycle.md)
+- [`evidence/2026-07-12-bank-live-rpc/bankk-wide-window-lifecycle.md`](evidence/2026-07-12-bank-live-rpc/bankk-wide-window-lifecycle.md)
 - [`evidence/2026-07-12-bank-live-rpc/security-boundary-corpus.md`](evidence/2026-07-12-bank-live-rpc/security-boundary-corpus.md)
 - [`evidence/2026-07-12-bank-live-rpc/private-runtime-fingerprints.md`](evidence/2026-07-12-bank-live-rpc/private-runtime-fingerprints.md)
 - [`evidence/2026-07-12-bank-live-rpc/gum-omnichain-binary-roles.md`](evidence/2026-07-12-bank-live-rpc/gum-omnichain-binary-roles.md)
