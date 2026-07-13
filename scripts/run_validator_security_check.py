@@ -87,6 +87,7 @@ def main() -> None:
     run([sys.executable, "scripts/analyze_outbox_root_history.py", str(out)], out / "outbox-root-history.md")
     run([sys.executable, "scripts/hunt_epoch_security_sources.py", str(out)], out / "epoch-security-source-hunt.md")
     run([sys.executable, "scripts/map_outbox_verifier_payloads.py", str(out)], out / "outbox-verifier-payload-field-map.md")
+    run([sys.executable, "scripts/analyze_security_boundary_corpus.py", str(out)], out / "security-boundary-corpus.md")
     run([sys.executable, "scripts/analyze_gum_omnichain_sender_program.py", str(out)], out / "gum-omnichain-sender-program.md")
     run([sys.executable, "scripts/analyze_jupnet_executable_census.py", str(out)], out / "jupnet-executable-census.md")
     if previous:
@@ -109,6 +110,7 @@ def main() -> None:
     print(f"Outbox root history: {out / 'outbox-root-history.md'}")
     print(f"Epoch security source hunt: {out / 'epoch-security-source-hunt.md'}")
     print(f"Outbox verifier payload field map: {out / 'outbox-verifier-payload-field-map.md'}")
+    print(f"Security boundary corpus: {out / 'security-boundary-corpus.md'}")
     print(f"Gum omnichain sender program: {out / 'gum-omnichain-sender-program.md'}")
     print(f"JupNet executable census: {out / 'jupnet-executable-census.md'}")
     if previous:

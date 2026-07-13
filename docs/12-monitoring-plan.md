@@ -34,6 +34,7 @@ It writes:
 - `outbox-root-history.md`
 - `epoch-security-source-hunt.md`
 - `outbox-verifier-payload-field-map.md`
+- `security-boundary-corpus.md`
 - `gum-omnichain-sender-program.md`
 - `jupnet-executable-census.md`
 - `diff.md` when a previous snapshot exists
@@ -190,6 +191,14 @@ python3 scripts/map_outbox_verifier_payloads.py \
   > evidence/YYYY-MM-DD-HHMM-live-rpc/outbox-verifier-payload-field-map.md
 ```
 
+Analyze the helper-account and verifier-payload security boundary corpus:
+
+```bash
+python3 scripts/analyze_security_boundary_corpus.py \
+  evidence/YYYY-MM-DD-HHMM-live-rpc \
+  > evidence/YYYY-MM-DD-HHMM-live-rpc/security-boundary-corpus.md
+```
+
 Collect and analyze the recovered Gum omnichain sender program:
 
 ```bash
@@ -250,6 +259,7 @@ Treat these as high-value changes:
 - outbox root-history analysis observes root-update root/key changes, new proof shapes, or any canonical JUP / validator / vote / stake key material;
 - epoch security-source hunting finds candidate aggregate-key or epoch-root material co-located with canonical JUP, validator, vote or stake keys;
 - outbox verifier payloads stop matching the mapped field layout, introduce new sender/program ids, or expose canonical JUP / validator / vote / stake key material;
+- security boundary corpus analysis finds helper-owned signer-set/quorum/weight state, root mismatches, new verifier sender/program ids, new proof layouts, or canonical JUP / validator / vote / stake material;
 - Gum omnichain ProgramData hash, deployment slot, upgrade authority, BLS/Merkle strings or utility/security key hits change;
 - JupNet executable census finds new programs, ProgramData hash changes, new `sol_verify_bls_merkle_key` consumers, or any canonical JUP / validator / vote / stake / Dove-weight source material;
 - Solana Bank Program logs add validator, quorum, stake, signer, BLS or JUP fee/sink terms;

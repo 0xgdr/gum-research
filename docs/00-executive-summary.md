@@ -38,6 +38,7 @@ The investigation therefore proceeded from observable evidence:
 - The recovered sender/program id resolves to JupNet `gum-omnichain`, which exposes deposit, withdrawal, swap, inbox/outbox and BLS/Merkle verification strings.
 - JupNet executable census found `sol_verify_bls_merkle_key` in two Gum omnichain executables, but did not expose Dove/JUP/stake-weight source material.
 - Outbox root-history analysis found one decoded root update and 19 decoded verifier payloads across 120 local outbox transaction files, with no canonical JUP or validator/vote/stake key exposure.
+- Security boundary corpus analysis decoded 42 verifier payloads across 128 local Bank/outbox/history transaction files and found zero canonical JUP/current validator/vote/stake key hits, zero root mismatches and no visible signer-set/quorum/weight state in helper-owned accounts.
 - JUP appears in Gum state and transaction flows as an asset.
 - JUP burn and mint operations were observed in omnichain activity, but these are non-decisive unless tied to protocol utility.
 - Public dependency metadata points to JupNet-specific BLS, BN254, Merkle and syscall components.
@@ -72,6 +73,7 @@ The strongest current model is:
 - **Gum omnichain sender:** the verifier sender/program id is a live upgradeable JupNet program with `programs/gum-omnichain` strings and `sol_verify_bls_merkle_key`.
 - **Executable census:** all 23 visible JupNet upgradeable executables were fetched; two Gum omnichain binaries contain `sol_verify_bls_merkle_key`, and zero expose canonical JUP or current validator/vote/stake keys.
 - **Root history:** a widened outbox history window found one root update and 19 verifier payloads; verifier aggregate keys varied, but every decoded verifier root landed on the same stored root and no decoded row exposed JUP or validator/stake key material.
+- **Security boundary corpus:** the helper accounts and wider verifier corpus strengthen the public BLS/Merkle verifier model, but still stop at the aggregate-key inclusion boundary rather than exposing the Dove/JUP/stake producer side.
 - **JUP utility/security:** described publicly for Dove security, but not independently verifiable from the beta artifacts inspected.
 
 This does not disprove the intended JUP security model. It establishes an evidence boundary: the implementation is either private, off-chain, not yet activated, or not publicly exposed in the beta.

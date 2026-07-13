@@ -75,3 +75,6 @@
 | Outbox root-history window exposes root-update material | Confirmed | 120 local outbox transaction files yielded one decoded root update for epoch/root slot `271`, recomputing to root `6928957b...9bd8d999` |
 | Outbox root-history verifier payloads expose aggregate-key variation | Confirmed | 19 decoded verifier payloads recomputed to one stored root while using three aggregate-key values |
 | Outbox root-history exposes JUP/validator/stake source material | Not observed | Decoded root-update and verifier rows had zero canonical JUP/current validator/vote/stake key hits |
+| Security boundary corpus covers helper accounts and wider verifier payloads | Confirmed | 128 local Bank/outbox/history transaction files were scanned; 42 verifier payloads decoded across 21 files with zero stored-root mismatches |
+| Security boundary corpus exposes public aggregate-key verifier behavior | Confirmed | Three aggregate keys, one recomputed root and stable Gum omnichain sender/program evidence were observed across the corpus |
+| Security boundary corpus exposes Dove/JUP/stake producer state | Not observed | Helper-owned accounts and decoded verifier payloads had zero canonical JUP/current validator/vote/stake hits and no visible signer-set, quorum or weight records |

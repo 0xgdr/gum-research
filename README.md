@@ -40,6 +40,7 @@ Utility-relevant evidence includes:
 - The recovered sender program resolves to JupNet `gum-omnichain`, whose executable exposes Gum deposit/withdraw/swap and BLS/Merkle verification strings.
 - JupNet executable census found `sol_verify_bls_merkle_key` in two Gum omnichain executables, but no public Dove/JUP/stake-weight source.
 - Outbox root-history analysis found one decoded root update and 19 verifier payloads across 120 local outbox transaction files, with no JUP or validator/stake key exposure.
+- Security boundary corpus analysis decoded 42 verifier payloads across 128 local Bank/outbox/history transaction files and still found no JUP, validator, vote, stake, signer-set, quorum or weight exposure.
 - JUP appears in Gum asset metadata/flows; this is confirmed but treated as non-decisive noise unless tied to protocol utility.
 - Public evidence does not currently prove that JUP stake determines validator or Dove voting weight.
 
@@ -74,6 +75,7 @@ Utility-relevant evidence includes:
 - [`docs/26-gum-omnichain-sender-program.md`](docs/26-gum-omnichain-sender-program.md)
 - [`docs/27-jupnet-executable-census.md`](docs/27-jupnet-executable-census.md)
 - [`docs/28-outbox-root-history.md`](docs/28-outbox-root-history.md)
+- [`docs/29-security-boundary-corpus.md`](docs/29-security-boundary-corpus.md)
 - [`appendices/rpc-catalogue.md`](appendices/rpc-catalogue.md)
 - [`appendices/program-ids.md`](appendices/program-ids.md)
 - [`appendices/scripts-index.md`](appendices/scripts-index.md)
@@ -97,6 +99,7 @@ Utility-relevant evidence includes:
 - [`evidence/2026-07-12-bank-live-rpc/gum-omnichain-sender-program.md`](evidence/2026-07-12-bank-live-rpc/gum-omnichain-sender-program.md)
 - [`evidence/2026-07-12-bank-live-rpc/jupnet-executable-census.md`](evidence/2026-07-12-bank-live-rpc/jupnet-executable-census.md)
 - [`evidence/2026-07-12-bank-live-rpc/outbox-root-history.md`](evidence/2026-07-12-bank-live-rpc/outbox-root-history.md)
+- [`evidence/2026-07-12-bank-live-rpc/security-boundary-corpus.md`](evidence/2026-07-12-bank-live-rpc/security-boundary-corpus.md)
 
 ## Evidence classifications
 
