@@ -848,6 +848,35 @@ def bank_request_message_correlation_metrics(base: Path) -> dict:
     }
 
 
+def created_bank_state_account_metrics(base: Path) -> dict:
+    report = base / "created-bank-state-account-correlation.md"
+    text = report.read_text() if report.exists() else ""
+
+    def number(pattern: str) -> int | None:
+        match = re.search(pattern, text)
+        return int(match.group(1)) if match else None
+
+    spaces = set(re.findall(r"`([^`]+ space=[0-9]+): [0-9]+`", text))
+    owners = set()
+    owner_line = re.search(r"^- Owners: (.+)$", text, flags=re.MULTILINE)
+    if owner_line:
+        owners.update(re.findall(r"`([^`:]+): [0-9]+`", owner_line.group(1)))
+
+    return {
+        "created_bank_state_present": report.exists(),
+        "created_bank_state_accounts": number(r"Created accounts fetched: `(\d+)`"),
+        "created_bank_state_missing": number(r"Current accounts missing/closed: `(\d+)`"),
+        "created_bank_state_decoded_hit_accounts": number(r"Accounts with any decoded `bk1PDA\.\.\.` field bytes: `(\d+)`"),
+        "created_bank_state_high_value_hits": number(r"High-value decoded request/message/recipient hits: `(\d+)`"),
+        "created_bank_state_bankk_cross_hits": number(r"Cross-surface high-value hits in current `BankK\.\.\.` state: `(\d+)`"),
+        "created_bank_state_bk1_retained_hits": number(r"Decoded request/implementation hits retained in current `bk1PDA\.\.\.` request state: `(\d+)`"),
+        "created_bank_state_jup_hits": number(r"Canonical JUP hits: `(\d+)`"),
+        "created_bank_state_validator_hits": number(r"Current validator/vote/stake hits: `(\d+)`"),
+        "created_bank_state_spaces": spaces,
+        "created_bank_state_owners": owners,
+    }
+
+
 def outbox_verifier_payload_map_metrics(base: Path) -> dict:
     rows = verifier_payload_rows(base)
     roots = verifier_stored_roots(base)
@@ -972,6 +1001,7 @@ def snapshot_metrics(base: Path) -> dict:
     bank_withdrawal_cohort = bank_withdrawal_cohort_metrics(base)
     withdrawal_surface_comparison = withdrawal_surface_comparison_metrics(base)
     bank_request_message_correlation = bank_request_message_correlation_metrics(base)
+    created_bank_state = created_bank_state_account_metrics(base)
     outbox_verifier_payload_map = outbox_verifier_payload_map_metrics(base)
     jupnet_executable_census = jupnet_executable_census_metrics(base)
     gum_validator_hits = 0
@@ -1071,6 +1101,7 @@ def snapshot_metrics(base: Path) -> dict:
         **bank_withdrawal_cohort,
         **withdrawal_surface_comparison,
         **bank_request_message_correlation,
+        **created_bank_state,
         **outbox_verifier_payload_map,
         **jupnet_executable_census,
     }
@@ -1245,6 +1276,15 @@ def main() -> None:
         ("Bank request/message recipient direct hits", "bank_request_message_correlation_recipient_hits"),
         ("Bank request/message common context hits", "bank_request_message_correlation_common_context_hits"),
         ("Bank request/message token near-matches", "bank_request_message_correlation_token_near_matches"),
+        ("Created Bank state report present", "created_bank_state_present"),
+        ("Created Bank state account count", "created_bank_state_accounts"),
+        ("Created Bank state missing/closed count", "created_bank_state_missing"),
+        ("Created Bank state decoded-hit account count", "created_bank_state_decoded_hit_accounts"),
+        ("Created Bank state high-value hit count", "created_bank_state_high_value_hits"),
+        ("Created Bank state BankK cross-surface hit count", "created_bank_state_bankk_cross_hits"),
+        ("Created Bank state bk1PDA retained-hit count", "created_bank_state_bk1_retained_hits"),
+        ("Created Bank state JUP-hit count", "created_bank_state_jup_hits"),
+        ("Created Bank state validator-hit count", "created_bank_state_validator_hits"),
         ("Outbox verifier field-map report present", "outbox_verifier_map_present"),
         ("Outbox verifier field-map payloads", "outbox_verifier_map_payloads"),
         ("Outbox verifier field-map Bank wrappers", "outbox_verifier_map_bank_wrappers"),
@@ -1396,6 +1436,15 @@ def main() -> None:
             "bank_request_message_correlation_recipient_hits",
             "bank_request_message_correlation_common_context_hits",
             "bank_request_message_correlation_token_near_matches",
+            "created_bank_state_present",
+            "created_bank_state_accounts",
+            "created_bank_state_missing",
+            "created_bank_state_decoded_hit_accounts",
+            "created_bank_state_high_value_hits",
+            "created_bank_state_bankk_cross_hits",
+            "created_bank_state_bk1_retained_hits",
+            "created_bank_state_jup_hits",
+            "created_bank_state_validator_hits",
             "outbox_verifier_map_present",
             "outbox_verifier_map_payloads",
             "outbox_verifier_map_bank_wrappers",
@@ -1590,6 +1639,8 @@ def main() -> None:
     alerts.extend(set_delta("Withdrawal surface helper/high-value program", old["withdrawal_surface_comparison_helper_programs"], new["withdrawal_surface_comparison_helper_programs"]))
     alerts.extend(set_delta("Bank request/message created account space", old["bank_request_message_correlation_created_spaces"], new["bank_request_message_correlation_created_spaces"]))
     alerts.extend(set_delta("Bank request/message role row", old["bank_request_message_correlation_role_rows"], new["bank_request_message_correlation_role_rows"]))
+    alerts.extend(set_delta("Created Bank state owner", old["created_bank_state_owners"], new["created_bank_state_owners"]))
+    alerts.extend(set_delta("Created Bank state account space", old["created_bank_state_spaces"], new["created_bank_state_spaces"]))
     alerts.extend(set_delta("Outbox verifier sender/program", old["outbox_verifier_map_senders"], new["outbox_verifier_map_senders"]))
     alerts.extend(set_delta("Outbox verifier field-map aggregate key", old["outbox_verifier_map_aggregate_keys"], new["outbox_verifier_map_aggregate_keys"]))
     alerts.extend(set_delta("Outbox verifier field-map root", old["outbox_verifier_map_roots"], new["outbox_verifier_map_roots"]))
@@ -1692,6 +1743,9 @@ def main() -> None:
     print(f"- Bank request/message message-hash direct hits: `{new['bank_request_message_correlation_message_hash_hits']}`")
     print(f"- Bank request/message high-value direct hits: `{new['bank_request_message_correlation_high_value_hits']}`")
     print(f"- Bank request/message token near-matches: `{new['bank_request_message_correlation_token_near_matches']}`")
+    print(f"- Created Bank state accounts fetched: `{new['created_bank_state_accounts']}`")
+    print(f"- Created Bank state BankK cross-surface hits: `{new['created_bank_state_bankk_cross_hits']}`")
+    print(f"- Created Bank state JUP/validator hits: `{new['created_bank_state_jup_hits']}` / `{new['created_bank_state_validator_hits']}`")
     print(f"- Outbox verifier field-map sender/programs: `{len(new['outbox_verifier_map_senders'])}`")
     print(f"- JupNet executable verifier-syscall consumers: `{new['jupnet_executable_verifier_count']}`")
     print(f"- JupNet executable key-hit rows: `{new['jupnet_executable_key_hit_count']}`")

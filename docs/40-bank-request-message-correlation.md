@@ -85,3 +85,10 @@ The next public angle is to fetch the Bank-owned state accounts created by the `
 - `72`-byte `bk1PDA...` request accounts from decoded request rows.
 
 If those accounts store message hashes or request ids after execution, account-state comparison may expose the join that transaction logs do not.
+
+Completed in:
+
+```text
+docs/41-created-bank-state-account-correlation.md
+evidence/2026-07-12-bank-live-rpc/created-bank-state-account-correlation.md
+```

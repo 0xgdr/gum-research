@@ -40,6 +40,7 @@ It writes:
 - `bank-withdrawal-cohort.md`
 - `withdrawal-surface-comparison.md`
 - `bank-request-message-correlation.md`
+- `created-bank-state-account-correlation.md`
 - `epoch-security-source-hunt.md`
 - `outbox-verifier-payload-field-map.md`
 - `security-boundary-corpus.md`
@@ -257,6 +258,17 @@ python3 scripts/analyze_gum_account_role_reconstruction.py \
   > evidence/YYYY-MM-DD-HHMM-live-rpc/gum-account-role-reconstruction.md
 ```
 
+Fetch and analyze current state for Bank/Gum accounts created in sampled transactions:
+
+```bash
+python3 scripts/collect_created_bank_state_accounts.py \
+  evidence/YYYY-MM-DD-HHMM-live-rpc
+
+python3 scripts/analyze_created_bank_state_accounts.py \
+  evidence/YYYY-MM-DD-HHMM-live-rpc \
+  > evidence/YYYY-MM-DD-HHMM-live-rpc/created-bank-state-account-correlation.md
+```
+
 Collect and analyze the recovered Gum omnichain sender program:
 
 ```bash
@@ -294,6 +306,8 @@ It also tracks withdrawal-surface comparison changes across `bk1PDA...`, `op16..
 
 The request/message correlation report is alert-worthy if it starts finding direct message-hash, request-pubkey, recipient or token-flow joins between the sampled `bk1PDA...` and `BankK...` surfaces.
 
+The created account-state correlation report is alert-worthy if current `BankK...` state starts retaining decoded `bk1PDA...` message hashes, request pubkeys, `jupnet` pubkeys or recipients, if `bk1PDA...` request-state retention changes materially, if owner/account-size distributions change, or if canonical JUP / validator / vote / stake material appears.
+
 ## Alert Conditions
 
 Treat these as high-value changes:
@@ -327,6 +341,7 @@ Treat these as high-value changes:
 - Bank withdrawal cohort changes decoded recipient distribution, mint distribution, implementation-program distribution, fee payer/signer distribution, or exposes canonical JUP / validator / vote / stake material;
 - withdrawal surface comparison changes the `bk1PDA...`/`BankK...` transaction mix, operational signer set, helper-program set, mint distribution, inbox/outbox behavior, or exposes canonical JUP / validator / vote / stake material;
 - Bank request/message correlation finds a direct decoded message-hash, request-pubkey, `jupnet` pubkey, recipient or token near-match between `bk1PDA...` and `BankK...`, changes Bank-owned account layout distribution, or exposes canonical JUP / validator / vote / stake material;
+- created Bank/Gum account-state correlation finds current `BankK...` state retaining decoded `bk1PDA...` message/request/recipient fields, changes the retained `bk1PDA...` request-state pattern, changes created-account owner/space distribution, or exposes canonical JUP / validator / vote / stake material;
 - epoch security-source hunting finds candidate aggregate-key or epoch-root material co-located with canonical JUP, validator, vote or stake keys;
 - outbox verifier payloads stop matching the mapped field layout, introduce new sender/program ids, or expose canonical JUP / validator / vote / stake key material;
 - security boundary corpus analysis finds helper-owned signer-set/quorum/weight state, root mismatches, new verifier sender/program ids, new proof layouts, or canonical JUP / validator / vote / stake material;
