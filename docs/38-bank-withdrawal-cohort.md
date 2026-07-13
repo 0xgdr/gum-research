@@ -80,3 +80,10 @@ The next useful expansion is to compare the two Solana-side withdrawal surfaces:
 - `BankK...` Withdraw rows already seen in sampled Bank Program transactions.
 
 That comparison should answer whether these are two layers of the same withdrawal pipeline, and whether the `JUPW3...` signer consistently controls both surfaces.
+
+Completed in:
+
+```text
+docs/39-withdrawal-surface-comparison.md
+evidence/2026-07-12-bank-live-rpc/withdrawal-surface-comparison.md
+```

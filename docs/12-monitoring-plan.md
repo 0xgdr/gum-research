@@ -35,6 +35,10 @@ It writes:
 - `root-update-authority-graph.md`
 - `root-submitter-provenance.md`
 - `root-submitter-history.md`
+- `root-submitter-funding-history.md`
+- `funding-actor-classifier.md`
+- `bank-withdrawal-cohort.md`
+- `withdrawal-surface-comparison.md`
 - `epoch-security-source-hunt.md`
 - `outbox-verifier-payload-field-map.md`
 - `security-boundary-corpus.md`
@@ -283,7 +287,9 @@ python3 scripts/compare_validator_security_snapshots.py \
   > evidence/NEW-live-rpc/diff.md
 ```
 
-The diff now promotes the proof-chain surfaces into alerts: outbox root-history roots, aggregate keys, compact verifier fields, root-update signers, root-update writable accounts, root-submitter provenance changes, root-submitter direct-history changes, root-submitter funding-history changes, funding actor classification changes, Bank withdrawal cohort changes, verifier aggregate-key sets, sender/program ids, verifier payload layouts, JupNet executable hashes, upgrade authorities, `sol_verify_bls_merkle_key` consumers and executable key-hit rows.
+The diff now promotes the proof-chain surfaces into alerts: outbox root-history roots, aggregate keys, compact verifier fields, root-update signers, root-update writable accounts, root-submitter provenance changes, root-submitter direct-history changes, root-submitter funding-history changes, funding actor classification changes, Bank withdrawal cohort changes, withdrawal-surface comparison changes, verifier aggregate-key sets, sender/program ids, verifier payload layouts, JupNet executable hashes, upgrade authorities, `sol_verify_bls_merkle_key` consumers and executable key-hit rows.
+
+It also tracks withdrawal-surface comparison changes across `bk1PDA...`, `op16...`, `BankK...`, `JNiN...`, `jnoUtn...`, operational signers, fee payers, mints and canonical JUP / validator / vote / stake intersections.
 
 ## Alert Conditions
 
@@ -316,6 +322,7 @@ Treat these as high-value changes:
 - root-submitter funding history shows a new funding source, Bank request file, positive funding transaction, token-balance hint, new invoked program, or canonical JUP / validator / vote / stake / upgrade-authority intersection;
 - funding actor classification changes the setup recipient, mint, amount, implementation program, fee payer/signer, Bank-owned request accounts, or exposes canonical JUP / validator / vote / stake material;
 - Bank withdrawal cohort changes decoded recipient distribution, mint distribution, implementation-program distribution, fee payer/signer distribution, or exposes canonical JUP / validator / vote / stake material;
+- withdrawal surface comparison changes the `bk1PDA...`/`BankK...` transaction mix, operational signer set, helper-program set, mint distribution, inbox/outbox behavior, or exposes canonical JUP / validator / vote / stake material;
 - epoch security-source hunting finds candidate aggregate-key or epoch-root material co-located with canonical JUP, validator, vote or stake keys;
 - outbox verifier payloads stop matching the mapped field layout, introduce new sender/program ids, or expose canonical JUP / validator / vote / stake key material;
 - security boundary corpus analysis finds helper-owned signer-set/quorum/weight state, root mismatches, new verifier sender/program ids, new proof layouts, or canonical JUP / validator / vote / stake material;

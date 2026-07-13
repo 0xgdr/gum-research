@@ -58,6 +58,7 @@ def main() -> None:
     parser.add_argument("snapshot_dir")
     parser.add_argument("--endpoint", default=SOLANA_ENDPOINT)
     parser.add_argument("--address", default=GUM_BANK_REQUEST)
+    parser.add_argument("--output-prefix", default="bank-withdrawal-cohort")
     parser.add_argument("--signature-limit", type=int, default=100)
     parser.add_argument("--transaction-limit", type=int, default=100)
     parser.add_argument("--timeout", type=int, default=30)
@@ -74,7 +75,7 @@ def main() -> None:
         args.pause,
         args.retries,
     )
-    signature_file = "solana-mainnet-bank-withdrawal-cohort-signatures.json"
+    signature_file = f"solana-mainnet-{args.output_prefix}-signatures.json"
     save(base / signature_file, {"address": args.address, "response": signatures})
     rows = signatures.get("result") or []
     time.sleep(args.pause)
@@ -82,7 +83,7 @@ def main() -> None:
     tx_files = []
     for item in rows[: args.transaction_limit]:
         signature = item["signature"]
-        filename = f"solana-mainnet-bank-withdrawal-cohort-tx-{signature[:8]}.json"
+        filename = f"solana-mainnet-{args.output_prefix}-tx-{signature[:8]}.json"
         tx = rpc_with_retries(
             args.endpoint,
             "getTransaction",
@@ -96,7 +97,7 @@ def main() -> None:
         time.sleep(args.pause)
 
     save(
-        base / "solana-mainnet-bank-withdrawal-cohort-manifest.json",
+        base / f"solana-mainnet-{args.output_prefix}-manifest.json",
         {
             "address": args.address,
             "signature_file": signature_file,

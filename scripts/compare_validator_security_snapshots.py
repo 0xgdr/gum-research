@@ -754,6 +754,61 @@ def bank_withdrawal_cohort_metrics(base: Path) -> dict:
     }
 
 
+def withdrawal_surface_comparison_metrics(base: Path) -> dict:
+    report = base / "withdrawal-surface-comparison.md"
+    text = report.read_text() if report.exists() else ""
+
+    def number(pattern: str) -> int | None:
+        match = re.search(pattern, text)
+        return int(match.group(1)) if match else None
+
+    def section(title: str) -> str:
+        match = re.search(rf"## {re.escape(title)}\n\n(.*?)(?=\n## |\Z)", text, flags=re.S)
+        return match.group(1) if match else ""
+
+    def records(cell: str) -> set[str]:
+        return set(re.findall(r"`([^`:]+): \d+`", cell))
+
+    surface_txs = set()
+    for surface, tx_count in re.findall(r"\| `(bk1PDA|BankK|root_submitter_setup)` \| ([0-9]+) \|", section("Surface Summary")):
+        surface_txs.add(f"{surface}: {tx_count}")
+
+    fee_payers = set()
+    signers = set()
+    instructions = set()
+    mints = set()
+    helper_programs = set()
+    for line in section("Cross-Surface Distributions").splitlines():
+        if not line.startswith("| `"):
+            continue
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        if len(cells) != 6:
+            continue
+        surface, fee_cell, signer_cell, instruction_cell, mint_cell, helper_cell = cells
+        surface = surface.strip("`")
+        fee_payers.update(f"{surface}: {value}" for value in records(fee_cell))
+        signers.update(f"{surface}: {value}" for value in records(signer_cell))
+        instructions.update(f"{surface}: {value}" for value in records(instruction_cell))
+        mints.update(f"{surface}: {value}" for value in records(mint_cell))
+        helper_programs.update(f"{surface}: {value}" for value in records(helper_cell))
+
+    security_clean = None
+    if text:
+        security_clean = "No canonical JUP/current validator/vote/stake key intersections appeared" in text
+
+    return {
+        "withdrawal_surface_comparison_present": report.exists(),
+        "withdrawal_surface_comparison_transactions": number(r"Transactions compared: `(\d+)`"),
+        "withdrawal_surface_comparison_security_clean": security_clean,
+        "withdrawal_surface_comparison_surface_txs": surface_txs,
+        "withdrawal_surface_comparison_fee_payers": fee_payers,
+        "withdrawal_surface_comparison_signers": signers,
+        "withdrawal_surface_comparison_instructions": instructions,
+        "withdrawal_surface_comparison_mints": mints,
+        "withdrawal_surface_comparison_helper_programs": helper_programs,
+    }
+
+
 def outbox_verifier_payload_map_metrics(base: Path) -> dict:
     rows = verifier_payload_rows(base)
     roots = verifier_stored_roots(base)
@@ -876,6 +931,7 @@ def snapshot_metrics(base: Path) -> dict:
     root_submitter_funding_history = root_submitter_funding_history_metrics(base, related)
     funding_actor_classifier = funding_actor_classifier_metrics(base)
     bank_withdrawal_cohort = bank_withdrawal_cohort_metrics(base)
+    withdrawal_surface_comparison = withdrawal_surface_comparison_metrics(base)
     outbox_verifier_payload_map = outbox_verifier_payload_map_metrics(base)
     jupnet_executable_census = jupnet_executable_census_metrics(base)
     gum_validator_hits = 0
@@ -973,6 +1029,7 @@ def snapshot_metrics(base: Path) -> dict:
         **root_submitter_funding_history,
         **funding_actor_classifier,
         **bank_withdrawal_cohort,
+        **withdrawal_surface_comparison,
         **outbox_verifier_payload_map,
         **jupnet_executable_census,
     }
@@ -1133,6 +1190,9 @@ def main() -> None:
         ("Bank withdrawal cohort unique recipient count", "bank_withdrawal_cohort_unique_recipients"),
         ("Bank withdrawal cohort root submitter recipient hits", "bank_withdrawal_cohort_root_submitter_hits"),
         ("Bank withdrawal cohort security-intersection count", "bank_withdrawal_cohort_security_intersections"),
+        ("Withdrawal surface comparison report present", "withdrawal_surface_comparison_present"),
+        ("Withdrawal surface comparison tx count", "withdrawal_surface_comparison_transactions"),
+        ("Withdrawal surface comparison has no JUP/validator/stake intersections", "withdrawal_surface_comparison_security_clean"),
         ("Outbox verifier field-map report present", "outbox_verifier_map_present"),
         ("Outbox verifier field-map payloads", "outbox_verifier_map_payloads"),
         ("Outbox verifier field-map Bank wrappers", "outbox_verifier_map_bank_wrappers"),
@@ -1270,6 +1330,9 @@ def main() -> None:
             "bank_withdrawal_cohort_unique_recipients",
             "bank_withdrawal_cohort_root_submitter_hits",
             "bank_withdrawal_cohort_security_intersections",
+            "withdrawal_surface_comparison_present",
+            "withdrawal_surface_comparison_transactions",
+            "withdrawal_surface_comparison_security_clean",
             "outbox_verifier_map_present",
             "outbox_verifier_map_payloads",
             "outbox_verifier_map_bank_wrappers",
@@ -1456,6 +1519,12 @@ def main() -> None:
     alerts.extend(set_delta("Bank withdrawal cohort mint", old["bank_withdrawal_cohort_mints"], new["bank_withdrawal_cohort_mints"]))
     alerts.extend(set_delta("Bank withdrawal cohort implementation program", old["bank_withdrawal_cohort_impls"], new["bank_withdrawal_cohort_impls"]))
     alerts.extend(set_delta("Bank withdrawal cohort fee payer", old["bank_withdrawal_cohort_fee_payers"], new["bank_withdrawal_cohort_fee_payers"]))
+    alerts.extend(set_delta("Withdrawal surface tx distribution", old["withdrawal_surface_comparison_surface_txs"], new["withdrawal_surface_comparison_surface_txs"]))
+    alerts.extend(set_delta("Withdrawal surface fee payer", old["withdrawal_surface_comparison_fee_payers"], new["withdrawal_surface_comparison_fee_payers"]))
+    alerts.extend(set_delta("Withdrawal surface signer", old["withdrawal_surface_comparison_signers"], new["withdrawal_surface_comparison_signers"]))
+    alerts.extend(set_delta("Withdrawal surface instruction", old["withdrawal_surface_comparison_instructions"], new["withdrawal_surface_comparison_instructions"]))
+    alerts.extend(set_delta("Withdrawal surface mint", old["withdrawal_surface_comparison_mints"], new["withdrawal_surface_comparison_mints"]))
+    alerts.extend(set_delta("Withdrawal surface helper/high-value program", old["withdrawal_surface_comparison_helper_programs"], new["withdrawal_surface_comparison_helper_programs"]))
     alerts.extend(set_delta("Outbox verifier sender/program", old["outbox_verifier_map_senders"], new["outbox_verifier_map_senders"]))
     alerts.extend(set_delta("Outbox verifier field-map aggregate key", old["outbox_verifier_map_aggregate_keys"], new["outbox_verifier_map_aggregate_keys"]))
     alerts.extend(set_delta("Outbox verifier field-map root", old["outbox_verifier_map_roots"], new["outbox_verifier_map_roots"]))
@@ -1553,6 +1622,8 @@ def main() -> None:
     print(f"- Bank withdrawal cohort txs: `{new['bank_withdrawal_cohort_txs']}`")
     print(f"- Bank withdrawal cohort Request/Withdraw txs: `{new['bank_withdrawal_cohort_request_withdraw_txs']}`")
     print(f"- Bank withdrawal cohort unique recipients: `{new['bank_withdrawal_cohort_unique_recipients']}`")
+    print(f"- Withdrawal surface comparison txs: `{new['withdrawal_surface_comparison_transactions']}`")
+    print(f"- Withdrawal surface comparison clean of JUP/validator/stake intersections: `{new['withdrawal_surface_comparison_security_clean']}`")
     print(f"- Outbox verifier field-map sender/programs: `{len(new['outbox_verifier_map_senders'])}`")
     print(f"- JupNet executable verifier-syscall consumers: `{new['jupnet_executable_verifier_count']}`")
     print(f"- JupNet executable key-hit rows: `{new['jupnet_executable_key_hit_count']}`")
