@@ -283,7 +283,7 @@ python3 scripts/compare_validator_security_snapshots.py \
   > evidence/NEW-live-rpc/diff.md
 ```
 
-The diff now promotes the proof-chain surfaces into alerts: outbox root-history roots, aggregate keys, compact verifier fields, root-update signers, root-update writable accounts, root-submitter provenance changes, root-submitter direct-history changes, verifier aggregate-key sets, sender/program ids, verifier payload layouts, JupNet executable hashes, upgrade authorities, `sol_verify_bls_merkle_key` consumers and executable key-hit rows.
+The diff now promotes the proof-chain surfaces into alerts: outbox root-history roots, aggregate keys, compact verifier fields, root-update signers, root-update writable accounts, root-submitter provenance changes, root-submitter direct-history changes, root-submitter funding-history changes, verifier aggregate-key sets, sender/program ids, verifier payload layouts, JupNet executable hashes, upgrade authorities, `sol_verify_bls_merkle_key` consumers and executable key-hit rows.
 
 ## Alert Conditions
 
@@ -313,6 +313,7 @@ Treat these as high-value changes:
 - root-update authority graph finds a new root-update signer, new writable root-update account, upgrade-authority overlap, or canonical JUP / validator / vote / stake key intersection;
 - root-submitter provenance shows the root submitter appearing in non-root Gum/Bank flows, touching canonical JUP / validator / vote / stake keys, matching upgrade authorities, or showing token-balance movement tied to utility/security flows;
 - root-submitter direct history shows a new invoked program, positive funding delta, token-balance movement, non-root behavior, or canonical JUP / validator / vote / stake / upgrade-authority intersection;
+- root-submitter funding history shows a new funding source, Bank request file, positive funding transaction, token-balance hint, new invoked program, or canonical JUP / validator / vote / stake / upgrade-authority intersection;
 - epoch security-source hunting finds candidate aggregate-key or epoch-root material co-located with canonical JUP, validator, vote or stake keys;
 - outbox verifier payloads stop matching the mapped field layout, introduce new sender/program ids, or expose canonical JUP / validator / vote / stake key material;
 - security boundary corpus analysis finds helper-owned signer-set/quorum/weight state, root mismatches, new verifier sender/program ids, new proof layouts, or canonical JUP / validator / vote / stake material;

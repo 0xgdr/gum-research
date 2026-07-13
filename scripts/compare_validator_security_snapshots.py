@@ -619,6 +619,83 @@ def root_submitter_direct_history_metrics(base: Path, validator_related: set[str
     }
 
 
+def root_submitter_funding_history_metrics(base: Path, validator_related: set[str]) -> dict:
+    manifest = load_json(base / "solana-mainnet-root-submitter-funding-history-manifest.json")
+    submitters = manifest.get("submitters") or []
+    upgrade_authorities = {row["authority"] for row in root_update_programdata(base) if row.get("authority")}
+    programs = set()
+    tx_files = set()
+    positive_delta_files = set()
+    token_hint_files = set()
+    transfer_sources = set()
+    security_intersections = set()
+    upgrade_intersections = set()
+    bank_request_files = set()
+    for row in submitters:
+        address = row.get("address")
+        positive_delta_files.update(row.get("positive_delta_files") or [])
+        for filename in row.get("transaction_files") or []:
+            tx = load_json(base / filename).get("result")
+            if not tx:
+                continue
+            tx_files.add(filename)
+            keys_list = list(transaction_account_keys(tx))
+            keys = set(keys_list)
+            programs.update(transaction_programs(tx))
+            security_intersections.update((keys & validator_related) | ({JUP_MINT} if JUP_MINT in keys else set()))
+            upgrade_intersections.update(keys & upgrade_authorities)
+            logs = tx.get("meta", {}).get("logMessages") or []
+            if GUM_BANK in keys or any("Instruction: Request" in line for line in logs):
+                bank_request_files.add(filename)
+            ordered_keys = []
+            for key in tx.get("transaction", {}).get("message", {}).get("accountKeys") or []:
+                ordered_keys.append(key["pubkey"] if isinstance(key, dict) else key)
+            if address in ordered_keys:
+                index = ordered_keys.index(address)
+                pre = tx.get("meta", {}).get("preBalances") or []
+                post = tx.get("meta", {}).get("postBalances") or []
+                if index < len(pre) and index < len(post) and post[index] - pre[index] > 0:
+                    positive_delta_files.add(filename)
+            for instruction_group in [tx.get("transaction", {}).get("message", {}).get("instructions") or []]:
+                for ix in instruction_group:
+                    parsed = ix.get("parsed") if isinstance(ix, dict) else None
+                    info = parsed.get("info") if isinstance(parsed, dict) else {}
+                    if parsed and parsed.get("type") == "transfer" and info.get("destination") == address:
+                        transfer_sources.add(info.get("source"))
+            for inner in tx.get("meta", {}).get("innerInstructions") or []:
+                for ix in inner.get("instructions") or []:
+                    parsed = ix.get("parsed") if isinstance(ix, dict) else None
+                    info = parsed.get("info") if isinstance(parsed, dict) else {}
+                    if parsed and parsed.get("type") == "transfer" and info.get("destination") == address:
+                        transfer_sources.add(info.get("source"))
+            for balance_key in ("preTokenBalances", "postTokenBalances"):
+                for balance in tx.get("meta", {}).get(balance_key) or []:
+                    account_index = balance.get("accountIndex")
+                    account = ordered_keys[account_index] if isinstance(account_index, int) and account_index < len(ordered_keys) else None
+                    if address in {balance.get("owner"), account}:
+                        token_hint_files.add(filename)
+    transfer_sources.discard(None)
+    return {
+        "root_submitter_funding_history_present": bool(submitters or (base / "root-submitter-funding-history.md").exists()),
+        "root_submitter_funding_history_submitter_count": len(submitters),
+        "root_submitter_funding_history_tx_count": len(tx_files),
+        "root_submitter_funding_history_positive_delta_count": len(positive_delta_files),
+        "root_submitter_funding_history_bank_request_count": len(bank_request_files),
+        "root_submitter_funding_history_token_hint_count": len(token_hint_files),
+        "root_submitter_funding_history_transfer_source_count": len(transfer_sources),
+        "root_submitter_funding_history_security_intersection_count": len(security_intersections),
+        "root_submitter_funding_history_upgrade_intersection_count": len(upgrade_intersections),
+        "root_submitter_funding_history_programs": programs,
+        "root_submitter_funding_history_tx_files": tx_files,
+        "root_submitter_funding_history_positive_delta_files": positive_delta_files,
+        "root_submitter_funding_history_bank_request_files": bank_request_files,
+        "root_submitter_funding_history_token_hint_files": token_hint_files,
+        "root_submitter_funding_history_transfer_sources": transfer_sources,
+        "root_submitter_funding_history_security_intersections": security_intersections,
+        "root_submitter_funding_history_upgrade_intersections": upgrade_intersections,
+    }
+
+
 def outbox_verifier_payload_map_metrics(base: Path) -> dict:
     rows = verifier_payload_rows(base)
     roots = verifier_stored_roots(base)
@@ -738,6 +815,7 @@ def snapshot_metrics(base: Path) -> dict:
     root_update_authority_graph = root_update_authority_graph_metrics(base, related)
     root_submitter_provenance = root_submitter_provenance_metrics(base, related)
     root_submitter_direct_history = root_submitter_direct_history_metrics(base, related)
+    root_submitter_funding_history = root_submitter_funding_history_metrics(base, related)
     outbox_verifier_payload_map = outbox_verifier_payload_map_metrics(base)
     jupnet_executable_census = jupnet_executable_census_metrics(base)
     gum_validator_hits = 0
@@ -832,6 +910,7 @@ def snapshot_metrics(base: Path) -> dict:
         **root_update_authority_graph,
         **root_submitter_provenance,
         **root_submitter_direct_history,
+        **root_submitter_funding_history,
         **outbox_verifier_payload_map,
         **jupnet_executable_census,
     }
@@ -974,6 +1053,15 @@ def main() -> None:
         ("Root submitter direct-history token-hint count", "root_submitter_history_token_hint_count"),
         ("Root submitter direct-history security-intersection count", "root_submitter_history_security_intersection_count"),
         ("Root submitter direct-history upgrade-intersection count", "root_submitter_history_upgrade_intersection_count"),
+        ("Root submitter funding-history report present", "root_submitter_funding_history_present"),
+        ("Root submitter funding-history submitter count", "root_submitter_funding_history_submitter_count"),
+        ("Root submitter funding-history tx count", "root_submitter_funding_history_tx_count"),
+        ("Root submitter funding-history positive-delta count", "root_submitter_funding_history_positive_delta_count"),
+        ("Root submitter funding-history Bank request count", "root_submitter_funding_history_bank_request_count"),
+        ("Root submitter funding-history token-hint count", "root_submitter_funding_history_token_hint_count"),
+        ("Root submitter funding-history transfer-source count", "root_submitter_funding_history_transfer_source_count"),
+        ("Root submitter funding-history security-intersection count", "root_submitter_funding_history_security_intersection_count"),
+        ("Root submitter funding-history upgrade-intersection count", "root_submitter_funding_history_upgrade_intersection_count"),
         ("Outbox verifier field-map report present", "outbox_verifier_map_present"),
         ("Outbox verifier field-map payloads", "outbox_verifier_map_payloads"),
         ("Outbox verifier field-map Bank wrappers", "outbox_verifier_map_bank_wrappers"),
@@ -1093,6 +1181,15 @@ def main() -> None:
             "root_submitter_history_token_hint_count",
             "root_submitter_history_security_intersection_count",
             "root_submitter_history_upgrade_intersection_count",
+            "root_submitter_funding_history_present",
+            "root_submitter_funding_history_submitter_count",
+            "root_submitter_funding_history_tx_count",
+            "root_submitter_funding_history_positive_delta_count",
+            "root_submitter_funding_history_bank_request_count",
+            "root_submitter_funding_history_token_hint_count",
+            "root_submitter_funding_history_transfer_source_count",
+            "root_submitter_funding_history_security_intersection_count",
+            "root_submitter_funding_history_upgrade_intersection_count",
             "outbox_verifier_map_present",
             "outbox_verifier_map_payloads",
             "outbox_verifier_map_bank_wrappers",
@@ -1229,6 +1326,50 @@ def main() -> None:
             new["root_submitter_history_upgrade_intersections"],
         )
     )
+    alerts.extend(set_delta("Root submitter funding-history program", old["root_submitter_funding_history_programs"], new["root_submitter_funding_history_programs"]))
+    alerts.extend(set_delta("Root submitter funding-history tx file", old["root_submitter_funding_history_tx_files"], new["root_submitter_funding_history_tx_files"]))
+    alerts.extend(
+        set_delta(
+            "Root submitter funding-history positive funding file",
+            old["root_submitter_funding_history_positive_delta_files"],
+            new["root_submitter_funding_history_positive_delta_files"],
+        )
+    )
+    alerts.extend(
+        set_delta(
+            "Root submitter funding-history Bank request file",
+            old["root_submitter_funding_history_bank_request_files"],
+            new["root_submitter_funding_history_bank_request_files"],
+        )
+    )
+    alerts.extend(
+        set_delta(
+            "Root submitter funding-history transfer source",
+            old["root_submitter_funding_history_transfer_sources"],
+            new["root_submitter_funding_history_transfer_sources"],
+        )
+    )
+    alerts.extend(
+        set_delta(
+            "Root submitter funding-history token-hint file",
+            old["root_submitter_funding_history_token_hint_files"],
+            new["root_submitter_funding_history_token_hint_files"],
+        )
+    )
+    alerts.extend(
+        set_delta(
+            "Root submitter funding-history JUP/validator/vote/stake intersection",
+            old["root_submitter_funding_history_security_intersections"],
+            new["root_submitter_funding_history_security_intersections"],
+        )
+    )
+    alerts.extend(
+        set_delta(
+            "Root submitter funding-history upgrade-authority intersection",
+            old["root_submitter_funding_history_upgrade_intersections"],
+            new["root_submitter_funding_history_upgrade_intersections"],
+        )
+    )
     alerts.extend(set_delta("Outbox verifier sender/program", old["outbox_verifier_map_senders"], new["outbox_verifier_map_senders"]))
     alerts.extend(set_delta("Outbox verifier field-map aggregate key", old["outbox_verifier_map_aggregate_keys"], new["outbox_verifier_map_aggregate_keys"]))
     alerts.extend(set_delta("Outbox verifier field-map root", old["outbox_verifier_map_roots"], new["outbox_verifier_map_roots"]))
@@ -1317,6 +1458,10 @@ def main() -> None:
     print(f"- Root submitter direct-history txs: `{new['root_submitter_history_tx_count']}`")
     print(f"- Root submitter direct-history positive funding txs: `{new['root_submitter_history_positive_delta_count']}`")
     print(f"- Root submitter direct-history token-hint txs: `{new['root_submitter_history_token_hint_count']}`")
+    print(f"- Root submitter funding-history txs: `{new['root_submitter_funding_history_tx_count']}`")
+    print(f"- Root submitter funding-history positive funding txs: `{new['root_submitter_funding_history_positive_delta_count']}`")
+    print(f"- Root submitter funding-history Bank request txs: `{new['root_submitter_funding_history_bank_request_count']}`")
+    print(f"- Root submitter funding-history transfer sources: `{new['root_submitter_funding_history_transfer_source_count']}`")
     print(f"- Outbox verifier field-map sender/programs: `{len(new['outbox_verifier_map_senders'])}`")
     print(f"- JupNet executable verifier-syscall consumers: `{new['jupnet_executable_verifier_count']}`")
     print(f"- JupNet executable key-hit rows: `{new['jupnet_executable_key_hit_count']}`")

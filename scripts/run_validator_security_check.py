@@ -34,6 +34,8 @@ def main() -> None:
     parser.add_argument("--compare-to", help="Previous snapshot directory. Defaults to latest existing snapshot.")
     parser.add_argument("--signature-limit", type=int, default=20)
     parser.add_argument("--transaction-limit", type=int, default=8)
+    parser.add_argument("--funding-signature-limit", type=int, default=300)
+    parser.add_argument("--funding-transaction-limit", type=int, default=300)
     args = parser.parse_args()
 
     existing = snapshot_dirs()
@@ -99,6 +101,24 @@ def main() -> None:
     )
     run([sys.executable, "scripts/analyze_root_submitter_provenance.py", str(out)], out / "root-submitter-provenance.md")
     run([sys.executable, "scripts/analyze_root_submitter_history.py", str(out)], out / "root-submitter-history.md")
+    run(
+        [
+            sys.executable,
+            "scripts/collect_root_submitter_funding_history.py",
+            str(out),
+            "--signature-limit",
+            str(args.funding_signature_limit),
+            "--transaction-limit",
+            str(args.funding_transaction_limit),
+            "--stop-after-positive",
+            "1",
+            "--pause",
+            "0.35",
+            "--retries",
+            "6",
+        ]
+    )
+    run([sys.executable, "scripts/analyze_root_submitter_funding_history.py", str(out)], out / "root-submitter-funding-history.md")
     run([sys.executable, "scripts/hunt_epoch_security_sources.py", str(out)], out / "epoch-security-source-hunt.md")
     run([sys.executable, "scripts/map_outbox_verifier_payloads.py", str(out)], out / "outbox-verifier-payload-field-map.md")
     run([sys.executable, "scripts/analyze_security_boundary_corpus.py", str(out)], out / "security-boundary-corpus.md")
@@ -128,6 +148,7 @@ def main() -> None:
     print(f"Root update authority graph: {out / 'root-update-authority-graph.md'}")
     print(f"Root submitter provenance: {out / 'root-submitter-provenance.md'}")
     print(f"Root submitter direct history: {out / 'root-submitter-history.md'}")
+    print(f"Root submitter funding history: {out / 'root-submitter-funding-history.md'}")
     print(f"Epoch security source hunt: {out / 'epoch-security-source-hunt.md'}")
     print(f"Outbox verifier payload field map: {out / 'outbox-verifier-payload-field-map.md'}")
     print(f"Security boundary corpus: {out / 'security-boundary-corpus.md'}")

@@ -118,4 +118,4 @@ Dove/JUP/stake signer set
   -> root submitted by 6f5mu...
 ```
 
-The next useful expansion is to page further back until the first funding or creation event for `6f5mu...` appears, then classify the funding source.
+The next expansion was completed in [`docs/36-root-submitter-funding-history.md`](docs/36-root-submitter-funding-history.md). It found one older funding/setup event tied to a Gum Bank request/withdrawal flow, but still no JUP, validator, vote or stake security-source exposure.

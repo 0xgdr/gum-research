@@ -1,0 +1,83 @@
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "blockTime": 1781510513,
+    "meta": {
+      "computeUnitsConsumed": 69841,
+      "costUnits": 71277,
+      "err": null,
+      "fee": 5000,
+      "innerInstructions": [],
+      "logMessages": [
+        "Program jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV invoke [1]",
+        "Program log: UpdateMerkleRoot invoked",
+        "Program log: Merkle proof verified",
+        "Program log: Verifying BLS signature",
+        "Program log: Signature verified",
+        "Program log: advance_epoch_root: dropped root of epoch 204:",
+        "Program data: aSiVey6kNrzJxElwoPhTZLbwyOXk6IZWXuoGHJvY2Zk=",
+        "Program data: zwAAAAAAAABpKJV7LqQ2vMnESXCg+FNktvDI5eTohlZe6gYcm9jZmQ==",
+        "Program jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV consumed 69841 of 200000 compute units",
+        "Program jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV success"
+      ],
+      "postBalances": [
+        2128190131,
+        3118080,
+        1141440
+      ],
+      "postTokenBalances": [],
+      "preBalances": [
+        2128195131,
+        3118080,
+        1141440
+      ],
+      "preTokenBalances": [],
+      "rewards": [],
+      "status": {
+        "Ok": null
+      }
+    },
+    "slot": 426593907,
+    "transaction": {
+      "message": {
+        "accountKeys": [
+          {
+            "pubkey": "6f5muRjigWVnoQHfXWLeXFfafUqMVJfzoBBJL8Gwquji",
+            "signer": true,
+            "source": "transaction",
+            "writable": true
+          },
+          {
+            "pubkey": "3C1LxtpR3Mh5RQjydfeQdvRaAzpStWM7gBi1XzP9oyGt",
+            "signer": false,
+            "source": "transaction",
+            "writable": true
+          },
+          {
+            "pubkey": "jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV",
+            "signer": false,
+            "source": "transaction",
+            "writable": false
+          }
+        ],
+        "instructions": [
+          {
+            "accounts": [
+              "3C1LxtpR3Mh5RQjydfeQdvRaAzpStWM7gBi1XzP9oyGt"
+            ],
+            "data": "4TxTFEF6ZvHMtRGsHtuXcGz1pZL98nNyqXZbTNzc9Jt15NzAQ8xEhWNHESCEQDipoiCDW3sNxAmdzwifkG6tHyRFjpFgJDs8QUcVaQJqNMtNzo6Y1a2xLd1YgY8pFeHAexZ5WhNQb2zJHLK4WSJDnFSJiVHSWiQngZuN8VZcfNDFFGRo32Z6YRNqFec5bD8vLUYixWSYLADH8CbzAMuvUHddNJ1dao3FWDgprrvZrdNW4GGLTe4GqUEk1me8hZrjgfGiR6LsLtUzvzJEPZH1uFoNEDgqZCfEQjaUbZJfBSpCYnz1xQ11r3MfR6cfJ1Nm41sg6UV572AmT9ALpX8MP5RJ2EMTkg1vnxkEcNPcJRxp36nxovJNSzE9s1HhnfyJjL3qbWwCs528amxxXvwX3iy8KLkGTnKW",
+            "programId": "jnoUtncGR9ZCCMixtys6Gzy5coTo6mnmUZuEHRQFTFV",
+            "stackHeight": 1
+          }
+        ],
+        "recentBlockhash": "BD2RyUxLPmdR7FNySzmAgpostm1YZiBKmFmNEgrSoqxR"
+      },
+      "signatures": [
+        "3Am4WeU5VC4FoxM6eqr4YR7aq559Ainqc4x547dhgLwFdm1ELydKqYJzUfznPftRm19wN4ecQbfWX92EWgxehj9f"
+      ]
+    },
+    "transactionIndex": 137,
+    "version": "legacy"
+  }
+}

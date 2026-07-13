@@ -43,6 +43,7 @@ Utility-relevant evidence includes:
 - Root-update authority graphing found the sampled root update was submitted by one unknown transaction signer, wrote only the outbox root-history account, and did not overlap known upgrade authorities, canonical JUP, validator, vote or stake keys.
 - Root submitter provenance shows that signer appears once in the saved transaction corpus, only as the outbox root-update signer/payer, paying the 5000 lamport fee with no token-balance movement or JUP/validator/stake overlap.
 - Direct root submitter history fetched 30 recent transactions for `6f5mu...`; every one was an outbox `UpdateMerkleRoot`, invoked only `jnoUtn...`, paid only the 5000 lamport fee, and exposed no JUP, validator/vote/stake, token-balance or upgrade-authority intersections.
+- Root submitter funding-history analysis found one older positive funding/setup transaction for `6f5mu...`; it flowed through the Solana-side Gum Bank request path with `jupnet` and `Signature verified` logs, but still exposed no canonical JUP or validator/vote/stake security source.
 - Security boundary corpus analysis decoded 42 verifier payloads across 128 local Bank/outbox/history transaction files and still found no JUP, validator, vote, stake, signer-set, quorum or weight exposure.
 - Private runtime fingerprint analysis found `jupnet_bn254` and `jupnet_crosschain_hash` in one public Gum omnichain ProgramData binary, but still found no Dove/JUP/stake-weight/quorum/root-builder producer terms.
 - Gum omnichain binary-role analysis shows `brhPf...` is the richer verifier/crypto-linked Gum binary, while `GUMeb...` is the recovered verifier-payload sender/program id.
@@ -88,6 +89,7 @@ Utility-relevant evidence includes:
 - [`docs/33-root-update-authority-graph.md`](docs/33-root-update-authority-graph.md)
 - [`docs/34-root-submitter-provenance.md`](docs/34-root-submitter-provenance.md)
 - [`docs/35-root-submitter-direct-history.md`](docs/35-root-submitter-direct-history.md)
+- [`docs/36-root-submitter-funding-history.md`](docs/36-root-submitter-funding-history.md)
 - [`appendices/rpc-catalogue.md`](appendices/rpc-catalogue.md)
 - [`appendices/program-ids.md`](appendices/program-ids.md)
 - [`appendices/scripts-index.md`](appendices/scripts-index.md)
@@ -114,6 +116,7 @@ Utility-relevant evidence includes:
 - [`evidence/2026-07-12-bank-live-rpc/root-update-authority-graph.md`](evidence/2026-07-12-bank-live-rpc/root-update-authority-graph.md)
 - [`evidence/2026-07-12-bank-live-rpc/root-submitter-provenance.md`](evidence/2026-07-12-bank-live-rpc/root-submitter-provenance.md)
 - [`evidence/2026-07-12-bank-live-rpc/root-submitter-history.md`](evidence/2026-07-12-bank-live-rpc/root-submitter-history.md)
+- [`evidence/2026-07-12-bank-live-rpc/root-submitter-funding-history.md`](evidence/2026-07-12-bank-live-rpc/root-submitter-funding-history.md)
 - [`evidence/2026-07-12-bank-live-rpc/security-boundary-corpus.md`](evidence/2026-07-12-bank-live-rpc/security-boundary-corpus.md)
 - [`evidence/2026-07-12-bank-live-rpc/private-runtime-fingerprints.md`](evidence/2026-07-12-bank-live-rpc/private-runtime-fingerprints.md)
 - [`evidence/2026-07-12-bank-live-rpc/gum-omnichain-binary-roles.md`](evidence/2026-07-12-bank-live-rpc/gum-omnichain-binary-roles.md)

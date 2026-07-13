@@ -84,4 +84,4 @@ This is helpful, but still bounded.
 
 It reduces one possible explanation: the visible root-update signer is not obviously the same as the broader public Gum/Bank operator accounts in the saved evidence.
 
-It does **not** prove who controls the signer, how it is funded historically, or whether it is one of several rotating root publishers. That requires a direct signature-window collection for the submitter address and a funding-history walk.
+It does **not** prove who controls the signer or whether it is one of several rotating root publishers. The follow-up direct-history and funding-history walks are now documented in [`docs/35-root-submitter-direct-history.md`](docs/35-root-submitter-direct-history.md) and [`docs/36-root-submitter-funding-history.md`](docs/36-root-submitter-funding-history.md).
