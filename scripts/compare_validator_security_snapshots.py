@@ -481,6 +481,74 @@ def root_update_authority_graph_metrics(base: Path, validator_related: set[str])
     }
 
 
+def all_saved_transaction_files(base: Path) -> list[Path]:
+    paths = []
+    for path in sorted(base.glob("*.json")):
+        tx = load_json(path).get("result")
+        if isinstance(tx, dict) and isinstance(tx.get("transaction"), dict):
+            paths.append(path)
+    return paths
+
+
+def transaction_account_keys(tx: dict) -> set[str]:
+    keys = set()
+    for key in tx.get("transaction", {}).get("message", {}).get("accountKeys") or []:
+        keys.add(key["pubkey"] if isinstance(key, dict) else key)
+    return keys
+
+
+def transaction_signers(tx: dict) -> set[str]:
+    signers = set()
+    for key in tx.get("transaction", {}).get("message", {}).get("accountKeys") or []:
+        if isinstance(key, dict) and key.get("signer"):
+            signers.add(key["pubkey"])
+    return signers
+
+
+def root_submitter_provenance_metrics(base: Path, validator_related: set[str]) -> dict:
+    root_rows = root_update_authority_rows(base)
+    submitters = {signer for row in root_rows for signer in row["tx_signers"]}
+    upgrade_authorities = {row["authority"] for row in root_update_programdata(base) if row.get("authority")}
+    occurrence_files = set()
+    signer_files = set()
+    programs = set()
+    security_intersections = set()
+    upgrade_intersections = set()
+    for path in all_saved_transaction_files(base):
+        tx = load_json(path).get("result")
+        keys = transaction_account_keys(tx)
+        matched = keys & submitters
+        if not matched:
+            continue
+        occurrence_files.add(path.name)
+        signers = transaction_signers(tx)
+        if signers & submitters:
+            signer_files.add(path.name)
+        security_intersections.update((keys & validator_related) | ({JUP_MINT} if JUP_MINT in keys else set()))
+        upgrade_intersections.update(keys & upgrade_authorities)
+        for ix in tx.get("transaction", {}).get("message", {}).get("instructions") or []:
+            if ix.get("programId"):
+                programs.add(ix["programId"])
+        for group in tx.get("meta", {}).get("innerInstructions") or []:
+            for ix in group.get("instructions") or []:
+                if ix.get("programId"):
+                    programs.add(ix["programId"])
+    return {
+        "root_submitter_provenance_present": bool(submitters or (base / "root-submitter-provenance.md").exists()),
+        "root_submitter_count": len(submitters),
+        "root_submitter_occurrence_tx_count": len(occurrence_files),
+        "root_submitter_signer_tx_count": len(signer_files),
+        "root_submitter_security_intersection_count": len(security_intersections),
+        "root_submitter_upgrade_intersection_count": len(upgrade_intersections),
+        "root_submitters": submitters,
+        "root_submitter_occurrence_files": occurrence_files,
+        "root_submitter_signer_files": signer_files,
+        "root_submitter_programs": programs,
+        "root_submitter_security_intersections": security_intersections,
+        "root_submitter_upgrade_intersections": upgrade_intersections,
+    }
+
+
 def outbox_verifier_payload_map_metrics(base: Path) -> dict:
     rows = verifier_payload_rows(base)
     roots = verifier_stored_roots(base)
@@ -598,6 +666,7 @@ def snapshot_metrics(base: Path) -> dict:
     private_runtime_fingerprints = private_runtime_fingerprint_metrics(base)
     outbox_root_history = outbox_root_history_metrics(base)
     root_update_authority_graph = root_update_authority_graph_metrics(base, related)
+    root_submitter_provenance = root_submitter_provenance_metrics(base, related)
     outbox_verifier_payload_map = outbox_verifier_payload_map_metrics(base)
     jupnet_executable_census = jupnet_executable_census_metrics(base)
     gum_validator_hits = 0
@@ -690,6 +759,7 @@ def snapshot_metrics(base: Path) -> dict:
         **private_runtime_fingerprints,
         **outbox_root_history,
         **root_update_authority_graph,
+        **root_submitter_provenance,
         **outbox_verifier_payload_map,
         **jupnet_executable_census,
     }
@@ -818,6 +888,12 @@ def main() -> None:
         ("Root update authority writable account count", "root_update_authority_writable_account_count"),
         ("Root update authority security-intersection count", "root_update_authority_security_intersection_count"),
         ("Root update authority upgrade-intersection count", "root_update_authority_upgrade_intersection_count"),
+        ("Root submitter provenance report present", "root_submitter_provenance_present"),
+        ("Root submitter count", "root_submitter_count"),
+        ("Root submitter transaction occurrences", "root_submitter_occurrence_tx_count"),
+        ("Root submitter signer transaction occurrences", "root_submitter_signer_tx_count"),
+        ("Root submitter security-intersection count", "root_submitter_security_intersection_count"),
+        ("Root submitter upgrade-intersection count", "root_submitter_upgrade_intersection_count"),
         ("Outbox verifier field-map report present", "outbox_verifier_map_present"),
         ("Outbox verifier field-map payloads", "outbox_verifier_map_payloads"),
         ("Outbox verifier field-map Bank wrappers", "outbox_verifier_map_bank_wrappers"),
@@ -923,6 +999,12 @@ def main() -> None:
             "root_update_authority_writable_account_count",
             "root_update_authority_security_intersection_count",
             "root_update_authority_upgrade_intersection_count",
+            "root_submitter_provenance_present",
+            "root_submitter_count",
+            "root_submitter_occurrence_tx_count",
+            "root_submitter_signer_tx_count",
+            "root_submitter_security_intersection_count",
+            "root_submitter_upgrade_intersection_count",
             "outbox_verifier_map_present",
             "outbox_verifier_map_payloads",
             "outbox_verifier_map_bank_wrappers",
@@ -1011,6 +1093,24 @@ def main() -> None:
             new["root_update_authority_upgrade_intersections"],
         )
     )
+    alerts.extend(set_delta("Root submitter", old["root_submitters"], new["root_submitters"]))
+    alerts.extend(set_delta("Root submitter occurrence file", old["root_submitter_occurrence_files"], new["root_submitter_occurrence_files"]))
+    alerts.extend(set_delta("Root submitter signer file", old["root_submitter_signer_files"], new["root_submitter_signer_files"]))
+    alerts.extend(set_delta("Root submitter invoked program", old["root_submitter_programs"], new["root_submitter_programs"]))
+    alerts.extend(
+        set_delta(
+            "Root submitter JUP/validator/vote/stake intersection",
+            old["root_submitter_security_intersections"],
+            new["root_submitter_security_intersections"],
+        )
+    )
+    alerts.extend(
+        set_delta(
+            "Root submitter upgrade-authority intersection",
+            old["root_submitter_upgrade_intersections"],
+            new["root_submitter_upgrade_intersections"],
+        )
+    )
     alerts.extend(set_delta("Outbox verifier sender/program", old["outbox_verifier_map_senders"], new["outbox_verifier_map_senders"]))
     alerts.extend(set_delta("Outbox verifier field-map aggregate key", old["outbox_verifier_map_aggregate_keys"], new["outbox_verifier_map_aggregate_keys"]))
     alerts.extend(set_delta("Outbox verifier field-map root", old["outbox_verifier_map_roots"], new["outbox_verifier_map_roots"]))
@@ -1093,6 +1193,9 @@ def main() -> None:
     print(f"- Root update writable accounts: `{new['root_update_authority_writable_account_count']}`")
     print(f"- Root update security intersections: `{new['root_update_authority_security_intersection_count']}`")
     print(f"- Root update upgrade-authority intersections: `{new['root_update_authority_upgrade_intersection_count']}`")
+    print(f"- Root submitters: `{new['root_submitter_count']}`")
+    print(f"- Root submitter tx occurrences: `{new['root_submitter_occurrence_tx_count']}`")
+    print(f"- Root submitter security intersections: `{new['root_submitter_security_intersection_count']}`")
     print(f"- Outbox verifier field-map sender/programs: `{len(new['outbox_verifier_map_senders'])}`")
     print(f"- JupNet executable verifier-syscall consumers: `{new['jupnet_executable_verifier_count']}`")
     print(f"- JupNet executable key-hit rows: `{new['jupnet_executable_key_hit_count']}`")
