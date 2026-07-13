@@ -107,4 +107,4 @@ Dove/JUP/stake-weight source
 
 The funding actor classification follow-up is documented in [`docs/37-funding-actor-classifier.md`](docs/37-funding-actor-classifier.md). It decodes the funding payload and classifies `JUPW3...`, `7r3...`, `bk1PDA...`, `op16...` and the Bank-owned request accounts.
 
-The next meaningful investigation target is now a wider Bank withdrawal cohort: compare other `bk1PDA...` request/withdrawal transactions against this root-submitter setup event to see whether infrastructure funding through this path is exceptional or routine.
+The wider Bank withdrawal cohort follow-up is documented in [`docs/38-bank-withdrawal-cohort.md`](docs/38-bank-withdrawal-cohort.md). It shows the setup event uses reusable `bk1PDA... -> op16...` withdrawal machinery, while remaining distinct from the sampled cohort by mint.

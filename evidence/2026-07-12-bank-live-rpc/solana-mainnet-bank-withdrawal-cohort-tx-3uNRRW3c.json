@@ -1,0 +1,124 @@
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "blockTime": 1780447199,
+    "meta": {
+      "computeUnitsConsumed": 191155,
+      "costUnits": 192951,
+      "err": null,
+      "fee": 285000,
+      "innerInstructions": [],
+      "logMessages": [
+        "Program ComputeBudget111111111111111111111111111111 invoke [1]",
+        "Program ComputeBudget111111111111111111111111111111 success",
+        "Program ComputeBudget111111111111111111111111111111 invoke [1]",
+        "Program ComputeBudget111111111111111111111111111111 success",
+        "Program bk1PDAkbHEBGtVRiM94Lzets8gVFP7FgySyfkAc8MPN invoke [1]",
+        "Program log: Instruction: UpdateMerkleRootState",
+        "Program log: Merkle proof verified",
+        "Program log: Message hash: [189, 255, 76, 112, 179, 10, 247, 148, 176, 195, 26, 104, 42, 123, 195, 111, 0, 43, 213, 146, 45, 124, 146, 98, 91, 122, 71, 126, 71, 130, 112, 119]",
+        "Program log: Signature verified",
+        "Program bk1PDAkbHEBGtVRiM94Lzets8gVFP7FgySyfkAc8MPN consumed 190855 of 1399700 compute units",
+        "Program bk1PDAkbHEBGtVRiM94Lzets8gVFP7FgySyfkAc8MPN success"
+      ],
+      "postBalances": [
+        40972793260,
+        3173760,
+        0,
+        1,
+        1,
+        1141440
+      ],
+      "postTokenBalances": [],
+      "preBalances": [
+        40970099380,
+        3173760,
+        2978880,
+        1,
+        1,
+        1141440
+      ],
+      "preTokenBalances": [],
+      "rewards": [],
+      "status": {
+        "Ok": null
+      }
+    },
+    "slot": 423919856,
+    "transaction": {
+      "message": {
+        "accountKeys": [
+          {
+            "pubkey": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+            "signer": true,
+            "source": "transaction",
+            "writable": true
+          },
+          {
+            "pubkey": "zVFYUJR5N4jnbxcSQFznjD5hjEmVbjSb9aiVLS4zQHh",
+            "signer": false,
+            "source": "transaction",
+            "writable": true
+          },
+          {
+            "pubkey": "9kgqyznoEnDA81wQ2nGA6XMBmhgtPsQVeTNjgEGN2WRU",
+            "signer": false,
+            "source": "transaction",
+            "writable": true
+          },
+          {
+            "pubkey": "11111111111111111111111111111111",
+            "signer": false,
+            "source": "transaction",
+            "writable": false
+          },
+          {
+            "pubkey": "ComputeBudget111111111111111111111111111111",
+            "signer": false,
+            "source": "transaction",
+            "writable": false
+          },
+          {
+            "pubkey": "bk1PDAkbHEBGtVRiM94Lzets8gVFP7FgySyfkAc8MPN",
+            "signer": false,
+            "source": "transaction",
+            "writable": false
+          }
+        ],
+        "addressTableLookups": [],
+        "instructions": [
+          {
+            "accounts": [],
+            "data": "3QAwFKa3MJAs",
+            "programId": "ComputeBudget111111111111111111111111111111",
+            "stackHeight": 1
+          },
+          {
+            "accounts": [],
+            "data": "K1FDJ7",
+            "programId": "ComputeBudget111111111111111111111111111111",
+            "stackHeight": 1
+          },
+          {
+            "accounts": [
+              "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+              "zVFYUJR5N4jnbxcSQFznjD5hjEmVbjSb9aiVLS4zQHh",
+              "9kgqyznoEnDA81wQ2nGA6XMBmhgtPsQVeTNjgEGN2WRU",
+              "11111111111111111111111111111111"
+            ],
+            "data": "E35zKTNYtQ845Swyg8YfYGGHF7QuX5MdWg6RaVD8ybZiumtGyRsV5vN6JCqwxUvFx2SU3Snvqo92AkBp6QR9LfwPWouiNBAJcuVCKFkSAER7q6d9R",
+            "programId": "bk1PDAkbHEBGtVRiM94Lzets8gVFP7FgySyfkAc8MPN",
+            "stackHeight": 1
+          }
+        ],
+        "recentBlockhash": "DAKMontPUzJa1bnjLHp5QFG8RDHLR3HZKrQ5uaFhXhk7"
+      },
+      "signatures": [
+        "3uNRRW3cMisC9VHr8xmNSvsw5MAt1uZkRaPFHbd2kiMNxyjwo6y8Rkv6r1PRHiiiYoHYkUGZ6gYBCbiy8CAFCmiU"
+      ]
+    },
+    "transactionIndex": 749,
+    "version": 0
+  }
+}

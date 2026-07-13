@@ -717,6 +717,43 @@ def funding_actor_classifier_metrics(base: Path) -> dict:
     }
 
 
+def bank_withdrawal_cohort_metrics(base: Path) -> dict:
+    report = base / "bank-withdrawal-cohort.md"
+    text = report.read_text() if report.exists() else ""
+
+    def number(pattern: str) -> int | None:
+        match = re.search(pattern, text)
+        return int(match.group(1)) if match else None
+
+    recipients = set()
+    mints = set()
+    impls = set()
+    fee_payers = set()
+    for label, values in re.findall(r"\| (Recipients|Mints|Implementation programs|Fee payers|Signers) \| (.+?) \|", text):
+        rows = re.findall(r"`([^`:]+): \d+`", values)
+        if label == "Recipients":
+            recipients.update(rows)
+        elif label == "Mints":
+            mints.update(rows)
+        elif label == "Implementation programs":
+            impls.update(rows)
+        elif label == "Fee payers":
+            fee_payers.update(rows)
+    return {
+        "bank_withdrawal_cohort_present": report.exists(),
+        "bank_withdrawal_cohort_txs": number(r"Cohort transaction bodies analyzed: `(\d+)`"),
+        "bank_withdrawal_cohort_request_withdraw_txs": number(r"Cohort transactions with both `Instruction: Request` and `Instruction: Withdraw`: `(\d+)`"),
+        "bank_withdrawal_cohort_decoded_rows": number(r"Decoded withdrawal-like rows including setup comparison: `(\d+)`"),
+        "bank_withdrawal_cohort_unique_recipients": number(r"Unique decoded recipients: `(\d+)`"),
+        "bank_withdrawal_cohort_root_submitter_hits": number(r"Root submitter recipient hits: `(\d+)`"),
+        "bank_withdrawal_cohort_security_intersections": number(r"Canonical JUP / current validator / vote / stake intersections: `(\d+)`"),
+        "bank_withdrawal_cohort_recipients": recipients,
+        "bank_withdrawal_cohort_mints": mints,
+        "bank_withdrawal_cohort_impls": impls,
+        "bank_withdrawal_cohort_fee_payers": fee_payers,
+    }
+
+
 def outbox_verifier_payload_map_metrics(base: Path) -> dict:
     rows = verifier_payload_rows(base)
     roots = verifier_stored_roots(base)
@@ -838,6 +875,7 @@ def snapshot_metrics(base: Path) -> dict:
     root_submitter_direct_history = root_submitter_direct_history_metrics(base, related)
     root_submitter_funding_history = root_submitter_funding_history_metrics(base, related)
     funding_actor_classifier = funding_actor_classifier_metrics(base)
+    bank_withdrawal_cohort = bank_withdrawal_cohort_metrics(base)
     outbox_verifier_payload_map = outbox_verifier_payload_map_metrics(base)
     jupnet_executable_census = jupnet_executable_census_metrics(base)
     gum_validator_hits = 0
@@ -934,6 +972,7 @@ def snapshot_metrics(base: Path) -> dict:
         **root_submitter_direct_history,
         **root_submitter_funding_history,
         **funding_actor_classifier,
+        **bank_withdrawal_cohort,
         **outbox_verifier_payload_map,
         **jupnet_executable_census,
     }
@@ -1087,6 +1126,13 @@ def main() -> None:
         ("Root submitter funding-history upgrade-intersection count", "root_submitter_funding_history_upgrade_intersection_count"),
         ("Funding actor classifier report present", "funding_actor_classifier_present"),
         ("Funding actor classifier account count", "funding_actor_count"),
+        ("Bank withdrawal cohort report present", "bank_withdrawal_cohort_present"),
+        ("Bank withdrawal cohort tx count", "bank_withdrawal_cohort_txs"),
+        ("Bank withdrawal cohort Request/Withdraw tx count", "bank_withdrawal_cohort_request_withdraw_txs"),
+        ("Bank withdrawal cohort decoded row count", "bank_withdrawal_cohort_decoded_rows"),
+        ("Bank withdrawal cohort unique recipient count", "bank_withdrawal_cohort_unique_recipients"),
+        ("Bank withdrawal cohort root submitter recipient hits", "bank_withdrawal_cohort_root_submitter_hits"),
+        ("Bank withdrawal cohort security-intersection count", "bank_withdrawal_cohort_security_intersections"),
         ("Outbox verifier field-map report present", "outbox_verifier_map_present"),
         ("Outbox verifier field-map payloads", "outbox_verifier_map_payloads"),
         ("Outbox verifier field-map Bank wrappers", "outbox_verifier_map_bank_wrappers"),
@@ -1217,6 +1263,13 @@ def main() -> None:
             "root_submitter_funding_history_upgrade_intersection_count",
             "funding_actor_classifier_present",
             "funding_actor_count",
+            "bank_withdrawal_cohort_present",
+            "bank_withdrawal_cohort_txs",
+            "bank_withdrawal_cohort_request_withdraw_txs",
+            "bank_withdrawal_cohort_decoded_rows",
+            "bank_withdrawal_cohort_unique_recipients",
+            "bank_withdrawal_cohort_root_submitter_hits",
+            "bank_withdrawal_cohort_security_intersections",
             "outbox_verifier_map_present",
             "outbox_verifier_map_payloads",
             "outbox_verifier_map_bank_wrappers",
@@ -1399,6 +1452,10 @@ def main() -> None:
     )
     alerts.extend(set_delta("Funding actor account", old["funding_actor_accounts"], new["funding_actor_accounts"]))
     alerts.extend(set_delta("Funding actor decoded field", old["funding_actor_decoded_records"], new["funding_actor_decoded_records"]))
+    alerts.extend(set_delta("Bank withdrawal cohort recipient", old["bank_withdrawal_cohort_recipients"], new["bank_withdrawal_cohort_recipients"]))
+    alerts.extend(set_delta("Bank withdrawal cohort mint", old["bank_withdrawal_cohort_mints"], new["bank_withdrawal_cohort_mints"]))
+    alerts.extend(set_delta("Bank withdrawal cohort implementation program", old["bank_withdrawal_cohort_impls"], new["bank_withdrawal_cohort_impls"]))
+    alerts.extend(set_delta("Bank withdrawal cohort fee payer", old["bank_withdrawal_cohort_fee_payers"], new["bank_withdrawal_cohort_fee_payers"]))
     alerts.extend(set_delta("Outbox verifier sender/program", old["outbox_verifier_map_senders"], new["outbox_verifier_map_senders"]))
     alerts.extend(set_delta("Outbox verifier field-map aggregate key", old["outbox_verifier_map_aggregate_keys"], new["outbox_verifier_map_aggregate_keys"]))
     alerts.extend(set_delta("Outbox verifier field-map root", old["outbox_verifier_map_roots"], new["outbox_verifier_map_roots"]))
@@ -1493,6 +1550,9 @@ def main() -> None:
     print(f"- Root submitter funding-history transfer sources: `{new['root_submitter_funding_history_transfer_source_count']}`")
     print(f"- Funding actor classifier accounts: `{new['funding_actor_count']}`")
     print(f"- Funding actor decoded records: `{len(new['funding_actor_decoded_records'])}`")
+    print(f"- Bank withdrawal cohort txs: `{new['bank_withdrawal_cohort_txs']}`")
+    print(f"- Bank withdrawal cohort Request/Withdraw txs: `{new['bank_withdrawal_cohort_request_withdraw_txs']}`")
+    print(f"- Bank withdrawal cohort unique recipients: `{new['bank_withdrawal_cohort_unique_recipients']}`")
     print(f"- Outbox verifier field-map sender/programs: `{len(new['outbox_verifier_map_senders'])}`")
     print(f"- JupNet executable verifier-syscall consumers: `{new['jupnet_executable_verifier_count']}`")
     print(f"- JupNet executable key-hit rows: `{new['jupnet_executable_key_hit_count']}`")

@@ -141,6 +141,22 @@ def main() -> None:
         ]
     )
     run([sys.executable, "scripts/analyze_funding_actor_classifier.py", str(out)], out / "funding-actor-classifier.md")
+    run(
+        [
+            sys.executable,
+            "scripts/collect_bank_withdrawal_cohort.py",
+            str(out),
+            "--signature-limit",
+            "50",
+            "--transaction-limit",
+            "50",
+            "--pause",
+            "0.35",
+            "--retries",
+            "5",
+        ]
+    )
+    run([sys.executable, "scripts/analyze_bank_withdrawal_cohort.py", str(out)], out / "bank-withdrawal-cohort.md")
     run([sys.executable, "scripts/hunt_epoch_security_sources.py", str(out)], out / "epoch-security-source-hunt.md")
     run([sys.executable, "scripts/map_outbox_verifier_payloads.py", str(out)], out / "outbox-verifier-payload-field-map.md")
     run([sys.executable, "scripts/analyze_security_boundary_corpus.py", str(out)], out / "security-boundary-corpus.md")
@@ -172,6 +188,7 @@ def main() -> None:
     print(f"Root submitter direct history: {out / 'root-submitter-history.md'}")
     print(f"Root submitter funding history: {out / 'root-submitter-funding-history.md'}")
     print(f"Funding actor classifier: {out / 'funding-actor-classifier.md'}")
+    print(f"Bank withdrawal cohort: {out / 'bank-withdrawal-cohort.md'}")
     print(f"Epoch security source hunt: {out / 'epoch-security-source-hunt.md'}")
     print(f"Outbox verifier payload field map: {out / 'outbox-verifier-payload-field-map.md'}")
     print(f"Security boundary corpus: {out / 'security-boundary-corpus.md'}")

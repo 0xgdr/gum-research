@@ -1,0 +1,141 @@
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "blockTime": 1781257641,
+    "meta": {
+      "computeUnitsConsumed": 2670,
+      "costUnits": 4890,
+      "err": null,
+      "fee": 5001,
+      "innerInstructions": [],
+      "logMessages": [
+        "Program BPFLoaderUpgradeab1e11111111111111111111111 invoke [1]",
+        "Upgraded program bk1PDAkbHEBGtVRiM94Lzets8gVFP7FgySyfkAc8MPN",
+        "Program BPFLoaderUpgradeab1e11111111111111111111111 success",
+        "Program ComputeBudget111111111111111111111111111111 invoke [1]",
+        "Program ComputeBudget111111111111111111111111111111 success",
+        "Program ComputeBudget111111111111111111111111111111 invoke [1]",
+        "Program ComputeBudget111111111111111111111111111111 success"
+      ],
+      "postBalances": [
+        15741896809,
+        1141440,
+        4194409200,
+        0,
+        1,
+        1,
+        1169280,
+        1009200
+      ],
+      "postTokenBalances": [],
+      "preBalances": [
+        11648997250,
+        1141440,
+        4194409200,
+        4092904560,
+        1,
+        1,
+        1169280,
+        1009200
+      ],
+      "preTokenBalances": [],
+      "rewards": [],
+      "status": {
+        "Ok": null
+      }
+    },
+    "slot": 425956918,
+    "transaction": {
+      "message": {
+        "accountKeys": [
+          {
+            "pubkey": "F5p1mBd6C3v6NB2oLGM9bLKmtHQ53RMsYKeGPPg4s113",
+            "signer": true,
+            "source": "transaction",
+            "writable": true
+          },
+          {
+            "pubkey": "bk1PDAkbHEBGtVRiM94Lzets8gVFP7FgySyfkAc8MPN",
+            "signer": false,
+            "source": "transaction",
+            "writable": true
+          },
+          {
+            "pubkey": "5ERop4TJtnRXpyUdRYuTfwWaxRTRTcb97An1jRAqa15L",
+            "signer": false,
+            "source": "transaction",
+            "writable": true
+          },
+          {
+            "pubkey": "FhogMuuYRMwktvtBWzkwguVWXyrV9dNuyenVhqbTJXkD",
+            "signer": false,
+            "source": "transaction",
+            "writable": true
+          },
+          {
+            "pubkey": "BPFLoaderUpgradeab1e11111111111111111111111",
+            "signer": false,
+            "source": "transaction",
+            "writable": false
+          },
+          {
+            "pubkey": "ComputeBudget111111111111111111111111111111",
+            "signer": false,
+            "source": "transaction",
+            "writable": false
+          },
+          {
+            "pubkey": "SysvarC1ock11111111111111111111111111111111",
+            "signer": false,
+            "source": "transaction",
+            "writable": false
+          },
+          {
+            "pubkey": "SysvarRent111111111111111111111111111111111",
+            "signer": false,
+            "source": "transaction",
+            "writable": false
+          }
+        ],
+        "instructions": [
+          {
+            "parsed": {
+              "info": {
+                "authority": "F5p1mBd6C3v6NB2oLGM9bLKmtHQ53RMsYKeGPPg4s113",
+                "bufferAccount": "FhogMuuYRMwktvtBWzkwguVWXyrV9dNuyenVhqbTJXkD",
+                "clockSysvar": "SysvarC1ock11111111111111111111111111111111",
+                "programAccount": "bk1PDAkbHEBGtVRiM94Lzets8gVFP7FgySyfkAc8MPN",
+                "programDataAccount": "5ERop4TJtnRXpyUdRYuTfwWaxRTRTcb97An1jRAqa15L",
+                "rentSysvar": "SysvarRent111111111111111111111111111111111",
+                "spillAccount": "F5p1mBd6C3v6NB2oLGM9bLKmtHQ53RMsYKeGPPg4s113"
+              },
+              "type": "upgrade"
+            },
+            "program": "bpf-upgradeable-loader",
+            "programId": "BPFLoaderUpgradeab1e11111111111111111111111",
+            "stackHeight": 1
+          },
+          {
+            "accounts": [],
+            "data": "3F8aKq24k59R",
+            "programId": "ComputeBudget111111111111111111111111111111",
+            "stackHeight": 1
+          },
+          {
+            "accounts": [],
+            "data": "GuCf6o",
+            "programId": "ComputeBudget111111111111111111111111111111",
+            "stackHeight": 1
+          }
+        ],
+        "recentBlockhash": "4TDNcJ2FKNJkBcyTaL4f6EtZ9ifLeNEFtf7breyBD5Y7"
+      },
+      "signatures": [
+        "3jfYU6KaPfAvuSHmTS8ozYcqDriDAbnt3E8jovx7NZUi86W17zdRGos1BrwtgZhvs7g6HykRzZq8VEQsiGDM1Zsx"
+      ]
+    },
+    "transactionIndex": 398,
+    "version": "legacy"
+  }
+}

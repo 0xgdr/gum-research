@@ -43,11 +43,11 @@ The funding transaction:
 | `VUMS4yy6oKWw4zqHHn9o9moDbaPuRmB7a6fGB7sNVXT` | Funding-event writable/account-meta participant | Owned by `bk1PDA...`, 9 bytes |
 | `zVFYUJR5N4jnbxcSQFznjD5hjEmVbjSb9aiVLS4zQHh` | Funding-event account-meta participant | Owned by `bk1PDA...`, 328 bytes |
 
-The local corpus also shows:
+The local corpus at this stage showed:
 
 - `6f5mu...` appears in `260` local transaction files and is signer in `259`, consistent with the later root-publisher loop;
 - `JUPW3...` appears in `26` local transaction files and is signer in all `26`, making it an operational fee-payer/signer candidate rather than a one-off passive account;
-- `7r3...`, `bk1PDA...` and `op16...` each appear once in the local corpus because the current saved corpus is centered on the root-submitter funding event rather than a broad Bank withdrawal cohort.
+- `7r3...`, `bk1PDA...` and `op16...` each appeared once before the broader Bank withdrawal cohort was collected.
 
 ## Decoded Logs
 
@@ -85,12 +85,6 @@ It still does not expose:
 - signer-set or quorum state;
 - JUP-denominated weight, rewards, slashing, fees or access control.
 
-## Next Angle
+## Follow-Up
 
-The next useful step is a **Bank withdrawal cohort**:
-
-- collect recent `bk1PDA...` request/withdrawal transactions;
-- identify how often `op16...` appears;
-- decode recipients, mints, amounts and request pubkeys;
-- compare recipients against known infrastructure accounts such as `6f5mu...`;
-- determine whether funding a root publisher through this path is exceptional or just normal Gum withdrawal behavior.
+The Bank withdrawal cohort follow-up is documented in [`docs/38-bank-withdrawal-cohort.md`](docs/38-bank-withdrawal-cohort.md). It shows `op16...` is reused across decoded withdrawals and `6f5mu...` is one recipient among many, while still being distinct by mint in the compared cohort.

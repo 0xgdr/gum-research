@@ -1,0 +1,135 @@
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "blockTime": 1780409395,
+    "meta": {
+      "computeUnitsConsumed": 7526,
+      "costUnits": 9081,
+      "err": null,
+      "fee": 14582,
+      "innerInstructions": [
+        {
+          "index": 2,
+          "instructions": [
+            {
+              "parsed": {
+                "info": {
+                  "lamports": 2978880,
+                  "newAccount": "FJZYVQStRe2j3V7KShPfdzVF28caphwg9ndas5JZ4weQ",
+                  "owner": "bk1PDAkbHEBGtVRiM94Lzets8gVFP7FgySyfkAc8MPN",
+                  "source": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+                  "space": 300
+                },
+                "type": "createAccount"
+              },
+              "program": "system",
+              "programId": "11111111111111111111111111111111",
+              "stackHeight": 2
+            }
+          ]
+        }
+      ],
+      "logMessages": [
+        "Program ComputeBudget111111111111111111111111111111 invoke [1]",
+        "Program ComputeBudget111111111111111111111111111111 success",
+        "Program ComputeBudget111111111111111111111111111111 invoke [1]",
+        "Program ComputeBudget111111111111111111111111111111 success",
+        "Program bk1PDAkbHEBGtVRiM94Lzets8gVFP7FgySyfkAc8MPN invoke [1]",
+        "Program log: Instruction: CreateOrAppendMerkleProofBuffer",
+        "Program 11111111111111111111111111111111 invoke [2]",
+        "Program 11111111111111111111111111111111 success",
+        "Program bk1PDAkbHEBGtVRiM94Lzets8gVFP7FgySyfkAc8MPN consumed 7226 of 27076 compute units",
+        "Program bk1PDAkbHEBGtVRiM94Lzets8gVFP7FgySyfkAc8MPN success"
+      ],
+      "postBalances": [
+        41890019189,
+        2978880,
+        1,
+        1,
+        1141440
+      ],
+      "postTokenBalances": [],
+      "preBalances": [
+        41893012651,
+        0,
+        1,
+        1,
+        1141440
+      ],
+      "preTokenBalances": [],
+      "rewards": [],
+      "status": {
+        "Ok": null
+      }
+    },
+    "slot": 423824845,
+    "transaction": {
+      "message": {
+        "accountKeys": [
+          {
+            "pubkey": "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+            "signer": true,
+            "source": "transaction",
+            "writable": true
+          },
+          {
+            "pubkey": "FJZYVQStRe2j3V7KShPfdzVF28caphwg9ndas5JZ4weQ",
+            "signer": false,
+            "source": "transaction",
+            "writable": true
+          },
+          {
+            "pubkey": "11111111111111111111111111111111",
+            "signer": false,
+            "source": "transaction",
+            "writable": false
+          },
+          {
+            "pubkey": "ComputeBudget111111111111111111111111111111",
+            "signer": false,
+            "source": "transaction",
+            "writable": false
+          },
+          {
+            "pubkey": "bk1PDAkbHEBGtVRiM94Lzets8gVFP7FgySyfkAc8MPN",
+            "signer": false,
+            "source": "transaction",
+            "writable": false
+          }
+        ],
+        "addressTableLookups": [],
+        "instructions": [
+          {
+            "accounts": [],
+            "data": "3MYX9epnkNJB",
+            "programId": "ComputeBudget111111111111111111111111111111",
+            "stackHeight": 1
+          },
+          {
+            "accounts": [],
+            "data": "LEVHy1",
+            "programId": "ComputeBudget111111111111111111111111111111",
+            "stackHeight": 1
+          },
+          {
+            "accounts": [
+              "JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo",
+              "FJZYVQStRe2j3V7KShPfdzVF28caphwg9ndas5JZ4weQ",
+              "11111111111111111111111111111111"
+            ],
+            "data": "NpEd3MFzRos7crfEB1PCzUvsGvThSrsfDA1bTdH3hCKjx8dcCQhdwUR2eepQ7zjxQUTpMXvHW2PqgkdPhoe4cMzn59VmM4HyfsWfVXLvucx6zCHQoN6VfEc4Hjq3NRTLyav5unmcyztKYDkyhc7L96rxL5gEnMX4Esd15QBXZEUUCAu6KzFPKsz9rxXpzazdvAU3J2UWgrkQfwXkMfCd9uJkNvtuza3UYR8N2u6fQJSvW3k5SoACudr9akndWBifjMEmJjRAxG5gopfSJ94uWpo69EyCtLu9ag7cTDtJhWzLvpAFKWcUikiL7UGQ71vJ7kkaXhBW4mUQyWCBKsKCZmm2416fjR4hR2cTKBtrfzgtKsNfviBq77V1JxKgziJtzJWAfCmDdgwq5PfWUMoxzXF3EtF9StwKDK7sNEi7mtAWFfasKZpb2",
+            "programId": "bk1PDAkbHEBGtVRiM94Lzets8gVFP7FgySyfkAc8MPN",
+            "stackHeight": 1
+          }
+        ],
+        "recentBlockhash": "96rUtBFCTfMjYV5ZyU6efahTm3c34hqSeLHfE91MtFit"
+      },
+      "signatures": [
+        "488FizoYdM5D6acrGeNdSa51vAPdGzrNB5jZjgTYQtRzbB79kAGwp8URhrcaohwbjNuV6UhM9deyKVpznrfZAmuk"
+      ]
+    },
+    "transactionIndex": 573,
+    "version": 0
+  }
+}
