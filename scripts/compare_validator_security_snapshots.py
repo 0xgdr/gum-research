@@ -696,6 +696,27 @@ def root_submitter_funding_history_metrics(base: Path, validator_related: set[st
     }
 
 
+def funding_actor_classifier_metrics(base: Path) -> dict:
+    report = base / "funding-actor-classifier.md"
+    account_data = load_json(base / "solana-mainnet-getMultipleAccounts-FundingActors.json")
+    accounts = set(account_data.get("accounts") or [])
+    decoded_records = set()
+    if report.exists():
+        text = report.read_text()
+        for label, _bytes, base58, known, hex_value, ints in re.findall(
+            r"\| `([^`]+)` \| (\d+) \| `([^`]+)` \| `([^`]+)` \| `([^`]+)` \| `([^`]+)` \|",
+            text,
+        ):
+            if label in {"recipient", "mint", "amount 0", "impl program key", "withdrawal_request_pubkey", "jupnet"}:
+                decoded_records.add(f"{label}: {base58} | {known} | {ints}")
+    return {
+        "funding_actor_classifier_present": report.exists(),
+        "funding_actor_count": len(accounts),
+        "funding_actor_accounts": accounts,
+        "funding_actor_decoded_records": decoded_records,
+    }
+
+
 def outbox_verifier_payload_map_metrics(base: Path) -> dict:
     rows = verifier_payload_rows(base)
     roots = verifier_stored_roots(base)
@@ -816,6 +837,7 @@ def snapshot_metrics(base: Path) -> dict:
     root_submitter_provenance = root_submitter_provenance_metrics(base, related)
     root_submitter_direct_history = root_submitter_direct_history_metrics(base, related)
     root_submitter_funding_history = root_submitter_funding_history_metrics(base, related)
+    funding_actor_classifier = funding_actor_classifier_metrics(base)
     outbox_verifier_payload_map = outbox_verifier_payload_map_metrics(base)
     jupnet_executable_census = jupnet_executable_census_metrics(base)
     gum_validator_hits = 0
@@ -911,6 +933,7 @@ def snapshot_metrics(base: Path) -> dict:
         **root_submitter_provenance,
         **root_submitter_direct_history,
         **root_submitter_funding_history,
+        **funding_actor_classifier,
         **outbox_verifier_payload_map,
         **jupnet_executable_census,
     }
@@ -1062,6 +1085,8 @@ def main() -> None:
         ("Root submitter funding-history transfer-source count", "root_submitter_funding_history_transfer_source_count"),
         ("Root submitter funding-history security-intersection count", "root_submitter_funding_history_security_intersection_count"),
         ("Root submitter funding-history upgrade-intersection count", "root_submitter_funding_history_upgrade_intersection_count"),
+        ("Funding actor classifier report present", "funding_actor_classifier_present"),
+        ("Funding actor classifier account count", "funding_actor_count"),
         ("Outbox verifier field-map report present", "outbox_verifier_map_present"),
         ("Outbox verifier field-map payloads", "outbox_verifier_map_payloads"),
         ("Outbox verifier field-map Bank wrappers", "outbox_verifier_map_bank_wrappers"),
@@ -1190,6 +1215,8 @@ def main() -> None:
             "root_submitter_funding_history_transfer_source_count",
             "root_submitter_funding_history_security_intersection_count",
             "root_submitter_funding_history_upgrade_intersection_count",
+            "funding_actor_classifier_present",
+            "funding_actor_count",
             "outbox_verifier_map_present",
             "outbox_verifier_map_payloads",
             "outbox_verifier_map_bank_wrappers",
@@ -1370,6 +1397,8 @@ def main() -> None:
             new["root_submitter_funding_history_upgrade_intersections"],
         )
     )
+    alerts.extend(set_delta("Funding actor account", old["funding_actor_accounts"], new["funding_actor_accounts"]))
+    alerts.extend(set_delta("Funding actor decoded field", old["funding_actor_decoded_records"], new["funding_actor_decoded_records"]))
     alerts.extend(set_delta("Outbox verifier sender/program", old["outbox_verifier_map_senders"], new["outbox_verifier_map_senders"]))
     alerts.extend(set_delta("Outbox verifier field-map aggregate key", old["outbox_verifier_map_aggregate_keys"], new["outbox_verifier_map_aggregate_keys"]))
     alerts.extend(set_delta("Outbox verifier field-map root", old["outbox_verifier_map_roots"], new["outbox_verifier_map_roots"]))
@@ -1462,6 +1491,8 @@ def main() -> None:
     print(f"- Root submitter funding-history positive funding txs: `{new['root_submitter_funding_history_positive_delta_count']}`")
     print(f"- Root submitter funding-history Bank request txs: `{new['root_submitter_funding_history_bank_request_count']}`")
     print(f"- Root submitter funding-history transfer sources: `{new['root_submitter_funding_history_transfer_source_count']}`")
+    print(f"- Funding actor classifier accounts: `{new['funding_actor_count']}`")
+    print(f"- Funding actor decoded records: `{len(new['funding_actor_decoded_records'])}`")
     print(f"- Outbox verifier field-map sender/programs: `{len(new['outbox_verifier_map_senders'])}`")
     print(f"- JupNet executable verifier-syscall consumers: `{new['jupnet_executable_verifier_count']}`")
     print(f"- JupNet executable key-hit rows: `{new['jupnet_executable_key_hit_count']}`")

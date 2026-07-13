@@ -319,6 +319,32 @@ python3 scripts/analyze_root_submitter_funding_history.py \
   evidence/YYYY-MM-DD-live-rpc
 ```
 
+### `scripts/collect_funding_actor_context.py`
+
+Collects account info and bounded recent signature context for accounts involved in positive root-submitter funding/setup events. By default it derives targets from the funding-history manifest and can restrict signature fetching to high-value inferred roles.
+
+Example:
+
+```bash
+python3 scripts/collect_funding_actor_context.py \
+  evidence/YYYY-MM-DD-live-rpc \
+  --signature-role "fee payer" \
+  --signature-role "root submitter" \
+  --signature-role "parsed transfer source into root submitter" \
+  --signature-role "non-standard funding event program"
+```
+
+### `scripts/analyze_funding_actor_classifier.py`
+
+Classifies funding-side actors, decodes byte-array logs from the positive funding transaction, summarizes account owners/executability and reports whether any funding actor maps to canonical JUP, validator, vote or stake security keys.
+
+Example:
+
+```bash
+python3 scripts/analyze_funding_actor_classifier.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
 ### `scripts/reconstruct_outbox_update_payload.py`
 
 Reconstructs sampled 305-byte outbox `UpdateMerkleRoot` payloads. It parses the epoch/root fields, proof nodes, path bitmap and final 64-byte candidate aggregate-key material, then recomputes the Merkle root using the public JupNet article's `0x00` leaf and `0x01` parent hash formulas.
@@ -454,7 +480,7 @@ python3 scripts/analyze_gum_account_role_reconstruction.py \
 
 ### `scripts/run_validator_security_check.py`
 
-Runs the full monitoring workflow: collect a fresh snapshot, fetch recurring Bank account state, fetch owner-program context, fetch JupNet helper-program-owned accounts, fetch outbox root-update transactions, fetch wider outbox root history, fetch root submitter direct history, fetch root submitter funding history, fetch the Gum omnichain sender program, fetch all visible JupNet executable ProgramData accounts, generate `analysis.md`, generate `deep-dive.md`, generate `authorization.md`, generate `utility-classification.md`, generate `solana-bank.md`, generate `bank-reverse-engineering.md`, generate `bank-account-graph.md`, generate `bank-recurring-account-state.md`, generate `bank-owner-program-context.md`, generate `jupnet-helper-program-accounts.md`, generate `verify-request-payload-reconstruction.md`, generate `outbox-root-update-transactions.md`, generate `outbox-update-payload-reconstruction.md`, generate `outbox-root-history.md`, generate `root-update-authority-graph.md`, generate `root-submitter-provenance.md`, generate `root-submitter-history.md`, generate `root-submitter-funding-history.md`, generate `epoch-security-source-hunt.md`, generate `outbox-verifier-payload-field-map.md`, generate `security-boundary-corpus.md`, generate `private-runtime-fingerprints.md`, generate `gum-omnichain-binary-roles.md`, generate `gum-account-role-reconstruction.md`, generate `gum-omnichain-sender-program.md`, generate `jupnet-executable-census.md`, and compare against the latest prior snapshot when available.
+Runs the full monitoring workflow: collect a fresh snapshot, fetch recurring Bank account state, fetch owner-program context, fetch JupNet helper-program-owned accounts, fetch outbox root-update transactions, fetch wider outbox root history, fetch root submitter direct history, fetch root submitter funding history, classify funding actors, fetch the Gum omnichain sender program, fetch all visible JupNet executable ProgramData accounts, generate `analysis.md`, generate `deep-dive.md`, generate `authorization.md`, generate `utility-classification.md`, generate `solana-bank.md`, generate `bank-reverse-engineering.md`, generate `bank-account-graph.md`, generate `bank-recurring-account-state.md`, generate `bank-owner-program-context.md`, generate `jupnet-helper-program-accounts.md`, generate `verify-request-payload-reconstruction.md`, generate `outbox-root-update-transactions.md`, generate `outbox-update-payload-reconstruction.md`, generate `outbox-root-history.md`, generate `root-update-authority-graph.md`, generate `root-submitter-provenance.md`, generate `root-submitter-history.md`, generate `root-submitter-funding-history.md`, generate `funding-actor-classifier.md`, generate `epoch-security-source-hunt.md`, generate `outbox-verifier-payload-field-map.md`, generate `security-boundary-corpus.md`, generate `private-runtime-fingerprints.md`, generate `gum-omnichain-binary-roles.md`, generate `gum-account-role-reconstruction.md`, generate `gum-omnichain-sender-program.md`, generate `jupnet-executable-census.md`, and compare against the latest prior snapshot when available.
 
 Example:
 

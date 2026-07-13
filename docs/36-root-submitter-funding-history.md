@@ -103,12 +103,8 @@ Dove/JUP/stake-weight source
   -> public root submitter
 ```
 
-## Next Angle
+## Follow-Up
 
-The next meaningful investigation target is the funding source side of the positive event:
+The funding actor classification follow-up is documented in [`docs/37-funding-actor-classifier.md`](docs/37-funding-actor-classifier.md). It decodes the funding payload and classifies `JUPW3...`, `7r3...`, `bk1PDA...`, `op16...` and the Bank-owned request accounts.
 
-- classify `7r3RH97CtnYvoUTG18pH3y8c47K7XtTVwzuDifgjiTMM`;
-- classify `JUPW3tHBxmNRzVnLmTyYUsUDB6izZSEtupY6znBC5mo`;
-- classify `op16NNe3ZDePmRze6ySKvZzKgT1D2duqSWg9b1rfCnR`;
-- inspect whether other Gum Bank withdrawal/request transactions create or fund infrastructure accounts;
-- monitor future root-submitter funding or Bank-request changes.
+The next meaningful investigation target is now a wider Bank withdrawal cohort: compare other `bk1PDA...` request/withdrawal transactions against this root-submitter setup event to see whether infrastructure funding through this path is exceptional or routine.
