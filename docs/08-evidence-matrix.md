@@ -72,3 +72,6 @@
 | JupNet executable census covers visible upgradeable programs | Confirmed | Full ProgramData was fetched and analyzed for 23 upgradeable JupNet executables visible in the loader scan |
 | JupNet executable census exposes verifier syscall consumers | Confirmed | `sol_verify_bls_merkle_key` appeared in two Gum omnichain executables: `brhPf...` and `GUMeb...` |
 | JupNet executable census exposes root-builder or Dove/JUP producer | Not observed | Census found zero canonical JUP/current validator/vote/stake key hits and no public Dove registry, JUP stake-weight table, slashing/reward or root-builder implementation |
+| Outbox root-history window exposes root-update material | Confirmed | 120 local outbox transaction files yielded one decoded root update for epoch/root slot `271`, recomputing to root `6928957b...9bd8d999` |
+| Outbox root-history verifier payloads expose aggregate-key variation | Confirmed | 19 decoded verifier payloads recomputed to one stored root while using three aggregate-key values |
+| Outbox root-history exposes JUP/validator/stake source material | Not observed | Decoded root-update and verifier rows had zero canonical JUP/current validator/vote/stake key hits |
