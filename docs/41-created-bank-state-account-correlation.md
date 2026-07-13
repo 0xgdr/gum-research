@@ -89,6 +89,15 @@ That makes the remaining bridge likely one of:
 
 ## Next Angle
 
+The immediate follow-up decoded the compact 41-byte `BankK...` state accounts:
+
+```text
+docs/42-bankk-41-byte-state-layout.md
+evidence/2026-07-12-bank-live-rpc/bankk-41-byte-state-layout.md
+```
+
+That found a stable Bank-local 32-byte id reused in `BankK...` / `JNiN...` payloads, but still no decoded `bk1PDA...`, verifier/root, JUP or validator/vote/stake match.
+
 The next meaningful public option is historical account-state reconstruction. Standard public RPC does not provide arbitrary historical account bytes, so the practical paths are:
 
 - collect larger paired time windows around same-slot `BankK...` Withdraw and VerifyRequest rows;

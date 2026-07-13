@@ -877,6 +877,43 @@ def created_bank_state_account_metrics(base: Path) -> dict:
     }
 
 
+def bankk_41_byte_state_metrics(base: Path) -> dict:
+    report = base / "bankk-41-byte-state-layout.md"
+    text = report.read_text() if report.exists() else ""
+
+    def number(pattern: str) -> int | None:
+        match = re.search(pattern, text)
+        return int(match.group(1)) if match else None
+
+    embedded_values = set()
+    groups_section = re.search(r"## Embedded Value Groups\n\n(.*?)(?=\n## |\Z)", text, flags=re.S)
+    if groups_section:
+        for line in groups_section.group(1).splitlines():
+            if not line.startswith("| `"):
+                continue
+            cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+            if cells:
+                embedded_values.add(cells[0].strip("`"))
+
+    discriminator_groups = set(re.findall(r"Discriminator groups: `([^`]+)`", text))
+    flag_groups = set(re.findall(r"Flag byte groups: `([^`]+)`", text))
+
+    return {
+        "bankk_41_state_present": report.exists(),
+        "bankk_41_state_accounts": number(r"41-byte `BankK\.\.\.` accounts analyzed: `(\d+)`"),
+        "bankk_41_state_unique_embedded": number(r"Unique embedded 32-byte values: `(\d+)`"),
+        "bankk_41_state_any_tx_hits": number(r"Embedded values with any sampled transaction hit: `(\d+)`"),
+        "bankk_41_state_account_key_hits": number(r"Embedded values seen as sampled transaction account keys: `(\d+)`"),
+        "bankk_41_state_raw_payload_hits": number(r"Embedded values seen in sampled Bank/inbox raw payloads: `(\d+)`"),
+        "bankk_41_state_decoded_request_hits": number(r"Embedded values matching decoded `bk1PDA\.\.\.` request fields: `(\d+)`"),
+        "bankk_41_state_verifier_hits": number(r"Embedded values matching verifier payload/root fields: `(\d+)`"),
+        "bankk_41_state_security_hits": number(r"Embedded values matching canonical JUP / current validator / vote / stake keys: `(\d+)`"),
+        "bankk_41_state_discriminator_groups": discriminator_groups,
+        "bankk_41_state_flag_groups": flag_groups,
+        "bankk_41_state_embedded_values": embedded_values,
+    }
+
+
 def outbox_verifier_payload_map_metrics(base: Path) -> dict:
     rows = verifier_payload_rows(base)
     roots = verifier_stored_roots(base)
@@ -1002,6 +1039,7 @@ def snapshot_metrics(base: Path) -> dict:
     withdrawal_surface_comparison = withdrawal_surface_comparison_metrics(base)
     bank_request_message_correlation = bank_request_message_correlation_metrics(base)
     created_bank_state = created_bank_state_account_metrics(base)
+    bankk_41_state = bankk_41_byte_state_metrics(base)
     outbox_verifier_payload_map = outbox_verifier_payload_map_metrics(base)
     jupnet_executable_census = jupnet_executable_census_metrics(base)
     gum_validator_hits = 0
@@ -1102,6 +1140,7 @@ def snapshot_metrics(base: Path) -> dict:
         **withdrawal_surface_comparison,
         **bank_request_message_correlation,
         **created_bank_state,
+        **bankk_41_state,
         **outbox_verifier_payload_map,
         **jupnet_executable_census,
     }
@@ -1285,6 +1324,15 @@ def main() -> None:
         ("Created Bank state bk1PDA retained-hit count", "created_bank_state_bk1_retained_hits"),
         ("Created Bank state JUP-hit count", "created_bank_state_jup_hits"),
         ("Created Bank state validator-hit count", "created_bank_state_validator_hits"),
+        ("BankK 41-byte state report present", "bankk_41_state_present"),
+        ("BankK 41-byte state account count", "bankk_41_state_accounts"),
+        ("BankK 41-byte state unique embedded values", "bankk_41_state_unique_embedded"),
+        ("BankK 41-byte state transaction-hit values", "bankk_41_state_any_tx_hits"),
+        ("BankK 41-byte state account-key hit values", "bankk_41_state_account_key_hits"),
+        ("BankK 41-byte state raw-payload hit values", "bankk_41_state_raw_payload_hits"),
+        ("BankK 41-byte state decoded-request hit values", "bankk_41_state_decoded_request_hits"),
+        ("BankK 41-byte state verifier/root hit values", "bankk_41_state_verifier_hits"),
+        ("BankK 41-byte state security-hit values", "bankk_41_state_security_hits"),
         ("Outbox verifier field-map report present", "outbox_verifier_map_present"),
         ("Outbox verifier field-map payloads", "outbox_verifier_map_payloads"),
         ("Outbox verifier field-map Bank wrappers", "outbox_verifier_map_bank_wrappers"),
@@ -1445,6 +1493,10 @@ def main() -> None:
             "created_bank_state_bk1_retained_hits",
             "created_bank_state_jup_hits",
             "created_bank_state_validator_hits",
+            "bankk_41_state_present",
+            "bankk_41_state_decoded_request_hits",
+            "bankk_41_state_verifier_hits",
+            "bankk_41_state_security_hits",
             "outbox_verifier_map_present",
             "outbox_verifier_map_payloads",
             "outbox_verifier_map_bank_wrappers",
@@ -1641,6 +1693,9 @@ def main() -> None:
     alerts.extend(set_delta("Bank request/message role row", old["bank_request_message_correlation_role_rows"], new["bank_request_message_correlation_role_rows"]))
     alerts.extend(set_delta("Created Bank state owner", old["created_bank_state_owners"], new["created_bank_state_owners"]))
     alerts.extend(set_delta("Created Bank state account space", old["created_bank_state_spaces"], new["created_bank_state_spaces"]))
+    alerts.extend(set_delta("BankK 41-byte state discriminator group", old["bankk_41_state_discriminator_groups"], new["bankk_41_state_discriminator_groups"]))
+    alerts.extend(set_delta("BankK 41-byte state flag group", old["bankk_41_state_flag_groups"], new["bankk_41_state_flag_groups"]))
+    alerts.extend(set_delta("BankK 41-byte embedded value", old["bankk_41_state_embedded_values"], new["bankk_41_state_embedded_values"]))
     alerts.extend(set_delta("Outbox verifier sender/program", old["outbox_verifier_map_senders"], new["outbox_verifier_map_senders"]))
     alerts.extend(set_delta("Outbox verifier field-map aggregate key", old["outbox_verifier_map_aggregate_keys"], new["outbox_verifier_map_aggregate_keys"]))
     alerts.extend(set_delta("Outbox verifier field-map root", old["outbox_verifier_map_roots"], new["outbox_verifier_map_roots"]))
@@ -1746,6 +1801,8 @@ def main() -> None:
     print(f"- Created Bank state accounts fetched: `{new['created_bank_state_accounts']}`")
     print(f"- Created Bank state BankK cross-surface hits: `{new['created_bank_state_bankk_cross_hits']}`")
     print(f"- Created Bank state JUP/validator hits: `{new['created_bank_state_jup_hits']}` / `{new['created_bank_state_validator_hits']}`")
+    print(f"- BankK 41-byte state accounts: `{new['bankk_41_state_accounts']}`")
+    print(f"- BankK 41-byte raw-payload / verifier / security hits: `{new['bankk_41_state_raw_payload_hits']}` / `{new['bankk_41_state_verifier_hits']}` / `{new['bankk_41_state_security_hits']}`")
     print(f"- Outbox verifier field-map sender/programs: `{len(new['outbox_verifier_map_senders'])}`")
     print(f"- JupNet executable verifier-syscall consumers: `{new['jupnet_executable_verifier_count']}`")
     print(f"- JupNet executable key-hit rows: `{new['jupnet_executable_key_hit_count']}`")
