@@ -32,6 +32,7 @@ It writes:
 - `outbox-root-update-transactions.md`
 - `outbox-update-payload-reconstruction.md`
 - `outbox-root-history.md`
+- `root-update-authority-graph.md`
 - `epoch-security-source-hunt.md`
 - `outbox-verifier-payload-field-map.md`
 - `security-boundary-corpus.md`
@@ -178,6 +179,14 @@ python3 scripts/analyze_outbox_root_history.py \
   > evidence/YYYY-MM-DD-HHMM-live-rpc/outbox-root-history.md
 ```
 
+Build the root-update authority graph:
+
+```bash
+python3 scripts/analyze_root_update_authority_graph.py \
+  evidence/YYYY-MM-DD-HHMM-live-rpc \
+  > evidence/YYYY-MM-DD-HHMM-live-rpc/root-update-authority-graph.md
+```
+
 Hunt for epoch security source material:
 
 ```bash
@@ -257,7 +266,7 @@ python3 scripts/compare_validator_security_snapshots.py \
   > evidence/NEW-live-rpc/diff.md
 ```
 
-The diff now promotes the proof-chain surfaces into alerts: outbox root-history roots, aggregate keys, compact verifier fields, verifier aggregate-key sets, sender/program ids, verifier payload layouts, JupNet executable hashes, upgrade authorities, `sol_verify_bls_merkle_key` consumers and executable key-hit rows.
+The diff now promotes the proof-chain surfaces into alerts: outbox root-history roots, aggregate keys, compact verifier fields, root-update signers, root-update writable accounts, verifier aggregate-key sets, sender/program ids, verifier payload layouts, JupNet executable hashes, upgrade authorities, `sol_verify_bls_merkle_key` consumers and executable key-hit rows.
 
 ## Alert Conditions
 
@@ -284,6 +293,7 @@ Treat these as high-value changes:
 - outbox root-update transactions start exposing canonical JUP, validator/vote/stake keys, signer-set, quorum, weight or fee material;
 - outbox update payload reconstruction stops matching the `0x00` leaf / `0x01` parent Merkle formula, changes aggregate-key material length, or adds new labelled Dove/JUP/stake fields;
 - outbox root-history analysis observes root-update root/key changes, new proof shapes, or any canonical JUP / validator / vote / stake key material;
+- root-update authority graph finds a new root-update signer, new writable root-update account, upgrade-authority overlap, or canonical JUP / validator / vote / stake key intersection;
 - epoch security-source hunting finds candidate aggregate-key or epoch-root material co-located with canonical JUP, validator, vote or stake keys;
 - outbox verifier payloads stop matching the mapped field layout, introduce new sender/program ids, or expose canonical JUP / validator / vote / stake key material;
 - security boundary corpus analysis finds helper-owned signer-set/quorum/weight state, root mismatches, new verifier sender/program ids, new proof layouts, or canonical JUP / validator / vote / stake material;

@@ -40,6 +40,7 @@ Utility-relevant evidence includes:
 - The recovered sender program resolves to JupNet `gum-omnichain`, whose executable exposes Gum deposit/withdraw/swap and BLS/Merkle verification strings.
 - JupNet executable census found `sol_verify_bls_merkle_key` in two Gum omnichain executables, but no public Dove/JUP/stake-weight source.
 - Outbox root-history analysis found one decoded root update and 19 verifier payloads across 120 local outbox transaction files, with no JUP or validator/stake key exposure.
+- Root-update authority graphing found the sampled root update was submitted by one unknown transaction signer, wrote only the outbox root-history account, and did not overlap known upgrade authorities, canonical JUP, validator, vote or stake keys.
 - Security boundary corpus analysis decoded 42 verifier payloads across 128 local Bank/outbox/history transaction files and still found no JUP, validator, vote, stake, signer-set, quorum or weight exposure.
 - Private runtime fingerprint analysis found `jupnet_bn254` and `jupnet_crosschain_hash` in one public Gum omnichain ProgramData binary, but still found no Dove/JUP/stake-weight/quorum/root-builder producer terms.
 - Gum omnichain binary-role analysis shows `brhPf...` is the richer verifier/crypto-linked Gum binary, while `GUMeb...` is the recovered verifier-payload sender/program id.
@@ -82,6 +83,7 @@ Utility-relevant evidence includes:
 - [`docs/30-private-runtime-fingerprints.md`](docs/30-private-runtime-fingerprints.md)
 - [`docs/31-gum-omnichain-binary-roles.md`](docs/31-gum-omnichain-binary-roles.md)
 - [`docs/32-gum-account-role-reconstruction.md`](docs/32-gum-account-role-reconstruction.md)
+- [`docs/33-root-update-authority-graph.md`](docs/33-root-update-authority-graph.md)
 - [`appendices/rpc-catalogue.md`](appendices/rpc-catalogue.md)
 - [`appendices/program-ids.md`](appendices/program-ids.md)
 - [`appendices/scripts-index.md`](appendices/scripts-index.md)
@@ -105,6 +107,7 @@ Utility-relevant evidence includes:
 - [`evidence/2026-07-12-bank-live-rpc/gum-omnichain-sender-program.md`](evidence/2026-07-12-bank-live-rpc/gum-omnichain-sender-program.md)
 - [`evidence/2026-07-12-bank-live-rpc/jupnet-executable-census.md`](evidence/2026-07-12-bank-live-rpc/jupnet-executable-census.md)
 - [`evidence/2026-07-12-bank-live-rpc/outbox-root-history.md`](evidence/2026-07-12-bank-live-rpc/outbox-root-history.md)
+- [`evidence/2026-07-12-bank-live-rpc/root-update-authority-graph.md`](evidence/2026-07-12-bank-live-rpc/root-update-authority-graph.md)
 - [`evidence/2026-07-12-bank-live-rpc/security-boundary-corpus.md`](evidence/2026-07-12-bank-live-rpc/security-boundary-corpus.md)
 - [`evidence/2026-07-12-bank-live-rpc/private-runtime-fingerprints.md`](evidence/2026-07-12-bank-live-rpc/private-runtime-fingerprints.md)
 - [`evidence/2026-07-12-bank-live-rpc/gum-omnichain-binary-roles.md`](evidence/2026-07-12-bank-live-rpc/gum-omnichain-binary-roles.md)
