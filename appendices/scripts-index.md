@@ -433,6 +433,17 @@ python3 scripts/analyze_bankk_41_byte_state.py \
   evidence/YYYY-MM-DD-live-rpc
 ```
 
+### `scripts/analyze_bankk_local_id_lifecycle.py`
+
+Traces 41-byte `BankK...` local ids across sampled transaction lifecycles. It reports operation, inbox-helper and `VerifyRequest` appearances, same-slot operation/verify pairings, root-update slot proximity and intersections with decoded `bk1PDA...`, verifier/root, canonical JUP and current validator/vote/stake material.
+
+Example:
+
+```bash
+python3 scripts/analyze_bankk_local_id_lifecycle.py \
+  evidence/YYYY-MM-DD-live-rpc
+```
+
 ### `scripts/reconstruct_outbox_update_payload.py`
 
 Reconstructs sampled 305-byte outbox `UpdateMerkleRoot` payloads. It parses the epoch/root fields, proof nodes, path bitmap and final 64-byte candidate aggregate-key material, then recomputes the Merkle root using the public JupNet article's `0x00` leaf and `0x01` parent hash formulas.
@@ -568,7 +579,7 @@ python3 scripts/analyze_gum_account_role_reconstruction.py \
 
 ### `scripts/run_validator_security_check.py`
 
-Runs the full monitoring workflow: collect a fresh snapshot, fetch recurring Bank account state, fetch owner-program context, fetch JupNet helper-program-owned accounts, fetch outbox root-update transactions, fetch wider outbox root history, fetch root submitter direct history, fetch root submitter funding history, classify funding actors, collect/analyze the Bank withdrawal cohort, collect the comparable `BankK...` withdrawal cohort, compare withdrawal surfaces, correlate request/message evidence, fetch/analyze current state for created Bank/Gum accounts, decode compact `BankK...` 41-byte state, fetch the Gum omnichain sender program, fetch all visible JupNet executable ProgramData accounts, generate `analysis.md`, generate `deep-dive.md`, generate `authorization.md`, generate `utility-classification.md`, generate `solana-bank.md`, generate `bank-reverse-engineering.md`, generate `bank-account-graph.md`, generate `bank-recurring-account-state.md`, generate `bank-owner-program-context.md`, generate `jupnet-helper-program-accounts.md`, generate `verify-request-payload-reconstruction.md`, generate `outbox-root-update-transactions.md`, generate `outbox-update-payload-reconstruction.md`, generate `outbox-root-history.md`, generate `root-update-authority-graph.md`, generate `root-submitter-provenance.md`, generate `root-submitter-history.md`, generate `root-submitter-funding-history.md`, generate `funding-actor-classifier.md`, generate `bank-withdrawal-cohort.md`, generate `withdrawal-surface-comparison.md`, generate `bank-request-message-correlation.md`, generate `created-bank-state-account-correlation.md`, generate `bankk-41-byte-state-layout.md`, generate `epoch-security-source-hunt.md`, generate `outbox-verifier-payload-field-map.md`, generate `security-boundary-corpus.md`, generate `private-runtime-fingerprints.md`, generate `gum-omnichain-binary-roles.md`, generate `gum-account-role-reconstruction.md`, generate `gum-omnichain-sender-program.md`, generate `jupnet-executable-census.md`, and compare against the latest prior snapshot when available.
+Runs the full monitoring workflow: collect a fresh snapshot, fetch recurring Bank account state, fetch owner-program context, fetch JupNet helper-program-owned accounts, fetch outbox root-update transactions, fetch wider outbox root history, fetch root submitter direct history, fetch root submitter funding history, classify funding actors, collect/analyze the Bank withdrawal cohort, collect the comparable `BankK...` withdrawal cohort, compare withdrawal surfaces, correlate request/message evidence, fetch/analyze current state for created Bank/Gum accounts, decode compact `BankK...` 41-byte state, trace `BankK...` local-id lifecycles, fetch the Gum omnichain sender program, fetch all visible JupNet executable ProgramData accounts, generate `analysis.md`, generate `deep-dive.md`, generate `authorization.md`, generate `utility-classification.md`, generate `solana-bank.md`, generate `bank-reverse-engineering.md`, generate `bank-account-graph.md`, generate `bank-recurring-account-state.md`, generate `bank-owner-program-context.md`, generate `jupnet-helper-program-accounts.md`, generate `verify-request-payload-reconstruction.md`, generate `outbox-root-update-transactions.md`, generate `outbox-update-payload-reconstruction.md`, generate `outbox-root-history.md`, generate `root-update-authority-graph.md`, generate `root-submitter-provenance.md`, generate `root-submitter-history.md`, generate `root-submitter-funding-history.md`, generate `funding-actor-classifier.md`, generate `bank-withdrawal-cohort.md`, generate `withdrawal-surface-comparison.md`, generate `bank-request-message-correlation.md`, generate `created-bank-state-account-correlation.md`, generate `bankk-41-byte-state-layout.md`, generate `bankk-local-id-lifecycle.md`, generate `epoch-security-source-hunt.md`, generate `outbox-verifier-payload-field-map.md`, generate `security-boundary-corpus.md`, generate `private-runtime-fingerprints.md`, generate `gum-omnichain-binary-roles.md`, generate `gum-account-role-reconstruction.md`, generate `gum-omnichain-sender-program.md`, generate `jupnet-executable-census.md`, and compare against the latest prior snapshot when available.
 
 Example:
 

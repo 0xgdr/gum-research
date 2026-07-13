@@ -70,7 +70,16 @@ The public surfaces are connected operationally, but the missing bridge from dec
 
 ## Next Useful Angle
 
-The next useful expansion is transaction-time reconstruction around a larger paired window:
+The immediate follow-up traced those local ids across sampled transaction lifecycles:
+
+```text
+docs/43-bankk-local-id-lifecycle.md
+evidence/2026-07-12-bank-live-rpc/bankk-local-id-lifecycle.md
+```
+
+That found 18 local ids with operation + `VerifyRequest` lifecycle evidence, including 12 same-slot operation/verify pairings, while still finding zero decoded `bk1PDA...`, verifier/root, JUP or validator/vote/stake matches.
+
+The next broader expansion is transaction-time reconstruction around a larger paired window:
 
 - collect more `BankK...` Withdraw/RFQ/Sweep rows;
 - map every 41-byte embedded id to its corresponding `VerifyRequest` payload;

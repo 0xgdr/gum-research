@@ -914,6 +914,42 @@ def bankk_41_byte_state_metrics(base: Path) -> dict:
     }
 
 
+def bankk_local_id_lifecycle_metrics(base: Path) -> dict:
+    report = base / "bankk-local-id-lifecycle.md"
+    text = report.read_text() if report.exists() else ""
+
+    def number(pattern: str) -> int | None:
+        match = re.search(pattern, text)
+        return int(match.group(1)) if match else None
+
+    same_slot_ids = set()
+    same_slot_section = re.search(r"## Same-Slot Operation And Verify\n\n(.*?)(?=\n## |\Z)", text, flags=re.S)
+    if same_slot_section:
+        for line in same_slot_section.group(1).splitlines():
+            if not line.startswith("| `"):
+                continue
+            cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+            if cells:
+                same_slot_ids.add(cells[0].strip("`"))
+
+    return {
+        "bankk_local_id_lifecycle_present": report.exists(),
+        "bankk_local_id_lifecycle_ids": number(r"41-byte local ids analyzed: `(\d+)`"),
+        "bankk_local_id_lifecycle_events": number(r"Local ids with sampled lifecycle events: `(\d+)`"),
+        "bankk_local_id_lifecycle_bankk_payloads": number(r"Local ids seen in `BankK\.\.\.` raw payloads: `(\d+)`"),
+        "bankk_local_id_lifecycle_inbox_payloads": number(r"Local ids seen in `JNiN\.\.\.` inbox raw payloads: `(\d+)`"),
+        "bankk_local_id_lifecycle_outbox_payloads": number(r"Local ids seen in `jnoUtn\.\.\.` outbox raw payloads: `(\d+)`"),
+        "bankk_local_id_lifecycle_verify_rows": number(r"Local ids seen in `VerifyRequest` rows: `(\d+)`"),
+        "bankk_local_id_lifecycle_operation_verify": number(r"Local ids with operation \+ verify lifecycle evidence: `(\d+)`"),
+        "bankk_local_id_lifecycle_same_slot_operation_verify": number(r"Local ids with same-slot operation \+ verify evidence: `(\d+)`"),
+        "bankk_local_id_lifecycle_decoded_request_hits": number(r"Local ids matching decoded `bk1PDA\.\.\.` request fields: `(\d+)`"),
+        "bankk_local_id_lifecycle_verifier_hits": number(r"Local ids matching verifier/root fields: `(\d+)`"),
+        "bankk_local_id_lifecycle_security_hits": number(r"Local ids matching canonical JUP / validator / vote / stake keys: `(\d+)`"),
+        "bankk_local_id_lifecycle_root_slot_hits": number(r"Local ids sharing a slot with root updates: `(\d+)`"),
+        "bankk_local_id_lifecycle_same_slot_ids": same_slot_ids,
+    }
+
+
 def outbox_verifier_payload_map_metrics(base: Path) -> dict:
     rows = verifier_payload_rows(base)
     roots = verifier_stored_roots(base)
@@ -1040,6 +1076,7 @@ def snapshot_metrics(base: Path) -> dict:
     bank_request_message_correlation = bank_request_message_correlation_metrics(base)
     created_bank_state = created_bank_state_account_metrics(base)
     bankk_41_state = bankk_41_byte_state_metrics(base)
+    bankk_local_id_lifecycle = bankk_local_id_lifecycle_metrics(base)
     outbox_verifier_payload_map = outbox_verifier_payload_map_metrics(base)
     jupnet_executable_census = jupnet_executable_census_metrics(base)
     gum_validator_hits = 0
@@ -1141,6 +1178,7 @@ def snapshot_metrics(base: Path) -> dict:
         **bank_request_message_correlation,
         **created_bank_state,
         **bankk_41_state,
+        **bankk_local_id_lifecycle,
         **outbox_verifier_payload_map,
         **jupnet_executable_census,
     }
@@ -1333,6 +1371,19 @@ def main() -> None:
         ("BankK 41-byte state decoded-request hit values", "bankk_41_state_decoded_request_hits"),
         ("BankK 41-byte state verifier/root hit values", "bankk_41_state_verifier_hits"),
         ("BankK 41-byte state security-hit values", "bankk_41_state_security_hits"),
+        ("BankK local-id lifecycle report present", "bankk_local_id_lifecycle_present"),
+        ("BankK local-id lifecycle id count", "bankk_local_id_lifecycle_ids"),
+        ("BankK local-id lifecycle event count", "bankk_local_id_lifecycle_events"),
+        ("BankK local-id lifecycle BankK payload count", "bankk_local_id_lifecycle_bankk_payloads"),
+        ("BankK local-id lifecycle inbox payload count", "bankk_local_id_lifecycle_inbox_payloads"),
+        ("BankK local-id lifecycle outbox payload count", "bankk_local_id_lifecycle_outbox_payloads"),
+        ("BankK local-id lifecycle VerifyRequest count", "bankk_local_id_lifecycle_verify_rows"),
+        ("BankK local-id lifecycle operation+verify count", "bankk_local_id_lifecycle_operation_verify"),
+        ("BankK local-id lifecycle same-slot operation+verify count", "bankk_local_id_lifecycle_same_slot_operation_verify"),
+        ("BankK local-id lifecycle decoded-request hit count", "bankk_local_id_lifecycle_decoded_request_hits"),
+        ("BankK local-id lifecycle verifier/root hit count", "bankk_local_id_lifecycle_verifier_hits"),
+        ("BankK local-id lifecycle security-hit count", "bankk_local_id_lifecycle_security_hits"),
+        ("BankK local-id lifecycle root-slot hit count", "bankk_local_id_lifecycle_root_slot_hits"),
         ("Outbox verifier field-map report present", "outbox_verifier_map_present"),
         ("Outbox verifier field-map payloads", "outbox_verifier_map_payloads"),
         ("Outbox verifier field-map Bank wrappers", "outbox_verifier_map_bank_wrappers"),
@@ -1497,6 +1548,12 @@ def main() -> None:
             "bankk_41_state_decoded_request_hits",
             "bankk_41_state_verifier_hits",
             "bankk_41_state_security_hits",
+            "bankk_local_id_lifecycle_present",
+            "bankk_local_id_lifecycle_outbox_payloads",
+            "bankk_local_id_lifecycle_decoded_request_hits",
+            "bankk_local_id_lifecycle_verifier_hits",
+            "bankk_local_id_lifecycle_security_hits",
+            "bankk_local_id_lifecycle_root_slot_hits",
             "outbox_verifier_map_present",
             "outbox_verifier_map_payloads",
             "outbox_verifier_map_bank_wrappers",
@@ -1696,6 +1753,7 @@ def main() -> None:
     alerts.extend(set_delta("BankK 41-byte state discriminator group", old["bankk_41_state_discriminator_groups"], new["bankk_41_state_discriminator_groups"]))
     alerts.extend(set_delta("BankK 41-byte state flag group", old["bankk_41_state_flag_groups"], new["bankk_41_state_flag_groups"]))
     alerts.extend(set_delta("BankK 41-byte embedded value", old["bankk_41_state_embedded_values"], new["bankk_41_state_embedded_values"]))
+    alerts.extend(set_delta("BankK local-id same-slot operation/verify id", old["bankk_local_id_lifecycle_same_slot_ids"], new["bankk_local_id_lifecycle_same_slot_ids"]))
     alerts.extend(set_delta("Outbox verifier sender/program", old["outbox_verifier_map_senders"], new["outbox_verifier_map_senders"]))
     alerts.extend(set_delta("Outbox verifier field-map aggregate key", old["outbox_verifier_map_aggregate_keys"], new["outbox_verifier_map_aggregate_keys"]))
     alerts.extend(set_delta("Outbox verifier field-map root", old["outbox_verifier_map_roots"], new["outbox_verifier_map_roots"]))
@@ -1803,6 +1861,7 @@ def main() -> None:
     print(f"- Created Bank state JUP/validator hits: `{new['created_bank_state_jup_hits']}` / `{new['created_bank_state_validator_hits']}`")
     print(f"- BankK 41-byte state accounts: `{new['bankk_41_state_accounts']}`")
     print(f"- BankK 41-byte raw-payload / verifier / security hits: `{new['bankk_41_state_raw_payload_hits']}` / `{new['bankk_41_state_verifier_hits']}` / `{new['bankk_41_state_security_hits']}`")
+    print(f"- BankK local-id operation+verify / same-slot / security hits: `{new['bankk_local_id_lifecycle_operation_verify']}` / `{new['bankk_local_id_lifecycle_same_slot_operation_verify']}` / `{new['bankk_local_id_lifecycle_security_hits']}`")
     print(f"- Outbox verifier field-map sender/programs: `{len(new['outbox_verifier_map_senders'])}`")
     print(f"- JupNet executable verifier-syscall consumers: `{new['jupnet_executable_verifier_count']}`")
     print(f"- JupNet executable key-hit rows: `{new['jupnet_executable_key_hit_count']}`")
